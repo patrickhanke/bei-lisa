@@ -3,7 +3,7 @@ import facepaint from 'facepaint';
 
 const breakpoints = [576, 980, 1200, 1900]
 
-export const black = "#000"
+export const black = "#1f1f1f"
 export const white = "#fff"
 export const grey = "#93918D"
 export const beige = "#EDD6C6"
