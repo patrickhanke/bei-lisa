@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { beige, darkgrey, FlexBox, FlexContainer, grey, light, Wrapper } from "../components/styles"
+import { beige, black, darkgrey, FlexBox, FlexContainer, grey, light, Wrapper } from "../components/styles"
 import TeamCard from "../components/teamcard"
 import Footer from "../components/footer"
 import { motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
@@ -14,15 +14,21 @@ let mainscrollheight;
 let mainclientheight;
 let headerscrollheight;
 
+
 const IndexPage = () => {
 const [mainHeight, setmainHeight] = useState()
 const [siteState, setSiteState] = useState()
-const {scrollY} = useViewportScroll() 
+const [scrollheight, setScrollheight] = useState()
+const {scrollY, scrollYProgress} = useViewportScroll() 
 const scrollYSlowest = useTransform(scrollY, value => -0.1*  value  )
 const scrollSlower = useTransform(scrollY, value => -0.2*  value  )
 const scrollSlow = useTransform(scrollY, value => -0.6*  value  )
 const scrollMedium = useTransform(scrollY, value => -0.7*  value  )
 const scrollFast = useTransform(scrollY, value => -0.8*  value  )
+
+
+
+const scrollbar = useTransform(scrollYProgress, value => value * 100  )
 
 let ySlowest = useSpring(scrollYSlowest, { damping: 99, stiffness: 200 })
 let ySlower = useSpring(scrollSlower, { damping: 99, stiffness: 200 })
@@ -31,12 +37,16 @@ let ySlow = useSpring(scrollSlow, { damping: 99, stiffness: 200 })
 let yMedium = useSpring(scrollMedium, { damping: 99, stiffness: 200 })
 let yFast = useSpring(scrollFast, { damping: 99, stiffness: 200 })
 
+let scrollanimation = useSpring(scrollbar, {damping: 99, stiffness: 200})
+
 
 const handleScroll = (e) => {
   let headerTop = document.getElementById("header").scrollHeight
   let angebotTop = document.getElementById("angebot").scrollHeight
   let salonTop = document.getElementById("salon").scrollHeight
   let teamTop = document.getElementById("team").scrollHeight
+
+
   
   let section0 = headerTop * 0.6
   let section1 = section0 + angebotTop
@@ -47,6 +57,7 @@ const handleScroll = (e) => {
   console.log(section1)
   console.log(section2)
   console.log(section3)
+
   
   if ( window.pageYOffset < section0 ) {
     console.log("header")
@@ -75,22 +86,19 @@ useEffect(() => {
   mainscrollheight = document.getElementById('wrapper').scrollHeight
   headerscrollheight = document.getElementById('header').scrollHeight
 
-
-  let teamdistance = document.documentElement.scrollTop
   console.log(mainclientheight)
-  console.log(mainscrollheight)
   
+setScrollheight(window.innerHeight / 50 )
   setmainHeight(mainclientheight + headerscrollheight + 1000)
   return () => window.removeEventListener("scroll", handleScroll, false);
 },[])
-
-
+console.log(scrollheight)
 return (
   <Layout>
     <SEO title="Home" />
     <Header siteState={siteState} />
     <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
-    
+    <motion.div style={{scaleY: scrollanimation }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: grey, zIndex: 12, height: scrollheight + "px" }} />
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0, background: "rgba(0,0,0, 0.2)", zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
       <Image image="team01" css={{zIndex: 1}} />
       <div css={{height: "100%", width: "100%", position: "absolute",  background: "rgba(0,0,0, 0.2)", zIndex: 4}}>

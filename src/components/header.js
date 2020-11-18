@@ -11,7 +11,12 @@ const underline = {
   exit: {scaleX: 0, originX: "right"}
 }
 
-const Header = ({ siteState }) => (
+const Header = ({ siteState }) => {
+function scrollHandlerAngebot() {
+  console.log("scroll?")
+  window.scrollTo(0,2000)
+}
+return (
   <header
       css={{position: "fixed", width: "100vw", height: "60px", background: light, zIndex: 12, }}
   >
@@ -34,8 +39,8 @@ const Header = ({ siteState }) => (
             </div>
           </div>
           <div css={{position: "relative", width: "6em"}}>
-            <div css={{position: "relative", height: "100%", width: "100%"}}>
-              <Link className={siteState==="angebot" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
+            <div onClick={() => scrollHandlerAngebot()} css={{position: "relative", height: "100%", width: "100%"}}>
+              <Link  className={siteState==="angebot" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
                   <h6>Angebot</h6>                
               </Link>
             </div>
@@ -71,7 +76,7 @@ const Header = ({ siteState }) => (
      
     </div>
   </header>
-)
+)}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
