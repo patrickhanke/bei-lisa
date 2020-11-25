@@ -11,10 +11,11 @@ const underline = {
   exit: {scaleX: 0, originX: "right"}
 }
 
-const Header = ({ siteState }) => {
-function scrollHandlerAngebot() {
-  console.log("scroll?")
-  window.scrollTo(0,2000)
+const Header = ({ siteState, position }) => {
+function scrollHandlerAngebot(e) {
+  console.log(e)
+  console.log(position[e])
+  window.scrollTo(0,position[e])
 }
 return (
   <header
@@ -31,7 +32,7 @@ return (
 
         <FlexBox css={{gap: "2em", width: "36em"}}> 
           <div css={{position: "relative", width: "6em"}}>
-            <div css={{position: "relative", height: "100%", width: "100%"}}>
+            <div  onClick={() => scrollHandlerAngebot("start")} css={{position: "relative", height: "100%", width: "100%"}}>
               <Link className={siteState==="header" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
                 <h6>Start</h6>
                
@@ -39,14 +40,14 @@ return (
             </div>
           </div>
           <div css={{position: "relative", width: "6em"}}>
-            <div onClick={() => scrollHandlerAngebot()} css={{position: "relative", height: "100%", width: "100%"}}>
+            <div onClick={() => scrollHandlerAngebot("angebot")} css={{position: "relative", height: "100%", width: "100%"}}>
               <Link  className={siteState==="angebot" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
                   <h6>Angebot</h6>                
               </Link>
             </div>
           </div>
           <div css={{position: "relative", width: "6em"}}>
-            <div css={{position: "relative", height: "100%", width: "100%"}}>
+            <div onClick={() => scrollHandlerAngebot("salon")} css={{position: "relative", height: "100%", width: "100%"}}>
               <Link className={siteState==="salon" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
 
                   <h6>Unser Salon</h6>                
@@ -55,7 +56,7 @@ return (
             </div>
           </div>
           <div css={{position: "relative", width: "6em"}}>
-            <div css={{position: "relative", height: "100%", width: "100%"}}>
+            <div onClick={() => scrollHandlerAngebot("team")} css={{position: "relative", height: "100%", width: "100%"}}>
               <Link className={siteState==="team" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
 
                   <h6>Das Team</h6>                

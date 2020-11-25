@@ -19,6 +19,7 @@ const IndexPage = () => {
 const [mainHeight, setmainHeight] = useState()
 const [siteState, setSiteState] = useState()
 const [scrollheight, setScrollheight] = useState()
+const [scrollPositions, setScrollPositions] = useState()
 const {scrollY, scrollYProgress} = useViewportScroll() 
 const scrollYSlowest = useTransform(scrollY, value => -0.1*  value  )
 const scrollSlower = useTransform(scrollY, value => -0.2*  value  )
@@ -52,6 +53,15 @@ const handleScroll = (e) => {
   let section1 = section0 + angebotTop
   let section2 = section0 + angebotTop + salonTop
   let section3 = section0 + angebotTop + salonTop + teamTop
+
+  setScrollPositions(
+    {
+      start: 0,
+      angebot: section0,
+      salon: section1,
+      team: section2
+    }
+  )
   console.log(window.pageYOffset)
   console.log(salonTop)
   console.log(section1)
@@ -88,7 +98,7 @@ useEffect(() => {
 
   console.log(mainclientheight)
   
-setScrollheight(window.innerHeight / 50 )
+  setScrollheight(window.innerHeight / 50 )
   setmainHeight(mainclientheight + headerscrollheight + 1000)
   return () => window.removeEventListener("scroll", handleScroll, false);
 },[])
@@ -96,7 +106,7 @@ console.log(scrollheight)
 return (
   <Layout>
     <SEO title="Home" />
-    <Header siteState={siteState} />
+    <Header siteState={siteState} position={scrollPositions} />
     <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
     <motion.div style={{scaleY: scrollanimation }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: grey, zIndex: 12, height: scrollheight + "px" }} />
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0, background: "rgba(0,0,0, 0.2)", zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
@@ -107,7 +117,7 @@ return (
       </div>
     </motion.div>
     
-  <motion.div id="wrapper" style={{y: yFast}} css={{position: "fixed",  height: "auto", width: "auto", top: "90vh", left: "0", zIndex: 5, background: light}}> 
+  <motion.div id="wrapper" style={{y: yFast}} css={{position: "fixed",  height: "auto", width: "auto", top: "90vh", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%"}}> 
     <FlexContainer id="angebot" align="center" justify="center">
       <FlexBox direction="column" align="center" justify="center">
         <h2 css={{textAlign: "right", color: beige}}>Wir bieten alles für Ihre Haare:</h2>
@@ -115,27 +125,27 @@ return (
         <div css={{color: darkgrey}}>
           <motion.div style={{y: ySlower}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "50%", transform: "translate(-50%, -50%)", zIndex: -1}}></motion.div>
         <div css={{zIndex: 13}}>
-        <h3>
+        <h4>
         Damenschnitt
-        </h3>
-        <h3>
+        </h4>
+        <h4>
         Herrenschnitt
-        </h3>
-        <h3>
+        </h4>
+        <h4>
         Wimpern
-        </h3>
-        <h3 >
+        </h4>
+        <h4 >
         Extensions
-        </h3>
-        <h3>
+        </h4>
+        <h4>
         Dauerwelle
-        </h3>
-        <h3>
+        </h4>
+        <h4>
         Make-Up
-        </h3>
-        <h3>
+        </h4>
+        <h4>
         Kinderschnitt
-        </h3>
+        </h4>
         </div>
         </div>
        
@@ -147,9 +157,9 @@ return (
       <FlexBox direction="row" justify="space-evenly" align="center" css={{width: "100%", margin: "3em 0"}}>
         
             <div css={{width: "30em"}} >
-            <h4>
+            <h3>
               Ein Ort um zu bleiben
-            </h4>
+            </h3>
             
             <p>
               Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen
@@ -173,9 +183,9 @@ return (
           <Image image="studio07" />
         </div>
         <div css={{width: "30em"}}>
-          <h4>
+          <h3>
             Der Weg zu ihrem Haarschnitt
-          </h4>
+          </h3>
           <p>
           Exaktes Zuhören. Das ist das wahre Geheimnis, um wirklich gezielt auf Ihre Wünsche eingehen zu können. Mit professioneller Schnitttechnik bringen wir Ihre Vorstellungen dann in Form. Bei uns können Sie sich inspirieren lassen.
           </p>

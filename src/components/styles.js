@@ -20,9 +20,11 @@ export const mq = facepaint(
     height: "100%",
     width: "100%",
     overflow: "hidden",
-    fontSize: "16px",
     display: "inline-block",
     background: light,
+    marginLeft: "auto",
+    marginRight: "auto",
+
     ['p']: {color: darkgrey}
 },
 [mq({fontSize: ["14px", "15px", "16px", "16px"]})]
@@ -41,6 +43,8 @@ export const FlexContainer = styled.div({
     marginRight: 'auto',
     maxWidth: '1400px',
     fontSize: "18px",
+    marginLeft: "auto",
+    marginRight: "auto",
     },
         props => ({justifyContent: props.justify}),
         props => ({backgroundColor: props.background}),
