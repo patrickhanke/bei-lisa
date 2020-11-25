@@ -94,6 +94,13 @@ const Image = ({image}) => {
           }
         }
       },
+      studio08: file(relativePath: { eq: "Haarstudio-Marita-Interieur-2020-web-16.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
 
     }
   `)
@@ -111,6 +118,7 @@ console.log(data)
  else if (image === "studio05") return <Img fluid={data.studio05.childImageSharp.fluid} css={{width: "100%", height: "100%"}}/>
  else if (image === "studio06") return <Img fluid={data.studio06.childImageSharp.fluid} css={{width: "auto", height: "100%"}}/>
  else if (image === "studio07") return <Img fluid={data.studio07.childImageSharp.fluid} css={{width: "auto", height: "100%"}} objectFit="cover" objectPosition="90% 80%"/>
+ else if (image === "studio08") return <Img fluid={data.studio08.childImageSharp.fluid} css={{width: "auto", height: "100%"}} objectFit="cover" objectPosition="90% 80%"/>
  else return null
 }
 

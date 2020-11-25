@@ -10,6 +10,7 @@ export const beige = "#EDD6C6"
 export const darkgrey = "#6A6969"
 export const light = "#FDFAF7"
 export const darkblue = "#374140"
+export const dark = "#3D3D3D"
 
 export const mq = facepaint(
     breakpoints.map(bp => `@media (min-width: ${bp}px)`)

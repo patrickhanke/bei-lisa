@@ -4,11 +4,12 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { beige, black, darkgrey, FlexBox, FlexContainer, grey, light, Wrapper } from "../components/styles"
+import { beige, black, dark, darkgrey, FlexBox, FlexContainer, grey, light, white, Wrapper } from "../components/styles"
 import TeamCard from "../components/teamcard"
 import Footer from "../components/footer"
 import { motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
 import Header from "../components/header"
+import SimpleMap from "../components/google-map"
 
 let mainscrollheight;
 let mainclientheight;
@@ -38,7 +39,7 @@ let ySlow = useSpring(scrollSlow, { damping: 99, stiffness: 200 })
 let yMedium = useSpring(scrollMedium, { damping: 99, stiffness: 200 })
 let yFast = useSpring(scrollFast, { damping: 99, stiffness: 200 })
 
-let scrollanimation = useSpring(scrollbar, {damping: 99, stiffness: 200})
+let scrollanimation = useSpring(scrollbar, {damping: 99, stiffness: 100})
 
 
 const handleScroll = (e) => {
@@ -62,27 +63,18 @@ const handleScroll = (e) => {
       team: section2
     }
   )
-  console.log(window.pageYOffset)
-  console.log(salonTop)
-  console.log(section1)
-  console.log(section2)
-  console.log(section3)
 
   
   if ( window.pageYOffset < section0 ) {
-    console.log("header")
     setSiteState("header")
     }
   else if ( window.pageYOffset < section1 ) {
-    console.log("angebot")
     setSiteState("angebot")
     }
   else if ( window.pageYOffset < section2 ) {
-    console.log("salon")
     setSiteState("salon")
     }
   else if ( window.pageYOffset < section3 ) {
-    console.log("team")
     setSiteState("team")
     }
   else setSiteState("header")
@@ -102,7 +94,6 @@ useEffect(() => {
   setmainHeight(mainclientheight + headerscrollheight + 1000)
   return () => window.removeEventListener("scroll", handleScroll, false);
 },[])
-console.log(scrollheight)
 return (
   <Layout>
     <SEO title="Home" />
@@ -215,6 +206,37 @@ return (
     <FlexContainer direction="column" align="center">
       <h2>Kontakt</h2>
       <p>Schreiben Sie uns oder rufen Sie uns an</p>
+      <p>0761 484745
+      </p>
+      <FlexBox direction="row" justify="space-between" align="center" css={{width: "100%",}}>
+          <div css={{width: "24em", height: "18em", display: "none"}}>
+            <Image image="studio08" />
+          </div>
+          
+          
+          <div css={{background: dark, color: white, padding: "2em 4em"}}>
+            <h3>Unsere <br />Öffnungszeiten</h3>
+                <p css={{color: white + " !important"}}>
+                  Di:  08.30 - 18.00
+                </p>
+                <p css={{color: white + " !important"}}>
+                  Mi: 08.30 - 18.00
+                </p>
+                <p css={{color: white + " !important"}}>
+                  Do: 08.30 - 20.00
+                </p>
+                <p css={{color: white + " !important"}}>
+                  Fr:  08.00 - 18.00
+                </p>
+                <p css={{color: white + " !important"}}>
+                  Sa:  08.00 - 13.00
+                </p >
+
+          </div>
+          <div css={{width: "400px", height: "400px", padding: "2em", background: dark}}>
+            <SimpleMap />
+          </div>
+      </FlexBox>
     </FlexContainer>
     </motion.div>
     </Wrapper>

@@ -59,8 +59,6 @@ const TeamImage = ({bild}) => {
     }
     `)
   
-console.log(image) 
-console.log(bild) 
  if      (bild === "team01") return <Img fluid={image.team01.childImageSharp.fluid} css={{width: "auto", height: "100%"}} />
  else if (bild === "team02") return <Img fluid={image.team02.childImageSharp.fluid} css={{width: "auto", height: "100%"}}/>
  else if (bild === "team03") return <Img fluid={image.team03.childImageSharp.fluid} css={{width: "auto", height: "100%"}}/>

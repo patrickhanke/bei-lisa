@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Image from "./image"
 import { beige, black, FlexBox, grey, light, white } from "./styles"
+import {IoLogoFacebook, IoLogoInstagram} from 'react-icons/io'
 
 const underline = {
   initial: {scaleX: 0, originX:"right"},
@@ -13,8 +14,6 @@ const underline = {
 
 const Header = ({ siteState, position }) => {
 function scrollHandlerAngebot(e) {
-  console.log(e)
-  console.log(position[e])
   window.scrollTo(0,position[e])
 }
 return (
@@ -30,49 +29,58 @@ return (
           <Image image="logo" />
         </div>
 
-        <FlexBox css={{gap: "2em", width: "36em"}}> 
+        <FlexBox css={{gap: "2em", width: "36em", height: "100%"}}> 
           <div css={{position: "relative", width: "6em"}}>
             <div  onClick={() => scrollHandlerAngebot("start")} css={{position: "relative", height: "100%", width: "100%"}}>
-              <Link className={siteState==="header" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
-                <h6>Start</h6>
+              <h6 className={siteState==="header" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
+                Start
                
-              </Link>
+              </h6>
             </div>
           </div>
           <div css={{position: "relative", width: "6em"}}>
             <div onClick={() => scrollHandlerAngebot("angebot")} css={{position: "relative", height: "100%", width: "100%"}}>
-              <Link  className={siteState==="angebot" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
-                  <h6>Angebot</h6>                
-              </Link>
+              <h6  className={siteState==="angebot" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
+                  Angebot           
+              </h6>
             </div>
           </div>
           <div css={{position: "relative", width: "6em"}}>
             <div onClick={() => scrollHandlerAngebot("salon")} css={{position: "relative", height: "100%", width: "100%"}}>
-              <Link className={siteState==="salon" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
+              <h6 className={siteState==="salon" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
 
-                  <h6>Unser Salon</h6>                
+                  Unser Salon           
                 
-              </Link>
+              </h6>
             </div>
           </div>
           <div css={{position: "relative", width: "6em"}}>
             <div onClick={() => scrollHandlerAngebot("team")} css={{position: "relative", height: "100%", width: "100%"}}>
-              <Link className={siteState==="team" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
+              <h6 className={siteState==="team" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
 
-                  <h6>Das Team</h6>                
+                  Das Team           
                 
-              </Link>
+              </h6>
             </div>
           </div>
           <div css={{position: "relative", width: "6em"}}>
             <div css={{position: "relative", height: "100%", width: "100%"}}>
-              <Link className={siteState==="kontakt" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
-                <h6>Kontakt</h6>
-              </Link>
+              <h6 className={siteState==="kontakt" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
+                Kontakt
+              </h6>
             </div>
           </div>
 
         </FlexBox>
+        <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "6em", paddingRight: "2em"}}>
+        
+          <p css={{marginBottom: 0, fontSize: "1.4em"}}>
+            <IoLogoInstagram />
+          </p>
+          <p css={{marginBottom: 0, fontSize: "1.4em"}}>
+            <IoLogoFacebook />
+          </p>
+        </div>
       </div>
      
     </div>

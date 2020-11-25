@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@ccalamos/gatsby-source-googlemaps-static": "^1.4.9",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "facepaint": "^1.2.1",
@@ -18,6 +19,8 @@
     "gatsby-plugin-sharp": "^2.6.38",
     "gatsby-source-filesystem": "^2.3.32",
     "gatsby-transformer-sharp": "^2.5.16",
+    "google-map-react": "^2.1.9",
+    "google-maps-react": "^2.0.6",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
