@@ -1,9 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
 import Image from "./image"
-import { beige, black, FlexBox, grey, light, white } from "./styles"
+import { beige, black, dark, FlexBox, grey, light, white } from "./styles"
 import {IoLogoFacebook, IoLogoInstagram} from 'react-icons/io'
 
 const underline = {
@@ -13,23 +13,22 @@ const underline = {
 }
 
 const Header = ({ siteState, position }) => {
+const [hoverState, setHoverState] = useState()
 function scrollHandlerAngebot(e) {
   window.scrollTo(0,position[e])
 }
 return (
   <header
-      css={{position: "fixed", width: "100vw", height: "60px", background: light, zIndex: 12, }}
+      css={{position: "fixed", width: "100vw", height: "80px", background: light, zIndex: 12, boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)", padding: "0 1em" }}
   >
-    <div
-      css={{width: "100%", height: "100%",position: "relative"}}
-    >
+  
       <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%"}}> 
         
-        <div css={{width: "140px", height: "auto"}}>
+        <div css={{width: "200px", height: "auto"}}>
           <Image image="logo" />
         </div>
 
-        <FlexBox css={{gap: "2em", width: "36em", height: "100%"}}> 
+        <FlexBox css={{gap: "2em",height: "100%"}}> 
           <div css={{position: "relative", width: "6em"}}>
             <div  onClick={() => scrollHandlerAngebot("start")} css={{position: "relative", height: "100%", width: "100%"}}>
               <h6 className={siteState==="header" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
@@ -64,7 +63,7 @@ return (
             </div>
           </div>
           <div css={{position: "relative", width: "6em"}}>
-            <div css={{position: "relative", height: "100%", width: "100%"}}>
+            <div onClick={() => scrollHandlerAngebot("kontakt")} css={{position: "relative", height: "100%", width: "100%"}}>
               <h6 className={siteState==="kontakt" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
                 Kontakt
               </h6>
@@ -72,18 +71,21 @@ return (
           </div>
 
         </FlexBox>
-        <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "6em", paddingRight: "2em"}}>
+        <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "7em", paddingRight: "1em"}}>
         
-          <p css={{marginBottom: 0, fontSize: "1.4em"}}>
-            <IoLogoInstagram />
-          </p>
-          <p css={{marginBottom: 0, fontSize: "1.4em"}}>
-            <IoLogoFacebook />
-          </p>
+          <div css={{padding: "0.5em", borderRadius: "50%", transition: "background 0.2s ease-in", [":hover"]: {background: beige, color: dark }}}>
+            <h6 css={{marginBottom: 0, fontSize: "1.4em", cursor: "pointer", }}>
+              <IoLogoInstagram />
+            </h6>
+          </div>
+          <div css={{padding: "0.5em", borderRadius: "50%", transition: "background 0.2s ease-in", [":hover"]: {background: beige, color: dark }}}>
+            <h6 css={{marginBottom: 0, fontSize: "1.4em", cursor: "pointer", }}>
+              <IoLogoFacebook />
+            </h6>
+          </div>
         </div>
       </div>
      
-    </div>
   </header>
 )}
 

@@ -370,6 +370,7 @@ hgroup {
     text-rendering: optimizeLegibility;
     text-transform: uppercase;
     letter-spacing: 3px;
+    margin-top: 3em;
   }
   h3 {
     font-family: 'Abhaya Libre';
@@ -387,6 +388,7 @@ hgroup {
     font-family: 'Playfair Display';
     font-weight: 500;
     font-size: 2.2em;
+    line-height: 1.4em;
     text-rendering: optimizeLegibility;
     text-align: center;
     color: inherit;
@@ -401,10 +403,11 @@ hgroup {
     margin-block-start: 0;
   }
   h6 {
-    font-family: 'Abhaya Libre';
-    font-weight: 700;
-    font-size: 1em;
-    line-height: 1.2em;
+    font-family: 'Playfair Display';
+    font-weight: 600;
+    font-size: 0.8em;
+    line-height: 0.8em;
+    margin-bottom: 0.4em;
     text-rendering: optimizeLegibility;
     margin-block-end: 0;
     margin-block-start: 0;
@@ -414,6 +417,7 @@ hgroup {
       font-size: 1em;
       line-height: 2.4em;
       color: inherit;
+      margin-bottom: 0.5em;
       
 
   }

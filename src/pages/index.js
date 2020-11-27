@@ -10,6 +10,7 @@ import Footer from "../components/footer"
 import { motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
 import Header from "../components/header"
 import SimpleMap from "../components/google-map"
+import KontaktIcon from "../components/kontakticon"
 
 let mainscrollheight;
 let mainclientheight;
@@ -22,11 +23,12 @@ const [siteState, setSiteState] = useState()
 const [scrollheight, setScrollheight] = useState()
 const [scrollPositions, setScrollPositions] = useState()
 const {scrollY, scrollYProgress} = useViewportScroll() 
+
 const scrollYSlowest = useTransform(scrollY, value => -0.1*  value  )
 const scrollSlower = useTransform(scrollY, value => -0.2*  value  )
 const scrollSlow = useTransform(scrollY, value => -0.6*  value  )
 const scrollMedium = useTransform(scrollY, value => -0.7*  value  )
-const scrollFast = useTransform(scrollY, value => -0.8*  value  )
+const scrollFast = useTransform(scrollY, value => -1*  value  )
 
 
 
@@ -43,24 +45,58 @@ let scrollanimation = useSpring(scrollbar, {damping: 99, stiffness: 100})
 
 
 const handleScroll = (e) => {
-  let headerTop = document.getElementById("header").scrollHeight
-  let angebotTop = document.getElementById("angebot").scrollHeight
-  let salonTop = document.getElementById("salon").scrollHeight
-  let teamTop = document.getElementById("team").scrollHeight
-
-
+  let headerTop = document.getElementById("header")
+  let angebotTop = document.getElementById("angebot")
+  let salonTop = document.getElementById("salon")
+  let teamTop = document.getElementById("team")
+  let kontaktTop = document.getElementById("kontakt")
+  function getPosition(el) {
+    var xPos = 0;
+    var yPos = 0;
+   
+    while (el) {
+      if (el.tagName == "BODY") {
+        // deal with browser quirks with body/window/document and page scroll
+        var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
+        var yScroll = el.scrollTop || document.documentElement.scrollTop;
+   
+        xPos += (el.offsetLeft - xScroll + el.clientLeft);
+        yPos += (el.offsetTop - yScroll + el.clientTop);
+      } else {
+        // for all other non-BODY elements
+        xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+        yPos += (el.offsetTop - el.scrollTop + el.clientTop);
+      }
+   
+      el = el.offsetParent;
+    }
+    return {
+      y: yPos
+    };
+  }
+ 
   
-  let section0 = headerTop * 0.6
-  let section1 = section0 + angebotTop
-  let section2 = section0 + angebotTop + salonTop
-  let section3 = section0 + angebotTop + salonTop + teamTop
+  let section0 = getPosition(headerTop)
+  let section1 = getPosition(angebotTop)
+  let section2 = getPosition(salonTop)
+  let section3 = getPosition(teamTop)
+  let section4 = getPosition(kontaktTop)
+
+  console.log(section0)
+  console.log(section1)
+  console.log(section2)
+  console.log(section3)
+  console.log(section4)
+  console.log(window.pageYOffset)
+
 
   setScrollPositions(
     {
       start: 0,
-      angebot: section0,
-      salon: section1,
-      team: section2
+      angebot: section1,
+      salon: section2,
+      team: section3,
+      kontakt: section4
     }
   )
 
@@ -77,7 +113,10 @@ const handleScroll = (e) => {
   else if ( window.pageYOffset < section3 ) {
     setSiteState("team")
     }
-  else setSiteState("header")
+  else if ( window.pageYOffset < section4 ) {
+    setSiteState("kontakt")
+    }
+  else setSiteState("kontakt")
   return 
 }
 
@@ -90,16 +129,19 @@ useEffect(() => {
 
   console.log(mainclientheight)
   
-  setScrollheight(window.innerHeight / 50 )
+  setScrollheight(window.innerHeight / 100 )
   setmainHeight(mainclientheight + headerscrollheight + 1000)
   return () => window.removeEventListener("scroll", handleScroll, false);
 },[])
+
 return (
   <Layout>
     <SEO title="Home" />
     <Header siteState={siteState} position={scrollPositions} />
+    <KontaktIcon /> 
     <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
-    <motion.div style={{scaleY: scrollanimation }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: grey, zIndex: 12, height: scrollheight + "px" }} />
+    <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
+
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0, background: "rgba(0,0,0, 0.2)", zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
       <Image image="team01" css={{zIndex: 1}} />
       <div css={{height: "100%", width: "100%", position: "absolute",  background: "rgba(0,0,0, 0.2)", zIndex: 4}}>
@@ -107,7 +149,7 @@ return (
 
       </div>
     </motion.div>
-    
+  
   <motion.div id="wrapper" style={{y: yFast}} css={{position: "fixed",  height: "auto", width: "auto", top: "90vh", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%"}}> 
     <FlexContainer id="angebot" align="center" justify="center">
       <FlexBox direction="column" align="center" justify="center">
@@ -203,44 +245,64 @@ return (
       </FlexBox>
     </FlexContainer>
 
-    <FlexContainer direction="column" align="center">
-      <h2>Kontakt</h2>
-      <p>Schreiben Sie uns oder rufen Sie uns an</p>
-      <p>0761 484745
+    <FlexContainer id="kontakt" direction="column" align="center">
+      <h2 css={{color: beige}}>Kontakt</h2>
+      <p>
+        Rufen Sie einfach an unter
       </p>
-      <FlexBox direction="row" justify="space-between" align="center" css={{width: "100%",}}>
+      <h3>0761 484745
+      </h3>
+      <FlexBox direction="row" justify="space-between" align="flex-start" css={{width: "100%",}}>
           <div css={{width: "24em", height: "18em", display: "none"}}>
             <Image image="studio08" />
           </div>
           
-          
-          <div css={{background: dark, color: white, padding: "2em 4em"}}>
-            <h3>Unsere <br />Öffnungszeiten</h3>
-                <p css={{color: white + " !important"}}>
+          <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
+            <h4 css={{textAlign: "left"}}>Unsere <br />Öffnungszeiten</h4>
+                <p css={{color: dark + " !important"}}>
                   Di:  08.30 - 18.00
                 </p>
-                <p css={{color: white + " !important"}}>
+                <p css={{color: dark + " !important"}}>
                   Mi: 08.30 - 18.00
                 </p>
-                <p css={{color: white + " !important"}}>
+                <p css={{color: dark + " !important"}}>
                   Do: 08.30 - 20.00
                 </p>
-                <p css={{color: white + " !important"}}>
+                <p css={{color: dark + " !important"}}>
                   Fr:  08.00 - 18.00
                 </p>
-                <p css={{color: white + " !important"}}>
+                <p css={{color: dark + " !important"}}>
                   Sa:  08.00 - 13.00
                 </p >
 
           </div>
-          <div css={{width: "400px", height: "400px", padding: "2em", background: dark}}>
-            <SimpleMap />
+          <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
+            <h4 css={{textAlign: "left"}}>Hier finden Sie uns</h4>
+            <p>
+              Haarstudio Marita
+            </p>
+            <p>
+              Andreas-Hofer-Str. 69b
+            </p>
+            <p>
+              79111 Freiburg im Breisgau
+            </p>
+
+          </div>
+          <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
+            <h4  css={{textAlign: "left"}}>Anfahrt</h4>
+            <div css={{width: "400px", height: "400px", padding: "2em", background: beige}}>
+              <SimpleMap />
+            </div>
           </div>
       </FlexBox>
     </FlexContainer>
     </motion.div>
     </Wrapper>
+    <FlexContainer>
     <Footer />
+
+    </FlexContainer>
   </Layout>
 )}
 

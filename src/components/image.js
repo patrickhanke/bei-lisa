@@ -107,7 +107,7 @@ const Image = ({image}) => {
   
 console.log(data)
  
- if (image === "team01") return <Img fluid={data.team01.childImageSharp.fluid} css={{width: "100%", width: "100%", zIndex: 1}} />
+ if (image === "team01") return <Img fluid={data.team01.childImageSharp.fluid} css={{width: "100%", height: "100%", zIndex: 1}} />
  else if (image === "team02") return <Img fluid={data.team02.childImageSharp.fluid} />
  else if (image === "gb") return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
  else if (image === "logo") return <Img fluid={data.logo.childImageSharp.fluid} />
