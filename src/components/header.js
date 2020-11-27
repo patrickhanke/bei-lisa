@@ -15,7 +15,7 @@ const underline = {
 const Header = ({ siteState, position }) => {
 const [hoverState, setHoverState] = useState()
 function scrollHandlerAngebot(e) {
-  window.scrollTo(0,position[e])
+  window.scrollTo(0,position[e] +50 )
 }
 return (
   <header

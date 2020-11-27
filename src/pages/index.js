@@ -127,6 +127,12 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handleScroll, false);
 },[])
 
+useEffect(() => {
+  console.log("initial effect")
+  handleScroll()
+  return
+},[])
+
 return (
   <Layout>
     <SEO title="Home" />
