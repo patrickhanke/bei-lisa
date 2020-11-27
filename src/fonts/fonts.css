@@ -370,12 +370,12 @@ hgroup {
     text-rendering: optimizeLegibility;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-top: 3em;
+    margin-top: 4em;
   }
   h3 {
     font-family: 'Abhaya Libre';
-    font-weight: 400;
-    font-size: 4.4em;
+    font-weight: 500;
+    font-size: 3.8em;
     line-height: 1em;
     text-rendering: optimizeLegibility;
     text-align: left;
@@ -387,7 +387,7 @@ hgroup {
   h4 {
     font-family: 'Playfair Display';
     font-weight: 500;
-    font-size: 2.2em;
+    font-size: 1.8em;
     line-height: 1.4em;
     text-rendering: optimizeLegibility;
     text-align: center;

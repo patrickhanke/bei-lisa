@@ -26,7 +26,7 @@ export const mq = facepaint(
     marginLeft: "auto",
     marginRight: "auto",
 
-    ['p']: {color: darkgrey}
+    ['p']: {color: "inherit"}
 },
 [mq({fontSize: ["14px", "15px", "16px", "16px"]})]
 

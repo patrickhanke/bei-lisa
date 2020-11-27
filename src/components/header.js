@@ -28,15 +28,8 @@ return (
           <Image image="logo" />
         </div>
 
-        <FlexBox css={{gap: "2em",height: "100%"}}> 
-          <div css={{position: "relative", width: "6em"}}>
-            <div  onClick={() => scrollHandlerAngebot("start")} css={{position: "relative", height: "100%", width: "100%"}}>
-              <h6 className={siteState==="header" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
-                Start
-               
-              </h6>
-            </div>
-          </div>
+        <FlexBox css={{gap: "2em",height: "100%", zIndex: 13}}> 
+          
           <div css={{position: "relative", width: "6em"}}>
             <div onClick={() => scrollHandlerAngebot("angebot")} css={{position: "relative", height: "100%", width: "100%"}}>
               <h6  className={siteState==="angebot" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
@@ -75,12 +68,12 @@ return (
         
           <div css={{padding: "0.5em", borderRadius: "50%", transition: "background 0.2s ease-in", [":hover"]: {background: beige, color: dark }}}>
             <h6 css={{marginBottom: 0, fontSize: "1.4em", cursor: "pointer", }}>
-              <IoLogoInstagram />
+              <a target="_blank" href="https://www.instagram.com/haarstudio_marita/"><IoLogoInstagram /></a>
             </h6>
           </div>
           <div css={{padding: "0.5em", borderRadius: "50%", transition: "background 0.2s ease-in", [":hover"]: {background: beige, color: dark }}}>
             <h6 css={{marginBottom: 0, fontSize: "1.4em", cursor: "pointer", }}>
-              <IoLogoFacebook />
+              <a target="_blank" href="https://www.facebook.com/haarstudiomarita"><IoLogoFacebook /></a>
             </h6>
           </div>
         </div>

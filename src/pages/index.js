@@ -15,6 +15,7 @@ import KontaktIcon from "../components/kontakticon"
 let mainscrollheight;
 let mainclientheight;
 let headerscrollheight;
+let footerscrollheight;
 
 
 const IndexPage = () => {
@@ -28,7 +29,7 @@ const scrollYSlowest = useTransform(scrollY, value => -0.1*  value  )
 const scrollSlower = useTransform(scrollY, value => -0.2*  value  )
 const scrollSlow = useTransform(scrollY, value => -0.6*  value  )
 const scrollMedium = useTransform(scrollY, value => -0.7*  value  )
-const scrollFast = useTransform(scrollY, value => -1*  value  )
+const scrollFast = useTransform(scrollY, value => -0.9*  value  )
 
 
 
@@ -82,39 +83,31 @@ const handleScroll = (e) => {
   let section3 = getPosition(teamTop)
   let section4 = getPosition(kontaktTop)
 
-  console.log(section0)
-  console.log(section1)
-  console.log(section2)
-  console.log(section3)
-  console.log(section4)
-  console.log(window.pageYOffset)
-
-
   setScrollPositions(
     {
       start: 0,
-      angebot: section1,
-      salon: section2,
-      team: section3,
-      kontakt: section4
+      angebot: section1.y * 1.1,
+      salon: section2.y * 1.1,
+      team: section3.y * 1.1,
+      kontakt: section4.y * 1.1
     }
   )
 
   
-  if ( window.pageYOffset < section0 ) {
+  if ( window.pageYOffset < section0.y *1.1 ) {
     setSiteState("header")
     }
-  else if ( window.pageYOffset < section1 ) {
+  else if ( window.pageYOffset < section1.y *1.1 ) {
     setSiteState("angebot")
     }
-  else if ( window.pageYOffset < section2 ) {
+  else if ( window.pageYOffset < section2.y *1.1 ) {
+    setSiteState("angebot")
+    }
+  else if ( window.pageYOffset < section3.y *1.1 ) {
     setSiteState("salon")
     }
-  else if ( window.pageYOffset < section3 ) {
+  else if ( window.pageYOffset < section4.y *1.1 ) {
     setSiteState("team")
-    }
-  else if ( window.pageYOffset < section4 ) {
-    setSiteState("kontakt")
     }
   else setSiteState("kontakt")
   return 
@@ -126,11 +119,11 @@ useEffect(() => {
   mainclientheight = document.getElementById('wrapper').clientHeight
   mainscrollheight = document.getElementById('wrapper').scrollHeight
   headerscrollheight = document.getElementById('header').scrollHeight
-
-  console.log(mainclientheight)
+  footerscrollheight = document.getElementById('footer').clientHeight
   
+
   setScrollheight(window.innerHeight / 100 )
-  setmainHeight(mainclientheight + headerscrollheight + 1000)
+  setmainHeight(mainclientheight + headerscrollheight  )
   return () => window.removeEventListener("scroll", handleScroll, false);
 },[])
 
@@ -156,7 +149,7 @@ return (
         <h2 css={{textAlign: "right", color: beige}}>Wir bieten alles für Ihre Haare:</h2>
         
         <div css={{color: darkgrey}}>
-          <motion.div style={{y: ySlower}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "50%", transform: "translate(-50%, -50%)", zIndex: -1}}></motion.div>
+          <motion.div style={{y: ySlower}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "38%", zIndex: -1}}></motion.div>
         <div css={{zIndex: 13}}>
         <h4>
         Damenschnitt
@@ -186,12 +179,13 @@ return (
      
         
     </FlexContainer>
-    <FlexContainer id="salon" direction="column" justify="space-evenly" align="center">
+    <FlexContainer id="salon" direction="column" justify="space-evenly" align="center" css={{color: dark}}>
+      <h2 css={{color: beige}}>Das Studio</h2>
       <FlexBox direction="row" justify="space-evenly" align="center" css={{width: "100%", margin: "3em 0"}}>
         
             <div css={{width: "30em"}} >
             <h3>
-              Ein Ort um zu bleiben
+              Ein Ort um zum Verweilen
             </h3>
             
             <p>
@@ -226,10 +220,11 @@ return (
         
       </FlexBox>
       </FlexContainer>
-    <FlexContainer id="team" direction="column" align="center" justify="center" css={{color: darkgrey}}>
+
+    <FlexContainer id="team" direction="column" align="center" justify="center" css={{color: dark}}>
       <h2 css={{textAlign: "center", color: beige}}>Das Team</h2>
       <h3 css={{textAlign: "center"}}>Friseurinnen mit Leidenschaft</h3>
-      <p css={{textAlign: "center", maxWidth: "60%"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
+      <p css={{textAlign: "center", maxWidth: "60%", marginBottom: "4em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em"}}>
         <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={0} />
         <TeamCard name="Christine Siebert" titel="Friseurin /Assistentin" bild="team02" margin={4} />
@@ -297,12 +292,13 @@ return (
           </div>
       </FlexBox>
     </FlexContainer>
-    </motion.div>
-    </Wrapper>
-    <FlexContainer>
+    <FlexContainer id="footer" direction="column" justify="center" align="center" css={{paddingBottom: 0}}>
     <Footer />
 
     </FlexContainer>
+    </motion.div>
+    </Wrapper>
+  
   </Layout>
 )}
 
