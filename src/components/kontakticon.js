@@ -39,7 +39,6 @@ const sidebar = {
 
 const KontaktIcon = () => {
     const [open, setOpen] = useState(false)
-    console.log(open)
     return (
         <motion.div
             initial={false}
