@@ -128,7 +128,6 @@ useEffect(() => {
 },[])
 
 useEffect(() => {
-  console.log("initial effect")
   handleScroll()
   return
 },[])
