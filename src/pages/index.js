@@ -140,12 +140,14 @@ return (
     <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
     <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
 
-    <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0, background: "rgba(0,0,0, 0.2)", zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
+    <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
       <Image image="team01" css={{zIndex: 1}} />
-      <div css={{height: "100%", width: "100%", position: "absolute",  background: "rgba(0,0,0, 0.2)", zIndex: 4}}>
-        <h1 css={{position: "absolute", top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>Haarstudio <br />Marita Kraus</h1>
+      <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
+        
+        <motion.h1 style={{y: yMedium, x:"-50%"}} css={{position: "absolute", top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
+          Haarstudio <br />Marita Kraus
+          </motion.h1>
 
-      </div>
     </motion.div>
   
   <motion.div id="wrapper" style={{y: yFast}} css={{position: "fixed",  height: "auto", width: "auto", top: "90vh", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%"}}> 
