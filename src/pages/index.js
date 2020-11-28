@@ -123,7 +123,7 @@ useEffect(() => {
   
 
   setScrollheight(window.innerHeight / 100 )
-  setmainHeight(mainclientheight + headerscrollheight  )
+  setmainHeight(mainclientheight + headerscrollheight + footerscrollheight +500)
   return () => window.removeEventListener("scroll", handleScroll, false);
 },[])
 
@@ -131,13 +131,13 @@ useEffect(() => {
   handleScroll()
   return
 },[])
-
+console.log(mainHeight)
 return (
   <Layout>
     <SEO title="Home" />
     <Header siteState={siteState} position={scrollPositions} />
     <KontaktIcon /> 
-    <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
+    <Wrapper className="scroller" id="mainwrapper" css={{height: mainHeight + "px"}}> 
     <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
 
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
