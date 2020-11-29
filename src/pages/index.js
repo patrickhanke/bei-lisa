@@ -97,9 +97,6 @@ const handleScroll = (e) => {
   if ( window.pageYOffset < section0.y *1.1 ) {
     setSiteState("header")
     }
-  else if ( window.pageYOffset < section1.y *1.1 ) {
-    setSiteState("angebot")
-    }
   else if ( window.pageYOffset < section2.y *1.1 ) {
     setSiteState("angebot")
     }
@@ -108,6 +105,9 @@ const handleScroll = (e) => {
     }
   else if ( window.pageYOffset < section4.y *1.1 ) {
     setSiteState("team")
+    }
+  else if ( window.pageYOffset < section4.y *1.1 ) {
+    setSiteState("kontakt")
     }
   else setSiteState("kontakt")
   return 
@@ -131,7 +131,6 @@ useEffect(() => {
   handleScroll()
   return
 },[])
-console.log(mainHeight)
 return (
   <Layout>
     <SEO title="Home" />
