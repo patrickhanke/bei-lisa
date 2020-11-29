@@ -123,7 +123,7 @@ useEffect(() => {
   
 
   setScrollheight(window.innerHeight / 100 )
-  setmainHeight(mainclientheight + headerscrollheight + footerscrollheight +500)
+  setmainHeight((mainclientheight + headerscrollheight) *1.1)
   return () => window.removeEventListener("scroll", handleScroll, false);
 },[])
 
