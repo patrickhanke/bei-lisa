@@ -55,7 +55,7 @@ const KontaktIcon = () => {
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    css={{background: beige,   position: "absolute", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)"}}>
+                    css={css`background-color: #EDD6C6; position: absolute; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1)`}>
                     <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};border-left: 10px dashed transparent;border-right: 10px dashed transparent; background: transparent;`}></div>
                         <motion.div variants={menuList} css={{position: "relative", height: "100%", padding: "2em", fontSize: "16px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between"}}>
                             <div onClick={() => setOpen(!open)}  css={{padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: dark, color: beige, cursor: "pointer", [":hover"]: {color: dark, background: beige}}}>
@@ -84,7 +84,7 @@ const KontaktIcon = () => {
                 </motion.div>}
             </AnimatePresence>
             
-            <motion.div onClick={()=> setOpen(!open)} animate={open ? {background:dark, color: beige }: {background: beige, color: dark}}  css={{padding: "24px",zIndex: 13, borderRadius: "50%", cursor: "pointer", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)" }}>
+            <motion.div onClick={()=> setOpen(!open)} animate={open ? {backgroundColor:dark, color: beige }: {backgroundColor: beige, color: dark}}  css={{padding: "24px",zIndex: 13, borderRadius: "50%", cursor: "pointer", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)" }}>
                 <h4 css={{marginBottom: 0, lineHeight: 0, marginop: 0, marginBlock: 0, fontSize: "24px"}}>
                     <MdLocalPhone />
                 </h4>
