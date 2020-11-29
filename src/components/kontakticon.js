@@ -85,7 +85,7 @@ const KontaktIcon = () => {
             </AnimatePresence>
             
             <motion.div onClick={()=> setOpen(!open)} animate={open ? {backgroundColor:dark, color: beige }: {backgroundColor: beige, color: dark}}  css={{padding: "24px",zIndex: 13, borderRadius: "50%", cursor: "pointer", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)" }}>
-                <h4 css={{marginBottom: 0, lineHeight: 0, marginop: 0, marginBlockEnd: 0, fontSize: "24px"}}>
+                <h4 css={{marginBottom: 0, lineHeight: 0, marginTop: 0, marginBlockEnd: 0, fontSize: "24px"}}>
                     <MdLocalPhone />
                 </h4>
             </motion.div>
