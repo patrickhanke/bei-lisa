@@ -75,13 +75,25 @@ const handleScroll = (e) => {
       y: yPos
     };
   }
- 
+  function getPositions(element) {
+    var xPosition = 0;
+    var yPosition = 0;
+
+    while(element) {
+        xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+        yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+        element = element.offsetParent;
+    }
+
+    return { x: xPosition, y: yPosition };
   
-  let section0 = getPosition(headerTop)
-  let section1 = getPosition(angebotTop)
-  let section2 = getPosition(salonTop)
-  let section3 = getPosition(teamTop)
-  let section4 = getPosition(kontaktTop)
+  }
+  
+  let section0 = getPositions(headerTop)
+  let section1 = getPositions(angebotTop)
+  let section2 = getPositions(salonTop)
+  let section3 = getPositions(teamTop)
+  let section4 = getPositions(kontaktTop)
 
   setScrollPositions(
     {
