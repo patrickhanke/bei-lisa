@@ -246,12 +246,12 @@ return (
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
         <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={0} />
-        <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={0} />
+        <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={4} />
         <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={0} />
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
         <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={4} />
-        <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={4} />
+        <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={0} />
       </FlexBox>
     </FlexContainer>
 
