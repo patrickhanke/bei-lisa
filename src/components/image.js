@@ -23,9 +23,9 @@ const Image = ({image}) => {
           }
         }
       },
-      team01: file(relativePath: { eq: "Haarstudio-Marita-Portraits-2020-web-29.jpg" }) {
+      team01: file(relativePath: { eq: "Haarstudio-Marita-Portraits-2020-high-res-26.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 3000) {
             ...GatsbyImageSharpFluid
           }
         }
