@@ -170,25 +170,22 @@ return (
           <motion.div style={{y: ySlower}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "38%", zIndex: -1}}></motion.div>
         <div css={{zIndex: 13}}>
         <h4>
-        Damenschnitt
+          Damenschnitt
         </h4>
         <h4>
-        Herrenschnitt
+          Herrenschnitt
         </h4>
         <h4>
-        Wimpern
+          Wimpern färben / tönen
         </h4>
         <h4 >
-        Extensions
+          Extensions / Balayage / Foilyage
+        </h4>
+        <h4 >
+          Extensions / hairtalk
         </h4>
         <h4>
-        Dauerwelle
-        </h4>
-        <h4>
-        Make-Up
-        </h4>
-        <h4>
-        Kinderschnitt
+          Make-Up
         </h4>
         </div>
         </div>
@@ -245,16 +242,16 @@ return (
       <p css={{textAlign: "center", maxWidth: "60%", marginBottom: "4em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
         <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={0} />
-        <TeamCard name="Christine Siebert" titel="Friseurin /Assistentin" bild="team02" margin={4} />
+        <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={4} />
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
         <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={0} />
-        <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={4} />
-        <TeamCard name="Laura Ott" titel="Friseurin /Gesellin" bild="team05" margin={0} />
+        <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={0} />
+        <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={0} />
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Dina Romano" titel="Friseurin / Gesellin" bild="team06" margin={4} />
-        <TeamCard name="Simone Teetz" titel="Friseurin/ Gesellin" bild="team07" margin={0} />
+        <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={4} />
+        <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={4} />
       </FlexBox>
     </FlexContainer>
 
@@ -292,7 +289,7 @@ return (
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
             <h4 css={{textAlign: "left"}}>Hier finden Sie uns</h4>
             <p>
-              Haarstudio Marita
+              Haarstudio Marita GmbH
             </p>
             <p>
               Andreas-Hofer-Str. 69b
