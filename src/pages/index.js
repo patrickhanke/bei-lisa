@@ -176,16 +176,19 @@ return (
           Herrenschnitt
         </h4>
         <h4>
-          Wimpern färben / tönen
+          Farbe & Tönen
         </h4>
         <h4 >
-          Extensions / Balayage / Foilyage
+          Balayage & Foilyage
         </h4>
         <h4 >
-          Extensions / hairtalk
+          Extensions - Hairtalk
         </h4>
         <h4>
-          Make-Up
+          Wimpern & Augenbrauen färben
+        </h4>
+        <h4>
+          Make-Up & Hochzeitsfrisur
         </h4>
         </div>
         </div>
