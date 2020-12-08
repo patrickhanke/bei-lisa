@@ -37,11 +37,11 @@ return (
         <div css={{width: "120px", padding: "0.5em 0"}}>
           <Image image="logo" />
         </div>
-        <motion.div animate={subMenu === true ? {background: dark, color: beige} : {background: beige, color: dark}} onClick={() => setSubMenu(!subMenu)} css={{background: beige, borderRadius: "50%", width: "30px", height: "30px", position: "relative"}}>
-            <div css={{width: "18px", height: "12px", position: "absolute", top: "13px", left: "15px", transform: "translate(-50%, -50%)" }}>
+        <motion.div animate={subMenu === true ? {background: dark, color: beige} : {background: beige, color: dark}} onClick={() => setSubMenu(!subMenu)} css={{background: beige, borderRadius: "50%", width: "40px", height: "40px", position: "relative"}}>
+            <div css={{width: "20px", height: "12px", position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
                 <motion.div animate={subMenu === true ? {background: beige, top: 0, opacity: 0} : {background: dark, opacity: 1}} css={{height: "2px", width: "100%", borderRadius: "3px", position: "absolute"}} />
-                <motion.div animate={subMenu === true ? {background: beige, top: 6, transform: "rotate(-45deg)"} : {background: dark, top:6, transform: "rotate(0deg)"}} css={{height: "2px", width: "100%", borderRadius: "3px", position: "absolute"}} />
-                <motion.div animate={subMenu === true ? {background: beige, top: 6, transform: "rotate(45deg)"} : {background: dark, top: 12, transform: "rotate(0deg)"}} css={{height: "2px", width: "100%",  borderRadius: "3px", position: "absolute"}} />
+                <motion.div animate={subMenu === true ? {background: beige, top: 5, transform: "rotate(-45deg)"} : {background: dark, top:5, transform: "rotate(0deg)"}} css={{height: "2px", width: "100%", borderRadius: "3px", position: "absolute"}} />
+                <motion.div animate={subMenu === true ? {background: beige, top: 5, transform: "rotate(45deg)"} : {background: dark, top: 10, transform: "rotate(0deg)"}} css={{height: "2px", width: "100%",  borderRadius: "3px", position: "absolute"}} />
             </div>
         </motion.div>
 
@@ -85,6 +85,10 @@ return (
            <Link to="/#kontakt">
                Kontakt
            </Link>
+
+           <h5>
+               Preisliste
+           </h5>
 
    </motion.div>
 

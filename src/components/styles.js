@@ -54,8 +54,8 @@ export const FlexContainer = styled.div({
    )
 export const FlexContainerMobile = styled.div({
     width: "100%",
-    paddingTop: '1.4em',
-    paddingBottom: '1.4em',
+    paddingTop: '3em',
+    paddingBottom: '.4em',
     paddingLeft: '1.4em',
     paddingRight: '1.4em',
     height: 'auto',
