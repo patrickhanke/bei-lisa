@@ -321,7 +321,7 @@ return (
       <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
     
       
-      <motion.div id="header"  css={{ width: `100vw`, height: `40vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"}}>
+      <motion.div id="header"  css={{ width: `100vw`, height: `300px`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"}}>
         <Image image="team01" css={{zIndex: 1}} />
         <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
           
@@ -414,19 +414,17 @@ return (
     <FlexContainerMobile id="team" direction="column" align="center" justify="center" css={{color: dark}}>
       <h2 css={{textAlign: "center", color: beige}}>Das Team</h2>
       <h3 css={{textAlign: "center"}}>Friseurinnen mit Leidenschaft</h3>
-      <p css={{textAlign: "center", maxWidth: "60%", marginBottom: "4em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
-      <FlexBoxMobile direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={2} />
-        <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={2} />
-      </FlexBoxMobile>
-      <FlexBoxMobile direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={2} />
-        <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={2} />
-        <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={2} />
-      </FlexBoxMobile>
-      <FlexBoxMobile direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={2} />
-        <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={2} />
+      <p css={{textAlign: "center", marginBottom: "4em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
+      <FlexBoxMobile css={{ marginBottom: "2em"}}>
+        <div css={{display: "flex", flexDirection: "row", justifyContent:"space-evenly", flexWrap: "wrap"}}> 
+          <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={2} />
+          <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={2} />
+          <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={2} />
+          <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={2} />
+          <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={2} />
+          <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={2} />
+          <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={2} />
+        </div>
       </FlexBoxMobile>
     </FlexContainerMobile>
 
@@ -441,7 +439,7 @@ return (
           <div css={{width: "24em", height: "18em", display: "none"}}>
             <Image image="studio08" />
           </div>
-          
+          <div css={{display: "flex", flexDirection: "row", justifyContent:"space-evenly", flexWrap: "wrap"}}>
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
             <h4 css={{textAlign: "left"}}>Unsere <br />Öffnungszeiten</h4>
                 <p css={{color: dark + " !important"}}>
@@ -479,6 +477,7 @@ return (
             <div css={{width: "400px", height: "400px", padding: "2em", background: beige}}>
               <SimpleMap />
             </div>
+          </div>
           </div>
       </FlexBoxMobile>
     </FlexContainer>
