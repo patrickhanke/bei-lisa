@@ -10,8 +10,9 @@ import Footer from "../components/footer"
 import { motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
 import Header from "../components/header"
 import SimpleMap from "../components/google-map"
-import KontaktIcon from "../components/kontakticon"
+import KontaktIcon, { KontaktIconMobile } from "../components/kontakticon"
 import { useMediaQuery } from "react-responsive"
+import HeaderMobile from "../components/header-mobile"
 
 let mainclientheight;
 let headerscrollheight;
@@ -133,10 +134,10 @@ const isDesktopOrLaptop = useMediaQuery({
 return (
   <Layout>
     <SEO title="Home" />
-    <Header siteState={siteState} position={scrollPositions} />
-    <KontaktIcon /> 
     {isDesktopOrLaptop &&
     <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
+    <Header siteState={siteState} position={scrollPositions} />
+    <KontaktIcon /> 
     
     <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
     
@@ -309,16 +310,17 @@ return (
     }
     {
       isTabletOrMobile &&
-      <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
-    
+      <Wrapper id="mainwrapper"  css={{scrollBehavior: "smooth"}}> 
+      <HeaderMobile />
+      <KontaktIconMobile />
       
-      <motion.div id="header"  css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"}}>
+      <motion.div id="header"  css={{ width: `100vw`, height: `300px`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"}}>
         <Image image="team01" css={{zIndex: 1}} />
         <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
           
-          <motion.h1 style={{y: yMedium, x:"-50%"}} css={{position: "absolute", top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
-            Haarstudio <br />Marita Mobile
-            </motion.h1>
+          <motion.h1 css={{position: "absolute", top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
+            Haarstudio <br /> Marita
+          </motion.h1>
 
       </motion.div>
     
@@ -358,7 +360,7 @@ return (
       
         
     </FlexContainerMobile>
-    <FlexContainerMobile css={{color: dark}}>
+    <FlexContainerMobile id="salon" css={{color: dark}}>
       <h2 css={{color: beige}}>Das Studio</h2>
       <FlexBoxMobile>
         
@@ -382,12 +384,10 @@ return (
           <Image image="studio03" />
         </div>  
       </FlexBoxMobile>
-      <FlexBox direction="row" justify="space-evenly" align="center" css={{ width: "100%", margin: "3em 0"}} >
+      <FlexBoxMobile >
   
-        <div css={{width: "30%", height: "18em"}}>
-          <Image image="studio07" />
-        </div>
-        <div css={{width: "30em"}}>
+        
+        <div>
           <h3>
             Der Weg zu ihrem Haarschnitt
           </h3>
@@ -396,28 +396,30 @@ return (
           </p>
         </div>
         
-      </FlexBox>
-      <FlexBoxMobile></FlexBoxMobile>
+      </FlexBoxMobile>
+      <FlexBoxMobile>
+        <div css={{width: "100%", height: "18em"}}>
+          <Image image="studio07" />
+        </div>
+      </FlexBoxMobile>
       </FlexContainerMobile>
 
-    <FlexContainer id="team" direction="column" align="center" justify="center" css={{color: dark}}>
+    <FlexContainerMobile id="team" direction="column" align="center" justify="center" css={{color: dark}}>
       <h2 css={{textAlign: "center", color: beige}}>Das Team</h2>
       <h3 css={{textAlign: "center"}}>Friseurinnen mit Leidenschaft</h3>
-      <p css={{textAlign: "center", maxWidth: "60%", marginBottom: "4em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
-      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={0} />
-        <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={4} />
-      </FlexBox>
-      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={0} />
-        <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={4} />
-        <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={0} />
-      </FlexBox>
-      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={4} />
-        <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={0} />
-      </FlexBox>
-    </FlexContainer>
+      <p css={{textAlign: "center", marginBottom: "4em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
+      <FlexBoxMobile css={{ marginBottom: "2em"}}>
+        <div css={{display: "flex", flexDirection: "row", justifyContent:"space-evenly", flexWrap: "wrap"}}> 
+          <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={2} />
+          <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={2} />
+          <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={2} />
+          <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={2} />
+          <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={2} />
+          <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={2} />
+          <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={2} />
+        </div>
+      </FlexBoxMobile>
+    </FlexContainerMobile>
 
     <FlexContainer id="kontakt" direction="column" align="center">
       <h2 css={{color: beige}}>Kontakt</h2>
@@ -426,11 +428,11 @@ return (
       </p>
       <h3>0761 484745
       </h3>
-      <FlexBox direction="row" justify="space-between" align="flex-start" css={{width: "100%",}}>
+      <FlexBoxMobile>
           <div css={{width: "24em", height: "18em", display: "none"}}>
             <Image image="studio08" />
           </div>
-          
+          <div css={{display: "flex", flexDirection: "row", justifyContent:"space-evenly", flexWrap: "wrap"}}>
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
             <h4 css={{textAlign: "left"}}>Unsere <br />Öffnungszeiten</h4>
                 <p css={{color: dark + " !important"}}>
@@ -469,7 +471,8 @@ return (
               <SimpleMap />
             </div>
           </div>
-      </FlexBox>
+          </div>
+      </FlexBoxMobile>
     </FlexContainer>
     <FlexContainer id="footer" direction="column" justify="center" align="center" css={{paddingBottom: 0}}>
     <Footer />
