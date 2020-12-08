@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { beige, black, dark, darkgrey, FlexBox, FlexContainer, grey, light, white, Wrapper } from "../components/styles"
+import { beige, black, dark, darkgrey, FlexBox, FlexContainer, grey, light, white, Wrapper, FlexBoxMobile, FlexContainerMobile } from "../components/styles"
 import TeamCard from "../components/teamcard"
 import Footer from "../components/footer"
 import { motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
@@ -320,57 +320,56 @@ return (
       isTabletOrMobile &&
       <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
     
-    <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
-    
-    <motion.div id="header"  css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"}}>
-      <Image image="team01" css={{zIndex: 1}} />
-      <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
-        
-        <motion.h1 style={{y: yMedium, x:"-50%"}} css={{position: "absolute", top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
-          Haarstudio <br />Marita Mobile
-          </motion.h1>
+      
+      <motion.div id="header"  css={{ width: `100vw`, height: `40vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"}}>
+        <Image image="team01" css={{zIndex: 1}} />
+        <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
+          
+          <motion.h1 css={{position: "absolute", top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
+            Haarstudio <br />Marita
+            </motion.h1>
 
-    </motion.div>
-  
-  <motion.div id="wrapper" css={{position: "relative",  height: "auto", width: "auto", top: "90vh", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%"}}> 
-    <FlexContainer id="angebot" align="center" justify="center">
-      <FlexBox direction="column" align="center" justify="center">
-        <h2 css={{textAlign: "right", color: beige}}>Wir bieten alles für Ihre Haare:</h2>
+      </motion.div>
+    
+    <motion.div id="wrapper" css={{position: "relative",  height: "auto", width: "auto", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%"}}> 
+      <FlexContainerMobile id="angebot" align="center" justify="center">
+        <FlexBoxMobile direction="column" align="center" justify="center">
+          <h2 css={{textAlign: "center", color: beige}}>Wir bieten alles für Ihre Haare:</h2>
+          
+          <div css={{color: darkgrey}}>
+            <motion.div style={{y: ySlower}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "38%", zIndex: -1}}></motion.div>
+          <div css={{zIndex: 13}}>
+          <h4>
+            Damenschnitt
+          </h4>
+          <h4>
+            Herrenschnitt
+          </h4>
+          <h4>
+            Farbe & Tönen
+          </h4>
+          <h4 >
+            Balayage & Foilyage
+          </h4>
+          <h4 >
+            Extensions - Hairtalk
+          </h4>
+          <h4>
+            Wimpern & Augenbrauen färben
+          </h4>
+          <h4>
+            Make-Up & Hochzeitsfrisur
+          </h4>
+          </div>
+          </div>
         
-        <div css={{color: darkgrey}}>
-          <motion.div style={{y: ySlower}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "38%", zIndex: -1}}></motion.div>
-        <div css={{zIndex: 13}}>
-        <h4>
-          Damenschnitt
-        </h4>
-        <h4>
-          Herrenschnitt
-        </h4>
-        <h4>
-          Farbe & Tönen
-        </h4>
-        <h4 >
-          Balayage & Foilyage
-        </h4>
-        <h4 >
-          Extensions - Hairtalk
-        </h4>
-        <h4>
-          Wimpern & Augenbrauen färben
-        </h4>
-        <h4>
-          Make-Up & Hochzeitsfrisur
-        </h4>
-        </div>
-        </div>
-       
-      </FlexBox>
-     
+        </FlexBoxMobile>
+      
         
-    </FlexContainer>
-    <FlexContainer id="salon" direction="column" justify="space-evenly" align="center" css={{color: dark}}>
+    </FlexContainerMobile>
+    <FlexContainerMobile css={{color: dark}}>
       <h2 css={{color: beige}}>Das Studio</h2>
-      <FlexBox direction="row" justify="space-evenly" align="center" css={{width: "100%", margin: "3em 0"}}>
+      <FlexBoxMobile>
         
             <div css={{width: "30em"}} >
             <h3>
@@ -381,24 +380,21 @@ return (
               Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen
             </p>
             </div>
-            <div css={{width: "30%", height: "30em"}}>
-            <Image image="studio06" />
-            </div>
+           
         
           
-      </FlexBox>
-      <FlexBox css={{height: "auto", width: "100%", margin: "3em 0"}}>
+      </FlexBoxMobile>
+
+      <FlexBoxMobile css={{height: "auto", width: "100%", margin: "3em 0"}}>
   
         <div  css={{height: "24em", width: "100%"}}>
           <Image image="studio03" />
-        </div>
-      </FlexBox>
-      <FlexBox direction="row" justify="space-evenly" align="center" css={{ width: "100%", margin: "3em 0"}} >
+        </div>  
+      </FlexBoxMobile>
+      <FlexBoxMobile >
   
-        <div css={{width: "30%", height: "30em"}}>
-          <Image image="studio07" />
-        </div>
-        <div css={{width: "30em"}}>
+        
+        <div>
           <h3>
             Der Weg zu ihrem Haarschnitt
           </h3>
@@ -407,27 +403,32 @@ return (
           </p>
         </div>
         
-      </FlexBox>
-      </FlexContainer>
+      </FlexBoxMobile>
+      <FlexBoxMobile>
+        <div css={{width: "100%", height: "18em"}}>
+          <Image image="studio07" />
+        </div>
+      </FlexBoxMobile>
+      </FlexContainerMobile>
 
-    <FlexContainer id="team" direction="column" align="center" justify="center" css={{color: dark}}>
+    <FlexContainerMobile id="team" direction="column" align="center" justify="center" css={{color: dark}}>
       <h2 css={{textAlign: "center", color: beige}}>Das Team</h2>
       <h3 css={{textAlign: "center"}}>Friseurinnen mit Leidenschaft</h3>
       <p css={{textAlign: "center", maxWidth: "60%", marginBottom: "4em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
-      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={0} />
-        <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={4} />
-      </FlexBox>
-      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={0} />
-        <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={4} />
-        <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={0} />
-      </FlexBox>
-      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={4} />
-        <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={0} />
-      </FlexBox>
-    </FlexContainer>
+      <FlexBoxMobile direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
+        <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={2} />
+        <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={2} />
+      </FlexBoxMobile>
+      <FlexBoxMobile direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
+        <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={2} />
+        <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={2} />
+        <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={2} />
+      </FlexBoxMobile>
+      <FlexBoxMobile direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
+        <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={2} />
+        <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={2} />
+      </FlexBoxMobile>
+    </FlexContainerMobile>
 
     <FlexContainer id="kontakt" direction="column" align="center">
       <h2 css={{color: beige}}>Kontakt</h2>
@@ -436,7 +437,7 @@ return (
       </p>
       <h3>0761 484745
       </h3>
-      <FlexBox direction="row" justify="space-between" align="flex-start" css={{width: "100%",}}>
+      <FlexBoxMobile>
           <div css={{width: "24em", height: "18em", display: "none"}}>
             <Image image="studio08" />
           </div>
@@ -479,7 +480,7 @@ return (
               <SimpleMap />
             </div>
           </div>
-      </FlexBox>
+      </FlexBoxMobile>
     </FlexContainer>
     <FlexContainer id="footer" direction="column" justify="center" align="center" css={{paddingBottom: 0}}>
     <Footer />

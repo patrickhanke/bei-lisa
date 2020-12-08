@@ -52,23 +52,23 @@ export const FlexContainer = styled.div({
         props => ({alignItems: props.align}),
         props => ({flexDirection: props.direction})
    )
-export const FlexContainerRow = styled.div({
+export const FlexContainerMobile = styled.div({
     width: "100%",
-    paddingTop: '10.4em',
-    paddingBottom: '10.4em',
+    paddingTop: '1.4em',
+    paddingBottom: '1.4em',
+    paddingLeft: '1.4em',
+    paddingRight: '1.4em',
     height: 'auto',
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    overflow: "visible",
     position: "relative",
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    maxWidth: '1920px',
+    ["h3"]: {fontSize: "3em", textAlign: "center"}
     },
     mq({
         flexDirection: ['column', 'column', 'row', 'row']
     }),
+    
    )
 export const FlexContainerColumn = styled.div({
     width: "100%",
@@ -98,12 +98,13 @@ export const FlexContainerColumn = styled.div({
     overflow: "visible",
     position: "relative",
     minWidth: 0,
+    
     },
     props => ({justifyContent: props.justify}),
     props => ({alignItems: props.align}),
     props => ({flexDirection: props.direction})
     )
-  export const FlexBoxRow = styled.div({
+  export const FlexBoxMobile = styled.div({
     height: "auto",
     padding: 0,
     display: "flex",
@@ -111,9 +112,10 @@ export const FlexContainerColumn = styled.div({
     justifyContent: "space-between",
     overflow: "visible",
     position: "relative",
+    fontSize: "14px", textAlign: "center"
     },
     mq({
-        flexDirection: ["column", "column", "row", "row"],
+        flexDirection: ["column", "column", "column", "column"],
         width: ['100%', '100%', '100%', '100%']
     }),
     )
