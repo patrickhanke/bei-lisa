@@ -35,7 +35,7 @@ const TeamImage = ({bild}) => {
                 }
             }
         },
-        team05: file(relativePath: {eq: "team/team05.jpg"}) {
+        team05: file(relativePath: {eq: "team/teampicture05.jpg"}) {
             childImageSharp {
                 fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid

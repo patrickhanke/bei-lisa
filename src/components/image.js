@@ -16,13 +16,6 @@ import {css} from '@emotion/core'
 const Image = ({image}) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      },
       team01: file(relativePath: { eq: "Haarstudio-Marita-Portraits-2020-high-res-26.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 3000) {

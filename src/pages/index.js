@@ -12,10 +12,14 @@ import Header from "../components/header"
 import SimpleMap from "../components/google-map"
 import KontaktIcon from "../components/kontakticon"
 
-let mainscrollheight;
 let mainclientheight;
 let headerscrollheight;
-let footerscrollheight;
+
+let section0 = "";
+let section1 = "";
+let section2 = "";
+let section3 = "";
+let section4 = "";
 
 
 const IndexPage = () => {
@@ -24,6 +28,12 @@ const [siteState, setSiteState] = useState()
 const [scrollheight, setScrollheight] = useState()
 const [scrollPositions, setScrollPositions] = useState()
 const {scrollY, scrollYProgress} = useViewportScroll() 
+const [scrollTimeout, setScrollTimeout] = useState(false) 
+const [headerTop, setHeaderTop] = useState()
+const [angebotTop, setAngebotTop] = useState()
+const [salonTop, setSalonTop] = useState()
+const [teamTop, setTeamTop] = useState()
+const [kontaktTop, setKontaktTop] = useState()
 
 const scrollYSlowest = useTransform(scrollY, value => -0.1*  value  )
 const scrollSlower = useTransform(scrollY, value => -0.2*  value  )
@@ -46,54 +56,30 @@ let scrollanimation = useSpring(scrollbar, {damping: 99, stiffness: 100})
 
 
 const handleScroll = (e) => {
-  let headerTop = document.getElementById("header")
-  let angebotTop = document.getElementById("angebot")
-  let salonTop = document.getElementById("salon")
-  let teamTop = document.getElementById("team")
-  let kontaktTop = document.getElementById("kontakt")
-  function getPosition(el) {
-    var xPos = 0;
-    var yPos = 0;
-   
-    while (el) {
-      if (el.tagName == "BODY") {
-        // deal with browser quirks with body/window/document and page scroll
-        var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
-        var yScroll = el.scrollTop || document.documentElement.scrollTop;
-   
-        xPos += (el.offsetLeft - xScroll + el.clientLeft);
-        yPos += (el.offsetTop - yScroll + el.clientTop);
-      } else {
-        // for all other non-BODY elements
-        xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-        yPos += (el.offsetTop - el.scrollTop + el.clientTop);
-      }
-   
-      el = el.offsetParent;
-    }
-    return {
-      y: yPos
-    };
-  }
+
+  setHeaderTop( document.getElementById("header"))
+  setAngebotTop( document.getElementById("angebot"))
+  setSalonTop( document.getElementById("salon"))
+  setTeamTop( document.getElementById("team"))
+  setKontaktTop( document.getElementById("kontakt"))
+  
   function getPositions(element) {
-    var xPosition = 0;
     var yPosition = 0;
 
     while(element) {
-        xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
         yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
         element = element.offsetParent;
     }
 
-    return { x: xPosition, y: yPosition };
+    return { y: yPosition };
   
   }
   
-  let section0 = getPositions(headerTop)
-  let section1 = getPositions(angebotTop)
-  let section2 = getPositions(salonTop)
-  let section3 = getPositions(teamTop)
-  let section4 = getPositions(kontaktTop)
+  section0 = getPositions(headerTop)
+  section1 = getPositions(angebotTop)
+  section2 = getPositions(salonTop)
+  section3 = getPositions(teamTop)
+  section4 = getPositions(kontaktTop)
 
   setScrollPositions(
     {
@@ -124,14 +110,18 @@ const handleScroll = (e) => {
   else setSiteState("kontakt")
   return 
 }
+const timer = () => {
+  setScrollTimeout(false)
+  setTimeout(() => setScrollTimeout(true), 1000) 
+}
 
 useEffect(() => {
+
+  
   window.addEventListener("scroll", handleScroll, false);
   document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
   mainclientheight = document.getElementById('wrapper').clientHeight
-  mainscrollheight = document.getElementById('wrapper').scrollHeight
   headerscrollheight = document.getElementById('header').scrollHeight
-  footerscrollheight = document.getElementById('footer').clientHeight
   
 
   setScrollheight(window.innerHeight / 100 )

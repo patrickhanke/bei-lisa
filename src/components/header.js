@@ -24,7 +24,7 @@ return (
   
       <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%"}}> 
         
-        <div css={{width: "200px", height: "auto"}}>
+        <div css={{width: "160px", padding: "0.5em 0"}}>
           <Image image="logo" />
         </div>
 
