@@ -10,8 +10,9 @@ import Footer from "../components/footer"
 import { motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
 import Header from "../components/header"
 import SimpleMap from "../components/google-map"
-import KontaktIcon from "../components/kontakticon"
+import KontaktIcon, { KontaktIconMobile } from "../components/kontakticon"
 import { useMediaQuery } from "react-responsive"
+import HeaderMobile from "../components/header-mobile"
 
 let mainclientheight;
 let headerscrollheight;
@@ -142,11 +143,12 @@ const isDesktopOrLaptop = useMediaQuery({
 return (
   <Layout>
     <SEO title="Home" />
-    <Header siteState={siteState} position={scrollPositions} />
-    <KontaktIcon /> 
+    
     {isDesktopOrLaptop &&
     <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
-    
+    <Header siteState={siteState} position={scrollPositions} />
+    <KontaktIcon /> 
+
     <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
     
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
@@ -318,16 +320,17 @@ return (
     }
     {
       isTabletOrMobile &&
-      <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
-    
+      <Wrapper id="mainwrapper"  css={{scrollBehavior: "smooth"}}> 
+      <HeaderMobile />
+      <KontaktIconMobile />
       
       <motion.div id="header"  css={{ width: `100vw`, height: `300px`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"}}>
         <Image image="team01" css={{zIndex: 1}} />
         <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
           
           <motion.h1 css={{position: "absolute", top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
-            Haarstudio <br />Marita
-            </motion.h1>
+            Haarstudio <br /> Marita
+          </motion.h1>
 
       </motion.div>
     
@@ -367,7 +370,7 @@ return (
       
         
     </FlexContainerMobile>
-    <FlexContainerMobile css={{color: dark}}>
+    <FlexContainerMobile id="salon" css={{color: dark}}>
       <h2 css={{color: beige}}>Das Studio</h2>
       <FlexBoxMobile>
         
