@@ -13,6 +13,7 @@ import SimpleMap from "../components/google-map"
 import KontaktIcon, { KontaktIconMobile } from "../components/kontakticon"
 import { useMediaQuery } from "react-responsive"
 import HeaderMobile from "../components/header-mobile"
+import { Preisliste } from "../components/preislisten"
 
 let mainclientheight;
 let headerscrollheight;
@@ -138,6 +139,7 @@ return (
     <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
     <Header siteState={siteState} position={scrollPositions} />
     <KontaktIcon /> 
+    <Preisliste />
     
     <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
     
@@ -193,7 +195,7 @@ return (
         
             <div css={{width: "30em"}} >
             <h3>
-              Ein Ort um zum Verweilen
+              Ein Ort zum Verweilen
             </h3>
             
             <p>
@@ -219,7 +221,7 @@ return (
         </div>
         <div css={{width: "30em"}}>
           <h3>
-            Der Weg zu ihrem Haarschnitt
+            Der Weg zu Ihrem Haarschnitt
           </h3>
           <p>
           Exaktes Zuhören. Das ist das wahre Geheimnis, um wirklich gezielt auf Ihre Wünsche eingehen zu können. Mit professioneller Schnitttechnik bringen wir Ihre Vorstellungen dann in Form. Bei uns können Sie sich inspirieren lassen.
