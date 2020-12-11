@@ -531,3 +531,20 @@ pre tt:after {
 ::-webkit-scrollbar {
   width: 0px;
 }
+
+.preiscontainer {
+  scrollbar-width: thin;          
+  scrollbar-color:  #3D3D3D #EDD6C6;   
+}
+
+.preiscontainer::-webkit-scrollbar {
+  width: 6px;
+
+}
+.preiscontainer::-webkit-scrollbar-track {
+  color: #EDD6C6;
+}
+.preiscontainer::-webkit-scrollbar-thumb {
+  background-color: #3D3D3D;
+  border-radius: 0;
+}

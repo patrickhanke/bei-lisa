@@ -320,8 +320,8 @@ return (
         <Image image="team01" css={{zIndex: 1}} />
         <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
           
-          <motion.h1 css={{position: "absolute", top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
-            Haarstudio <br /> Marita
+          <motion.h1 css={{position: "absolute", fontSize: "2.2em", bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5}}>
+            Haarstudio Marita
           </motion.h1>
 
       </motion.div>
@@ -424,12 +424,15 @@ return (
     </FlexContainerMobile>
 
     <FlexContainer id="kontakt" direction="column" align="center">
-      <h2 css={{color: beige}}>Kontakt</h2>
-      <p>
+      <FlexBoxMobile>
+        <h2 css={{color: beige}}>Kontakt</h2>
+        <p>
         Rufen Sie einfach an unter
-      </p>
-      <h3>0761 484745
-      </h3>
+        </p>
+        <h3>0761 484745
+        </h3>
+      </FlexBoxMobile>
+
       <FlexBoxMobile>
           <div css={{width: "24em", height: "18em", display: "none"}}>
             <Image image="studio08" />
@@ -468,8 +471,8 @@ return (
 
           </div>
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
-            <h4  css={{textAlign: "left"}}>Anfahrt</h4>
-            <div css={{width: "400px", height: "400px", padding: "2em", background: beige}}>
+            <h4  css={{textAlign: "center"}}>Anfahrt</h4>
+            <div css={{width: "300px", height: "300px", padding: "2em", background: beige}}>
               <SimpleMap />
             </div>
           </div>

@@ -7,7 +7,7 @@ import { css } from '@emotion/core'
 
 const popup = {
     initial: {opacity: 0,width: 0, height: 0, scaleX: 0, scaleY:0},
-    animate: {opacity: 1,width: 300, height: 500, scaleX: 1, scaleY: -1, transition: { scaleY: {delay: 0.2, duration: 0.3}, scaleX: {delay: 0, duration: 0.15} }},
+    animate: {opacity: 1,width: 250, height:400, scaleX: 1, scaleY: -1, transition: { scaleY: {delay: 0.2, duration: 0.3}, scaleX: {delay: 0, duration: 0.15} }},
     exit: {opacity: 0,width: 0, height: 0, scaleX: 0, scaleY:0, transition: { scaleY: {delay: 0, duration: 0.3}, scaleX: {delay: 0.2, duration: 0.15} }},
 
 }
@@ -58,7 +58,7 @@ const KontaktIcon = () => {
                     css={css`background-color: #EDD6C6; position: absolute; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1)`}>
                     <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};border-left: 10px dashed transparent;border-right: 10px dashed transparent; background: transparent;`}></div>
                         <motion.div variants={menuList} css={{position: "relative", height: "100%", padding: "2em", fontSize: "16px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between"}}>
-                            <div onClick={() => setOpen(!open)}  css={{padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: dark, color: beige, cursor: "pointer", [":hover"]: {color: dark, background: beige}}}>
+                            <div onClick={() => setOpen(!open)}  css={{padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " +dark, cursor: "pointer", [":hover"]: {color: beige, background: dark}}}>
                                     <VscClose /> 
                             </div>
                             <h5> Telefonnummer</h5>
@@ -115,19 +115,19 @@ export const KontaktIconMobile = () => {
                 {open === true &&
                 <motion.div 
                     variants={popup}  
-                    style={{originX: 0, originY: 0, x: 0, y: -20}}
+                    style={{originX: 0, originY: 0, x: -10, y: -20}}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    css={css`background-color: #EDD6C6; position: absolute; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1)`}>
+                    css={css`background-color: #EDD6C6; position: absolute; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1); font-size: 14px;`}>
                     <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};border-left: 10px dashed transparent;border-right: 10px dashed transparent; background: transparent;`}></div>
-                        <motion.div variants={menuList} css={{position: "relative", height: "100%", padding: "2em", fontSize: "16px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between"}}>
-                            <div onClick={() => setOpen(!open)}  css={{padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: dark, color: beige, cursor: "pointer", [":hover"]: {color: dark, background: beige}}}>
+                        <motion.div variants={menuList} css={{position: "relative", height: "100%", padding: "2em", fontSize: "13px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between"}}>
+                            <div onClick={() => setOpen(!open)}  css={{padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " +dark, cursor: "pointer", [":hover"]: {color: beige, background: dark}}}>
                                     <VscClose /> 
                             </div>
                             <h5> Telefonnummer</h5>
                             <p css={{marginBottom: 0}}> 0761 484745</p>
-                            <div css={{width: "100%", height: "1.5px", background: grey, margin: "6px auto 12px auto"}} />
+                            <div css={{width: "100%", height: "1.5px", background: grey, margin: "6px auto 12px auto",}} />
                             <h5>Öffnungszeiten</h5>
                             <p css={{color: dark + " !important"}}>
                                 Di:  08.30 - 18.00

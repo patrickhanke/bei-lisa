@@ -6,6 +6,21 @@ import Image from "./image"
 import { beige, black, dark, FlexBox, grey, light, white } from "./styles"
 import {IoLogoFacebook, IoLogoInstagram} from 'react-icons/io'
 import { MdTranslate } from "react-icons/md"
+import { IoPlaySkipForwardCircleSharp } from "react-icons/io5"
+import { PreislisteMobile } from "./preislisten"
+import styled from "@emotion/styled"
+
+const SelectButtonMobile = styled.button({
+  fontSize: "14px",
+  padding: "0.3em 0.6em",
+  border: "1px solid " +dark,
+  cursor: "pointer",
+  margin: ".2em 0",
+  [":hover"]: {color: beige, background: dark, },
+},
+props => ({background: props.background}),
+props => ({color: props.color})
+)
 
 const underline = {
   initial: {scaleX: 0, originX:"right"},
@@ -20,12 +35,40 @@ const submenu = {
 
 
 const HeaderMobile = ({ siteState, position }) => {
-const [subMenu, setSubMenu] = useState(false)
+const [menuIcon, setMenuIcon] = useState("close")
+  const [subMenu, setSubMenu] = useState(false)
 const [hoverState, setHoverState] = useState()
+const [preisliste, setPreisliste] = useState(false)
 function scrollHandlerAngebot(e) {
   window.scrollTo(0,position[e] +50 )
 }
 console.log(subMenu)
+const preislisteHandler = (e) => {
+  if (e === "close") {
+    console.log("close")
+    setMenuIcon(e)
+    setSubMenu(false)
+    setPreisliste(false)
+  }
+  else{
+    setSubMenu(!subMenu)
+    setMenuIcon(e)
+    setPreisliste(!preisliste)
+  }
+}
+const subMenuHandler = () => {
+  if (menuIcon === "open") {
+    setSubMenu(false)
+    setPreisliste(false)
+    setMenuIcon("close")
+  }
+  else {
+    setSubMenu(!subMenu)
+    setMenuIcon("open")
+  }
+  
+}
+
 return (
     <>
   <header
@@ -34,14 +77,14 @@ return (
   
       <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%"}}> 
         
-        <div css={{width: "120px", padding: "0.5em 0"}}>
+        <div css={{width: "100px", padding: "0.7em 0"}}>
           <Image image="logo" />
         </div>
-        <motion.div animate={subMenu === true ? {background: dark, color: beige} : {background: beige, color: dark}} onClick={() => setSubMenu(!subMenu)} css={{background: beige, borderRadius: "50%", width: "40px", height: "40px", position: "relative"}}>
+        <motion.div animate={menuIcon === "open" ? {background: dark, color: beige} : {background: beige, color: dark}} onClick={() => subMenuHandler(!subMenu)} css={{background: beige, borderRadius: "50%", width: "36px", height: "36px", position: "relative"}}>
             <div css={{width: "20px", height: "12px", position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
-                <motion.div animate={subMenu === true ? {background: beige, top: 0, opacity: 0} : {background: dark, opacity: 1}} css={{height: "2px", width: "100%", borderRadius: "3px", position: "absolute"}} />
-                <motion.div animate={subMenu === true ? {background: beige, top: 5, transform: "rotate(-45deg)"} : {background: dark, top:5, transform: "rotate(0deg)"}} css={{height: "2px", width: "100%", borderRadius: "3px", position: "absolute"}} />
-                <motion.div animate={subMenu === true ? {background: beige, top: 5, transform: "rotate(45deg)"} : {background: dark, top: 10, transform: "rotate(0deg)"}} css={{height: "2px", width: "100%",  borderRadius: "3px", position: "absolute"}} />
+                <motion.div animate={menuIcon === "open" ? {background: beige, top: 0, opacity: 0} : {background: dark, opacity: 1}} css={{height: "2px", width: "100%", borderRadius: "3px", position: "absolute"}} />
+                <motion.div animate={menuIcon === "open" ? {background: beige, top: 5, transform: "rotate(-45deg)"} : {background: dark, top:5, transform: "rotate(0deg)"}} css={{height: "2px", width: "100%", borderRadius: "3px", position: "absolute"}} />
+                <motion.div animate={menuIcon === "open" ? {background: beige, top: 5, transform: "rotate(45deg)"} : {background: dark, top: 10, transform: "rotate(0deg)"}} css={{height: "2px", width: "100%",  borderRadius: "3px", position: "absolute"}} />
             </div>
         </motion.div>
 
@@ -65,33 +108,32 @@ return (
      
      
   </header>
-   <AnimatePresence>
+   <AnimatePresence exitBeforeEnter>
    {subMenu === true &&
-   <motion.div variants={submenu} initial="initial" animate="animate" exit="exit" css={{background: beige, boxShadow: "0 0 6px 3px rgba(0,0,0,0.2)", left: 0, zIndex: 6, padding: "0 2em", position: "fixed", height: "60px", width: "100vw", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}> 
+   <motion.div key="submenu" variants={submenu} initial="initial" animate="animate" exit="exit" css={{background: beige, boxShadow: "0 0 6px 3px rgba(0,0,0,0.2)", left: 0, zIndex: 6, padding: "0 2em", position: "fixed", height: "60px", width: "100vw", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}> 
      
-             <Link to="/#angebot">
-                 Angebot
-             </Link>
-
              <Link to="/#salon">
-                 Unser Salon
+                 Salon
              </Link>
            
 
              <Link to="/#team">
-                 Das Team
+                 Team
              </Link>
            
            <Link to="/#kontakt">
                Kontakt
            </Link>
 
-           <h5>
+           <SelectButtonMobile background={beige} color={dark} onClick={() => preislisteHandler("open")}>
                Preisliste
-           </h5>
+           </SelectButtonMobile>
 
    </motion.div>
 
+   }
+   {preisliste === true &&
+     	<PreislisteMobile plstate={preisliste} preislisteHandler={preislisteHandler} />
    }
    </AnimatePresence>
    </>
