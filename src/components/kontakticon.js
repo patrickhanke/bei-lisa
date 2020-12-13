@@ -7,7 +7,7 @@ import { css } from '@emotion/core'
 
 const popup = {
     initial: {opacity: 0,width: 0, height: 0, scaleX: 0, scaleY:0},
-    animate: {opacity: 1,width: 250, height:400, scaleX: 1, scaleY: -1, transition: { scaleY: {delay: 0.2, duration: 0.3}, scaleX: {delay: 0, duration: 0.15} }},
+    animate: {opacity: 1,width: 250, height:500, scaleX: 1, scaleY: -1, transition: { scaleY: {delay: 0.2, duration: 0.3}, scaleX: {delay: 0, duration: 0.15} }},
     exit: {opacity: 0,width: 0, height: 0, scaleX: 0, scaleY:0, transition: { scaleY: {delay: 0, duration: 0.3}, scaleX: {delay: 0.2, duration: 0.15} }},
 
 }

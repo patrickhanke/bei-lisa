@@ -29,7 +29,7 @@ props => ({color: props.color})
 )
 const popup = {
     initial: {opacity: 0,width: 0, height: 0, scaleX: 0, scaleY:0},
-    animate: {opacity: 1,width: 550, height: 700, scaleX: -1, scaleY: -1, transition: { scaleY: {delay: 0.2, duration: 0.3}, scaleX: {delay: 0, duration: 0.15} }},
+    animate: {opacity: 1,width: 550, height: "70vh", scaleX: -1, scaleY: -1, transition: { scaleY: {delay: 0.2, duration: 0.3}, scaleX: {delay: 0, duration: 0.15} }},
     exit: {opacity: 0,width: 0, height: 0, scaleX: 0, scaleY:0, transition: { scaleY: {delay: 0, duration: 0.3}, scaleX: {delay: 0.2, duration: 0.15} }},
 }
 const slidein = {
