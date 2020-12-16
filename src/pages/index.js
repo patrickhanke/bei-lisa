@@ -38,7 +38,7 @@ const scrollSlow = useTransform(scrollY, value => -0.6*  value  )
 const scrollMedium = useTransform(scrollY, value => -0.7*  value  )
 const scrollFast = useTransform(scrollY, value => -0.9*  value  )
 
-const yRangeLarge = [-300, 0, 300]
+const yRangeLarge = [-450, 0, 450]
 const yRangeNarrow = [-150, 0, 150]
 const scrollRange = [1,0.5,0]
 const paralaxfast = useTransform(scrollYProgress, scrollRange, yRangeLarge)
@@ -204,7 +204,7 @@ return (
               Ein Ort zum Verweilen
             </h3>
             
-            <p>
+            <p css={{paddingLeft: "6em"}}>
               Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen
             </p>
             </div>
@@ -220,16 +220,20 @@ return (
           <Image image="studio03" />
         </motion.div>
       </FlexBox>
+
+
       <FlexBox direction="row" justify="space-evenly" align="flex-start" css={{ width: "100%", margin: "3em 0"}} >
-        <div>
+        <div css={{width: "30%"}}>
+        <motion.div style={{y: paralaxSlow}} css={{width: "100%", height: "30em", marginTop: "6em"}}>
+          <Image image="studio07" />
+        </motion.div>
+        <motion.div style={{y: paralaxFast, x: 100}} css={{width: "30em", height: "30em", marginTop: "6em"}}>
+          <Image image="studio09" />
+        </motion.div>
 
           
         </div>
 
-
-        <motion.div style={{y: paralaxSlow}} css={{width: "30%", height: "30em", marginTop: "6em"}}>
-          <Image image="studio07" />
-        </motion.div>
         <div css={{width: "30em"}}>
           <h3 css={{transform: "translateX(-2em)"}}>
             Der Weg zu Ihrem Haarschnitt
@@ -237,8 +241,8 @@ return (
           <p>
           Exaktes Zuhören. Das ist das wahre Geheimnis, um wirklich gezielt auf Ihre Wünsche eingehen zu können. Mit professioneller Schnitttechnik bringen wir Ihre Vorstellungen dann in Form. Bei uns können Sie sich inspirieren lassen.
           </p>
-          <motion.div style={{y: paralaxFast}} transition={{duration: 0.4}} css={{width: "100%", height: "30em",}}>
-            <Image image="studio07" />
+          <motion.div style={{y: paralaxSlow}} transition={{duration: 0.4}} css={{width: "100%", height: "30em",marginTop: "3em"}}>
+            <Image image="studio02" />
         </motion.div>
         </div>
         
@@ -416,7 +420,7 @@ return (
       </FlexBoxMobile>
       <FlexBoxMobile>
         <div css={{width: "100%", height: "18em"}}>
-          <Image image="studio07" />
+          <Image image="studio02" />
         </div>
       </FlexBoxMobile>
       </FlexContainerMobile>
