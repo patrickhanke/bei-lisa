@@ -11,7 +11,7 @@ const Footer = () => {
           alignItems: "center",
           justifyContent: "space-between",
           background: dark,
-          width: "90%",
+          width: "100%",
           fontSize: "16px"
 
         }}>

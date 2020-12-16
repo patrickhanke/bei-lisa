@@ -32,14 +32,19 @@ const [scrollheight, setScrollheight] = useState()
 const [scrollPositions, setScrollPositions] = useState()
 const {scrollY, scrollYProgress} = useViewportScroll() 
 
-
 const scrollYSlowest = useTransform(scrollY, value => -0.1*  value  )
 const scrollSlower = useTransform(scrollY, value => -0.2*  value  )
 const scrollSlow = useTransform(scrollY, value => -0.6*  value  )
 const scrollMedium = useTransform(scrollY, value => -0.7*  value  )
 const scrollFast = useTransform(scrollY, value => -0.9*  value  )
 
-
+const yRangeLarge = [-300, 0, 300]
+const yRangeNarrow = [-150, 0, 150]
+const scrollRange = [1,0.5,0]
+const paralaxfast = useTransform(scrollYProgress, scrollRange, yRangeLarge)
+const paralaxslow = useTransform(scrollYProgress, scrollRange, yRangeNarrow)
+const paralaxFast = useSpring(paralaxfast, {damping: 99, stiffness: 200 })
+const paralaxSlow = useSpring(paralaxslow, {damping: 99, stiffness: 200 })
 
 const scrollbar = useTransform(scrollYProgress, value => value * 100  )
 
@@ -91,7 +96,7 @@ const handleScroll = (e) => {
   )
 
   
-  if ( window.pageYOffset < section0.y *1.1 ) {
+  if ( window.pageYOffset < 200 ) {
     setSiteState("header")
     }
   else if ( window.pageYOffset < section2.y *1.1 ) {
@@ -145,7 +150,7 @@ return (
     
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
       <Image image="team01" css={{zIndex: 1}} />
-      <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
+      <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.3)", top: 0 }}></div>
         
         <motion.h1 style={{y: yMedium, x:"-50%"}} css={{position: "absolute", top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
           Haarstudio <br />Marita
@@ -154,12 +159,13 @@ return (
     </motion.div>
   
   <motion.div id="wrapper" style={{y: yFast}} css={{position: "fixed",  height: "auto", width: "auto", top: "90vh", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%"}}> 
+    
     <FlexContainer id="angebot" align="center" justify="center">
       <FlexBox direction="column" align="center" justify="center">
         <h2 css={{textAlign: "right", color: beige}}>Wir bieten alles für Ihre Haare:</h2>
         
         <div css={{color: darkgrey}}>
-          <motion.div style={{y: ySlower}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "38%", zIndex: -1}}></motion.div>
+          <motion.div style={{y: ySlower}} animate={{y: 200}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "38%", zIndex: -1}}></motion.div>
         <div css={{zIndex: 13}}>
         <h4>
           Damenschnitt
@@ -202,33 +208,42 @@ return (
               Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen
             </p>
             </div>
-            <div css={{width: "30%", height: "30em"}}>
+            <motion.div style={{y: paralaxFast}} css={{width: "30%", height: "30em"}}>
             <Image image="studio06" />
-            </div>
+            </motion.div>
         
           
       </FlexBox>
       <FlexBox css={{height: "auto", width: "100%", margin: "3em 0"}}>
   
-        <div  css={{height: "24em", width: "100%"}}>
+        <motion.div style={{y: paralaxSlow}}  css={{height: "24em", width: "100%"}}>
           <Image image="studio03" />
-        </div>
+        </motion.div>
       </FlexBox>
-      <FlexBox direction="row" justify="space-evenly" align="center" css={{ width: "100%", margin: "3em 0"}} >
-  
-        <div css={{width: "30%", height: "30em"}}>
-          <Image image="studio07" />
+      <FlexBox direction="row" justify="space-evenly" align="flex-start" css={{ width: "100%", margin: "3em 0"}} >
+        <div>
+
+          
         </div>
+
+
+        <motion.div style={{y: paralaxSlow}} css={{width: "30%", height: "30em", marginTop: "6em"}}>
+          <Image image="studio07" />
+        </motion.div>
         <div css={{width: "30em"}}>
-          <h3>
+          <h3 css={{transform: "translateX(-2em)"}}>
             Der Weg zu Ihrem Haarschnitt
           </h3>
           <p>
           Exaktes Zuhören. Das ist das wahre Geheimnis, um wirklich gezielt auf Ihre Wünsche eingehen zu können. Mit professioneller Schnitttechnik bringen wir Ihre Vorstellungen dann in Form. Bei uns können Sie sich inspirieren lassen.
           </p>
+          <motion.div style={{y: paralaxFast}} transition={{duration: 0.4}} css={{width: "100%", height: "30em",}}>
+            <Image image="studio07" />
+        </motion.div>
         </div>
         
       </FlexBox>
+     
       </FlexContainer>
 
     <FlexContainer id="team" direction="column" align="center" justify="center" css={{color: dark}}>
@@ -460,7 +475,7 @@ return (
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
             <h4 css={{textAlign: "left"}}>Hier finden Sie uns</h4>
             <p>
-              Haarstudio Marita GmbH
+              Haarstudio Marita Kraus GmbH
             </p>
             <p>
               Andreas-Hofer-Str. 69b

@@ -12,14 +12,21 @@ const underline = {
   exit: {scaleX: 0, originX: "right"}
 }
 
+const headeranimate = {
+
+}
+
 const Header = ({ siteState, position }) => {
 const [hoverState, setHoverState] = useState()
 function scrollHandlerAngebot(e) {
   window.scrollTo(0,position[e] +50 )
 }
+console.log(siteState)
 return (
-  <header
-      css={{position: "fixed", width: "100vw", height: "80px", background: light, zIndex: 12, boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)", padding: "0 1em" }}
+  <motion.header
+      transition={{duration: .6, delay: 0.4}}
+      animate={siteState === "header" ? {background: "rgba(253, 250, 247,0)", boxShadow: "0 0 12px 6px rgba(0,0,0,0)", height: "100px", color: white } : { background: "rgb(253, 250, 247, 1)", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)", height: "80px", color: dark} }
+      css={{position: "fixed", width: "100vw",  zIndex: 12,  padding: "0 1em" }}
   >
   
       <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%"}}> 
@@ -28,7 +35,7 @@ return (
           <Image image="logo" />
         </div>
 
-        <FlexBox css={{gap: "2em",height: "100%", zIndex: 13}}> 
+        <FlexBox css={{gap: "2em",height: "100%", zIndex: 13, padding: 0}}> 
           
           <div css={{position: "relative", width: "6em"}}>
             <div onClick={() => scrollHandlerAngebot("angebot")} css={{position: "relative", height: "100%", width: "100%"}}>
@@ -79,7 +86,7 @@ return (
         </div>
       </div>
      
-  </header>
+  </motion.header>
 )}
 
 Header.propTypes = {

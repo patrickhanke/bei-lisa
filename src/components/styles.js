@@ -22,7 +22,7 @@ export const mq = facepaint(
     width: "100%",
     overflow: "hidden",
     display: "inline-block",
-    background: light,
+    background: white,
     marginLeft: "auto",
     marginRight: "auto",
 
@@ -93,7 +93,7 @@ export const FlexContainerColumn = styled.div({
 
   export const FlexBox = styled.div({
     height: "auto",
-    padding: 0,
+    padding: "4em 0",
     display: "flex",
     overflow: "visible",
     position: "relative",

@@ -77,14 +77,14 @@ export const Preisliste = () => {
                 {open === true &&
                 <motion.div 
                     variants={popup}  
-                    style={{originX: 0, originY: 0, x: 60, y: -20}}
+                    style={{originX: 0, originY: 0, x: 200, y: -20}}
                     initial="initial"
                     animate="animate"
                     exit="exit"
                     css={css`background-color: #EDD6C6; position: absolute; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1)`}>
                     <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};border-left: 10px dashed transparent;border-right: 10px dashed transparent; background: transparent;`}></div>
                         <motion.div variants={menuList} css={{position: "relative", height: "100%", paddingBottom: "1em", fontSize: "16px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start"}}>
-                            <div css={{width: "100%", display: "flex", padding: "1em", flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+                            <div css={{width: "100%", display: "flex", padding: "1em", flexDirection: "row", alignItems: "center", justifyContent: "space-between", }}>
                                 <h5> Preisliste</h5>
 
                                 <div onClick={() => setOpen(!open)}  css={{padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " +dark, cursor: "pointer", [":hover"]: {color: beige, background: dark}}}>
@@ -233,7 +233,7 @@ export const Preisliste = () => {
                                 <div css={{width: "100%"}}> 
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Mädchen und Jugen bis 6 Jahre
+                                            Mädchen und Jungen bis 6 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
                                             15 Euro
@@ -241,7 +241,7 @@ export const Preisliste = () => {
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Mädchen und Jugen bis 12 Jahre
+                                            Mädchen und Jungen bis 12 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
                                             20 Euro
@@ -477,9 +477,9 @@ export const Preisliste = () => {
                 </motion.div>}
             </AnimatePresence>
             
-            <motion.div onClick={()=> setOpen(!open)} animate={open ? {backgroundColor:dark, color: beige }: {backgroundColor: beige, color: dark}}  css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", padding: "24px",zIndex: 13, borderRadius: "50%", cursor: "pointer", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)" }}>
-                <h4 css={{marginBottom: 0, lineHeight: 0, marginTop: 0, marginBlockEnd: 0, fontSize: "24px", width: "24px", height: "24px"}}>
-                    <IoPricetagOutline />
+            <motion.div onClick={()=> setOpen(!open)} animate={open ? {backgroundColor:dark, color: beige }: {backgroundColor: beige, color: dark}}  css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", padding: "24px",zIndex: 13, borderRadius: "10px", cursor: "pointer", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)" }}>
+                <h4 css={{marginBottom: 0, lineHeight: 0, marginTop: 0, marginBlockEnd: 0, fontSize: "16px",}}>
+                    Leistungen & Preise
                 </h4>
             </motion.div>
             

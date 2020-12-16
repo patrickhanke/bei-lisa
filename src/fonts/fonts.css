@@ -358,8 +358,8 @@ hgroup {
   h1 {
     font-family: 'Abhaya Libre';
     font-weight: 800;
-    font-size: 5em;
-    line-height: 1.6em;
+    font-size: 8em;
+    line-height: 1.2em;
     color: white;
     text-rendering: optimizeLegibility;
   }
@@ -405,8 +405,8 @@ hgroup {
   h6 {
     font-family: 'Playfair Display';
     font-weight: 600;
-    font-size: 0.8em;
-    line-height: 0.8em;
+    font-size: 1em;
+    line-height: 1.2em;
     margin-bottom: 0.4em;
     text-rendering: optimizeLegibility;
     margin-block-end: 0;
