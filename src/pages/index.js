@@ -197,21 +197,22 @@ return (
     </FlexContainer>
     <FlexContainer id="salon" direction="column" justify="space-evenly" align="center" css={{color: dark}}>
       <h2 css={{color: beige}}>Das Studio</h2>
-      <FlexBox direction="row" justify="space-evenly" align="center" css={{width: "100%", margin: "3em 0"}}>
+      <FlexBox direction="column" justify="center" align="flex-start" css={{width: "100%", margin: "3em 0"}}>
         
-            <div css={{width: "30em"}} >
+            <div css={{width: "auto"}} >
             <h3>
               Ein Ort zum Verweilen
             </h3>
-            
-            <p css={{paddingLeft: "6em"}}>
-              Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen
-            </p>
             </div>
-            <motion.div style={{y: paralaxFast}} css={{width: "30%", height: "30em"}}>
-            <Image image="studio06" />
-            </motion.div>
-        
+
+            <div css={{display: "flex", flexDirection: "row", width: "100%", alignItems: "flex-start", justifyContent: "space-evenly"}}>
+              <p css={{width: "18em", marginLeft: "6em"}}>
+              Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen
+              </p>
+              <motion.div style={{y: paralaxFast}} css={{width: "40%", height: "30em", marginTop: "-4em"}}>
+              <Image image="studio06" />
+              </motion.div>
+            </div>
           
       </FlexBox>
       <FlexBox css={{height: "auto", width: "100%", margin: "3em 0"}}>
@@ -255,17 +256,31 @@ return (
       <h3 css={{textAlign: "center"}}>Friseurinnen mit Leidenschaft</h3>
       <p css={{textAlign: "center", maxWidth: "60%", marginBottom: "4em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={0} />
-        <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={4} />
+        <motion.div style={{y:paralaxSlow}}>
+          <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={0} />
+        </motion.div>
+        <motion.div style={{y:paralaxFast}}>
+          <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={4} />
+        </motion.div>
+      </FlexBox>
+      <FlexBox direction="row" align="flex-start" justify="space-between" css={{width: "54em", marginBottom: "2em"}}>
+        <motion.div style={{y:paralaxSlow}}>
+          <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={0} />
+        </motion.div>
+        <motion.div style={{y:paralaxFast}}>
+          <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={4} />
+        </motion.div>
+        <motion.div style={{y:paralaxSlow}}>
+          <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={0} />
+        </motion.div>
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={0} />
-        <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={4} />
-        <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={0} />
-      </FlexBox>
-      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={4} />
-        <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={0} />
+        <motion.div style={{y:paralaxFast}}>
+          <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={4} />
+        </motion.div>
+        <motion.div style={{y:paralaxSlow}}>
+          <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={0} />
+        </motion.div>
       </FlexBox>
     </FlexContainer>
 
