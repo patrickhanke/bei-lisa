@@ -16,7 +16,7 @@ const headeranimate = {
 
 }
 
-const Header = ({ siteState, position }) => {
+const Header = ({ siteState, position, top }) => {
 const [hoverState, setHoverState] = useState()
 function scrollHandlerAngebot(e) {
   window.scrollTo(0,position[e] +50 )
@@ -24,17 +24,18 @@ function scrollHandlerAngebot(e) {
 console.log(siteState)
 return (
   <motion.header
-      transition={{duration: .6, delay: 0.4}}
+      transition={{duration: .6, delay: 0.1}}
       animate={siteState === "header" ? {background: "rgba(253, 250, 247,0)", boxShadow: "0 0 12px 6px rgba(0,0,0,0)", height: "100px", color: white } : { background: "rgb(253, 250, 247, 1)", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)", height: "80px", color: dark} }
       css={{position: "fixed", width: "100vw",  zIndex: 12,  padding: "0 1em" }}
   >
   
       <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%"}}> 
-        
-        <div css={{width: "160px", padding: "0.5em 0"}}>
+        <Link to="/">
+          <div css={{width: "160px", padding: "0.5em 0"}}>
           <Image image="logo" />
-        </div>
-
+          </div>
+        </Link>
+      {top==="start" ? 
         <FlexBox css={{gap: "2em",height: "100%", zIndex: 13, padding: 0}}> 
           
           <div css={{position: "relative", width: "6em"}}>
@@ -70,7 +71,8 @@ return (
             </div>
           </div>
 
-        </FlexBox>
+        </FlexBox> : null
+        }
         <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "7em", paddingRight: "1em"}}>
         
           <div css={{padding: "0.5em", borderRadius: "50%", transition: "background 0.2s ease-in", [":hover"]: {background: beige, color: dark }}}>

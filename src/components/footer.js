@@ -1,8 +1,13 @@
+import { Link, navigate } from 'gatsby'
 import React from 'react'
 import { beige, dark, darkgrey, FlexContainer, light, white } from './styles'
 
 const Footer = () => {
+    const navigationHandler = (e) => {
 
+        window.scrollTo(0, 0);
+        navigate( e)
+    }
     return (
         
         <footer css={{
@@ -23,12 +28,13 @@ const Footer = () => {
                     Andreas-Hofer-Str. 69b <br />
                     79111 Freiburg im Breisgau
                 </p>
-                <p>
+                <h6 onClick={() => navigationHandler("/impressum/")}>
                     Impressum
-                </p>
-                <p>
+                </h6>
+                <h6 onClick={() => navigationHandler("/datenschutz/")}>
                     Datenschutz
-                </p>
+                </h6>
+                
            </div>
 
         <div css={{background: dark, color: white, padding: "0.5em 0", width: "100%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>

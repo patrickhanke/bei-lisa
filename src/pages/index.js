@@ -121,7 +121,6 @@ useEffect(() => {
   document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
   mainclientheight = document.getElementById('wrapper').clientHeight
   headerscrollheight = document.getElementById('header').scrollHeight
-  
 
   setScrollheight(window.innerHeight / 100 )
   setmainHeight((mainclientheight + headerscrollheight) *1.1)
@@ -142,7 +141,7 @@ return (
     <SEO title="Home" />
     {isDesktopOrLaptop &&
     <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
-    <Header siteState={siteState} position={scrollPositions} />
+    <Header top="start" siteState={siteState} position={scrollPositions} />
     <KontaktIcon /> 
     <Preisliste />
     
@@ -163,7 +162,9 @@ return (
     <FlexContainer id="angebot" align="center" justify="center">
       <FlexBox direction="column" align="center" justify="center">
         <h2 css={{textAlign: "right", color: beige}}>Wir bieten alles für Ihre Haare:</h2>
-        
+        <Link to="/impressum/">
+                    Impressum
+                </Link>
         <div css={{color: darkgrey}}>
           <motion.div style={{y: ySlower}} animate={{y: 200}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "38%", zIndex: -1}}></motion.div>
         <div css={{zIndex: 13}}>
@@ -199,16 +200,19 @@ return (
       <h2 css={{color: beige}}>Das Studio</h2>
       <FlexBox direction="column" justify="center" align="flex-start" css={{width: "100%", margin: "3em 0"}}>
         
-            <div css={{width: "auto"}} >
+           
+
+            <div css={{display: "flex", flexDirection: "row", width: "100%", alignItems: "flex-start", justifyContent: "space-evenly"}}>
+            <div css={{width: "24em"}} >
             <h3>
               Ein Ort zum Verweilen
             </h3>
-            </div>
-
-            <div css={{display: "flex", flexDirection: "row", width: "100%", alignItems: "flex-start", justifyContent: "space-evenly"}}>
-              <p css={{width: "18em", marginLeft: "6em"}}>
+            <p css={{marginLeft: "6em"}} >
               Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen
               </p>
+            </div>
+
+             
               <motion.div style={{y: paralaxFast}} css={{width: "40%", height: "30em", marginTop: "-4em"}}>
               <Image image="studio06" />
               </motion.div>
@@ -224,22 +228,22 @@ return (
 
 
       <FlexBox direction="row" justify="space-evenly" align="flex-start" css={{ width: "100%", margin: "3em 0"}} >
-        <div css={{width: "30%"}}>
+        <div css={{width: "40%"}}>
         <motion.div style={{y: paralaxSlow}} css={{width: "100%", height: "30em", marginTop: "6em"}}>
           <Image image="studio07" />
         </motion.div>
-        <motion.div style={{y: paralaxFast, x: 100}} css={{width: "30em", height: "30em", marginTop: "6em"}}>
+        <motion.div style={{y: paralaxFast, x: 50}} css={{width: "30em", height: "30em", marginTop: "6em"}}>
           <Image image="studio09" />
         </motion.div>
 
           
         </div>
 
-        <div css={{width: "30em"}}>
-          <h3 css={{transform: "translateX(-2em)"}}>
+        <div css={{width: "24em"}}>
+          <h3 >
             Der Weg zu Ihrem Haarschnitt
           </h3>
-          <p>
+          <p css={{paddingLeft: "6em"}}>
           Exaktes Zuhören. Das ist das wahre Geheimnis, um wirklich gezielt auf Ihre Wünsche eingehen zu können. Mit professioneller Schnitttechnik bringen wir Ihre Vorstellungen dann in Form. Bei uns können Sie sich inspirieren lassen.
           </p>
           <motion.div style={{y: paralaxSlow}} transition={{duration: 0.4}} css={{width: "100%", height: "30em",marginTop: "3em"}}>
@@ -254,31 +258,31 @@ return (
     <FlexContainer id="team" direction="column" align="center" justify="center" css={{color: dark}}>
       <h2 css={{textAlign: "center", color: beige}}>Das Team</h2>
       <h3 css={{textAlign: "center"}}>Friseurinnen mit Leidenschaft</h3>
-      <p css={{textAlign: "center", maxWidth: "60%", marginBottom: "4em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
+      <p css={{textAlign: "center", maxWidth: "60%", marginBottom: "6em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <motion.div style={{y:paralaxSlow}}>
+        <motion.div style={{y:paralaxFast}}>
           <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={0} />
         </motion.div>
-        <motion.div style={{y:paralaxFast}}>
-          <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={4} />
+        <motion.div style={{y:paralaxSlow}}>
+          <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={0} />
         </motion.div>
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-between" css={{width: "54em", marginBottom: "2em"}}>
-        <motion.div style={{y:paralaxSlow}}>
+        <motion.div style={{y:paralaxFast}}>
           <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={0} />
         </motion.div>
-        <motion.div style={{y:paralaxFast}}>
-          <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={4} />
-        </motion.div>
         <motion.div style={{y:paralaxSlow}}>
+          <TeamCard name="Laura Ott" titel="Friseurgesellin" bild="team05" margin={0} />
+        </motion.div>
+        <motion.div style={{y:paralaxFast}}>
           <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={0} />
         </motion.div>
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
-        <motion.div style={{y:paralaxFast}}>
-          <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={4} />
-        </motion.div>
         <motion.div style={{y:paralaxSlow}}>
+          <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={0} />
+        </motion.div>
+        <motion.div style={{y:paralaxFast}}>
           <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={0} />
         </motion.div>
       </FlexBox>
