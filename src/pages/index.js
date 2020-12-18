@@ -399,10 +399,10 @@ return (
         
     </FlexContainerMobile>
     <FlexContainerMobile id="salon" css={{color: dark}}>
-      <h2 css={{color: beige}}>Das Studio</h2>
       <FlexBoxMobile>
+      <h2 css={{color: beige}}>Das Studio</h2>
         
-            <div css={{width: "30em"}} >
+            <div css={{width: "auto"}} >
             <h3>
               Ein Ort um zum Verweilen
             </h3>
