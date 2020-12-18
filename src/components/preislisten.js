@@ -220,9 +220,9 @@ export const Preisliste = () => {
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: "1em"}}>
-                                        <h6 css={{color: dark + " !important"}}>
+                                        <p css={{color: dark + " !important"}}>
                                             Alles inkl. Shampoo, Gel, Wachs oder Haarspray sowie eine Gesichts-Kompresse Heiß oder Kalt                                 
-                                        </h6>
+                                        </p>
                                         
                                     </div>
                                 </div> 
@@ -385,12 +385,12 @@ export const Preisliste = () => {
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "space-between", marginTop: "1em"}}>
-                                        <h5 css={{color: dark + " !important"}}>
+                                        <p css={{color: dark + " !important"}}>
                                             Alles inkl.Friseurexquisite Produkte
-                                        </h5>
-                                        <h6 css={{color: dark + " !important"}}>
+                                        </p>
+                                        <p css={{color: dark + " !important"}}>
                                             Shampoo, Conditioner, Festiger, Wachs oder Gel und Haarspray
-                                        </h6>
+                                        </p>
                                     </div>
                                     
                                 </div>
@@ -639,9 +639,9 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: "1em"}}>
-                                        <h6 css={{color: dark + " !important"}}>
+                                        <p css={{color: dark + " !important"}}>
                                             Alles inkl. Shampoo, Gel, Wachs oder Haarspray sowie eine Gesichts-Kompresse Heiß oder Kalt                                 
-                                        </h6>
+                                        </p>
                                         
                                     </div>
                                 </div> 
@@ -804,12 +804,12 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "space-between", marginTop: "1em"}}>
-                                        <h5 css={{color: dark + " !important"}}>
+                                        <p css={{color: dark + " !important"}}>
                                             Alles inkl.Friseurexquisite Produkte
-                                        </h5>
-                                        <h6 css={{color: dark + " !important"}}>
+                                        </p>
+                                        <p css={{color: dark + " !important"}}>
                                             Shampoo, Conditioner, Festiger, Wachs oder Gel und Haarspray
-                                        </h6>
+                                        </p>
                                     </div>
                                     
                                 </div>

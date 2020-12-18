@@ -162,9 +162,6 @@ return (
     <FlexContainer id="angebot" align="center" justify="center">
       <FlexBox direction="column" align="center" justify="center">
         <h2 css={{textAlign: "right", color: beige}}>Wir bieten alles für Ihre Haare:</h2>
-        <Link to="/impressum/">
-                    Impressum
-                </Link>
         <div css={{color: darkgrey}}>
           <motion.div style={{y: ySlower}} animate={{y: 200}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "38%", zIndex: -1}}></motion.div>
         <div css={{zIndex: 13}}>
@@ -340,8 +337,8 @@ return (
           </div>
       </FlexBox>
     </FlexContainer>
-    <FlexContainer id="footer" direction="column" justify="center" align="center" css={{paddingBottom: 0}}>
-    <Footer />
+    <FlexContainer id="footer" direction="column" justify="center" align="center">
+      <Footer />
 
     </FlexContainer>
     </motion.div> 

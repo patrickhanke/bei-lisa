@@ -22,7 +22,7 @@ const Footer = () => {
         }}>
            
                 
-           <div css={mq({maxWidth: "1440px", width: "100%", display: "flex", padding: "4em 1em 2em 1em", flexDirection:  ["column", "column", "row", "row"], alignItems: ["flex-start","flex-start","flex-end", "flex-end"], justifyContent: "space-evenly", color: white, borderBottom: "1px solid " +beige})} >
+           <div css={mq({width: "100%", display: "flex", padding: "4em 1em 2em 1em", flexDirection:  ["column", "column", "row", "row"], alignItems: ["flex-start","flex-start","flex-end", "flex-end"], justifyContent: "space-evenly", color: white, borderBottom: "1px solid " +beige})} >
                 <div>
                     <h5 css={{marginTop: "2em"}}>Kontakt</h5>
                     <p>
