@@ -6,22 +6,10 @@ import Image from "./image"
 import { beige, black, dark, FlexBox, grey, light, white } from "./styles"
 import {IoLogoFacebook, IoLogoInstagram} from 'react-icons/io'
 
-const underline = {
-  initial: {scaleX: 0, originX:"right"},
-  animate: {scaleX: "100%", originX: "right"},
-  exit: {scaleX: 0, originX: "right"}
-}
-
-const headeranimate = {
-
-}
-
 const Header = ({ siteState, position, top }) => {
-const [hoverState, setHoverState] = useState()
 function scrollHandlerAngebot(e) {
   window.scrollTo(0,position[e] +50 )
 }
-console.log(siteState)
 return (
   <motion.header
       css={{position: "fixed", width: "100vw",  zIndex: 12,  padding: "0 1em",  background: "rgb(253, 250, 247, 1)", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)", height: "80px", color: dark }}

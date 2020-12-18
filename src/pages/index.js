@@ -161,9 +161,9 @@ return (
     
     <FlexContainer id="angebot" align="center" justify="center">
       <FlexBox direction="column" align="center" justify="center">
+      <motion.div style={{y: paralaxFast, x: "-50%"}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "10%", left: "50%",  zIndex: -1}}></motion.div>
         <h2 css={{textAlign: "right", color: beige}}>Wir bieten alles für Ihre Haare:</h2>
         <div css={{color: darkgrey}}>
-          <motion.div style={{y: ySlower}} animate={{y: 200}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "38%", zIndex: -1}}></motion.div>
         <div css={{zIndex: 13}}>
         <h4>
           Damenschnitt
@@ -363,11 +363,12 @@ return (
     
     <motion.div id="wrapper" css={{position: "relative",  height: "auto", width: "auto", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%"}}> 
       <FlexContainerMobile id="angebot" align="center" justify="center">
-        <FlexBoxMobile direction="column" align="center" justify="center">
+        <FlexBoxMobile direction="column" align="center" justify="center" css={{position: "relative"}}>
+          <motion.div style={{y: paralaxFast, x: "-50%"}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "10%", left: "50%", zIndex: -1}}></motion.div>
+
           <h2 css={{textAlign: "center", color: beige}}>Wir bieten alles für Ihre Haare:</h2>
           
-          <div css={{color: darkgrey}}>
-            <motion.div style={{y: ySlower}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "80%", left: "38%", zIndex: -1}}></motion.div>
+          <div css={{color: darkgrey, position: "relative"}}>
           <div css={{zIndex: 13}}>
           <h4>
             Damenschnitt

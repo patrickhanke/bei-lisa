@@ -22,11 +22,6 @@ props => ({background: props.background}),
 props => ({color: props.color})
 )
 
-const underline = {
-  initial: {scaleX: 0, originX:"right"},
-  animate: {scaleX: "100%", originX: "right"},
-  exit: {scaleX: 0, originX: "right"}
-}
 const submenu = {
     initial: {y: 0, opacity: 0},
     animate: {y: 60, opacity: 1},
@@ -34,10 +29,9 @@ const submenu = {
 }
 
 
-const HeaderMobile = ({ siteState, position }) => {
+const HeaderMobile = ({position }) => {
 const [menuIcon, setMenuIcon] = useState("close")
   const [subMenu, setSubMenu] = useState(false)
-const [hoverState, setHoverState] = useState()
 const [preisliste, setPreisliste] = useState(false)
 function scrollHandlerAngebot(e) {
   window.scrollTo(0,position[e] +50 )

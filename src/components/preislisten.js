@@ -33,9 +33,9 @@ const popup = {
     exit: {opacity: 0,width: 0, height: 0, scaleX: 0, scaleY:0, transition: { scaleY: {delay: 0, duration: 0.3}, scaleX: {delay: 0.2, duration: 0.15} }},
 }
 const slidein = {
-    initial: {opacity: 0,width: "100vw", y: "-100%", height: 600, },
-    animate: {opacity: 1,width: "100vw", y: 0, height: 600,  transition: { width: {delay: 0.2, duration: 0.3}, height: {delay: 0, duration: 0.15} }},
-    exit: {opacity: 0,width: "100vw", y: "-100%", height: 600, transition: { width: {delay: 0, duration: 0.3}, height: {delay: 0.2, duration: 0.15} }},
+    initial: {opacity: 0,width: "100vw", y: "-100%", height: 700, },
+    animate: {opacity: 1,width: "100vw", y: 0, height: 700,  transition: { width: {delay: 0.2, duration: 0.3}, height: {delay: 0, duration: 0.15} }},
+    exit: {opacity: 0,width: "100vw", y: "-100%", height: 700, transition: { width: {delay: 0, duration: 0.3}, height: {delay: 0.2, duration: 0.15} }},
 }
 const menuList ={
     initial: {scaleY: 0, scaleX: -1, transition: {staggerChildren: 0.07, delayChildren: 0.2}},
@@ -500,7 +500,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    css={css`position: fixed; background-color: #EDD6C6; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1); z-index: 7; max-width: 600px; max-height: 90vh; overflow: hidden;`}>
+                    css={css`position: fixed; background-color: #EDD6C6; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1); z-index: 7; max-width: 600px; max-height: 90vh; overflow: hidden; padding-bottom: 2em;`}>
                     <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};`}></div>
                         <motion.div css={{position: "relative", height: "100%", paddingBottom: "3em", fontSize: "14px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", marginTop: "60px"}}>
                             <div css={{width: "100%", display: "flex", padding: "1em", flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>

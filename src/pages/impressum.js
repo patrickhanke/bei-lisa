@@ -18,7 +18,7 @@ const Impressum = () => {
 
 useEffect(() => {
     document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
-    mainclientheight = document.getElementById('wrapper').clientHeight
+    mainclientheight = document.getElementById('mainwrapper').clientHeight
   
     setScrollheight(window.innerHeight / 100 )
     setmainHeight((mainclientheight ) *1.1)
@@ -117,10 +117,12 @@ useEffect(() => {
             <Wrapper id="mainwrapper" css={{height: "auto"}}> 
 
                     <FlexContainer direction="column" css={{padding: "2em 1em"}}>
-                        <div >
-                            <h1 css={{color: dark, fontSize: "6em"}}>Impressum</h1>
-                        </div>
+                        
                         <FlexBox direction="column" align="flex-start" css={{ width: "100%"}}>
+                        <div >
+                            <h1 css={{color: dark, fontSize: "2em"}}>Impressum</h1>
+                        </div>
+                        <h5>Kontakt:</h5>
                         
                         <p>
                         Haarstudio Marita Kraus GmbH <br />
@@ -128,7 +130,6 @@ useEffect(() => {
                         Andreas-Hofer-Str. 69b <br />
                         79111 Freiburg im Breisgau
                         </p>
-                        <h5>Kontakt:</h5>
                         <p>
                             Telefon: 0761 484745
                             E-Mail: info@haarstudio-marita.de
