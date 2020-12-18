@@ -1,6 +1,6 @@
 import { Link, navigate } from 'gatsby'
 import React from 'react'
-import { beige, dark, darkgrey, FlexContainer, light, white } from './styles'
+import { beige, dark, darkgrey, FlexContainer, light, mq, white } from './styles'
 
 const Footer = () => {
     const navigationHandler = (e) => {
@@ -22,18 +22,35 @@ const Footer = () => {
         }}>
            
                 
-           <div css={{maxWidth: "1440px", width: "100%", display: "flex", padding: "4em 1em 2em 1em", flexDirection: "row", alignItems: "flex-end", justifyContent: "space-evenly", color: white, borderBottom: "1px solid " +beige}} >
-                <p>
-                    Haarstudio Marita Kraus GmbH <br />
-                    Andreas-Hofer-Str. 69b <br />
-                    79111 Freiburg im Breisgau
-                </p>
-                <h6 onClick={() => navigationHandler("/impressum/")}>
+           <div css={mq({maxWidth: "1440px", width: "100%", display: "flex", padding: "4em 1em 2em 1em", flexDirection:  ["column", "column", "row", "row"], alignItems: ["flex-start","flex-start","flex-end", "flex-end"], justifyContent: "space-evenly", color: white, borderBottom: "1px solid " +beige})} >
+                <div>
+                    <h5>Kontakt</h5>
+                    <p>
+                        Haarstudio Marita Kraus GmbH 
+                    </p>
+                    <p>
+                        Andreas-Hofer-Str. 69b
+                    </p> 
+                    <p> 
+                        79111 Freiburg im Breisgau
+                    </p>
+                </div>
+                <div>
+                    <h5>Inhalte</h5>
+                    
+                    
+                    <p onClick={() => navigationHandler("/")} css={{textDecoration: "underline", cursor: "pointer", [":hover"]: {color: beige}}}>
+                    Start
+                    </p>
+                    <p onClick={() => navigationHandler("/impressum/")} css={{textDecoration: "underline", cursor: "pointer", [":hover"]: {color: beige}}}>
                     Impressum
-                </h6>
-                <h6 onClick={() => navigationHandler("/datenschutz/")}>
-                    Datenschutz
-                </h6>
+                    </p>
+                    <p onClick={() => navigationHandler("/datenschutz/")} css={{textDecoration: "underline", cursor: "pointer", [":hover"]: {color: beige}}}>
+                        Datenschutz
+                    </p>
+                </div>
+                
+                
                 
            </div>
 

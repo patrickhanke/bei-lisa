@@ -36,7 +36,7 @@ return (
           </div>
         </Link>
       {top==="start" ? 
-        <FlexBox css={{gap: "2em",height: "100%", zIndex: 13, padding: 0}}> 
+        <div css={{display: "flex", flexDirection: "row", alignItems: "flex-start", justifyContent: "space-between",  gap: "2em",height: "100%", zIndex: 13, padding: 0}}> 
           
           <div css={{position: "relative", width: "6em"}}>
             <div onClick={() => scrollHandlerAngebot("angebot")} css={{position: "relative", height: "100%", width: "100%"}}>
@@ -71,7 +71,7 @@ return (
             </div>
           </div>
 
-        </FlexBox> : null
+        </div> : null
         }
         <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "7em", paddingRight: "1em"}}>
         

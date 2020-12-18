@@ -1,5 +1,6 @@
 import { motion, useSpring, useTransform, useViewportScroll } from 'framer-motion';
 import React, { useEffect, useState } from 'react'
+import { useMediaQuery } from 'react-responsive';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import Layout from '../components/layout';
@@ -47,7 +48,10 @@ useEffect(() => {
     let ySlow = useSpring(scrollSlow, { damping: 99, stiffness: 200 })
     let yMedium = useSpring(scrollMedium, { damping: 99, stiffness: 200 })
     let yFast = useSpring(scrollFast, { damping: 99, stiffness: 200 })
-    
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+    const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-device-width: 1224px)'
+    })
 
     return (
         <Layout>
@@ -100,7 +104,6 @@ useEffect(() => {
 
                         </FlexBox>
                     <Footer />
-
                     </FlexContainer>
             </motion.div>
 
