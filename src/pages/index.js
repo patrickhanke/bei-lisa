@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { beige, black, dark, darkgrey, FlexBox, FlexContainer, grey, light, white, Wrapper, FlexBoxMobile, FlexContainerMobile } from "../components/styles"
+import { beige, black, dark, darkgrey, FlexBox, FlexContainer, grey, light, white, Wrapper, FlexBoxMobile, FlexContainerMobile, mq } from "../components/styles"
 import TeamCard from "../components/teamcard"
 import Footer from "../components/footer"
 import { motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
@@ -132,9 +132,9 @@ useEffect(() => {
   return
 },[])
 
-const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+const isTabletOrMobile = useMediaQuery({ query: '(max-device-width: 1180px)' })
 const isDesktopOrLaptop = useMediaQuery({
-  query: '(min-device-width: 1224px)'
+  query: '(min-device-width: 1180px)'
 })
 return (
   <Layout>
@@ -230,7 +230,7 @@ return (
           <Image image="studio07" />
         </motion.div>
         <motion.div style={{y: paralaxFast, x: 50}} css={{width: "30em", height: "30em", marginTop: "6em"}}>
-          <Image image="studio09" />
+          <Image image="studio05" />
         </motion.div>
 
           
@@ -255,8 +255,8 @@ return (
     <FlexContainer id="team" direction="column" align="center" justify="center" css={{color: dark}}>
       <h2 css={{textAlign: "center", color: beige}}>Das Team</h2>
       <h3 css={{textAlign: "center"}}>Friseurinnen mit Leidenschaft</h3>
-      <p css={{textAlign: "center", maxWidth: "60%", marginBottom: "6em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
-      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
+      <p css={{textAlign: "center", maxWidth: "60%", marginBottom: "8em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
+      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "3em"}}>
         <motion.div style={{y:paralaxFast}}>
           <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={0} />
         </motion.div>
@@ -264,7 +264,7 @@ return (
           <TeamCard name="Dina Romano" titel="Friseurgesellin" bild="team06" margin={0} />
         </motion.div>
       </FlexBox>
-      <FlexBox direction="row" align="flex-start" justify="space-between" css={{width: "54em", marginBottom: "2em"}}>
+      <FlexBox direction="row" align="flex-start" justify="space-between" css={{width: "54em", marginBottom: "3em"}}>
         <motion.div style={{y:paralaxFast}}>
           <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={0} />
         </motion.div>
@@ -275,7 +275,7 @@ return (
           <TeamCard name="Simone Teetz" titel="Friseurgesellin" bild="team07" margin={0} />
         </motion.div>
       </FlexBox>
-      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "2em"}}>
+      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em"}}>
         <motion.div style={{y:paralaxSlow}}>
           <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={0} />
         </motion.div>
@@ -285,7 +285,7 @@ return (
       </FlexBox>
     </FlexContainer>
 
-    <FlexContainer id="kontakt" direction="column" align="center">
+    <FlexContainer id="kontakt" direction="column" align="center" css={{paddingTop: 0}}>
       <h2 css={{color: beige}}>Kontakt</h2>
       <p>
         Rufen Sie einfach an unter
@@ -319,7 +319,7 @@ return (
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
             <h4 css={{textAlign: "left"}}>Hier finden Sie uns</h4>
             <p>
-              Haarstudio Marita GmbH
+              Haarstudio Marita Kraus GmbH
             </p>
             <p>
               Andreas-Hofer-Str. 69b
@@ -337,8 +337,8 @@ return (
           </div>
       </FlexBox>
     </FlexContainer>
-    <FlexContainer id="footer" direction="column" justify="center" align="center">
-      <Footer />
+    <FlexContainer id="footer" direction="column" justify="center" align="center" css={{padding: "0 2em"}}>
+        <Footer />
 
     </FlexContainer>
     </motion.div> 
@@ -351,11 +351,11 @@ return (
       <HeaderMobile />
       <KontaktIconMobile />
       
-      <motion.div id="header"  css={{ width: `100vw`, height: `300px`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"}}>
+      <motion.div id="header"  css={mq({ width: `100vw`, height: [`300px`, `300px`, `50vh`, `80vh`], top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"})}>
         <Image image="team01" css={{zIndex: 1}} />
         <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
           
-          <motion.h1 css={{position: "absolute", fontSize: "2.2em", bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5}}>
+          <motion.h1 css={{position: "absolute", fontSize: ["2.2em", "4.4em"], bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5}}>
             Haarstudio Marita
           </motion.h1>
 
@@ -407,7 +407,7 @@ return (
               Ein Ort um zum Verweilen
             </h3>
             
-            <p>
+            <p css={{maxWidth: "42em"}}>
               Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen
             </p>
             </div>
@@ -429,15 +429,15 @@ return (
           <h3>
             Der Weg zu ihrem Haarschnitt
           </h3>
-          <p>
+          <p css={{maxWidth: "42em"}}>
           Exaktes Zuhören. Das ist das wahre Geheimnis, um wirklich gezielt auf Ihre Wünsche eingehen zu können. Mit professioneller Schnitttechnik bringen wir Ihre Vorstellungen dann in Form. Bei uns können Sie sich inspirieren lassen.
           </p>
         </div>
         
       </FlexBoxMobile>
       <FlexBoxMobile>
-        <div css={{width: "100%", height: "18em"}}>
-          <Image image="studio02" />
+        <div css={{width: "100%", height: "24em", marginTop: "4em"}}>
+          <Image image="studio08" />
         </div>
       </FlexBoxMobile>
       </FlexContainerMobile>
@@ -445,7 +445,7 @@ return (
     <FlexContainerMobile id="team" direction="column" align="center" justify="center" css={{color: dark}}>
       <h2 css={{textAlign: "center", color: beige}}>Das Team</h2>
       <h3 css={{textAlign: "center"}}>Friseurinnen mit Leidenschaft</h3>
-      <p css={{textAlign: "center", marginBottom: "4em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
+      <p css={{textAlign: "center", marginBottom: "4em", maxWidth: "42em"}}>Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.</p>
       <FlexBoxMobile css={{ marginBottom: "2em"}}>
         <div css={{display: "flex", flexDirection: "row", justifyContent:"space-evenly", flexWrap: "wrap"}}> 
           <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={2} />
@@ -475,7 +475,7 @@ return (
           </div>
           <div css={{display: "flex", flexDirection: "row", justifyContent:"space-evenly", flexWrap: "wrap"}}>
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
-            <h4 css={{textAlign: "left"}}>Unsere <br />Öffnungszeiten</h4>
+            <h4 css={{textAlign: "center"}}>Unsere <br />Öffnungszeiten</h4>
                 <p css={{color: dark + " !important"}}>
                   Di:  08.30 - 18.00
                 </p>
@@ -494,7 +494,7 @@ return (
 
           </div>
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
-            <h4 css={{textAlign: "left"}}>Hier finden Sie uns</h4>
+            <h4 css={{textAlign: "center"}}>Hier finden Sie uns</h4>
             <p>
               Haarstudio Marita Kraus GmbH
             </p>
@@ -515,7 +515,7 @@ return (
           </div>
       </FlexBoxMobile>
     </FlexContainer>
-    <FlexContainer id="footer" direction="column" justify="center" align="center" css={{paddingBottom: 0}}>
+    <FlexContainer id="footer" direction="column" justify="center" align="center" css={mq({padding: ["0 1em", "0 1em", "0 2em", "0 2em"]})}>
     <Footer />
 
     </FlexContainer>

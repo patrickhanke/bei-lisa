@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import facepaint from 'facepaint';
 
-const breakpoints = [576, 980, 1200, 1900]
+const breakpoints = [576, 980, 1180, 1900]
 
 export const black = "#1f1f1f"
 export const white = "#fff"
@@ -15,6 +15,7 @@ export const dark = "#3D3D3D"
 export const mq = facepaint(
     breakpoints.map(bp => `@media (min-width: ${bp}px)`)
   )
+
 
   export const Wrapper = styled.div({
     scrollbarWidth: "thick !important",
@@ -66,7 +67,7 @@ export const FlexContainerMobile = styled.div({
     ["h3"]: {fontSize: "3em", textAlign: "center"}
     },
     mq({
-        flexDirection: ['column', 'column', 'row', 'row']
+        flexDirection: ['column', 'column', 'column', 'column']
     }),
     
    )
@@ -93,7 +94,7 @@ export const FlexContainerColumn = styled.div({
 
   export const FlexBox = styled.div({
     height: "auto",
-    padding: "4em 0",
+    padding: "1em 0",
     display: "flex",
     overflow: "visible",
     position: "relative",

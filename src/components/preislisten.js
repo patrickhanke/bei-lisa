@@ -1,6 +1,6 @@
 import { animate, AnimatePresence, motion } from 'framer-motion'
 import React, { useState } from 'react'
-import { beige, dark, grey, light, white } from './styles'
+import { beige, dark, grey, light, mq, white } from './styles'
 import {IoPricetagOutline} from 'react-icons/io5'
 import {VscClose} from 'react-icons/vsc'
 import { css } from '@emotion/core'
@@ -500,9 +500,9 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    css={css`position: fixed; background-color: #EDD6C6; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1); z-index: 7; max-width: 600px; max-height: 90vh; overflow: hidden; padding-bottom: 2em;`}>
+                    css={css`position: fixed; background-color: #EDD6C6; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1); z-index: 7; max-height: 90vh; overflow: hidden; padding-bottom: 2em;`}>
                     <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};`}></div>
-                        <motion.div css={{position: "relative", height: "100%", paddingBottom: "3em", fontSize: "14px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", marginTop: "60px"}}>
+                        <motion.div css={mq({position: "relative", height: "100%", padding: ["0em 0em 3em 0em", "0em 0em 3em 0em", "0em 4em 3em 4em", "0em 4em 3em 4em"],fontSize: "14px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", marginTop: "60px"})}>
                             <div css={{width: "100%", display: "flex", padding: "1em", flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                                 <h5> Preisliste</h5>
 

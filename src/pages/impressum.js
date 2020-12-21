@@ -8,49 +8,31 @@ import SEO from '../components/seo';
 import { dark, FlexBox, FlexContainer, Wrapper, light } from '../components/styles';
 
 let mainclientheight;
-let headerscrollheight;
 
 const Impressum = () => {
     const [mainHeight, setmainHeight] = useState()
-    const [siteState, setSiteState] = useState()
     const [scrollheight, setScrollheight] = useState()
     const {scrollY, scrollYProgress} = useViewportScroll() 
 
 useEffect(() => {
     document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
-    mainclientheight = document.getElementById('mainwrapper').clientHeight
+    mainclientheight = document.getElementById('wrapper').clientHeight
   
-    setScrollheight(window.innerHeight / 100 )
+    setScrollheight(window.outerHeight / 100 )
     setmainHeight((mainclientheight ) *1.1)
   },[])
 
 
     const scrollbar = useTransform(scrollYProgress, value => value * 100  )
     let scrollanimation = useSpring(scrollbar, {damping: 99, stiffness: 100})
-    const scrollYSlowest = useTransform(scrollY, value => -0.1*  value  )
-    const scrollSlower = useTransform(scrollY, value => -0.2*  value  )
-    const scrollSlow = useTransform(scrollY, value => -0.6*  value  )
-    const scrollMedium = useTransform(scrollY, value => -0.7*  value  )
+    
     const scrollFast = useTransform(scrollY, value => -0.9*  value  )
+
     
-    const yRangeLarge = [-450, 0, 450]
-    const yRangeNarrow = [-150, 0, 150]
-    const scrollRange = [1,0.5,0]
-    const paralaxfast = useTransform(scrollYProgress, scrollRange, yRangeLarge)
-    const paralaxslow = useTransform(scrollYProgress, scrollRange, yRangeNarrow)
-    const paralaxFast = useSpring(paralaxfast, {damping: 99, stiffness: 200 })
-    const paralaxSlow = useSpring(paralaxslow, {damping: 99, stiffness: 200 })
-    
-    
-    let ySlowest = useSpring(scrollYSlowest, { damping: 99, stiffness: 200 })
-    let ySlower = useSpring(scrollSlower, { damping: 99, stiffness: 200 })
-    
-    let ySlow = useSpring(scrollSlow, { damping: 99, stiffness: 200 })
-    let yMedium = useSpring(scrollMedium, { damping: 99, stiffness: 200 })
     let yFast = useSpring(scrollFast, { damping: 99, stiffness: 200 })
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1180px)' })
     const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-device-width: 1224px)'
+    query: '(min-device-width: 1180px)'
     })
 
     return (
@@ -114,15 +96,15 @@ useEffect(() => {
         }
             {isTabletOrMobile &&
 
-            <Wrapper id="mainwrapper" css={{height: "auto"}}> 
+            <Wrapper id="wrapper" css={{height: "auto"}}> 
 
-                    <FlexContainer direction="column" css={{padding: "2em 1em"}}>
+                    <FlexContainer direction="column" css={{padding: "2em 1em", ["p"]: {lineHeight: "1.6em", marginBlockEnd: "2.4em"}, ["h2"]: {marginTop: "2em"}}}>
                         
                         <FlexBox direction="column" align="flex-start" css={{ width: "100%"}}>
                         <div >
-                            <h1 css={{color: dark, fontSize: "2em"}}>Impressum</h1>
+                            <h1 css={{color: dark, fontSize: "3em", marginTop: "100px", marginBottom: "30px"}}>Impressum</h1>
                         </div>
-                        <h5>Kontakt:</h5>
+                        <h2>Kontakt:</h2>
                         
                         <p>
                         Haarstudio Marita Kraus GmbH <br />

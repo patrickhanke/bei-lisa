@@ -7,7 +7,7 @@ const TeamCard = ({name, titel, bild, margin}) => {
 
     return(
         <div css={{height: "auto", display:"flex", flexDirection: "column", justifyContent: "flex-start", marginBottom: "2em", alignItems: "center", marginTop: margin + "em"}}>
-            <div css={{width: "16em", height: "20em", zIndex: 2, marginBottom: "6px"}}>
+            <div css={{width: "15em", height: "20em", zIndex: 2, marginBottom: "6px"}}>
                 <TeamImage bild={bild} />
             </div>
             <div css={{background: "transparent", width: "16em", height: "auto", zIndex: 1}}>
