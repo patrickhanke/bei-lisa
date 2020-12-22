@@ -98,7 +98,7 @@ export const Preisliste = () => {
                             </div>
                             <AnimatePresence exitBeforeEnter> 
                             {sliderState === "frisuren" &&
-                            <motion.div className="preiscontainer" key="frisuren" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "0 1em"}}> 
+                            <motion.div className="preiscontainer" key="frisuren" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em"}}> 
                                 
                                 <h4 css={{marginTop: "0.5em"}}>Damen</h4>
                                 <div css={{width: "100%"}}>
@@ -108,7 +108,7 @@ export const Preisliste = () => {
                                             Schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            30-35 Euro
+                                            30 - 35 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -116,7 +116,7 @@ export const Preisliste = () => {
                                             Neuschnitt Plus
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            10 Euro
+                                            10 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -124,7 +124,7 @@ export const Preisliste = () => {
                                             Föhnen oder Legen kurz
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            16 Euro
+                                            16 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -132,7 +132,7 @@ export const Preisliste = () => {
                                             Föhnen oder Legen mittel
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            20 Euro
+                                            20 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -140,7 +140,7 @@ export const Preisliste = () => {
                                             Föhnen oder Legen lang
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            25 Euro
+                                            25 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -148,7 +148,7 @@ export const Preisliste = () => {
                                             Hochsteckfrisur                                    
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            ab 20 Euro
+                                            ab 20 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -156,15 +156,15 @@ export const Preisliste = () => {
                                             Hochzeits-Paket inkl Probetermin                                    
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            150 Euro
+                                            150 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: "1em"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Dauerwelle ab
+                                            Dauerwelle
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            38-58 Euro
+                                            38 - 58 €
                                         </p>
                                     </div>
                                 </div> 
@@ -176,7 +176,7 @@ export const Preisliste = () => {
                                             Haarkranz schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            12 Euro
+                                            12 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -184,7 +184,7 @@ export const Preisliste = () => {
                                             Maschinenschnitt
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            12 Euro
+                                            12 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -192,7 +192,7 @@ export const Preisliste = () => {
                                             Konturenschnitt
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            20 Euro
+                                            20 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -200,7 +200,7 @@ export const Preisliste = () => {
                                             Haarschnitt
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            26 Euro
+                                            26 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -208,7 +208,7 @@ export const Preisliste = () => {
                                             Vollbart schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            9 Euro
+                                            9 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -216,11 +216,11 @@ export const Preisliste = () => {
                                             Americen Crew Farbe                                    
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            7 Euro
+                                            7 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: "1em"}}>
-                                        <p css={{color: dark + " !important"}}>
+                                        <p css={{color: dark + " !important", fontWeight: 600}}>
                                             Alles inkl. Shampoo, Gel, Wachs oder Haarspray sowie eine Gesichts-Kompresse Heiß oder Kalt                                 
                                         </p>
                                         
@@ -233,26 +233,26 @@ export const Preisliste = () => {
                                 <div css={{width: "100%"}}> 
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Mädchen und Jungen bis 6 Jahre
+                                            Mädchen und Jugen bis 6 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            15 Euro
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Mädchen und Jungen bis 12 Jahre
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            20 Euro
+                                            15 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Föhnen ab
+                                            Mädchen und Jugen bis 12 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            10 Euro
+                                            20 €
+                                        </p>
+                                    </div>
+                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                        <p css={{color: dark + " !important"}}>
+                                            Föhnen 
+                                        </p>
+                                        <p css={{color: dark + " !important"}}>
+                                            ab 10 €
                                         </p>
                                     </div>
                                     
@@ -268,38 +268,31 @@ export const Preisliste = () => {
                                 <motion.div className="preiscontainer" key="faerben" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em"}}> 
                                 
                                 
-                                <h4 css={{marginTop: "0.5em"}}>Tönen und Färben</h4>
+                                <h4 css={{marginTop: "0.5em"}}>Färben & Tönen</h4>
                                 <div css={{marginTop: "1em"}}>
+                                    
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Cellophanes / tönen ab 50ml
+                                            Intensiv Tönen und Färben
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            30 Euro
+                                            ab 35 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Intensiv Tönen und Färben ab
+                                            Blondieren
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            35 Euro
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Blondieren ab
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            35 Euro
+                                            ab 35 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Brett Strähnen ab
+                                            Brett Strähnen
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            30 Euro
+                                            ab 30 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -307,7 +300,7 @@ export const Preisliste = () => {
                                             Folien Pro Päckchen 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            3 Euro
+                                            3 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -315,7 +308,7 @@ export const Preisliste = () => {
                                             Folien Str. Kurz Kinnlänge 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            40 Euro
+                                            40 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -323,7 +316,7 @@ export const Preisliste = () => {
                                             Folien Str. Schulterlänge
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            55 Euro
+                                            55 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -331,23 +324,23 @@ export const Preisliste = () => {
                                             Folien Str. ab Schulterlänge bis Brustbein
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            70 Euro
+                                            70 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Balayage ab
+                                            Balayage 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            70-130 Euro
+                                            70 - 130 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Painting ab
+                                            Painting 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            50 - 110 Euro
+                                            50 - 110 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -355,7 +348,7 @@ export const Preisliste = () => {
                                             Freihandtechnik ab Menge
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            25-25 Euro
+                                            25-25 €
                                         </p>
                                     </div>
                                     
@@ -365,7 +358,7 @@ export const Preisliste = () => {
                                             Wimpern färben
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            12 Euro
+                                            12 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -373,7 +366,7 @@ export const Preisliste = () => {
                                             Augenbrauen färben 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            6 Euro
+                                            6 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -381,14 +374,14 @@ export const Preisliste = () => {
                                             Im Paket
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            16 Euro
+                                            16 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "space-between", marginTop: "1em"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Alles inkl.Friseurexquisite Produkte
+                                        <p css={{color: dark + " !important", fontWeight: 600}}>
+                                            Alles inkl. Friseurexquisite Produkte
                                         </p>
-                                        <p css={{color: dark + " !important"}}>
+                                        <p css={{color: dark + " !important", fontWeight: 600}}>
                                             Shampoo, Conditioner, Festiger, Wachs oder Gel und Haarspray
                                         </p>
                                     </div>
@@ -403,14 +396,14 @@ export const Preisliste = () => {
                             {
                                 sliderState === "extensions" && 
                                 <motion.div className="preiscontainer" key="extensions" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em"}}> 
-                                 <h4>Haar und Kopfhautpflege</h4>
-                                <div css={{marginTop: "1em"}}>
+                                 <h4 css={{marginTop: "0.5em"}}>Haar- und Kopfhautpflege</h4>
+                                <div >
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
                                             Haarkur
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            10-16 Euro
+                                            10 - 16 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -418,7 +411,7 @@ export const Preisliste = () => {
                                             Protection Cheveux
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            18-27
+                                            18 - 27 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -426,13 +419,13 @@ export const Preisliste = () => {
                                             Olaplex Treatment
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            20-30 Euro
+                                            20 - 30 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <h6 css={{color: dark + " !important"}}>
+                                        <p css={{color: dark + " !important", fontWeight: 600}}>
                                             Alles knkl. Kopfmassage
-                                        </h6>
+                                        </p>
                                     </div>
                                     
                                     
@@ -440,10 +433,10 @@ export const Preisliste = () => {
                                         <h4>Make-up</h4>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                           Tages Make-Up
+                                           Tages Make-up
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            18 Euro
+                                            18 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -451,7 +444,7 @@ export const Preisliste = () => {
                                             Abend Make-up  
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            23 Euro
+                                            23 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -459,17 +452,13 @@ export const Preisliste = () => {
                                             Braut Make-up
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            25-30 Euro
+                                            25 - 30 €
                                         </p>
                                     </div>
-                                    
-                                    
+        
                                 </div>
                                     
                                 </div>
-                                
-                            
-
                                 </motion.div>
                             }
                             </AnimatePresence>
@@ -517,7 +506,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                             </div>
                             <AnimatePresence exitBeforeEnter> 
                             {sliderState === "frisuren" &&
-                            <motion.div className="preiscontainer" key="frisuren" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "0 1em"}}> 
+                            <motion.div className="preiscontainer" key="frisuren" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em"}}> 
                                 
                                 <h4 css={{marginTop: "0.5em"}}>Damen</h4>
                                 <div css={{width: "100%"}}>
@@ -527,7 +516,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            30-35 Euro
+                                            30 - 35 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -535,7 +524,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Neuschnitt Plus
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            10 Euro
+                                            10 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -543,7 +532,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Föhnen oder Legen kurz
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            16 Euro
+                                            16 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -551,7 +540,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Föhnen oder Legen mittel
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            20 Euro
+                                            20 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -559,7 +548,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Föhnen oder Legen lang
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            25 Euro
+                                            25 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -567,7 +556,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Hochsteckfrisur                                    
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            ab 20 Euro
+                                            ab 20 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -575,15 +564,15 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Hochzeits-Paket inkl Probetermin                                    
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            150 Euro
+                                            150 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: "1em"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Dauerwelle ab
+                                            Dauerwelle
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            38-58 Euro
+                                            38 - 58 €
                                         </p>
                                     </div>
                                 </div> 
@@ -595,7 +584,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Haarkranz schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            12 Euro
+                                            12 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -603,7 +592,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Maschinenschnitt
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            12 Euro
+                                            12 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -611,7 +600,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Konturenschnitt
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            20 Euro
+                                            20 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -619,7 +608,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Haarschnitt
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            26 Euro
+                                            26 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -627,7 +616,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Vollbart schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            9 Euro
+                                            9 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -635,14 +624,13 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Americen Crew Farbe                                    
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            7 Euro
+                                            7 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: "1em"}}>
-                                        <p css={{color: dark + " !important"}}>
+                                        <p css={{color: dark + " !important", fontWeight: 600}}>
                                             Alles inkl. Shampoo, Gel, Wachs oder Haarspray sowie eine Gesichts-Kompresse Heiß oder Kalt                                 
                                         </p>
-                                        
                                     </div>
                                 </div> 
                                
@@ -655,7 +643,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Mädchen und Jugen bis 6 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            15 Euro
+                                            15 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -663,15 +651,15 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Mädchen und Jugen bis 12 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            20 Euro
+                                            20 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Föhnen ab
+                                            Föhnen 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            10 Euro
+                                            ab 10 €
                                         </p>
                                     </div>
                                     
@@ -687,38 +675,31 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                 <motion.div className="preiscontainer" key="faerben" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em"}}> 
                                 
                                 
-                                <h4 css={{marginTop: "0.5em"}}>Tönen und Färben</h4>
+                                <h4 css={{marginTop: "0.5em"}}>Färben & Tönen</h4>
                                 <div css={{marginTop: "1em"}}>
+                                    
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Cellophanes / tönen ab 50ml
+                                            Intensiv Tönen und Färben
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            30 Euro
+                                            ab 35 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Intensiv Tönen und Färben ab
+                                            Blondieren
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            35 Euro
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Blondieren ab
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            35 Euro
+                                            ab 35 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Brett Strähnen ab
+                                            Brett Strähnen
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            30 Euro
+                                            ab 30 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -726,7 +707,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Folien Pro Päckchen 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            3 Euro
+                                            3 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -734,7 +715,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Folien Str. Kurz Kinnlänge 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            40 Euro
+                                            40 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -742,7 +723,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Folien Str. Schulterlänge
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            55 Euro
+                                            55 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -750,23 +731,23 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Folien Str. ab Schulterlänge bis Brustbein
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            70 Euro
+                                            70 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Balayage ab
+                                            Balayage 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            70-130 Euro
+                                            70 - 130 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Painting ab
+                                            Painting 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            50 - 110 Euro
+                                            50 - 110 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -774,7 +755,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Freihandtechnik ab Menge
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            25-25 Euro
+                                            25-25 €
                                         </p>
                                     </div>
                                     
@@ -784,7 +765,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Wimpern färben
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            12 Euro
+                                            12 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -792,7 +773,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Augenbrauen färben 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            6 Euro
+                                            6 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -800,14 +781,14 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Im Paket
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            16 Euro
+                                            16 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "space-between", marginTop: "1em"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Alles inkl.Friseurexquisite Produkte
+                                        <p css={{color: dark + " !important", fontWeight: 600}}>
+                                            Alles inkl. Friseurexquisite Produkte
                                         </p>
-                                        <p css={{color: dark + " !important"}}>
+                                        <p css={{color: dark + " !important", fontWeight: 600}}>
                                             Shampoo, Conditioner, Festiger, Wachs oder Gel und Haarspray
                                         </p>
                                     </div>
@@ -822,14 +803,14 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                             {
                                 sliderState === "extensions" && 
                                 <motion.div className="preiscontainer" key="extensions" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em"}}> 
-                                 <h4>Haar und Kopfhautpflege</h4>
+                                 <h4 css={{marginTop: "0.5em"}}>Haar- und Kopfhautpflege</h4>
                                 <div css={{marginTop: "1em"}}>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
                                             Haarkur
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            10-16 Euro
+                                            10 - 16 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -837,7 +818,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Protection Cheveux
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            18-27
+                                            18 - 27 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -845,13 +826,13 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Olaplex Treatment
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            20-30 Euro
+                                            20 - 30 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <h6 css={{color: dark + " !important"}}>
+                                        <p css={{color: dark + " !important", fontWeight: 600}}>
                                             Alles knkl. Kopfmassage
-                                        </h6>
+                                        </p>
                                     </div>
                                     
                                     
@@ -859,10 +840,10 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                         <h4>Make-up</h4>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                           Tages Make-Up
+                                           Tages Make-up
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            18 Euro
+                                            18 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -870,7 +851,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Abend Make-up  
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            23 Euro
+                                            23 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -878,7 +859,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Braut Make-up
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            25-30 Euro
+                                            25 - 30 €
                                         </p>
                                     </div>
                                     

@@ -1,15 +1,21 @@
-import { Link, navigate } from 'gatsby'
+import { navigate } from 'gatsby'
 import React from 'react'
-import { beige, dark, darkgrey, FlexContainer, light, mq, white } from './styles'
+import { beige, dark, mq, white } from './styles'
 
 const Footer = () => {
     const navigationHandler = (e) => {
-
-        window.scrollTo(0, 0);
-        navigate( e)
+  
+        
+        const timer = setTimeout(() => {
+            window.scrollTo(0, 0) 
+        
+                return navigate(e)
+            }, 20);
+          
+          return () => clearTimeout(timer);
+        
     }
     return (
-        
         <footer css={{
           display: "flex", 
           flexDirection: "column",
@@ -20,8 +26,6 @@ const Footer = () => {
           fontSize: "16px"
 
         }}>
-           
-                
            <div css={mq({width: "100%", display: "flex", padding: "1em 1em 2em 1em", flexDirection:  ["column", "column", "row", "row"], alignItems: ["flex-start","flex-start","flex-end", "flex-end"], justifyContent: "space-evenly", color: white, borderBottom: "1px solid " +beige})} >
                 <div>
                     <h5 css={{marginTop: "2em"}}>Kontakt</h5>
@@ -37,8 +41,6 @@ const Footer = () => {
                 </div>
                 <div>
                     <h5 css={{marginTop: "2em"}}>Inhalte</h5>
-                    
-                    
                     <p onClick={() => navigationHandler("/")} css={{textDecoration: "underline", cursor: "pointer", [":hover"]: {color: beige}}}>
                     Start
                     </p>
@@ -49,15 +51,11 @@ const Footer = () => {
                         Datenschutz
                     </p>
                 </div>
-                
-                
-                
            </div>
-
-        <div css={{background: dark, color: white, padding: "0.5em 0", width: "100%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-            <p>Haarstudio Marita Kraus GmbH</p>
-              <p css={{color: white, marginLeft: "0.4em"}}> © {new Date().getFullYear()} </p>
-        </div> 
+            <div css={{background: dark, color: white, padding: "0.5em 0", width: "100%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
+                <p>Haarstudio Marita Kraus GmbH</p>
+                <p css={{color: white, marginLeft: "0.4em"}}> © {new Date().getFullYear()} </p>
+            </div> 
         </footer>
     )
 }

@@ -1,9 +1,9 @@
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React from "react"
 import Image from "./image"
-import { beige, black, dark, FlexBox, grey, light, white } from "./styles"
+import { beige, dark } from "./styles"
 import {IoLogoFacebook, IoLogoInstagram} from 'react-icons/io'
 
 const Header = ({ siteState, position, top }) => {
@@ -14,7 +14,6 @@ return (
   <motion.header
       css={{position: "fixed", width: "100vw",  zIndex: 12,  padding: "0 1em",  background: "rgb(253, 250, 247, 1)", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)", height: "80px", color: dark }}
   >
-  
       <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", }}> 
         <Link to="/">
           <div css={{width: "160px", padding: "0.5em 0"}}>
@@ -34,18 +33,14 @@ return (
           <div css={{position: "relative", width: "6em"}}>
             <div onClick={() => scrollHandlerAngebot("salon")} css={{position: "relative", height: "100%", width: "100%"}}>
               <h6 className={siteState==="salon" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
-
                   Unser Salon           
-                
               </h6>
             </div>
           </div>
           <div css={{position: "relative", width: "6em"}}>
             <div onClick={() => scrollHandlerAngebot("team")} css={{position: "relative", height: "100%", width: "100%"}}>
               <h6 className={siteState==="team" ? "active" : "not-active"} css={{position: "absolute", cursor: "pointer" }}>
-
                   Das Team           
-                
               </h6>
             </div>
           </div>
@@ -56,11 +51,9 @@ return (
               </h6>
             </div>
           </div>
-
         </div> : null
         }
         <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "7em", paddingRight: "1em"}}>
-        
           <div css={{padding: "0.5em", borderRadius: "50%", transition: "background 0.2s ease-in", [":hover"]: {background: beige, color: dark }}}>
             <h6 css={{marginBottom: 0, fontSize: "1.4em", cursor: "pointer", }}>
               <a target="_blank" href="https://www.instagram.com/haarstudio_marita/"><IoLogoInstagram /></a>

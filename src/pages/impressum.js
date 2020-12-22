@@ -51,13 +51,14 @@ useEffect(() => {
                         </div>
                         <FlexBox direction="column" align="flex-start" css={{ width: "100%"}}>
                         
+                        <h2>Kontakt</h2>
+                        
                         <p>
-                        Haarstudio Marita Kraus GmbH <br />
-                        Marita Schindler <br />
-                        Andreas-Hofer-Str. 69b <br />
-                        79111 Freiburg im Breisgau
+                            Haarstudio Marita Kraus GmbH <br />
+                            Marita Schindler <br />
+                            Andreas-Hofer-Str. 69b <br />
+                            79111 Freiburg im Breisgau
                         </p>
-                        <h5>Kontakt:</h5>
                         <p>
                             Telefon: 0761 484745
                             E-Mail: info@haarstudio-marita.de
@@ -104,13 +105,13 @@ useEffect(() => {
                         <div >
                             <h1 css={{color: dark, fontSize: "3em", marginTop: "100px", marginBottom: "30px"}}>Impressum</h1>
                         </div>
-                        <h2>Kontakt:</h2>
+                        <h2>Kontakt</h2>
                         
                         <p>
-                        Haarstudio Marita Kraus GmbH <br />
-                        Marita Schindler <br />
-                        Andreas-Hofer-Str. 69b <br />
-                        79111 Freiburg im Breisgau
+                            Haarstudio Marita Kraus GmbH <br />
+                            Marita Schindler <br />
+                            Andreas-Hofer-Str. 69b <br />
+                            79111 Freiburg im Breisgau
                         </p>
                         <p>
                             Telefon: 0761 484745

@@ -172,7 +172,7 @@ return (
           Herrenschnitt
         </h4>
         <h4>
-          Farbe & Tönen
+          Färben & Tönen
         </h4>
         <h4 >
           Balayage & Foilyage
@@ -205,7 +205,7 @@ return (
               Ein Ort zum Verweilen
             </h3>
             <p css={{marginLeft: "6em"}} >
-              Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen
+            Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.
               </p>
             </div>
 
@@ -290,8 +290,10 @@ return (
       <p>
         Rufen Sie einfach an unter
       </p>
-      <h3>0761 484745
-      </h3>
+      <a href="tel:5554280940">
+        <h3 className="linkclass">  0761 484745 
+        </h3>
+      </a>
       <FlexBox direction="row" justify="space-between" align="flex-start" css={{width: "100%",}}>
           <div css={{width: "24em", height: "18em", display: "none"}}>
             <Image image="studio08" />
@@ -377,7 +379,7 @@ return (
             Herrenschnitt
           </h4>
           <h4>
-            Farbe & Tönen
+            Färben & Tönen
           </h4>
           <h4 >
             Balayage & Foilyage
@@ -404,11 +406,11 @@ return (
         
             <div css={{width: "auto"}} >
             <h3>
-              Ein Ort um zum Verweilen
+              Ein Ort zum Verweilen
             </h3>
             
             <p css={{maxWidth: "42em"}}>
-              Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen
+            Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.
             </p>
             </div>
            
@@ -465,8 +467,10 @@ return (
         <p>
         Rufen Sie einfach an unter
         </p>
-        <h3>0761 484745
+        <a href="tel:5554280940">
+        <h3 className="linkclass">  0761 484745 
         </h3>
+        </a>
       </FlexBoxMobile>
 
       <FlexBoxMobile>
