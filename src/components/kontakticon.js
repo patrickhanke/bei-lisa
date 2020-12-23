@@ -62,8 +62,8 @@ const KontaktIcon = () => {
                                     <VscClose /> 
                             </div>
                             <h5> Telefonnummer</h5>
-                            <a href="tel:+49761484745">
-                                <p css={{marginBottom: 0, fontSize: 1.2}}> 0761 484745</p>
+                            <a href="tel:+49761484745" css={{lineHeight: "1em", color: dark, textDecoration: "none"}}>
+                                <p css={{marginBottom: 0, fontSize: "1.2em", lineHeight: "1.2em", marginBottom: "0.6em"}}> 0761 484745</p>
                             </a>
                             <div css={{width: "100%", height: "1.5px", background: grey, margin: "6px auto 12px auto"}} />
                             <h5>Öffnungszeiten</h5>
@@ -128,7 +128,9 @@ export const KontaktIconMobile = () => {
                                     <VscClose /> 
                             </div>
                             <h5> Telefonnummer</h5>
-                            <p css={{marginBottom: 0}}> 0761 484745</p>
+                            <a href="tel:+49761484745" css={{lineHeight: "1em", color: dark, textDecoration: "none"}}>
+                                <p css={{marginBottom: 0, fontSize: "1.2em", lineHeight: "1.2em", marginBottom: "0.6em"}}> 0761 484745</p>
+                            </a>
                             <div css={{width: "100%", height: "1.5px", background: grey, margin: "6px auto 12px auto",}} />
                             <h5>Öffnungszeiten</h5>
                             <p css={{color: dark + " !important"}}>
