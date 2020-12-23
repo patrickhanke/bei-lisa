@@ -1,9 +1,7 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react';
-import Img from 'gatsby-image/withIEPolyfill'
 import TeamImage from '../components/teamimage'
-import { darkblue, darkgrey, light, beige } from './styles';
-const TeamCard = ({name, titel, bild, margin}) => {
+import {  darkgrey } from './styles';
+const TeamCard = ({name, titel, bild }) => {
 
     return(
         <div css={{height: "auto", display:"flex", flexDirection: "column", justifyContent: "flex-start", marginBottom: "1em", alignItems: "center", marginTop: "5em"}}>

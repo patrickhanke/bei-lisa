@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { beige, black, dark, darkgrey, FlexBox, FlexContainer, grey, light, white, Wrapper, FlexBoxMobile, FlexContainerMobile, mq } from "../components/styles"
+import { beige, dark, darkgrey, FlexBox, FlexContainer,light, Wrapper, FlexBoxMobile, FlexContainerMobile, mq } from "../components/styles"
 import TeamCard from "../components/teamcard"
 import Footer from "../components/footer"
 import { motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
@@ -32,8 +31,6 @@ const [scrollheight, setScrollheight] = useState()
 const [scrollPositions, setScrollPositions] = useState()
 const {scrollY, scrollYProgress} = useViewportScroll() 
 
-const scrollYSlowest = useTransform(scrollY, value => -0.1*  value  )
-const scrollSlower = useTransform(scrollY, value => -0.2*  value  )
 const scrollSlow = useTransform(scrollY, value => -0.6*  value  )
 const scrollMedium = useTransform(scrollY, value => -0.7*  value  )
 const scrollFast = useTransform(scrollY, value => -0.9*  value  )
@@ -47,9 +44,6 @@ const paralaxFast = useSpring(paralaxfast, {damping: 99, stiffness: 200 })
 const paralaxSlow = useSpring(paralaxslow, {damping: 99, stiffness: 200 })
 
 const scrollbar = useTransform(scrollYProgress, value => value * 100  )
-
-let ySlowest = useSpring(scrollYSlowest, { damping: 99, stiffness: 200 })
-let ySlower = useSpring(scrollSlower, { damping: 99, stiffness: 200 })
 
 let ySlow = useSpring(scrollSlow, { damping: 99, stiffness: 200 })
 let yMedium = useSpring(scrollMedium, { damping: 99, stiffness: 200 })
@@ -127,9 +121,6 @@ useEffect(() => {
   document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
   mainclientheight = document.getElementById('wrapper').offsetHeight
   headerscrollheight = document.getElementById('header').offsetHeight
-  console.log(mainclientheight)
-  console.log(headerscrollheight)
-  console.log((mainclientheight + headerscrollheight) *1.1)
   setScrollheight(window.innerHeight / 100 )
   setmainHeight((mainclientheight + headerscrollheight) *1.1)
   return () => window.removeEventListener("scroll", handleScroll, false);
@@ -147,7 +138,7 @@ const isDesktopOrLaptop = useMediaQuery({
 
 return (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Haarstudio Marita" />
     {isDesktopOrLaptop &&
     <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
     <Header top="start" siteState={siteState} position={scrollPositions} />
@@ -299,7 +290,7 @@ return (
       <p>
         Rufen Sie einfach an unter
       </p>
-      <a href="tel:5554280940">
+      <a href="tel:+49761484745">
         <h3 className="linkclass">  0761 484745 
         </h3>
       </a>

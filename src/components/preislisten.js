@@ -1,7 +1,6 @@
-import { animate, AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import React, { useState } from 'react'
-import { beige, dark, grey, light, mq, white } from './styles'
-import {IoPricetagOutline} from 'react-icons/io5'
+import { beige, dark, mq, } from './styles'
 import {VscClose} from 'react-icons/vsc'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
@@ -471,9 +470,7 @@ export const Preisliste = () => {
     )
 }
 export const PreislisteMobile = ({plstate, preislisteHandler}) => {
-    const [open, setOpen] = useState(false)
     const [sliderState, setSliderState] = useState("frisuren")
-    console.log(plstate)
     return (
                 <motion.div 
                     variants={slidein}  

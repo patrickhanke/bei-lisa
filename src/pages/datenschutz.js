@@ -33,7 +33,6 @@ useEffect(() => {
     const isDesktopOrLaptop = useMediaQuery({
     query: '(min-device-width: 1180px)'
     })
-    console.log(scrollheight)
     return (
         <Layout>
             <SEO title="Datenschutzerklärung" />

@@ -17,7 +17,7 @@ return (
       <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", }}> 
         <Link to="/">
           <div css={{width: "160px", padding: "0.5em 0"}}>
-          <Image image="logo" />
+            <Image image="logo" />
           </div>
         </Link>
       {top==="start" ? 
