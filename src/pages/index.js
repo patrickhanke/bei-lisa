@@ -65,6 +65,12 @@ const handleScroll = (e) => {
   var salonTop = document.getElementById("salon")
   var teamTop = document.getElementById("team")
   var kontaktTop = document.getElementById("kontakt")
+  document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
+
+  mainclientheight = document.getElementById('wrapper').offsetHeight
+  headerscrollheight = document.getElementById('header').offsetHeight
+  setScrollheight(window.innerHeight / 99 )
+  setmainHeight((mainclientheight + headerscrollheight) *1.1)
   
   function getPositions(element) {
     var xPosition = 0;
@@ -119,9 +125,11 @@ const handleScroll = (e) => {
 useEffect(() => {
   window.addEventListener("scroll", handleScroll, false);
   document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
-  mainclientheight = document.getElementById('wrapper').clientHeight
-  headerscrollheight = document.getElementById('header').scrollHeight
-
+  mainclientheight = document.getElementById('wrapper').offsetHeight
+  headerscrollheight = document.getElementById('header').offsetHeight
+  console.log(mainclientheight)
+  console.log(headerscrollheight)
+  console.log((mainclientheight + headerscrollheight) *1.1)
   setScrollheight(window.innerHeight / 100 )
   setmainHeight((mainclientheight + headerscrollheight) *1.1)
   return () => window.removeEventListener("scroll", handleScroll, false);
@@ -136,6 +144,7 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-device-width: 1180px)' })
 const isDesktopOrLaptop = useMediaQuery({
   query: '(min-device-width: 1180px)'
 })
+
 return (
   <Layout>
     <SEO title="Home" />
@@ -363,7 +372,7 @@ return (
 
       </motion.div>
     
-    <motion.div id="wrapper" css={{position: "relative",  height: "auto", width: "auto", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%"}}> 
+    <motion.div id="wrapper" css={{position: "relative",  height: "auto", width: "auto", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%", ["h2"]: {marginTop: "6em"}}}> 
       <FlexContainerMobile id="angebot" align="center" justify="center">
         <FlexBoxMobile direction="column" align="center" justify="center" css={{position: "relative"}}>
           <motion.div style={{y: paralaxFast, x: "-50%"}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "10%", left: "50%", zIndex: -1}}></motion.div>

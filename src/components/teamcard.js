@@ -6,7 +6,7 @@ import { darkblue, darkgrey, light, beige } from './styles';
 const TeamCard = ({name, titel, bild, margin}) => {
 
     return(
-        <div css={{height: "auto", display:"flex", flexDirection: "column", justifyContent: "flex-start", marginBottom: "2em", alignItems: "center", marginTop: "4em"}}>
+        <div css={{height: "auto", display:"flex", flexDirection: "column", justifyContent: "flex-start", marginBottom: "1em", alignItems: "center", marginTop: "5em"}}>
             <div css={{width: "15em", height: "20em", zIndex: 2, marginBottom: "6px"}}>
                 <TeamImage bild={bild} />
             </div>
