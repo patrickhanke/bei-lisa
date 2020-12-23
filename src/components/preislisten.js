@@ -339,7 +339,7 @@ export const Preisliste = () => {
                                             Freihandtechnik ab Menge
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            25-25 €
+                                            25 - 45 €
                                         </p>
                                     </div>
                                     
@@ -736,7 +736,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Freihandtechnik ab Menge
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            25-25 €
+                                            25 - 45 €
                                         </p>
                                     </div>
                                     
