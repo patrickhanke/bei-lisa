@@ -108,7 +108,7 @@ export const Preisliste = () => {
                                             Schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            30 - 35 €
+                                            ab 30 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -233,7 +233,7 @@ export const Preisliste = () => {
                                 <div css={{width: "100%"}}> 
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Mädchen und Jugen bis 6 Jahre
+                                            Mädchen und Jungen bis 6 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
                                             15 €
@@ -241,7 +241,7 @@ export const Preisliste = () => {
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Mädchen und Jugen bis 12 Jahre
+                                            Mädchen und Jungen bis 12 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
                                             20 €
@@ -297,18 +297,10 @@ export const Preisliste = () => {
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Folien Pro Päckchen 
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            3 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
                                             Folien Str. Kurz Kinnlänge 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            40 €
+                                            ab 40 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -316,7 +308,7 @@ export const Preisliste = () => {
                                             Folien Str. Schulterlänge
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            55 €
+                                            ab 55 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -324,7 +316,7 @@ export const Preisliste = () => {
                                             Folien Str. ab Schulterlänge bis Brustbein
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            70 €
+                                            ab 70 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -340,7 +332,7 @@ export const Preisliste = () => {
                                             Painting 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            50 - 110 €
+                                            ab 50 - 110 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -640,7 +632,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                 <div css={{width: "100%"}}> 
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Mädchen und Jugen bis 6 Jahre
+                                            Mädchen und Jungen bis 6 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
                                             15 €
@@ -648,7 +640,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Mädchen und Jugen bis 12 Jahre
+                                            Mädchen und Jungen bis 12 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
                                             20 €
@@ -704,18 +696,10 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Folien Pro Päckchen 
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            3 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
                                             Folien Str. Kurz Kinnlänge 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            40 €
+                                            ab 40 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -723,7 +707,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Folien Str. Schulterlänge
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            55 €
+                                            ab 55 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -731,7 +715,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Folien Str. ab Schulterlänge bis Brustbein
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            70 €
+                                            ab 70 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -747,7 +731,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Painting 
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            50 - 110 €
+                                            ab 50 - 110 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
