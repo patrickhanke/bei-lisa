@@ -467,8 +467,8 @@ return (
         <p>
         Rufen Sie einfach an unter
         </p>
-        <a href="tel:5554280940">
-        <h3 className="linkclass">  0761 484745 
+        <a href="tel:+49761484745">
+          <h3 className="linkclass">  0761 484745 
         </h3>
         </a>
       </FlexBoxMobile>
