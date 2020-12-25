@@ -69,7 +69,150 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Haarstudio Marita Kraus GmbH",
+          "alternateName": "Haarstudio Marita",
+          "url": "https://www.reifen-tritsch.de",
+          "logo": "/src/images/reifen_tritsch_logo_klein.png",
+          "description": "Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird. ",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+49761484745",
+            "contactType": "customer service",
+            "contactOption": "HearingImpairedSupported",
+            "areaServed": "DE",
+            "availableLanguage": "German"
+          },
+          "sameAs": [
+            "https://reifen-tritsch.de"
+          ]
+        }
+      `}</script>
+      {title == "Home" &&
+      <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+          "@graph":[{
+          "@type": "WebPage",
+          "name": "Haarstudio Marita Kraus GmbH",
+          "alternateName": "Haarstudio Marita Kraus GmbH",
+          "url": "https://www.haarstudio-marita.de",
+          "description": "Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird. ",
+          "inLanguage": "de-DE",
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://haarstudio-marita.de/#website",
+            "url": "https://haarstudio-marita.de/",
+            "name": "Haarstudio Marita Kraus GmbH",
+            "inLanguage": "de-DE"
+            }
+          },{
+            "@type": "BreadcrumbList",
+            "itemListElement": {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "WebPage",
+                "@id": "https://haarstudio-marita.de/",
+                "url": "https://haarstudio-marita.de/",
+                "name": "Shop"
+              }
+            }
+          }]
+        }
+      `}</script>
+      }
+      {title == "Impressum" &&
+      <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+          "@graph":[{
+          "@type": "WebPage",
+          "name": "Impressum - Haarstudio Marita Kraus GmbH",
+          "url": "https://haarstudio-marita.de/impressum",
+          "inLanguage": "de-DE",
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://haarstudio-marita.de/#website",
+            "url": "https://haarstudio-marita.de/",
+            "name": "Haarstudio Marita Kraus GmbH",
+            "inLanguage": "de-DE"
+            }
+          },{
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "WebPage",
+                "@id": "https://haarstudio-marita.de/",
+                "url": "https://haarstudio-marita.de/",
+                "name": "Shop"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "WebPage",
+                "@id": "https://haarstudio-marita.de/impressum",
+                "url": "https://haarstudio-marita.de/impressum",
+                "name": "Shop"
+              }
+            }]
+          }]
+        }
+      `}</script>
+      }
+      {title == "Datenschutz" &&
+      <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+          "@graph":[{
+          "@type": "WebPage",
+          "name": "Datenschutz - Haarstudio Marita Kraus GmbH",
+          "url": "https://www.haarstudio-marita.de/datenschutz",
+          "inLanguage": "de-DE",
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://haarstudio-marita.de/#website",
+            "url": "https://haarstudio-marita.de/",
+            "name": "Haarstudio Marita Kraus GmbH",
+            "inLanguage": "de-DE"
+            }
+          },{
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "WebPage",
+                "@id": "https://haarstudio-marita.de/",
+                "url": "https://haarstudio-marita.de/",
+                "name": "Shop"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "WebPage",
+                "@id": "https://haarstudio-marita.de/#impressum",
+                "url": "https://haarstudio-marita.de/impressum",
+                "name": "Shop"
+              }
+            }]
+          }]
+        }
+      `}</script>
+      }
+    </Helmet>
   )
 }
 
