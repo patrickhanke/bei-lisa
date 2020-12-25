@@ -76,8 +76,8 @@ function SEO({ description, lang, meta, title }) {
           "@type": "Organization",
           "name": "Haarstudio Marita Kraus GmbH",
           "alternateName": "Haarstudio Marita",
-          "url": "https://www.reifen-tritsch.de",
-          "logo": "/src/images/reifen_tritsch_logo_klein.png",
+          "url": "https://haarstudio-marita.de/",
+          "logo": "/src/images/logo.jpg",
           "description": "Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird. ",
           "contactPoint": {
             "@type": "ContactPoint",
@@ -88,7 +88,7 @@ function SEO({ description, lang, meta, title }) {
             "availableLanguage": "German"
           },
           "sameAs": [
-            "https://reifen-tritsch.de"
+            "https://haarstudio-marita.de/"
           ]
         }
       `}</script>
