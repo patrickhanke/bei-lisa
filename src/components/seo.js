@@ -92,7 +92,7 @@ function SEO({ description, lang, meta, title }) {
           ]
         }
       `}</script>
-      {title == "Home" &&
+      {title == "Haarstudio Marita" &&
       <script type="application/ld+json">{`
         {
           "@context": "https://schema.org",
@@ -169,7 +169,7 @@ function SEO({ description, lang, meta, title }) {
         }
       `}</script>
       }
-      {title == "Datenschutz" &&
+      {title == "Datenschutzerklärung" &&
       <script type="application/ld+json">{`
         {
           "@context": "https://schema.org",
