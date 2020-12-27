@@ -107,7 +107,7 @@ export const Preisliste = () => {
                                             Schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            ab 30 €
+                                            ab 35 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -505,7 +505,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            30 - 35 €
+                                            ab 35 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>

@@ -357,7 +357,7 @@ return (
         <Image image="team01" css={{zIndex: 1}} />
         <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
           
-          <motion.h1 css={{position: "absolute", fontSize: ["2.2em", "4.4em"], bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5}}>
+          <motion.h1 css={{position: "absolute", fontSize: ["1.2em", "2.4em"], bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5}}>
             Haarstudio Marita
           </motion.h1>
 
@@ -451,12 +451,12 @@ return (
       <FlexBoxMobile css={{ marginBottom: "2em"}}>
         <div css={{display: "flex", flexDirection: "row", justifyContent:"space-evenly", flexWrap: "wrap"}}> 
           <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={2} />
-          <TeamCard name="Dina Romano" titel="Friseurin" bild="team06" margin={2} />
           <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={2} />
+          <TeamCard name="Dina Romano" titel="Friseurin" bild="team06" margin={2} />
           <TeamCard name="Laura Ott" titel="Friseurin" bild="team05" margin={2} />
           <TeamCard name="Simone Teetz" titel="Friseurin" bild="team07" margin={2} />
-          <TeamCard name="Christine Siebert" titel="Friseurin / Assistentin" bild="team02" margin={2} />
-          <TeamCard name="Silvia Lickert" titel="Friseurin / Assistentin" bild="team04" margin={2} />
+          <TeamCard name="Christine Siebert" titel="Assistentin" bild="team02" margin={2} />
+          <TeamCard name="Silvia Lickert" titel="Assistentin" bild="team04" margin={2} />
         </div>
       </FlexBoxMobile>
     </FlexContainerMobile>
