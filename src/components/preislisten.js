@@ -415,7 +415,7 @@ export const Preisliste = () => {
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important", fontWeight: 600}}>
-                                            Alles knkl. Kopfmassage
+                                            Alles inkl. Kopfmassage
                                         </p>
                                     </div>
                                     
@@ -812,7 +812,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important", fontWeight: 600}}>
-                                            Alles knkl. Kopfmassage
+                                            Alles inkl. Kopfmassage
                                         </p>
                                     </div>
                                     
