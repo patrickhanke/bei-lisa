@@ -15,14 +15,14 @@ const SelectButton = styled.button({
 props => ({background: props.background}),
 props => ({color: props.color})
 )
-const SelectButtonMobile = styled.button({
-    fontSize: "14px",
+const SelectButtonMobile = styled.button(mq({
+    fontSize: ["12px","14px","14px","14px"],
     padding: "0.3em 0.6em",
     border: "1px solid " +dark,
     cursor: "pointer",
     margin: ".2em 0",
     [":hover"]: {color: beige, background: dark, },
-},
+}),
 props => ({background: props.background}),
 props => ({color: props.color})
 )
