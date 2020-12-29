@@ -161,8 +161,16 @@ return (
    
     <AnimatePresence>
        {popupState &&
-       <motion.div key="popup" variants={navbackground} initial="initial" animate="animate" exit="exit"  css={{width: "100vw", height: "100vw", position: "fixed", zIndex: 15}} >
-          <motion.div key="popupcontent" transition={{duration: 0.5}} onClick={() => null} initial={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}} animate={{background: "rgba(255,255,255,1)", display:"flex", scaleY: 1, translateX: "-50%", translateY: "-50%"}} exit={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}}  css={{position: "fixed", flexDirection: "column", alignItems: "center", top: "50%", left: "50%",  padding: "2em 4em", zIndex: 16, transformOrigin: "50% 50%", background: white}}>
+       <motion.div key="popup" variants={navbackground} initial="initial" animate="animate" exit="exit"  css={{width: "100vw", height: "100vh", position: "fixed", zIndex: 15}} >
+          <motion.div 
+            key="popupcontent" 
+            transition={{duration: 0.5}} 
+            onClick={() => null} 
+            initial={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}} 
+            animate={{background: "rgba(255,255,255,1)", display:"flex", scaleY: 1, translateX: "-50%", translateY: "-50%"}} 
+            exit={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}}  
+            css={{position: "fixed", flexDirection: "column", alignItems: "center", top: "50%", left: "50%",  padding: "2em 4em", zIndex: 16, transformOrigin: "50% 50%", background: white}}
+            >
               <div onClick={() => setPopupState(false)}  css={{padding: "0.5em", fontSize: "1.6em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " +dark, cursor: "pointer", [":hover"]: {color: beige, background: dark}}}>
                   <VscClose /> 
               </div>
@@ -386,15 +394,23 @@ return (
       <Wrapper id="mainwrapper"  css={{scrollBehavior: "smooth"}}> 
       <HeaderMobile />
       <KontaktIconMobile />
-      
+
       <AnimatePresence>
        {popupState &&
-       <motion.div key="popup" variants={navbackground} initial="initial" animate="animate" exit="exit"  css={{width: "100vw", height: "100vw", position: "fixed", zIndex: 15}} >
-          <motion.div key="popupcontent" transition={{duration: 0.5}} onClick={() => null} initial={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}} animate={{background: "rgba(255,255,255,1)", display:"flex", scaleY: 1, translateX: "-50%", translateY: "-50%"}} exit={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}}  css={{position: "fixed", flexDirection: "column", alignItems: "center", top: "50%", left: "50%",  padding: "2em 4em", zIndex: 16, transformOrigin: "50% 50%", background: white}}>
+       <motion.div key="popup" variants={navbackground} initial="initial" animate="animate" exit="exit"  css={{width: "100vw", height: "100vh", position: "fixed", zIndex: 15}} >
+          <motion.div 
+            key="popupcontent" 
+            transition={{duration: 0.5}} 
+            onClick={() => null} 
+            initial={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}} 
+            animate={{background: "rgba(255,255,255,1)", fontSize: "14px", display:"flex", scaleY: 1, translateX: "-50%", translateY: "-50%"}} 
+            exit={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}}  
+            css={{position: "fixed", fontSize: "14px",width: "80vw", overflow: "hidden", flexDirection: "column", alignItems: "center", top: "50%", left: "50%",  padding: "1em 2em", zIndex: 16, transformOrigin: "50% 50%", background: white, maxHeight: "80vh"}}
+            >
               <div onClick={() => setPopupState(false)}  css={{padding: "0.5em", fontSize: "1.6em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " +dark, cursor: "pointer", [":hover"]: {color: beige, background: dark}}}>
                   <VscClose /> 
               </div>
-              <h4> Lieber Besucherin, lieber Besucher,</h4>
+              <h4 css={{fontSize: "1.6em"}}> Lieber Besucherin, lieber Besucher,</h4>
               <p css={{textAlign: "center"}}>
               Leider haben wir wegen der gegenwärtigen Corona-Mapnahmen bis einschließlich 11.01.2020 geschlossen.
               Telefonisch erreichbar sind wir wieder ab dem 10.1.2021 zwischen 9 und 13 Uhr.
