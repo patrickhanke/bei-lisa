@@ -3,16 +3,23 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { beige, dark, darkgrey, FlexBox, FlexContainer,light, Wrapper, FlexBoxMobile, FlexContainerMobile, mq } from "../components/styles"
+import { beige, dark, darkgrey, FlexBox, FlexContainer,light, Wrapper, FlexBoxMobile, FlexContainerMobile, mq, white } from "../components/styles"
 import TeamCard from "../components/teamcard"
 import Footer from "../components/footer"
-import { motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
+import { AnimatePresence, motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
 import Header from "../components/header"
 import SimpleMap from "../components/google-map"
 import KontaktIcon, { KontaktIconMobile } from "../components/kontakticon"
 import { useMediaQuery } from "react-responsive"
 import HeaderMobile from "../components/header-mobile"
 import { Preisliste } from "../components/preislisten"
+import { VscClose } from "react-icons/vsc"
+
+const navbackground = {
+  initial: {backgroundColor: "rgba(0,0,0,0)", transition: {delay: 0, duration: 0.6}},
+  animate: {backgroundColor: "rgba(0,0,0,0.3)", transition: {delay: 0, duration: 0.6}},
+  exit: {backgroundColor: "rgba(0,0,0,0)", transition: {delay: 0.4, duration: 0.3}}
+}
 
 let mainclientheight;
 let headerscrollheight;
@@ -30,6 +37,7 @@ const [siteState, setSiteState] = useState()
 const [scrollheight, setScrollheight] = useState()
 const [scrollPositions, setScrollPositions] = useState()
 const {scrollY, scrollYProgress} = useViewportScroll() 
+const [popupState, setPopupState] = useState(false)
 
 const scrollSlow = useTransform(scrollY, value => -0.6*  value  )
 const scrollMedium = useTransform(scrollY, value => -0.7*  value  )
@@ -131,11 +139,17 @@ useEffect(() => {
   return
 },[])
 
+useEffect(() => {
+  setTimeout(() => {
+    setPopupState(true)
+  },[2000])
+},[])
+
 const isTabletOrMobile = useMediaQuery({ query: '(max-device-width: 1180px)' })
 const isDesktopOrLaptop = useMediaQuery({
   query: '(min-device-width: 1180px)'
 })
-
+console.log(popupState)
 return (
   <Layout>
     <SEO title="Haarstudio Marita" />
@@ -144,7 +158,28 @@ return (
     <Header top="start" siteState={siteState} position={scrollPositions} />
     <KontaktIcon /> 
     <Preisliste />
-    
+   
+    <AnimatePresence>
+       {popupState &&
+       <motion.div key="popup" variants={navbackground} initial="initial" animate="animate" exit="exit"  css={{width: "100vw", height: "100vw", position: "fixed", zIndex: 15}} >
+          <motion.div key="popupcontent" transition={{duration: 0.5}} onClick={() => null} initial={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}} animate={{background: "rgba(255,255,255,1)", display:"flex", scaleY: 1, translateX: "-50%", translateY: "-50%"}} exit={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}}  css={{position: "fixed", flexDirection: "column", alignItems: "center", top: "50%", left: "50%",  padding: "2em 4em", zIndex: 16, transformOrigin: "50% 50%", background: white}}>
+              <div onClick={() => setPopupState(false)}  css={{padding: "0.5em", fontSize: "1.6em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " +dark, cursor: "pointer", [":hover"]: {color: beige, background: dark}}}>
+                  <VscClose /> 
+              </div>
+              <h4> Lieber Besucherin, lieber Besucher,</h4>
+              <p css={{textAlign: "center"}}>
+              Leider haben wir wegen der gegenwärtigen Corona-Mapnahmen bis einschließlich 11.01.2020 geschlossen.
+              Telefonisch erreichbar sind wir wieder ab dem 10.1.2021 zwischen 9 und 13 Uhr.
+              
+              </p>
+              <p css={{textAlign: "center", fontWeight: 600}}>
+              Ihr Haarstudio Marita Team
+              </p>
+        </motion.div>
+      </motion.div>  
+      }
+    </AnimatePresence>    
+        
     <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
     
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
@@ -209,7 +244,6 @@ return (
               </p>
             </div>
 
-             
               <motion.div style={{y: paralaxFast}} css={{width: "40%", height: "30em", marginTop: "-4em"}}>
               <Image image="studio06" />
               </motion.div>
@@ -352,6 +386,27 @@ return (
       <Wrapper id="mainwrapper"  css={{scrollBehavior: "smooth"}}> 
       <HeaderMobile />
       <KontaktIconMobile />
+      
+      <AnimatePresence>
+       {popupState &&
+       <motion.div key="popup" variants={navbackground} initial="initial" animate="animate" exit="exit"  css={{width: "100vw", height: "100vw", position: "fixed", zIndex: 15}} >
+          <motion.div key="popupcontent" transition={{duration: 0.5}} onClick={() => null} initial={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}} animate={{background: "rgba(255,255,255,1)", display:"flex", scaleY: 1, translateX: "-50%", translateY: "-50%"}} exit={{background: "rgba(255,255,255,0)", display:"none", scaleY: 0, translateX: "-50%", translateY: "-50%"}}  css={{position: "fixed", flexDirection: "column", alignItems: "center", top: "50%", left: "50%",  padding: "2em 4em", zIndex: 16, transformOrigin: "50% 50%", background: white}}>
+              <div onClick={() => setPopupState(false)}  css={{padding: "0.5em", fontSize: "1.6em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " +dark, cursor: "pointer", [":hover"]: {color: beige, background: dark}}}>
+                  <VscClose /> 
+              </div>
+              <h4> Lieber Besucherin, lieber Besucher,</h4>
+              <p css={{textAlign: "center"}}>
+              Leider haben wir wegen der gegenwärtigen Corona-Mapnahmen bis einschließlich 11.01.2020 geschlossen.
+              Telefonisch erreichbar sind wir wieder ab dem 10.1.2021 zwischen 9 und 13 Uhr.
+              
+              </p>
+              <p css={{textAlign: "center", fontWeight: 600}}>
+              Ihr Haarstudio Marita Team
+              </p>
+        </motion.div>
+      </motion.div>  
+      }
+      </AnimatePresence>
       
       <motion.div id="header"  css={mq({ width: `100vw`, height: [`300px`, `300px`, `50vh`, `80vh`], top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"})}>
         <Image image="team01" css={{zIndex: 1}} />

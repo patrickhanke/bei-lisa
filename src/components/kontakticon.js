@@ -59,7 +59,7 @@ const KontaktIcon = () => {
                     <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};border-left: 10px dashed transparent;border-right: 10px dashed transparent; background: transparent;`}></div>
                         <motion.div variants={menuList} css={{position: "relative", height: "100%", padding: "2em", fontSize: "16px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between"}}>
                             <div onClick={() => setOpen(!open)}  css={{padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " +dark, cursor: "pointer", [":hover"]: {color: beige, background: dark}}}>
-                                    <VscClose /> 
+                                <VscClose /> 
                             </div>
                             <h5> Telefonnummer</h5>
                             <a href="tel:+49761484745" css={{lineHeight: "1em", color: dark, textDecoration: "none"}}>
