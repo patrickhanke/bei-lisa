@@ -149,7 +149,6 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-device-width: 1180px)' })
 const isDesktopOrLaptop = useMediaQuery({
   query: '(min-device-width: 1180px)'
 })
-console.log(popupState)
 return (
   <Layout>
     <SEO title="Haarstudio Marita" />
