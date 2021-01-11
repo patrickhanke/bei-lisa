@@ -176,8 +176,8 @@ return (
               </div>
               <h4> Lieber Besucherin, lieber Besucher,</h4>
               <p css={{textAlign: "center"}}>
-              Leider haben wir wegen der gegenwärtigen Corona-Maßnahmen bis einschließlich 11.01.2020 geschlossen.
-              Telefonisch erreichbar sind wir wieder ab dem 10.1.2021 zwischen 9 und 13 Uhr.
+              Leider haben wir wegen der gegenwärtigen Corona-Maßnahmen bis einschließlich 31.01.2020 geschlossen.
+              Telefonisch erreichbar sind wir wieder ab dem 1.2.2021 zwischen 9 und 13 Uhr.
               
               </p>
               <p css={{textAlign: "center", fontWeight: 600}}>
