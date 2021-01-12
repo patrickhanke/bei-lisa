@@ -375,13 +375,13 @@ hgroup {
   h3 {
     font-family: 'Abhaya Libre';
     font-weight: 500;
-    font-size: 3.8em;
+    font-size: 3em;
     line-height: 1em;
     text-rendering: optimizeLegibility;
     text-align: left;
     color: inherit;
     letter-spacing: 4px;
-    margin-block-start: 1em;
+    margin-block-start: 0.2em;
     margin-block-end: 1em;
   }
   h4 {
