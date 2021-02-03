@@ -398,7 +398,7 @@ return (
     {
       isTabletOrMobile &&
       <Wrapper id="mainwrapper"  css={{scrollBehavior: "smooth"}}> 
-      <HeaderMobile />
+      <HeaderMobile siteState={siteState} position={scrollPositions} />
       <KontaktIconMobile />
 
       <AnimatePresence>

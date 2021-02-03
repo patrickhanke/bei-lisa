@@ -3,10 +3,8 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import Image from "./image"
-import { beige, black, dark, FlexBox, grey, light, white } from "./styles"
+import { beige,  dark, light } from "./styles"
 import {IoLogoFacebook, IoLogoInstagram} from 'react-icons/io'
-import { MdTranslate } from "react-icons/md"
-import { IoPlaySkipForwardCircleSharp } from "react-icons/io5"
 import { PreislisteMobile } from "./preislisten"
 import styled from "@emotion/styled"
 
@@ -34,12 +32,10 @@ const [menuIcon, setMenuIcon] = useState("close")
   const [subMenu, setSubMenu] = useState(false)
 const [preisliste, setPreisliste] = useState(false)
 function scrollHandlerAngebot(e) {
-  window.scrollTo(0,position[e] +50 )
+  window.scrollTo(0,position[e] - 200 )
 }
-console.log(subMenu)
 const preislisteHandler = (e) => {
   if (e === "close") {
-    console.log("close")
     setMenuIcon(e)
     setSubMenu(false)
     setPreisliste(false)
@@ -65,9 +61,9 @@ const subMenuHandler = () => {
 
 return (
     <>
-  <header
-      css={{position: "fixed", width: "100vw", height: "60px", background: light, zIndex: 9,  boxShadow: "0 0 12px 6px rgba(0,0,0,0.2)", padding: "0 1em" }}
-  >
+    <header
+        css={{position: "fixed", width: "100vw", height: "60px", background: light, zIndex: 9,  boxShadow: "0 0 12px 6px rgba(0,0,0,0.2)", padding: "0 1em" }}
+    >
   
       <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%"}}> 
         
@@ -106,18 +102,18 @@ return (
    {subMenu === true &&
    <motion.div key="submenu" variants={submenu} initial="initial" animate="animate" exit="exit" css={{background: beige, boxShadow: "0 0 6px 3px rgba(0,0,0,0.2)", left: 0, zIndex: 6, padding: "0 2em", position: "fixed", height: "60px", width: "100vw", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}> 
      
-             <Link to="/#salon">
+             <div  onClick={() => scrollHandlerAngebot("angebot")}>
                  Salon
-             </Link>
+             </div>
            
 
-             <Link to="/#team">
+             <div onClick={() => scrollHandlerAngebot("team")}>
                  Team
-             </Link>
+             </div>
            
-           <Link to="/#kontakt">
+           <div onClick={() => scrollHandlerAngebot("kontakt")}>
                Kontakt
-           </Link>
+           </div>
 
            <SelectButtonMobile background={beige} color={dark} onClick={() => preislisteHandler("open")}>
                Preisliste
