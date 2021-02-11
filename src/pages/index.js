@@ -175,9 +175,8 @@ return (
               </div>
               <h4> Lieber Besucherin, lieber Besucher,</h4>
               <p css={{textAlign: "center"}}>
-              Leider haben wir wegen der gegenwärtigen Corona-Maßnahmen bis einschließlich 31.01.2020 geschlossen.
-              Telefonisch erreichbar sind wir wieder ab dem 1.2.2021 zwischen 9 und 13 Uhr.
-              
+              Leider haben wir wegen der gegenwärtigen Corona-Maßnahmen bis einschließlich 28.02.2021 geschlossen.
+              Ab dem 1.3.2021 hat unser Salon wieder für Sie geöffnet.
               </p>
               <p css={{textAlign: "center", fontWeight: 600}}>
               Ihr Haarstudio Marita Team
@@ -230,17 +229,11 @@ return (
         </h4>
         </div>
         </div>
-       
       </FlexBox>
-     
-        
     </FlexContainer>
     <FlexContainer id="salon" direction="column" justify="space-evenly" align="center" css={{color: dark}}>
       <h2 css={{color: beige}}>Das Studio</h2>
       <FlexBox direction="column" justify="center" align="flex-start" css={{width: "100%", margin: "3em 0"}}>
-        
-           
-
             <div css={{display: "flex", flexDirection: "row", width: "100%", alignItems: "flex-start", justifyContent: "space-evenly"}}>
             <div css={{width: "24em"}} >
             <h3>
@@ -255,7 +248,6 @@ return (
               <Image image="studio06" />
               </motion.div>
             </div>
-          
       </FlexBox>
       <FlexBox css={{height: "auto", width: "100%", margin: "3em 0"}}>
   
@@ -263,8 +255,6 @@ return (
           <Image image="studio03" />
         </motion.div>
       </FlexBox>
-
-
       <FlexBox direction="row" justify="space-evenly" align="flex-start" css={{ width: "100%", margin: "3em 0"}} >
         <div css={{width: "40%"}}>
         <motion.div style={{y: paralaxSlow}} css={{width: "100%", height: "30em", marginTop: "6em"}}>
@@ -273,8 +263,6 @@ return (
         <motion.div style={{y: paralaxFast, x: 50}} css={{width: "30em", height: "30em", marginTop: "6em"}}>
           <Image image="studio05" />
         </motion.div>
-
-          
         </div>
 
         <div css={{width: "24em"}}>
@@ -288,7 +276,6 @@ return (
             <Image image="studio02" />
         </motion.div>
         </div>
-        
       </FlexBox>
      
       </FlexContainer>
@@ -480,30 +467,22 @@ return (
     <FlexContainerMobile id="salon" css={{color: dark}}>
       <FlexBoxMobile>
       <h2 css={{color: beige}}>Das Studio</h2>
-        
             <div css={{width: "auto"}} >
             <h3>
               Ein Ort zum Verweilen
             </h3>
-            
             <p css={{maxWidth: "42em"}}>
             Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.
             </p>
             </div>
-           
-        
-          
       </FlexBoxMobile>
 
       <FlexBoxMobile css={{height: "auto", width: "100%", margin: "3em 0"}}>
-  
         <div  css={{height: "24em", width: "100%"}}>
           <Image image="studio03" />
         </div>  
       </FlexBoxMobile>
       <FlexBoxMobile >
-  
-        
         <div>
           <h3>
             Der Weg zu ihrem Haarschnitt
@@ -512,7 +491,6 @@ return (
           Exaktes Zuhören. Das ist das wahre Geheimnis, um wirklich gezielt auf Ihre Wünsche eingehen zu können. Mit professioneller Schnitttechnik bringen wir Ihre Vorstellungen dann in Form. Bei uns können Sie sich inspirieren lassen.
           </p>
         </div>
-        
       </FlexBoxMobile>
       <FlexBoxMobile>
         <div css={{width: "100%", height: "24em", marginTop: "4em"}}>
