@@ -149,6 +149,7 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-device-width: 1180px)' })
 const isDesktopOrLaptop = useMediaQuery({
   query: '(min-device-width: 1180px)'
 })
+const textblock = "Leider haben wir wegen der gegenwärtigen Corona-Maßnahmen bis einschließlich 28.02.2021 geschlossen. Ab dem 1.3.2021 hat unser Salon wieder für Sie geöffnet."
 return (
   <Layout>
     <SEO title="Haarstudio Marita" />
@@ -175,8 +176,7 @@ return (
               </div>
               <h4> Lieber Besucherin, lieber Besucher,</h4>
               <p css={{textAlign: "center"}}>
-              Leider haben wir wegen der gegenwärtigen Corona-Maßnahmen bis einschließlich 28.02.2021 geschlossen.
-              Ab dem 1.3.2021 hat unser Salon wieder für Sie geöffnet.
+              {textblock}
               </p>
               <p css={{textAlign: "center", fontWeight: 600}}>
               Ihr Haarstudio Marita Team
@@ -405,8 +405,7 @@ return (
               </div>
               <h4 css={{fontSize: "1.6em"}}> Lieber Besucherin, lieber Besucher,</h4>
               <p css={{textAlign: "center"}}>
-              Leider haben wir wegen der gegenwärtigen Corona-Maßnahmen bis einschließlich 31.01.2020 geschlossen.
-              Telefonisch erreichbar sind wir wieder ab dem 1.2.2021 zwischen 9 und 13 Uhr.
+              {textblock}
               
               </p>
               <p css={{textAlign: "center", fontWeight: 600}}>
