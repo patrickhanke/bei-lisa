@@ -160,7 +160,7 @@ return (
     <Preisliste />
    
     <AnimatePresence>
-       {popupState &&
+       {/* {popupState &&
        <motion.div key="popup" variants={navbackground} initial="initial" animate="animate" exit="exit"  css={{width: "100vw", height: "100vh", position: "fixed", zIndex: 15}} >
           <motion.div 
             key="popupcontent" 
@@ -183,7 +183,7 @@ return (
               </p>
         </motion.div>
       </motion.div>  
-      }
+      } */}
     </AnimatePresence>    
         
     <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
@@ -389,7 +389,7 @@ return (
       <KontaktIconMobile />
 
       <AnimatePresence>
-       {popupState &&
+       {/* {popupState &&
        <motion.div key="popup" variants={navbackground} initial="initial" animate="animate" exit="exit"  css={{width: "100vw", height: "100vh", position: "fixed", zIndex: 15}} >
           <motion.div 
             key="popupcontent" 
@@ -413,7 +413,7 @@ return (
               </p>
         </motion.div>
       </motion.div>  
-      }
+      } */}
       </AnimatePresence>
       
       <motion.div id="header"  css={mq({ width: `100vw`, height: [`300px`, `300px`, `50vh`, `80vh`], top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"})}>
