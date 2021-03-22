@@ -64,9 +64,6 @@ const KontaktIcon = () => {
                             <a href="tel:+49761484745" css={{lineHeight: "1em", color: dark, textDecoration: "none", marginTop: "1em", [":hover"]: {textDecoration: "underline"}}}>
                                 <p css={{marginBottom: 0, fontSize: "1.2em", lineHeight: "1.2em", marginBottom: "0.6em"}}> 0761 484745</p>
                             </a>
-                            <a href="mailto:post@haarstudio-marita.de" css={{lineHeight: "1em", color: dark, textDecoration: "none", [":hover"]: {textDecoration: "underline"}}}>
-                                <p css={{marginBottom: 0, fontSize: "1.2em", lineHeight: "1.2em", marginBottom: "0.6em", textAlign: "center"}}> E-Mail senden</p>
-                            </a>
                             <div css={{width: "100%", height: "1.5px", background: grey, margin: "6px auto 12px auto"}} />
                             <h5>Öffnungszeiten</h5>
                             <p css={{color: dark + " !important"}}>
@@ -131,9 +128,6 @@ export const KontaktIconMobile = () => {
                             </div>
                             <a href="tel:+49761484745" css={{lineHeight: "1em", color: dark, textDecoration: "none", marginTop: "1em", [":hover"]: {textDecoration: "underline"}}}>
                                 <p css={{marginBottom: 0, fontSize: "1.2em", lineHeight: "1.2em", marginBottom: "0.6em"}}> 0761 484745</p>
-                            </a>
-                            <a href="mailto:post@haarstudio-marita.de" css={{lineHeight: "1em", color: dark, textDecoration: "none", [":hover"]: {textDecoration: "underline"}}}>
-                                <p css={{marginBottom: 0, fontSize: "1.2em", lineHeight: "1.2em", marginBottom: "0.6em", textAlign: "center"}}> E-Mail senden</p>
                             </a>
                             <div css={{width: "100%", height: "1.5px", background: grey, margin: "6px auto 12px auto",}} />
                             <h5>Öffnungszeiten</h5>

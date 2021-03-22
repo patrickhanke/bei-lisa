@@ -322,13 +322,7 @@ return (
         <h3 className="linkclass">  0761 484745 
         </h3>
       </a>
-      <p>
-        oder schreiben Sie uns
-      </p>
-      <a href="mailto:post@haarstudio-marita.de">
-        <h3 className="linkclass">  post@haarstudio-marita.de
-        </h3>
-      </a>
+     
       <FlexBox direction="row" justify="space-between" align="flex-start" css={{width: "100%",}}>
           <div css={{width: "24em", height: "18em", display: "none"}}>
             <Image image="studio08" />
@@ -525,13 +519,7 @@ return (
           <h3 className="linkclass">  0761 484745 
         </h3>
         </a>
-          <p>
-          oder schreiben Sie uns
-        </p>
-        <a href="mailto:post@haarstudio-marita.de">
-          <h3 className="linkclass" css={{textAlign: "center"}}>  post@haarstudio-marita.de
-          </h3>
-        </a>
+         
       </FlexBoxMobile>
 
       <FlexBoxMobile>
