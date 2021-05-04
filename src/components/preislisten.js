@@ -634,7 +634,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Alles inkl. Shampoo, Gel, Wachs oder Haarspray sowie eine Gesichts-Kompresse Heiß oder Kalt                                 
                                         </p>
                                     </div>
-                               
+                               </div>
                                 
                             </div>
                             <h4>Kinder</h4>
