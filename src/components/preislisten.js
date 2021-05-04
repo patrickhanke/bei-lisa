@@ -175,7 +175,7 @@ export const Preisliste = () => {
                                             Haarkranz schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            12 €
+                                            14 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -183,7 +183,7 @@ export const Preisliste = () => {
                                             Maschinenschnitt
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            12 €
+                                            14 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -199,7 +199,7 @@ export const Preisliste = () => {
                                             Haarschnitt
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            26 €
+                                            28 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -207,7 +207,7 @@ export const Preisliste = () => {
                                             Vollbart schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            9 €
+                                            15 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -235,15 +235,31 @@ export const Preisliste = () => {
                                             Mädchen und Jungen bis 6 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            15 €
+                                            17 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Mädchen und Jungen bis 12 Jahre
+                                            Jungen bis 12 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            20 €
+                                            24 €
+                                        </p>
+                                    </div>
+                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                        <p css={{color: dark + " !important"}}>
+                                            Mädchen von 6 bis 10 Jahre
+                                        </p>
+                                        <p css={{color: dark + " !important"}}>
+                                            22 €
+                                        </p>
+                                    </div>
+                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                        <p css={{color: dark + " !important"}}>
+                                            Mädchen von 10 bis 12 Jahre
+                                        </p>
+                                        <p css={{color: dark + " !important"}}>
+                                            28 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>

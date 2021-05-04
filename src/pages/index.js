@@ -530,19 +530,19 @@ return (
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
             <h4 css={{textAlign: "center"}}>Unsere <br />Öffnungszeiten</h4>
                 <p css={{color: dark + " !important"}}>
-                  Di:  08.30 - 18.00
+                  Dienstag 08.30 - 18.00
                 </p>
                 <p css={{color: dark + " !important"}}>
-                  Mi: 08.30 - 18.00
+                  Mittwoch 08.30 - 18.00
                 </p>
                 <p css={{color: dark + " !important"}}>
-                  Do: 08.30 - 20.00
+                  Donnerstag 08.30 - 20.00
                 </p>
                 <p css={{color: dark + " !important"}}>
-                  Fr:  08.00 - 18.00
+                  Freitag 08.00 - 18.00
                 </p>
                 <p css={{color: dark + " !important"}}>
-                  Sa:  08.00 - 13.00
+                  Samstag 08.00 - 13.00
                 </p >
 
           </div>
