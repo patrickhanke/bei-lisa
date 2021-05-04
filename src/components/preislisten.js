@@ -263,10 +263,26 @@ export const Preisliste = () => {
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Föhnen 
+                                            Föhnen oder Legen kurz
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            ab 10 €
+                                            16 €
+                                        </p>
+                                    </div>
+                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                        <p css={{color: dark + " !important"}}>
+                                            Föhnen oder Legen mittel
+                                        </p>
+                                        <p css={{color: dark + " !important"}}>
+                                            20 €
+                                        </p>
+                                    </div>
+                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                        <p css={{color: dark + " !important"}}>
+                                            Föhnen oder Legen lang
+                                        </p>
+                                        <p css={{color: dark + " !important"}}>
+                                            25 €
                                         </p>
                                     </div>
                                     
@@ -673,10 +689,26 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Föhnen 
+                                            Föhnen oder Legen kurz
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            ab 10 €
+                                            16 €
+                                        </p>
+                                    </div>
+                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                        <p css={{color: dark + " !important"}}>
+                                            Föhnen oder Legen mittel
+                                        </p>
+                                        <p css={{color: dark + " !important"}}>
+                                            20 €
+                                        </p>
+                                    </div>
+                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                        <p css={{color: dark + " !important"}}>
+                                            Föhnen oder Legen lang
+                                        </p>
+                                        <p css={{color: dark + " !important"}}>
+                                            25 €
                                         </p>
                                     </div>
                                 </div> 
