@@ -222,7 +222,6 @@ export const Preisliste = () => {
                                         <p css={{color: dark + " !important", fontWeight: 600}}>
                                             Alles inkl. Shampoo, Gel, Wachs oder Haarspray sowie eine Gesichts-Kompresse Heiß oder Kalt                                 
                                         </p>
-                                        
                                     </div>
                                 </div> 
                                
@@ -281,8 +280,6 @@ export const Preisliste = () => {
                             {
                                 sliderState === "faerben" && 
                                 <motion.div className="preiscontainer" key="faerben" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em"}}> 
-                                
-                                
                                 <h4 css={{marginTop: "0.5em"}}>Färben & Tönen</h4>
                                 <div css={{marginTop: "1em"}}>
                                     
@@ -589,7 +586,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Haarkranz schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            12 €
+                                            14 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -597,7 +594,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Maschinenschnitt
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            12 €
+                                            14 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -613,7 +610,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Haarschnitt
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            26 €
+                                            28 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -621,7 +618,7 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Vollbart schneiden
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            9 €
+                                            15 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -637,26 +634,41 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             Alles inkl. Shampoo, Gel, Wachs oder Haarspray sowie eine Gesichts-Kompresse Heiß oder Kalt                                 
                                         </p>
                                     </div>
-                                </div> 
                                
                                 
                             </div>
                             <h4>Kinder</h4>
                                 <div css={{width: "100%"}}> 
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
                                             Mädchen und Jungen bis 6 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            15 €
+                                            17 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                                         <p css={{color: dark + " !important"}}>
-                                            Mädchen und Jungen bis 12 Jahre
+                                            Jungen bis 12 Jahre
                                         </p>
                                         <p css={{color: dark + " !important"}}>
-                                            20 €
+                                            24 €
+                                        </p>
+                                    </div>
+                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                        <p css={{color: dark + " !important"}}>
+                                            Mädchen von 6 bis 10 Jahre
+                                        </p>
+                                        <p css={{color: dark + " !important"}}>
+                                            22 €
+                                        </p>
+                                    </div>
+                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+                                        <p css={{color: dark + " !important"}}>
+                                            Mädchen von 10 bis 12 Jahre
+                                        </p>
+                                        <p css={{color: dark + " !important"}}>
+                                            28 €
                                         </p>
                                     </div>
                                     <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -667,12 +679,8 @@ export const PreislisteMobile = ({plstate, preislisteHandler}) => {
                                             ab 10 €
                                         </p>
                                     </div>
-                                    
                                 </div> 
-              
                             </div>
-                            
-
                             </motion.div>
                             }
                             {
