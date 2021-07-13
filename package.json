@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "author": "Patrick Hanke",
   "dependencies": {
+    "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@react-google-maps/api": "^2.2.0",
     "facepaint": "^1.2.1",
