@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { beige, dark, grey, light, white } from './styles'
 import {MdLocalPhone} from 'react-icons/md'
 import {VscClose} from 'react-icons/vsc'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 const popup = {
     initial: {opacity: 0,width: 0, height: 0, scaleX: 0, scaleY:0},
@@ -44,7 +44,7 @@ const KontaktIcon = () => {
             initial={false}
             animate={open ? "open" : "closed"}
             custom={500}
-            css={{position: "fixed", bottom: "30px", left: "30px",zIndex: 12, }}
+            css={{position: "fixed", bottom: "24px", left: "24px",zIndex: 12, }}
             >
 
             <AnimatePresence exitBeforeEnter>
@@ -55,7 +55,7 @@ const KontaktIcon = () => {
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    css={css`background-color: #EDD6C6; position: absolute; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1)`}>
+                    css={css`background-color: #EDD6C6; position: absolute; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1);`}>
                     <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};border-left: 10px dashed transparent;border-right: 10px dashed transparent; background: transparent;`}></div>
                         <motion.div variants={menuList} css={{position: "relative", height: "100%", padding: "2em", fontSize: "16px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between"}}>
                             <div onClick={() => setOpen(!open)}  css={{padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " +dark, cursor: "pointer", [":hover"]: {color: beige, background: dark}}}>

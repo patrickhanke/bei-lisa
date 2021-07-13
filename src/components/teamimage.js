@@ -1,9 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-
-const TeamImage = ({bild}) => {
+const TeamImage = ({bild, name}) => {
   const image = useStaticQuery(graphql`
     query {
         team01: file(relativePath: {eq: "team/team01.jpg"}) {
@@ -58,14 +58,14 @@ const TeamImage = ({bild}) => {
     }
     `)
   
- if      (bild === "team01") return <Img fluid={image.team01.childImageSharp.fluid} css={{width: "auto", height: "100%"}} />
- else if (bild === "team02") return <Img fluid={image.team02.childImageSharp.fluid} css={{width: "auto", height: "100%"}}/>
- else if (bild === "team03") return <Img fluid={image.team03.childImageSharp.fluid} css={{width: "auto", height: "100%"}}/>
- else if (bild === "team04") return <Img fluid={image.team04.childImageSharp.fluid} css={{width: "auto", height: "100%"}}/>
- else if (bild === "team05") return <Img fluid={image.team05.childImageSharp.fluid} css={{width: "auto", height: "100%"}}/>
- else if (bild === "team06") return <Img fluid={image.team06.childImageSharp.fluid} css={{width: "auto", height: "100%"}}/>
- else if (bild === "team07") return <Img fluid={image.team07.childImageSharp.fluid} css={{width: "auto", height: "100%"}}/>
- else return null
+    if      (bild === "team01") return <GatsbyImage image={image.team01} alt={name} css={{width: "auto", height: "100%"}} />
+    else if (bild === "team02") return <GatsbyImage image={image.team02} alt={name} css={{width: "auto", height: "100%"}}/>
+    else if (bild === "team03") return <GatsbyImage image={image.team03} alt={name} css={{width: "auto", height: "100%"}}/>
+    else if (bild === "team04") return <GatsbyImage image={image.team04} alt={name} css={{width: "auto", height: "100%"}}/>
+    else if (bild === "team05") return <GatsbyImage image={image.team05} alt={name} css={{width: "auto", height: "100%"}}/>
+    else if (bild === "team06") return <GatsbyImage image={image.team06} alt={name} css={{width: "auto", height: "100%"}}/>
+    else if (bild === "team07") return <GatsbyImage image={image.team07} alt={name} css={{width: "auto", height: "100%"}}/>
+    else return null
 }
 
 export default TeamImage

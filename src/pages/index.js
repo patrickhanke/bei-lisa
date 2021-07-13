@@ -3,17 +3,19 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { beige, dark, darkgrey, FlexBox, FlexContainer,light, Wrapper, FlexBoxMobile, FlexContainerMobile, mq, white } from "../components/styles"
+import { beige, dark, darkgrey, FlexBox, FlexContainer,light, Wrapper, FlexBoxMobile, FlexContainerMobile, mq, white, teamcontainer } from "../components/styles"
 import TeamCard from "../components/teamcard"
 import Footer from "../components/footer"
 import { AnimatePresence, motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
 import Header from "../components/header"
-import SimpleMap from "../components/google-map"
+import KontaktMap from "../components/google-map"
 import KontaktIcon, { KontaktIconMobile } from "../components/kontakticon"
 import { useMediaQuery } from "react-responsive"
 import HeaderMobile from "../components/header-mobile"
 import { Preisliste } from "../components/preislisten"
+import { StaticImage } from "gatsby-plugin-image"
 import { VscClose } from "react-icons/vsc"
+
 
 const navbackground = {
   initial: {backgroundColor: "rgba(0,0,0,0)", transition: {delay: 0, duration: 0.6}},
@@ -139,28 +141,28 @@ useEffect(() => {
   return
 },[])
 
-useEffect(() => {
-  setTimeout(() => {
-    setPopupState(true)
-  },[2000])
-},[])
+// useEffect(() => {
+//   setTimeout(() => {
+//     setPopupState(true)
+//   },[2000])
+// },[])
 
 const isTabletOrMobile = useMediaQuery({ query: '(max-device-width: 1180px)' })
 const isDesktopOrLaptop = useMediaQuery({
   query: '(min-device-width: 1180px)'
 })
-const textblock = "Leider haben wir wegen der gegenwärtigen Corona-Maßnahmen bis einschließlich 28.02.2021 geschlossen. Ab dem 1.3.2021 hat unser Salon wieder für Sie geöffnet."
+const textblock = "Du möchtest Teil unseres Teams werden? Dann bewirb dich jetzt bei uns. Wir freuen uns mir dir von Dienstag bis Freitag zusammen zu arbeiten."
 return (
   <Layout>
     <SEO title="Haarstudio Marita" />
     {isDesktopOrLaptop &&
     <Wrapper id="mainwrapper" css={{height: mainHeight + "px"}}> 
-    <Header top="start" siteState={siteState} position={scrollPositions} />
+    <Header top="start" siteState={siteState} position={scrollPositions} popupHandler={setPopupState} />
     <KontaktIcon /> 
     <Preisliste />
    
     <AnimatePresence>
-       {/* {popupState &&
+       {popupState &&
        <motion.div key="popup" variants={navbackground} initial="initial" animate="animate" exit="exit"  css={{width: "100vw", height: "100vh", position: "fixed", zIndex: 15}} >
           <motion.div 
             key="popupcontent" 
@@ -174,22 +176,28 @@ return (
               <div onClick={() => setPopupState(false)}  css={{padding: "0.5em", fontSize: "1.6em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " +dark, cursor: "pointer", [":hover"]: {color: beige, background: dark}}}>
                   <VscClose /> 
               </div>
-              <h4> Lieber Besucherin, lieber Besucher,</h4>
+              <h4> Wir suchen Dich</h4>
               <p css={{textAlign: "center"}}>
               {textblock}
               </p>
               <p css={{textAlign: "center", fontWeight: 600}}>
-              Ihr Haarstudio Marita Team
+              Melde dich bei uns unter 0761 484745
               </p>
         </motion.div>
       </motion.div>  
-      } */}
+      }
     </AnimatePresence>    
         
     <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
     
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
-      <Image image="team01" css={{zIndex: 1}} />
+      <StaticImage 
+        src={`../images/Haarstudio-Marita-Portraits-2020-high-res-26.jpg`} 
+        alt="Haarstudio Marita Team" 
+        objectFit="fill"
+        layout="constrained"
+        transformOptions={{fit: "cover", cropFocus: "center", position: "centre"}}
+      />
       <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.3)", top: 0 }}></div>
         
         <motion.h1 style={{y: yMedium, x:"-50%"}} css={{position: "absolute", top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
@@ -244,24 +252,53 @@ return (
               </p>
             </div>
 
-              <motion.div style={{y: paralaxFast}} css={{width: "40%", height: "30em", marginTop: "-4em"}}>
-              <Image image="studio06" />
-              </motion.div>
+            <motion.div style={{y: paralaxFast}} css={{width: "40%", height: "30em", marginTop: "-4em"}}>
+              <StaticImage 
+                src={`../images/Haarstudio-Marita-Interieur-2020-web-5.jpg`} 
+                alt={"Haarstudio Marita"} 
+                objectFit="fill"
+                layout="constrained"
+                transformOptions={{fit: "cover", cropFocus: "center"}}
+              />
+            </motion.div>
             </div>
       </FlexBox>
       <FlexBox css={{height: "auto", width: "100%", margin: "3em 0"}}>
   
-        <motion.div style={{y: paralaxSlow}}  css={{height: "24em", width: "100%"}}>
-          <Image image="studio03" />
+        <motion.div style={{y: paralaxSlow}}  css={{height: "24em", width: "100%", overflow: "hidden"}}>
+          <StaticImage 
+            src={`../images/Haarstudio-Marita-Interieur-2020-web-11.jpg`} 
+            alt="Haarstudio Marita"
+            height={1200}
+            width={3600}
+            // width="100%"
+            // height="100%"
+            // objectPosition="50% 50%"
+            layout="constrained"
+            transformOptions={{fit: "cover", cropFocus: "center"}}
+          />
         </motion.div>
       </FlexBox>
       <FlexBox direction="row" justify="space-evenly" align="flex-start" css={{ width: "100%", margin: "3em 0"}} >
         <div css={{width: "40%"}}>
-        <motion.div style={{y: paralaxSlow}} css={{width: "100%", height: "30em", marginTop: "6em"}}>
-          <Image image="studio07" />
+        <motion.div style={{y: paralaxSlow}} css={{width: "100%", height: "30em", marginTop: "2em"}}>
+          <StaticImage 
+            src={`../images/Haarstudio-Marita-Interieur-2020-web-17.jpg`} 
+            alt="Haarstudio Marita"
+
+            objectFit="fill"
+            layout="constrained"
+            transformOptions={{fit: "cover", cropFocus: "center",}}
+          />
         </motion.div>
-        <motion.div style={{y: paralaxFast, x: 50}} css={{width: "30em", height: "30em", marginTop: "6em"}}>
-          <Image image="studio05" />
+        <motion.div style={{y: paralaxFast, x: 50}} css={{width: "30em", height: "30em", marginTop: "2em"}}>
+          <StaticImage 
+            src={`../images/Haarstudio-Marita-Interieur-2020-web-12.jpg`} 
+            alt="Haarstudio Marita"
+            objectFit="fill"
+            layout="constrained"
+            transformOptions={{fit: "cover", cropFocus: "center"}}
+          />
         </motion.div>
         </div>
 
@@ -273,7 +310,16 @@ return (
           Exaktes Zuhören. Das ist das wahre Geheimnis, um wirklich gezielt auf Ihre Wünsche eingehen zu können. Mit professioneller Schnitttechnik bringen wir Ihre Vorstellungen dann in Form. Bei uns können Sie sich inspirieren lassen.
           </p>
           <motion.div style={{y: paralaxSlow}} transition={{duration: 0.4}} css={{width: "100%", height: "30em",marginTop: "3em"}}>
-            <Image image="studio02" />
+            <StaticImage 
+              src={`../images/Haarstudio-Marita-Interieur-2020-web-2.jpg`} 
+              alt="Haarstudio Marita"
+              width={500}
+              height={600}
+              // objectFit="cover"
+              // objectPosition="50% 50%"
+              layout="constrained"
+              transformOptions={{fit: "cover", cropFocus: "center"}}
+            />
         </motion.div>
         </div>
       </FlexBox>
@@ -286,28 +332,105 @@ return (
       <p css={{textAlign: "center", maxWidth: "60%", marginBottom: "8em"}}>Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird. Ein Erlebnis, das Sie gerne weiterempfehlen und selbst aufs Neue wieder und wieder erleben möchten.</p>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em", marginBottom: "3em"}}>
         <motion.div style={{y:paralaxFast}}>
+          <div css={teamcontainer}>
+            <StaticImage 
+                src={`../images/team/team01.jpg`} 
+                alt="Marita Schindler"
+                width={360}
+                height={500}
+                objectFit="fill"
+                layout="constrained"
+                transformOptions={{fit: "cover", cropFocus: "center"}}
+            />
+          </div>
           <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={0} />
         </motion.div>
         <motion.div style={{y:paralaxSlow}}>
+          <div css={teamcontainer}>
+            <StaticImage 
+                src={`../images/team/team03.jpg`} 
+                alt={"Lisa Scheuing"} 
+                width={360}
+                height={500}
+                objectFit="fill"
+                layout="constrained"
+                transformOptions={{fit: "cover", cropFocus: "center"}}
+            />
+          </div>
           <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={0} />
         </motion.div>
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-between" css={{width: "54em", marginBottom: "3em"}}>
         <motion.div style={{y:paralaxFast}}>
+          <div css={teamcontainer}>
+            <StaticImage 
+                src={`../images/team/team06.jpg`} 
+                alt={"Dina Romano"} 
+                width={360}
+                height={500}
+                objectFit="fill"
+                layout="constrained"
+                transformOptions={{fit: "cover", cropFocus: "center"}}
+            />
+          </div>
           <TeamCard name="Dina Romano" titel="Friseurin" bild="team06" margin={0} />
         </motion.div>
         <motion.div style={{y:paralaxSlow}}>
+          <div css={teamcontainer}>
+            <StaticImage 
+                src={`../images/team/team05.jpg`} 
+                alt="Laura Ott" 
+                width={360}
+                height={500}
+                objectFit="fill"
+                layout="constrained"
+                transformOptions={{fit: "cover", cropFocus: "center"}}
+            />
+          </div>
           <TeamCard name="Laura Ott" titel="Friseurin" bild="team05" margin={0} />
         </motion.div>
         <motion.div style={{y:paralaxFast}}>
+          <div css={teamcontainer}>
+            <StaticImage 
+                src={`../images/team/team07.jpg`} 
+                alt="Simone Teetz" 
+                width={360}
+                height={500}
+                objectFit="fill"
+                layout="constrained"
+                transformOptions={{fit: "cover", cropFocus: "center"}}
+            />
+          </div>
           <TeamCard name="Simone Teetz" titel="Friseurin" bild="team07" margin={0} />
         </motion.div>
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em"}}>
         <motion.div style={{y:paralaxSlow}}>
+          <div css={teamcontainer}>
+            <StaticImage 
+                src={`../images/team/team02.jpg`} 
+                alt="Christine Siebert" 
+                width={360}
+                height={500}
+                objectFit="fill"
+                layout="constrained"
+                transformOptions={{fit: "cover", cropFocus: "center"}}
+            />
+          </div>
           <TeamCard name="Christine Siebert" titel="Assistentin" bild="team02" margin={0} />
         </motion.div>
         <motion.div style={{y:paralaxFast}}>
+          <div css={teamcontainer}>
+            <StaticImage 
+                src={`../images/team/team04.jpg`} 
+                alt={"Silvia Lickert"} 
+                width={360}
+                height={500}
+                objectFit="fill"
+                layout="constrained"
+                transformOptions={{fit: "cover", cropFocus: "center"}}
+            />
+          </div>
           <TeamCard name="Silvia Lickert" titel="Assistentin" bild="team04" margin={0} />
         </motion.div>
       </FlexBox>
@@ -360,7 +483,7 @@ return (
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
             <h4  css={{textAlign: "left"}}>Anfahrt</h4>
             <div css={{width: "400px", height: "400px", padding: "2em", background: beige}}>
-              <SimpleMap />
+              <KontaktMap />
             </div>
           </div>
       </FlexBox>
@@ -376,11 +499,11 @@ return (
     {
       isTabletOrMobile &&
       <Wrapper id="mainwrapper"  css={{scrollBehavior: "smooth"}}> 
-      <HeaderMobile siteState={siteState} position={scrollPositions} />
+      <HeaderMobile popupHandler={setPopupState} siteState={siteState} position={scrollPositions} />
       <KontaktIconMobile />
 
       <AnimatePresence>
-       {/* {popupState &&
+       {popupState &&
        <motion.div key="popup" variants={navbackground} initial="initial" animate="animate" exit="exit"  css={{width: "100vw", height: "100vh", position: "fixed", zIndex: 15}} >
           <motion.div 
             key="popupcontent" 
@@ -394,21 +517,29 @@ return (
               <div onClick={() => setPopupState(false)}  css={{padding: "0.5em", fontSize: "1.6em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " +dark, cursor: "pointer", [":hover"]: {color: beige, background: dark}}}>
                   <VscClose /> 
               </div>
-              <h4 css={{fontSize: "1.6em"}}> Lieber Besucherin, lieber Besucher,</h4>
+              <h4 css={{fontSize: "1.6em"}}> Wir suchen Dich</h4>
               <p css={{textAlign: "center"}}>
               {textblock}
               
               </p>
               <p css={{textAlign: "center", fontWeight: 600}}>
-              Ihr Haarstudio Marita Team
+              Melde dich bei uns unter 0761 484745
               </p>
         </motion.div>
       </motion.div>  
-      } */}
+      }
       </AnimatePresence>
       
-      <motion.div id="header"  css={mq({ width: `100vw`, height: [`300px`, `300px`, `50vh`, `80vh`], top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"})}>
-        <Image image="team01" css={{zIndex: 1}} />
+      <motion.div id="header"  css={mq({ width: `100vw`, height: [`auto`, `auto`, `50vh`, `80vh`], top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"})}>
+        <StaticImage 
+          src={`../images/Haarstudio-Marita-Portraits-2020-high-res-26.jpg`} 
+          alt="Haarstudio Marita Team"
+          height={300}
+          width={400}
+          objectFit="cover"
+          layout="fullWidth"
+          transformOptions={{fit: "cover", cropFocus: "center", position: "center"}}
+        />
         <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
           
           <motion.h1 css={{position: "absolute", fontSize: ["1.2em", "2.4em"], bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5}}>
@@ -417,7 +548,7 @@ return (
 
       </motion.div>
     
-    <motion.div id="wrapper" css={{position: "relative",  height: "auto", width: "auto", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%", ["h2"]: {marginTop: "6em"}}}> 
+    <motion.div id="wrapper" css={{position: "relative",  height: "auto", width: "auto", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%", ["h2"]: {marginTop: "2em"}}}> 
       <FlexContainerMobile id="angebot" align="center" justify="center">
         <FlexBoxMobile direction="column" align="center" justify="center" css={{position: "relative"}}>
           <motion.div style={{y: paralaxFast, x: "-50%"}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "10%", left: "50%", zIndex: -1}}></motion.div>
@@ -468,8 +599,15 @@ return (
       </FlexBoxMobile>
 
       <FlexBoxMobile css={{height: "auto", width: "100%", margin: "3em 0"}}>
-        <div  css={{height: "24em", width: "100%"}}>
-          <Image image="studio03" />
+        <div  css={{height: "auto", width: "100%"}}>
+          <StaticImage 
+            src={`../images/Haarstudio-Marita-Interieur-2020-web-11.jpg`} 
+            alt="Haarstudio Marita"
+            height={2400}
+            width={3600}
+            layout="constrained"
+            transformOptions={{fit: "cover", cropFocus: "center"}}
+          />
         </div>  
       </FlexBoxMobile>
       <FlexBoxMobile >
@@ -484,7 +622,14 @@ return (
       </FlexBoxMobile>
       <FlexBoxMobile>
         <div css={{width: "100%", height: "24em", marginTop: "4em"}}>
-          <Image image="studio08" />
+        <StaticImage 
+            src={`../images/Haarstudio-Marita-Interieur-2020-web-16.jpg`} 
+            alt="Haarstudio Marita"
+            height={2400}
+            width={3600}
+            layout="constrained"
+            transformOptions={{fit: "cover", cropFocus: "center"}}
+          />
         </div>
       </FlexBoxMobile>
       </FlexContainerMobile>
@@ -495,13 +640,104 @@ return (
       <p css={{textAlign: "center", marginBottom: "4em", maxWidth: "42em"}}>Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird. Ein Erlebnis, das Sie gerne weiterempfehlen und selbst aufs Neue wieder und wieder erleben möchten.</p>
       <FlexBoxMobile css={{ marginBottom: "2em"}}>
         <div css={{display: "flex", flexDirection: "row", justifyContent:"space-evenly", flexWrap: "wrap"}}> 
-          <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={2} />
-          <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={2} />
-          <TeamCard name="Dina Romano" titel="Friseurin" bild="team06" margin={2} />
-          <TeamCard name="Laura Ott" titel="Friseurin" bild="team05" margin={2} />
-          <TeamCard name="Simone Teetz" titel="Friseurin" bild="team07" margin={2} />
-          <TeamCard name="Christine Siebert" titel="Assistentin" bild="team02" margin={2} />
-          <TeamCard name="Silvia Lickert" titel="Assistentin" bild="team04" margin={2} />
+          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div css={teamcontainer}>
+              <StaticImage 
+                  src={`../images/team/team01.jpg`} 
+                  alt="Marita Schindler"
+                  width="360"
+                  height="500"
+                  objectFit="fill"
+                  layout="constrained"
+                  transformOptions={{fit: "cover", cropFocus: "center"}}
+              />
+              </div>
+              <TeamCard name="Marita Schindler" titel="Friseurmeisterin" bild="team01" margin={0} />
+          </div>
+          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div css={teamcontainer}>
+            <StaticImage 
+                src={`../images/team/team03.jpg`} 
+                alt={"Lisa Scheuing"} 
+                width={360}
+                height={500}
+                objectFit="fill"
+                layout="constrained"
+                transformOptions={{fit: "cover", cropFocus: "center"}}
+            />
+          </div>
+            <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={2} />
+          </div>
+          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div css={teamcontainer}>
+              <StaticImage 
+                  src={`../images/team/team06.jpg`} 
+                  alt={"Dina Romano"} 
+                  width="360"
+                  height="500"
+                  objectFit="fill"
+                  layout="constrained"
+                  transformOptions={{fit: "cover", cropFocus: "center"}}
+              />
+            </div>
+            <TeamCard name="Dina Romano" titel="Friseurin" bild="team06" margin={2} />
+          </div>
+          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div css={teamcontainer}>
+              <StaticImage 
+                  src={`../images/team/team05.jpg`} 
+                  alt="Laura Ott" 
+                  width="360"
+                  height="500"
+                  objectFit="fill"
+                  layout="constrained"
+                  transformOptions={{fit: "cover", cropFocus: "center"}}
+              />
+            </div>
+            <TeamCard name="Laura Ott" titel="Friseurin" bild="team05" margin={2} />
+          </div>
+          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div css={teamcontainer}>
+              <StaticImage 
+                  src={`../images/team/team07.jpg`} 
+                  alt="Simone Teetz" 
+                  width="360"
+                  height="500"
+                  objectFit="fill"
+                  layout="constrained"
+                  transformOptions={{fit: "cover", cropFocus: "center"}}
+              />
+            </div>
+            <TeamCard name="Simone Teetz" titel="Friseurin" bild="team07" margin={2} />
+          </div>
+          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div css={teamcontainer}>
+              <StaticImage 
+                  src={`../images/team/team02.jpg`} 
+                  alt="Christine Siebert" 
+                  width="360"
+                  height="500"
+                  objectFit="fill"
+                  layout="constrained"
+                  transformOptions={{fit: "cover", cropFocus: "center"}}
+              />
+            </div>
+            <TeamCard name="Christine Siebert" titel="Assistentin" bild="team02" margin={2} />
+          </div>
+          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div css={teamcontainer}>
+              <StaticImage 
+                  src={`../images/team/team04.jpg`} 
+                  alt={"Silvia Lickert"} 
+                  width="360"
+                  height="500"
+                  objectFit="fill"
+                  layout="constrained"
+                  transformOptions={{fit: "cover", cropFocus: "center"}}
+              />
+            </div>
+            <TeamCard name="Silvia Lickert" titel="Assistentin" bild="team04" margin={2} />
+          </div>
         </div>
       </FlexBoxMobile>
     </FlexContainerMobile>
@@ -557,7 +793,7 @@ return (
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
             <h4  css={{textAlign: "center"}}>Anfahrt</h4>
             <div css={{width: "300px", height: "300px", padding: "2em", background: beige}}>
-              <SimpleMap />
+              <KontaktMap />
             </div>
           </div>
           </div>

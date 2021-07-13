@@ -7,6 +7,7 @@ import { beige,  dark, light } from "./styles"
 import {IoLogoFacebook, IoLogoInstagram} from 'react-icons/io'
 import { PreislisteMobile } from "./preislisten"
 import styled from "@emotion/styled"
+import { StaticImage } from "gatsby-plugin-image"
 
 const SelectButtonMobile = styled.button({
   fontSize: "14px",
@@ -27,7 +28,7 @@ const submenu = {
 }
 
 
-const HeaderMobile = ({position }) => {
+const HeaderMobile = ({position, popupHandler }) => {
 const [menuIcon, setMenuIcon] = useState("close")
   const [subMenu, setSubMenu] = useState(false)
 const [preisliste, setPreisliste] = useState(false)
@@ -68,7 +69,13 @@ return (
       <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%"}}> 
         
         <div css={{width: "100px", padding: "0.7em 0"}}>
-          <Image image="logo" />
+          <StaticImage 
+              src={`../images/logo.png`} 
+              alt="Haarstudio Marita Logo" 
+              objectFit="fill"
+              layout="constrained"
+              width={100}
+          />
         </div>
         <motion.div animate={menuIcon === "open" ? {background: dark, color: beige} : {background: beige, color: dark}} onClick={() => subMenuHandler(!subMenu)} css={{background: beige, borderRadius: "50%", width: "36px", height: "36px", position: "relative"}}>
             <div css={{width: "20px", height: "12px", position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
@@ -81,7 +88,7 @@ return (
         
 
         <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "7em", paddingRight: "1em"}}>
-        
+          
           <div css={{padding: "0.5em", borderRadius: "50%", transition: "background 0.2s ease-in", [":hover"]: {background: beige, color: dark }}}>
             <h6 css={{marginBottom: 0, fontSize: "1.4em", cursor: "pointer", }}>
               <a target="_blank" href="https://www.instagram.com/haarstudio_marita/"><IoLogoInstagram /></a>
@@ -126,6 +133,13 @@ return (
      	<PreislisteMobile plstate={preisliste} preislisteHandler={preislisteHandler} />
    }
    </AnimatePresence>
+    <div css={{position: "fixed", right: "24px", bottom: "24px", zIndex: 8}}>
+      <motion.button onClick={()=> popupHandler(true)} css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", padding: "24px",zIndex: 13, borderRadius: "10px", cursor: "pointer", backgroundColor: beige, color: dark, border: "none", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)", transition: "background-color 0.4s ease", [":hover"] : {backgroundColor: dark, color: beige} }}>
+        <h4 css={{marginBottom: 0, lineHeight: 0, marginTop: 0, marginBlockEnd: 0, fontSize: "16px",}}>
+            Mitarbeiter*in gesucht
+        </h4>
+      </motion.button>
+    </div>
    </>
 )}
 

@@ -5,8 +5,9 @@ import React from "react"
 import Image from "./image"
 import { beige, dark } from "./styles"
 import {IoLogoFacebook, IoLogoInstagram} from 'react-icons/io'
+import { StaticImage } from "gatsby-plugin-image"
 
-const Header = ({ siteState, position, top }) => {
+const Header = ({ siteState, position, top, popupHandler }) => {
 function scrollHandlerAngebot(e) {
   window.scrollTo(0,position[e] +50 )
 }
@@ -17,7 +18,13 @@ return (
       <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", }}> 
         <Link to="/">
           <div css={{width: "160px", padding: "0.5em 0"}}>
-            <Image image="logo" />
+          <StaticImage 
+            src={`../images/logo.png`} 
+            alt="Haarstudio Marita Logo" 
+            objectFit="fill"
+            layout="constrained"
+            width={160}
+        />
           </div>
         </Link>
       {top==="start" ? 
@@ -53,7 +60,13 @@ return (
           </div>
         </div> : null
         }
-        <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "7em", paddingRight: "1em"}}>
+        <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "auto", paddingRight: "1em"}}>
+        <motion.button onClick={()=> popupHandler(true)} css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", padding: "24px",zIndex: 13, borderRadius: "10px", cursor: "pointer", backgroundColor: beige, color: dark, border: "none", transition: "background-color 0.4s ease", [":hover"] : {backgroundColor: dark, color: beige} }}>
+            <h4 css={{marginBottom: 0, lineHeight: 0, marginTop: 0, marginBlockEnd: 0, fontSize: "16px",}}>
+                Mitarbeiter*in gesucht
+            </h4>
+        </motion.button>
+          
           <div css={{padding: "0.5em", borderRadius: "50%", transition: "background 0.2s ease-in", [":hover"]: {background: beige, color: dark }}}>
             <h6 css={{marginBottom: 0, fontSize: "1.4em", cursor: "pointer", }}>
               <a target="_blank" href="https://www.instagram.com/haarstudio_marita/"><IoLogoInstagram /></a>

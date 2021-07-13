@@ -149,3 +149,12 @@ export const FlexContainerColumn = styled.div({
     }),
    
    )
+
+  export const teamcontainer = {
+     marginTop: "4em",
+     zIndex: 2, 
+     marginBottom: "6px", 
+     width: "14em", 
+     height: "18em", 
+     overflow: "hidden"
+   }

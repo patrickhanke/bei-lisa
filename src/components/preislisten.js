@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React, { useState } from 'react'
 import { beige, dark, mq, } from './styles'
 import {VscClose} from 'react-icons/vsc'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 const SelectButton = styled.button({
