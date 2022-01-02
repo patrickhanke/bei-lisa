@@ -30,11 +30,13 @@ const submenu = {
 
 const HeaderMobile = ({position, popupHandler }) => {
 const [menuIcon, setMenuIcon] = useState("close")
-  const [subMenu, setSubMenu] = useState(false)
+const [subMenu, setSubMenu] = useState(false)
 const [preisliste, setPreisliste] = useState(false)
+
 function scrollHandlerAngebot(e) {
   window.scrollTo(0,position[e] - 200 )
 }
+
 const preislisteHandler = (e) => {
   if (e === "close") {
     setMenuIcon(e)
@@ -47,6 +49,7 @@ const preislisteHandler = (e) => {
     setPreisliste(!preisliste)
   }
 }
+
 const subMenuHandler = () => {
   if (menuIcon === "open") {
     setSubMenu(false)
@@ -77,6 +80,7 @@ return (
               width={100}
           />
         </div>
+
         <motion.div animate={menuIcon === "open" ? {background: dark, color: beige} : {background: beige, color: dark}} onClick={() => subMenuHandler(!subMenu)} css={{background: beige, borderRadius: "50%", width: "36px", height: "36px", position: "relative"}}>
             <div css={{width: "20px", height: "12px", position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
                 <motion.div animate={menuIcon === "open" ? {background: beige, top: 0, opacity: 0} : {background: dark, opacity: 1}} css={{height: "2px", width: "100%", borderRadius: "3px", position: "absolute"}} />
@@ -85,10 +89,7 @@ return (
             </div>
         </motion.div>
 
-        
-
         <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "7em", paddingRight: "1em"}}>
-          
           <div css={{padding: "0.5em", borderRadius: "50%", transition: "background 0.2s ease-in", [":hover"]: {background: beige, color: dark }}}>
             <h6 css={{marginBottom: 0, fontSize: "1.4em", cursor: "pointer", }}>
               <a target="_blank" href="https://www.instagram.com/haarstudio_marita/"><IoLogoInstagram /></a>
@@ -101,30 +102,23 @@ return (
           </div>
         </div>
       </div>
-      
-     
-     
   </header>
+
    <AnimatePresence exitBeforeEnter>
    {subMenu === true &&
    <motion.div key="submenu" variants={submenu} initial="initial" animate="animate" exit="exit" css={{background: beige, boxShadow: "0 0 6px 3px rgba(0,0,0,0.2)", left: 0, zIndex: 6, padding: "0 2em", position: "fixed", height: "60px", width: "100vw", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}> 
-     
-             <div  onClick={() => scrollHandlerAngebot("angebot")}>
-                 Salon
-             </div>
-           
-
-             <div onClick={() => scrollHandlerAngebot("team")}>
-                 Team
-             </div>
-           
-           <div onClick={() => scrollHandlerAngebot("kontakt")}>
-               Kontakt
-           </div>
-
-           <SelectButtonMobile background={beige} color={dark} onClick={() => preislisteHandler("open")}>
-               Preisliste
-           </SelectButtonMobile>
+      <div  onClick={() => scrollHandlerAngebot("angebot")}>
+          Salon
+      </div>
+      <div onClick={() => scrollHandlerAngebot("team")}>
+          Team
+      </div>
+      <div onClick={() => scrollHandlerAngebot("kontakt")}>
+          Kontakt
+      </div>
+      <SelectButtonMobile background={beige} color={dark} onClick={() => preislisteHandler("open")}>
+          Preisliste
+    </SelectButtonMobile>
 
    </motion.div>
 
@@ -133,13 +127,13 @@ return (
      	<PreislisteMobile plstate={preisliste} preislisteHandler={preislisteHandler} />
    }
    </AnimatePresence>
-    <div css={{position: "fixed", right: "24px", bottom: "24px", zIndex: 8}}>
+    {/* <div css={{position: "fixed", right: "24px", bottom: "24px", zIndex: 8}}>
       <motion.button onClick={()=> popupHandler(true)} css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", padding: "24px",zIndex: 13, borderRadius: "10px", cursor: "pointer", backgroundColor: beige, color: dark, border: "none", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)", transition: "background-color 0.4s ease", [":hover"] : {backgroundColor: dark, color: beige} }}>
         <h4 css={{marginBottom: 0, lineHeight: 0, marginTop: 0, marginBlockEnd: 0, fontSize: "16px",}}>
             Mitarbeiter*in gesucht
         </h4>
       </motion.button>
-    </div>
+    </div> */}
    </>
 )}
 

@@ -161,7 +161,7 @@ return (
     <KontaktIcon /> 
     <Preisliste />
    
-    <AnimatePresence>
+    {/* <AnimatePresence>
        {popupState &&
        <motion.div key="popup" variants={navbackground} initial="initial" animate="animate" exit="exit"  css={{width: "100vw", height: "100vh", position: "fixed", zIndex: 15}} >
           <motion.div 
@@ -186,7 +186,7 @@ return (
         </motion.div>
       </motion.div>  
       }
-    </AnimatePresence>    
+    </AnimatePresence>     */}
         
     <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
     
