@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "author": "Patrick Hanke",
   "dependencies": {
+    "@apollo/client": "^3.5.6",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@react-google-maps/api": "^2.2.0",
@@ -20,6 +21,7 @@
     "gatsby-plugin-sharp": "^3.9.0",
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-transformer-sharp": "^3.9.0",
+    "isomorphic-fetch": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

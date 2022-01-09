@@ -4,6 +4,58 @@ import { beige, dark, mq, } from './styles'
 import {VscClose} from 'react-icons/vsc'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
+import { gql, useQuery } from '@apollo/client'
+
+const PREISLISTEN = gql`
+query Frisuren {
+  kategorien {
+    id
+    ueberschrift
+    kategorie
+  }
+  frisuren {
+    id
+    titel
+    reihenfolge
+    preis
+    kategorie {
+      id
+      ueberschrift
+      kategorie
+    }
+    absatz
+    information
+  }
+  preiseFuT {
+    id
+    titel
+    reihenfolge
+    preis
+    kategorie {
+      id
+      ueberschrift
+      kategorie
+    }
+    absatz
+    information
+  }
+  preisePuMU {
+    id
+    titel
+    reihenfolge
+    preis
+    kategorie {
+      id
+      ueberschrift
+      kategorie
+    }
+    absatz
+    information
+  }
+}
+`
+
+
 
 const SelectButton = styled.button({
     fontSize: "16px",
@@ -62,8 +114,39 @@ const sidebar = {
   };
 
 export const Preisliste = () => {
-    const [open, setOpen] = useState(false)
-    const [sliderState, setSliderState] = useState("frisuren")
+    const {data} = useQuery(PREISLISTEN);
+    const [open, setOpen] = useState(false);
+    const [sliderState, setSliderState] = useState("Frisuren");
+
+    const kategorienArray = [];
+    const kategorieObjects = [];
+    const preisArray = []
+
+    if (data) {
+        data.kategorien.map(kategorie => {
+            if (!kategorienArray.includes(kategorie.kategorie)){
+                kategorienArray.push(kategorie.kategorie)
+                kategorieObjects[kategorie.kategorie]  = {
+                    kategorie: kategorie.kategorie,
+                    ueberschriften: [kategorie.ueberschrift]
+                }
+            } else {
+                kategorieObjects[kategorie.kategorie].ueberschriften.push(kategorie.ueberschrift) 
+            }
+
+        })
+        data.frisuren.map(frisur => {
+            preisArray.push(frisur)
+        })
+        data.preiseFuT.map(frisur => {
+            preisArray.push(frisur)
+        })
+        data.preisePuMU.map(frisur => {
+            preisArray.push(frisur)
+        })
+        preisArray.sort((a,b) => a.reihenfolge - b.reihenfolge)
+    }
+
     return (
         <motion.div
             initial={false}
@@ -91,208 +174,54 @@ export const Preisliste = () => {
                                 </div>
                             </div> 
                             <div css={{width: "100%", display: "flex", flexDirection: "row", alignItems: "flex-start", justifyContent: "space-between", padding: "0 1em 1em 1em", borderBottom: "1px solid " + dark}}>
-                                <SelectButton background={sliderState === "frisuren" ? dark : "transparent"} color={sliderState === "frisuren" ? beige : dark} onClick={() => setSliderState("frisuren")}>Frisuren</SelectButton>
-                                <SelectButton background={sliderState === "faerben" ?  dark :  "transparent"} color={sliderState === "faerben" ? beige : dark} onClick={() => setSliderState("faerben")}>Färben & Tönen</SelectButton>
-                                <SelectButton background={sliderState === "extensions" ? dark : "transparent"} color={sliderState === "extensions" ? beige : dark} onClick={() => setSliderState("extensions")}>Pflege & Make-up</SelectButton>
+                                {kategorienArray.length > 0 && kategorienArray.map(kategorie =>  <SelectButton background={sliderState === kategorie ? dark : "transparent"} color={sliderState === kategorie ? beige : dark} onClick={() => setSliderState(kategorie)}>{kategorie}</SelectButton> )}
                             </div>
                             <AnimatePresence exitBeforeEnter> 
-                            {sliderState === "frisuren" &&
-                            <motion.div className="preiscontainer" key="frisuren" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em"}}> 
-                                
-                                <h4 css={{marginTop: "0.5em"}}>Damen</h4>
-                                <div css={{width: "100%"}}>
-                                <div css={{width: "100%"}}> 
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Schneiden
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            ab 35 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Neuschnitt Plus
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            10 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Föhnen oder Legen kurz
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            16 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Föhnen oder Legen mittel
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            20 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Föhnen oder Legen lang
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            25 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Hochsteckfrisur                                    
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            ab 20 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Hochzeits-Paket inkl Probetermin                                    
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            150 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: "1em"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Dauerwelle
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            38 - 58 €
-                                        </p>
-                                    </div>
-                                </div> 
-                                <h4>Herren</h4>
-                                <div css={{width: "100%"}}>
-                                <div css={{width: "100%"}}> 
-                                    <div className="preiscontainer" css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Haarkranz schneiden
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            14 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Maschinenschnitt
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            14 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Konturenschnitt
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            20 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Haarschnitt
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            28 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Vollbart schneiden
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            15 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Americen Crew Farbe                                    
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            7 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: "1em"}}>
-                                        <p css={{color: dark + " !important", fontWeight: 600}}>
-                                            Alles inkl. Shampoo, Gel, Wachs oder Haarspray sowie eine Gesichts-Kompresse Heiß oder Kalt                                 
-                                        </p>
-                                    </div>
-                                </div> 
-                               
-                                
-                            </div>
-                            <h4>Kinder</h4>
-                                <div css={{width: "100%"}}> 
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Mädchen und Jungen bis 6 Jahre
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            17 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Jungen bis 12 Jahre
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            24 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Mädchen von 6 bis 10 Jahre
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            22 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Mädchen von 10 bis 12 Jahre
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            28 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Föhnen oder Legen kurz
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            16 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Föhnen oder Legen mittel
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            20 €
-                                        </p>
-                                    </div>
-                                    <div css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-                                        <p css={{color: dark + " !important"}}>
-                                            Föhnen oder Legen lang
-                                        </p>
-                                        <p css={{color: dark + " !important"}}>
-                                            25 €
-                                        </p>
-                                    </div>
-                                    
-                                </div> 
-              
-                            </div>
-                            
+                            {Object.keys(kategorieObjects).length > 0 && Object.keys(kategorieObjects).map(kategorieId => {
+                            console.log(kategorieObjects[kategorieId])
+                            return sliderState === kategorieObjects[kategorieId].kategorie &&
+                            <motion.div className="preiscontainer" key="frisuren" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em", ['p']: {lineHeight: '2.1em'}}}> 
+                                {
+                                    kategorieObjects[kategorieId].ueberschriften.map(ueberschrift => 
+                                        {
+                                            
+                                                return <>
+                                                    <h4 css={{marginTop: "1em", marginBlockEnd: ".5em"}}>{ueberschrift}</h4>
+                                                    {preisArray.map(preis => {
+                                                        if (preis.kategorie?.ueberschrift === ueberschrift && preis.information) {
+                                                            return (
+                                                                <div key={ueberschrift + preis.titel} css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: preis.absatz  ? "1em" : "0em"}}>
+                                                                    <p css={{color: dark + " !important",  fontWeight: 600}}>
+                                                                        {preis.titel}
+                                                                    </p>
+                                                                </div>
 
+                                                            )
+                                                        }
+                                                        if (preis.kategorie?.ueberschrift === ueberschrift) {
+                                                            return (
+                                                                <div key={ueberschrift + preis.titel} css={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: preis.absatz  ? "1em" : "0em"}}>
+                                                                    <p css={{color: dark + " !important"}}>
+                                                                        {preis.titel}
+                                                                    </p>
+                                                                    <p css={{color: dark + " !important"}}>
+                                                                        {preis.preis} €
+                                                                    </p>
+                                                                </div>
+
+                                                            )
+                                                        }
+                                                        return null
+                                                    })}
+                                                </>
+                                            
+                                        }
+                                    )
+                                }
+                                
+                             
                             </motion.div>
-                            }
+                            })}
                             {
                                 sliderState === "faerben" && 
                                 <motion.div className="preiscontainer" key="faerben" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em"}}> 

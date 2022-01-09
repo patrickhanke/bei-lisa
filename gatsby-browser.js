@@ -1,4 +1,12 @@
+import React  from 'react';
+import { ApolloProvider } from '@apollo/client';
+import { client } from './src/provider/apollo/client';
 
+export const wrapRootElement = ({ element }) => (
+    <ApolloProvider client={client}>
+            {element}
+    </ApolloProvider>
+);
 
 
 
@@ -6,9 +14,6 @@ export const shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition
 }) => {
-  
-  
-  
   // transition duration from `layout.js` * 1000 to get time in ms
   const TRANSITION_DELAY = 0.3 * 1000 * 2
 
