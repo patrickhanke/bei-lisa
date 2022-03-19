@@ -191,16 +191,16 @@ return (
     <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
     
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
-      {/* <StaticImage 
-        src={`../images/Haarstudio-Marita-Portraits-2020-high-res-26.jpg`} 
+      <StaticImage 
+        src={`../images/Haarstudio-Marita-Interieur-2020-web-9.jpg`} 
         alt="Haarstudio Marita Team" 
         objectFit="fill"
         layout="constrained"
         transformOptions={{fit: "cover", cropFocus: "center", position: "centre"}}
-      /> */}
+      />
       <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4, top: 0 }}></div>
         
-        <motion.h1 style={{y: yMedium, x:"-50%"}} css={{position: "absolute", color: dark, top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
+        <motion.h1 style={{y: yMedium, x:"-50%"}} css={{position: "absolute", color: white, top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
           Haarstudio <br />Marita
           </motion.h1>
 
@@ -375,7 +375,7 @@ return (
           </div>
           <TeamCard name="Dina Romano" titel="Friseurin" bild="team06" margin={0} />
         </motion.div> */}
-        <motion.div style={{y:paralaxSlow}}>
+        {/* <motion.div style={{y:paralaxSlow}}>
           <div css={teamcontainer}>
             <StaticImage 
                 src={`../images/team/team05.jpg`} 
@@ -388,8 +388,8 @@ return (
             />
           </div>
           <TeamCard name="Laura Ott" titel="Friseurin" bild="team05" margin={0} />
-        </motion.div>
-        <motion.div style={{y:paralaxFast}}>
+        </motion.div> */}
+        {/* <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
             <StaticImage 
                 src={`../images/team/team07.jpg`} 
@@ -402,7 +402,7 @@ return (
             />
           </div>
           <TeamCard name="Simone Teetz" titel="Friseurin" bild="team07" margin={0} />
-        </motion.div>
+        </motion.div> */}
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em"}}>
         <motion.div style={{y:paralaxSlow}}>
@@ -532,7 +532,7 @@ return (
       
       <motion.div id="header"  css={mq({ width: `100vw`, height: [`auto`, `auto`, `50vh`, `80vh`], top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"})}>
         <StaticImage 
-          src={`../images/Haarstudio-Marita-Portraits-2020-high-res-26.jpg`} 
+          src={`../images/Haarstudio-Marita-Interieur-2020-web-9.jpg`} 
           alt="Haarstudio Marita Team"
           height={300}
           width={400}
@@ -542,7 +542,7 @@ return (
         />
         <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
           
-          <motion.h1 css={{position: "absolute", fontSize: ["1.2em", "2.4em"], bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5}}>
+          <motion.h1 css={{position: "absolute", fontSize: ["1.8rem", "2.4rem"], bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5}}>
             Haarstudio Marita
           </motion.h1>
 
@@ -682,7 +682,7 @@ return (
             </div>
             <TeamCard name="Dina Romano" titel="Friseurin" bild="team06" margin={2} />
           </div> */}
-          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+          {/* <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
               <StaticImage 
                   src={`../images/team/team05.jpg`} 
@@ -695,8 +695,8 @@ return (
               />
             </div>
             <TeamCard name="Laura Ott" titel="Friseurin" bild="team05" margin={2} />
-          </div>
-          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+          </div> */}
+          {/* <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
               <StaticImage 
                   src={`../images/team/team07.jpg`} 
@@ -709,7 +709,7 @@ return (
               />
             </div>
             <TeamCard name="Simone Teetz" titel="Friseurin" bild="team07" margin={2} />
-          </div>
+          </div> */}
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
               <StaticImage 
