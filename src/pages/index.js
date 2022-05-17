@@ -194,9 +194,9 @@ return (
       <StaticImage 
         src={`../images/Haarstudio-Marita-Interieur-2020-web-9.jpg`} 
         alt="Haarstudio Marita Team" 
-        objectFit="fill"
+        objectFit="cover"
         layout="constrained"
-        transformOptions={{fit: "cover", cropFocus: "center", position: "centre"}}
+        style={{width: '100%', height: '100%', position: 'relative'}}
       />
       <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4, top: 0 }}></div>
         
