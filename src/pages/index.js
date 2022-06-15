@@ -774,8 +774,6 @@ return (
                 <p css={{color: dark + " !important"}}>
                   Freitag 08:00 - 18:00
                 </p>
-               
-
           </div>
           <div css={{background: "transparent" , color: dark, padding: "2em 2em"}}>
             <h4 css={{textAlign: "center"}}>Hier finden Sie uns</h4>
