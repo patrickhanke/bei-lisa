@@ -360,12 +360,12 @@ return (
           <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={0} />
         </motion.div>
       </FlexBox>
-      <FlexBox direction="row" align="flex-start" justify="space-between" css={{width: "54em", marginBottom: "3em"}}>
-        {/* <motion.div style={{y:paralaxFast}}>
+      <FlexBox direction="row" align="flex-start" justify="space-between" css={{width: "54em", marginBottom: "6em"}}>
+        <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/team06.jpg`} 
-                alt={"Dina Romano"} 
+                src={`../images/team/havva_figlestahler.jpg`} 
+                alt={"Havva Figlestahler"} 
                 width={360}
                 height={500}
                 objectFit="fill"
@@ -373,13 +373,13 @@ return (
                 transformOptions={{fit: "cover", cropFocus: "center"}}
             />
           </div>
-          <TeamCard name="Dina Romano" titel="Friseurin" bild="team06" margin={0} />
-        </motion.div> */}
-        {/* <motion.div style={{y:paralaxSlow}}>
+          <TeamCard name="Havva Figlestahler" titel="Friseurmeisterin" bild="havva_figlestahler" margin={0} />
+        </motion.div>
+        <motion.div style={{y:paralaxSlow}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/team05.jpg`} 
-                alt="Laura Ott" 
+                src={`../images/team/lirije_berisa.jpg`} 
+                alt="Lirije Berisa" 
                 width={360}
                 height={500}
                 objectFit="fill"
@@ -387,8 +387,8 @@ return (
                 transformOptions={{fit: "cover", cropFocus: "center"}}
             />
           </div>
-          <TeamCard name="Laura Ott" titel="Friseurin" bild="team05" margin={0} />
-        </motion.div> */}
+          <TeamCard name="Lirije Berisa" titel="Gesellin" bild="lirije_berisa" margin={0} />
+        </motion.div>
         {/* <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
             <StaticImage 
@@ -408,7 +408,7 @@ return (
         <motion.div style={{y:paralaxSlow}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/team02.jpg`} 
+                src={`../images/team/christine_siebert.jpg`} 
                 alt="Christine Siebert" 
                 width={360}
                 height={500}
@@ -417,7 +417,7 @@ return (
                 transformOptions={{fit: "cover", cropFocus: "center"}}
             />
           </div>
-          <TeamCard name="Christine Siebert" titel="Assistentin" bild="team02" margin={0} />
+          <TeamCard name="Christine Siebert" titel="Assistentin" bild="christine_siebert" margin={0} />
         </motion.div>
         <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
@@ -668,34 +668,34 @@ return (
           </div>
             <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={2} />
           </div>
-          {/* <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-            <div css={teamcontainer}>
+          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <div css={teamcontainer}>
+            <StaticImage 
+                src={`../images/team/havva_figlestahler.jpg`} 
+                alt={"Havva Figlestahler"} 
+                width={360}
+                height={500}
+                objectFit="fill"
+                layout="constrained"
+                transformOptions={{fit: "cover", cropFocus: "center"}}
+              />
+            </div>
+            <TeamCard name="Havva Figlestahler" titel="Friseurmeisterin" bild="havva_figlestahler" margin={0} />
+          </div>
+          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <div css={teamcontainer}>
               <StaticImage 
-                  src={`../images/team/team06.jpg`} 
-                  alt={"Dina Romano"} 
-                  width="360"
-                  height="500"
+                  src={`../images/team/lirije_berisa.jpg`} 
+                  alt="Lirije Berisa" 
+                  width={360}
+                  height={500}
                   objectFit="fill"
                   layout="constrained"
                   transformOptions={{fit: "cover", cropFocus: "center"}}
               />
             </div>
-            <TeamCard name="Dina Romano" titel="Friseurin" bild="team06" margin={2} />
-          </div> */}
-          {/* <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-            <div css={teamcontainer}>
-              <StaticImage 
-                  src={`../images/team/team05.jpg`} 
-                  alt="Laura Ott" 
-                  width="360"
-                  height="500"
-                  objectFit="fill"
-                  layout="constrained"
-                  transformOptions={{fit: "cover", cropFocus: "center"}}
-              />
-            </div>
-            <TeamCard name="Laura Ott" titel="Friseurin" bild="team05" margin={2} />
-          </div> */}
+            <TeamCard name="Lirije Berisa" titel="Gesellin" bild="team05" margin={2} />
+          </div>
           {/* <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
               <StaticImage 
@@ -713,7 +713,7 @@ return (
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
               <StaticImage 
-                  src={`../images/team/team02.jpg`} 
+                  src={`../images/team/christine_siebert.jpg`} 
                   alt="Christine Siebert" 
                   width="360"
                   height="500"
@@ -722,7 +722,7 @@ return (
                   transformOptions={{fit: "cover", cropFocus: "center"}}
               />
             </div>
-            <TeamCard name="Christine Siebert" titel="Assistentin" bild="team02" margin={2} />
+            <TeamCard name="Christine Siebert" titel="Assistentin" bild="christine_siebert" margin={2} />
           </div>
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
