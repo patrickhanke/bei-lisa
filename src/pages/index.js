@@ -389,7 +389,24 @@ return (
           </div>
           <TeamCard name="Lirije Berisa" titel="Gesellin" bild="lirije_berisa" margin={0} />
         </motion.div>
-        {/* <motion.div style={{y:paralaxFast}}>
+        <motion.div style={{y:paralaxFast}}>
+          <div css={teamcontainer}>
+            <StaticImage 
+                src={`../images/team/team05.jpg`} 
+                alt="Laura Ott" 
+                width={360}
+                height={500}
+                objectFit="fill"
+                layout="constrained"
+                transformOptions={{fit: "cover", cropFocus: "center"}}
+            />
+          </div>
+          <TeamCard name="Laura Ott" titel="Friseurin" />
+          <p css={{fontSize: '.6rem !important', color: beige + ' !important', lineHeight: '1 !important'}}> Beginnt wieder am 14. Februar </p>
+        </motion.div>
+      </FlexBox>
+      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em"}}>
+        <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
             <StaticImage 
                 src={`../images/team/team07.jpg`} 
@@ -401,10 +418,9 @@ return (
                 transformOptions={{fit: "cover", cropFocus: "center"}}
             />
           </div>
-          <TeamCard name="Simone Teetz" titel="Friseurin" bild="team07" margin={0} />
-        </motion.div> */}
-      </FlexBox>
-      <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em"}}>
+          <TeamCard name="Simone Teetz" titel="Friseurin"  />
+          <p css={{fontSize: '.6rem !important', color: beige + ' !important', lineHeight: '1 !important'}}> Beginnt wieder am 2. Mai </p>
+        </motion.div>
         <motion.div style={{y:paralaxSlow}}>
           <div css={teamcontainer}>
             <StaticImage 
@@ -431,7 +447,7 @@ return (
                 transformOptions={{fit: "cover", cropFocus: "center"}}
             />
           </div>
-          <TeamCard name="Silvia Lickert" titel="Assistentin" bild="team04" margin={0} />
+          <TeamCard name="Silvia Lickert" titel="Assistentin" bild="team04" />
         </motion.div>
       </FlexBox>
     </FlexContainer>
@@ -645,8 +661,8 @@ return (
               <StaticImage 
                   src={`../images/team/team01.jpg`} 
                   alt="Marita Schindler"
-                  width="360"
-                  height="500"
+                  width={360}
+                  height={500}
                   objectFit="fill"
                   layout="constrained"
                   transformOptions={{fit: "cover", cropFocus: "center"}}
@@ -694,29 +710,45 @@ return (
                   transformOptions={{fit: "cover", cropFocus: "center"}}
               />
             </div>
-            <TeamCard name="Lirije Berisa" titel="Gesellin" bild="team05" margin={2} />
+            <TeamCard name="Lirije Berisa" titel="Gesellin" />
           </div>
-          {/* <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
               <StaticImage 
-                  src={`../images/team/team07.jpg`} 
-                  alt="Simone Teetz" 
-                  width="360"
-                  height="500"
+                  src={`../images/team/team05.jpg`} 
+                  alt="Laura Ott" 
+                  width={360}
+                  height={500}
                   objectFit="fill"
                   layout="constrained"
                   transformOptions={{fit: "cover", cropFocus: "center"}}
               />
             </div>
-            <TeamCard name="Simone Teetz" titel="Friseurin" bild="team07" margin={2} />
-          </div> */}
+            <TeamCard name="Laura Ott" titel="Friseurin" />
+            <p css={{fontSize: '.6rem !important', color: beige + ' !important', lineHeight: '1 !important'}}> Beginnt wieder am 14. Februar </p>
+          </div>
+          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div css={teamcontainer}>
+              <StaticImage 
+                  src={`../images/team/team07.jpg`} 
+                  alt="Simone Teetz" 
+                  width={360}
+                  height={500}
+                  objectFit="fill"
+                  layout="constrained"
+                  transformOptions={{fit: "cover", cropFocus: "center"}}
+              />
+            </div>
+            <TeamCard name="Simone Teetz" titel="Friseurin"/>
+            <p css={{fontSize: '.6rem !important', color: beige + ' !important', lineHeight: '1 !important'}}> Beginnt wieder am 2. Mai </p>
+          </div>
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
               <StaticImage 
                   src={`../images/team/christine_siebert.jpg`} 
                   alt="Christine Siebert" 
-                  width="360"
-                  height="500"
+                  width={360}
+                  height={500}
                   objectFit="fill"
                   layout="constrained"
                   transformOptions={{fit: "cover", cropFocus: "center"}}
@@ -729,8 +761,8 @@ return (
               <StaticImage 
                   src={`../images/team/team04.jpg`} 
                   alt={"Silvia Lickert"} 
-                  width="360"
-                  height="500"
+                  width={360}
+                  height={500}
                   objectFit="fill"
                   layout="constrained"
                   transformOptions={{fit: "cover", cropFocus: "center"}}
