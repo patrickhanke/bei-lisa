@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import { beige, dark, darkgrey, FlexBox, FlexContainer,light, Wrapper, FlexBoxMobile, FlexContainerMobile, mq, white, teamcontainer } from "../components/styles"
 import TeamCard from "../components/teamcard"
 import Footer from "../components/footer"
-import { AnimatePresence, motion, useSpring, useTransform, useViewportScroll } from "framer-motion"
+import { AnimatePresence, motion, useScroll, useSpring, useTransform } from "framer-motion"
 import Header from "../components/header"
 import KontaktMap from "../components/google-map"
 import KontaktIcon, { KontaktIconMobile } from "../components/kontakticon"
@@ -38,7 +38,7 @@ const [mainHeight, setmainHeight] = useState()
 const [siteState, setSiteState] = useState()
 const [scrollheight, setScrollheight] = useState()
 const [scrollPositions, setScrollPositions] = useState()
-const {scrollY, scrollYProgress} = useViewportScroll() 
+const {scrollY, scrollYProgress} = useScroll() 
 const [popupState, setPopupState] = useState(false)
 
 const scrollSlow = useTransform(scrollY, value => -0.6*  value  )
@@ -52,6 +52,8 @@ const paralaxfast = useTransform(scrollYProgress, scrollRange, yRangeLarge)
 const paralaxslow = useTransform(scrollYProgress, scrollRange, yRangeNarrow)
 const paralaxFast = useSpring(paralaxfast, {damping: 99, stiffness: 200 })
 const paralaxSlow = useSpring(paralaxslow, {damping: 99, stiffness: 200 })
+
+console.log(scrollYProgress)
 
 const scrollbar = useTransform(scrollYProgress, value => value * 100  )
 
@@ -95,6 +97,7 @@ const handleScroll = (e) => {
   section2 = getPositions(salonTop)
   section3 = getPositions(teamTop)
   section4 = getPositions(kontaktTop)
+
   setScrollPositions(
     {
       start: 0,
@@ -140,6 +143,8 @@ useEffect(() => {
   handleScroll()
   return
 },[])
+
+console.log(paralaxfast)
 
 // useEffect(() => {
 //   setTimeout(() => {
@@ -188,7 +193,7 @@ return (
       }
     </AnimatePresence>     */}
         
-    <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
+    {/* <motion.div style={{scaleY: scrollanimation, originY: 0 }}  css={{position: "fixed", top:0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} /> */}
     
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
       <StaticImage 
@@ -210,7 +215,7 @@ return (
     
     <FlexContainer id="angebot" align="center" justify="center">
       <FlexBox direction="column" align="center" justify="center">
-      <motion.div style={{y: paralaxFast, x: "-50%"}} css={{width: "8em", height: "8em", backgroundColor: beige, borderRadius: "50%", position: "absolute", top: "10%", left: "50%",  zIndex: -1}}></motion.div>
+      <motion.div  style={{y: paralaxFast || 450, x: "-50%"}} css={{width: "8em", height: "8em", backgroundColor: beige, borderRadius: "50%", position: "absolute", top: "10%", left: "50%",  zIndex: -1}}></motion.div>
         <h2 css={{textAlign: "right", color: beige}}>Wir bieten alles für Ihre Haare:</h2>
         <div css={{color: darkgrey}}>
         <div css={{zIndex: 13}}>
