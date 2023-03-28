@@ -210,7 +210,7 @@ return (
     
     <FlexContainer id="angebot" align="center" justify="center">
       <FlexBox direction="column" align="center" justify="center">
-      <motion.div style={{y: paralaxFast, x: "-50%"}} css={{width: "8em", height: "8em", background: beige, borderRadius: "50%", position: "absolute", top: "10%", left: "50%",  zIndex: -1}}></motion.div>
+      <motion.div style={{y: paralaxFast, x: "-50%"}} css={{width: "8em", height: "8em", backgroundColor: beige, borderRadius: "50%", position: "absolute", top: "10%", left: "50%",  zIndex: -1}}></motion.div>
         <h2 css={{textAlign: "right", color: beige}}>Wir bieten alles für Ihre Haare:</h2>
         <div css={{color: darkgrey}}>
         <div css={{zIndex: 13}}>
@@ -402,25 +402,9 @@ return (
             />
           </div>
           <TeamCard name="Laura Ott" titel="Friseurin" />
-          <p css={{fontSize: '.6rem !important', color: beige + ' !important', lineHeight: '1 !important'}}> Beginnt wieder am 14. Februar </p>
         </motion.div>
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em"}}>
-        <motion.div style={{y:paralaxFast}}>
-          <div css={teamcontainer}>
-            <StaticImage 
-                src={`../images/team/team07.jpg`} 
-                alt="Simone Teetz" 
-                width={360}
-                height={500}
-                objectFit="fill"
-                layout="constrained"
-                transformOptions={{fit: "cover", cropFocus: "center"}}
-            />
-          </div>
-          <TeamCard name="Simone Teetz" titel="Friseurin"  />
-          <p css={{fontSize: '.6rem !important', color: beige + ' !important', lineHeight: '1 !important'}}> Beginnt wieder am 2. Mai </p>
-        </motion.div>
         <motion.div style={{y:paralaxSlow}}>
           <div css={teamcontainer}>
             <StaticImage 
@@ -725,22 +709,6 @@ return (
               />
             </div>
             <TeamCard name="Laura Ott" titel="Friseurin" />
-            <p css={{fontSize: '.6rem !important', color: beige + ' !important', lineHeight: '1 !important'}}> Beginnt wieder am 14. Februar </p>
-          </div>
-          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-            <div css={teamcontainer}>
-              <StaticImage 
-                  src={`../images/team/team07.jpg`} 
-                  alt="Simone Teetz" 
-                  width={360}
-                  height={500}
-                  objectFit="fill"
-                  layout="constrained"
-                  transformOptions={{fit: "cover", cropFocus: "center"}}
-              />
-            </div>
-            <TeamCard name="Simone Teetz" titel="Friseurin"/>
-            <p css={{fontSize: '.6rem !important', color: beige + ' !important', lineHeight: '1 !important'}}> Beginnt wieder am 2. Mai </p>
           </div>
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
