@@ -104,7 +104,7 @@ return (
       </div>
   </header>
 
-   <AnimatePresence exitBeforeEnter>
+   <AnimatePresence mode='wait'>
    {subMenu === true &&
    <motion.div key="submenu" variants={submenu} initial="initial" animate="animate" exit="exit" css={{background: beige, boxShadow: "0 0 6px 3px rgba(0,0,0,0.2)", left: 0, zIndex: 6, padding: "0 2em", position: "fixed", height: "60px", width: "100vw", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}> 
       <div  onClick={() => scrollHandlerAngebot("angebot")}>

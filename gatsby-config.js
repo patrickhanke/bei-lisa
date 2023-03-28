@@ -11,6 +11,7 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+        ignore: [`**/\.*`]
       },
     },
     `gatsby-plugin-image`,

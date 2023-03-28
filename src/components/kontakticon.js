@@ -47,7 +47,7 @@ const KontaktIcon = () => {
             css={{position: "fixed", bottom: "24px", left: "24px",zIndex: 12, }}
             >
 
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence mode='wait'>
                 {open === true &&
                 <motion.div 
                     variants={popup}  
@@ -109,7 +109,7 @@ export const KontaktIconMobile = () => {
             css={{position: "fixed", bottom: "30px", left: "30px",zIndex: 12, }}
             >
 
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence mode='wait'>
                 {open === true &&
                 <motion.div 
                     variants={popup}  

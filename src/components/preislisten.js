@@ -155,7 +155,7 @@ export const Preisliste = () => {
             css={{position: "fixed", bottom: "30px", right: "30px",zIndex: 12, }}
             >
 
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence mode='wait'>
                 {open === true &&
                 <motion.div 
                     variants={popup}  
@@ -176,7 +176,7 @@ export const Preisliste = () => {
                             <div css={{width: "100%", display: "flex", flexDirection: "row", alignItems: "flex-start", justifyContent: "space-between", padding: "0 1em 1em 1em", borderBottom: "1px solid " + dark}}>
                                 {kategorienArray.length > 0 && kategorienArray.map(kategorie =>  <SelectButton background={sliderState === kategorie ? dark : "transparent"} color={sliderState === kategorie ? beige : dark} onClick={() => setSliderState(kategorie)}>{kategorie}</SelectButton> )}
                             </div>
-                            <AnimatePresence exitBeforeEnter> 
+                            <AnimatePresence mode='wait'> 
                             {Object.keys(kategorieObjects).length > 0 && Object.keys(kategorieObjects).map(kategorieId => {
                             return sliderState === kategorieObjects[kategorieId].kategorie &&
                             <motion.div className="preiscontainer" key="frisuren" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em", ['p']: {lineHeight: '2.1em'}}}> 
@@ -293,7 +293,7 @@ export const PreislisteMobile = ({preislisteHandler}) => {
                     <div css={{width: "100%", display: "flex", flexDirection: "row", alignItems: "flex-start", justifyContent: "space-between", padding: "0 1em 1em 1em", borderBottom: "1px solid " + dark}}>
                         {kategorienArray.length > 0 && kategorienArray.map(kategorie =>  <SelectButtonMobile background={sliderState === kategorie ? dark : "transparent"} color={sliderState === kategorie ? beige : dark} onClick={() => setSliderState(kategorie)}>{kategorie}</SelectButtonMobile> )}
                     </div>
-                    <AnimatePresence exitBeforeEnter> 
+                    <AnimatePresence mode='wait'> 
                     {Object.keys(kategorieObjects).length > 0 && Object.keys(kategorieObjects).map(kategorieId => {
                     return sliderState === kategorieObjects[kategorieId].kategorie &&
                     <motion.div className="preiscontainer" key="frisuren" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em", ['p']: {lineHeight: '2.1em'}}}> 
