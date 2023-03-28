@@ -16,7 +16,6 @@ import { Preisliste } from "../components/preislisten"
 import { StaticImage } from "gatsby-plugin-image"
 import { VscClose } from "react-icons/vsc"
 
-
 const navbackground = {
   initial: {backgroundColor: "rgba(0,0,0,0)", transition: {delay: 0, duration: 0.6}},
   animate: {backgroundColor: "rgba(0,0,0,0.3)", transition: {delay: 0, duration: 0.6}},
@@ -52,8 +51,6 @@ const paralaxfast = useTransform(scrollYProgress, scrollRange, yRangeLarge)
 const paralaxslow = useTransform(scrollYProgress, scrollRange, yRangeNarrow)
 const paralaxFast = useSpring(paralaxfast, {damping: 99, stiffness: 200 })
 const paralaxSlow = useSpring(paralaxslow, {damping: 99, stiffness: 200 })
-
-console.log(scrollYProgress)
 
 const scrollbar = useTransform(scrollYProgress, value => value * 100  )
 
@@ -144,18 +141,11 @@ useEffect(() => {
   return
 },[])
 
-console.log(paralaxfast)
-
-// useEffect(() => {
-//   setTimeout(() => {
-//     setPopupState(true)
-//   },[2000])
-// },[])
-
 const isTabletOrMobile = useMediaQuery({ query: '(max-device-width: 1180px)' })
 const isDesktopOrLaptop = useMediaQuery({
   query: '(min-device-width: 1180px)'
 })
+
 const textblock = "Du möchtest Teil unseres Teams werden? Dann bewirb dich jetzt bei uns. Wir freuen uns mir dir von Dienstag bis Freitag zusammen zu arbeiten."
 return (
   <Layout>
