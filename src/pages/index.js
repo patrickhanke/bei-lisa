@@ -187,7 +187,7 @@ return (
     
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
       <StaticImage 
-        src={`../images/Haarstudio-Marita-Interieur-2020-web-9.jpg`} 
+        src={`../images/team/HM-08.jpg`} 
         alt="Haarstudio Marita Team" 
         objectFit="cover"
         layout="constrained"
@@ -329,7 +329,7 @@ return (
         <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/team01.jpg`} 
+                src={`../images/team/HM-05.jpg`} 
                 alt="Marita Schindler"
                 width={360}
                 height={500}
@@ -343,7 +343,7 @@ return (
         <motion.div style={{y:paralaxSlow}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/team03.jpg`} 
+                src={`../images/team/HM-03.jpg`} 
                 alt={"Lisa Scheuing"} 
                 width={360}
                 height={500}
@@ -359,7 +359,7 @@ return (
         <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/havva_figlestahler.jpg`} 
+                src={`../images/team/HM-07.jpg`} 
                 alt={"Havva Figlestahler"} 
                 width={360}
                 height={500}
@@ -373,7 +373,7 @@ return (
         <motion.div style={{y:paralaxSlow}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/lirije_berisa.jpg`} 
+                src={`../images/team/HM-06.jpg`} 
                 alt="Lirije Berisa" 
                 width={360}
                 height={500}
@@ -387,7 +387,7 @@ return (
         <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/team05.jpg`} 
+                src={`../images/team/HM-01.jpg`} 
                 alt="Laura Ott" 
                 width={360}
                 height={500}
@@ -403,7 +403,7 @@ return (
         <motion.div style={{y:paralaxSlow}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/christine_siebert.jpg`} 
+                src={`../images/team/HM-04.jpg`} 
                 alt="Christine Siebert" 
                 width={360}
                 height={500}
@@ -417,7 +417,7 @@ return (
         <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/team04.jpg`} 
+                src={`../images/team/HM-02.jpg`} 
                 alt={"Silvia Lickert"} 
                 width={360}
                 height={500}
@@ -527,7 +527,7 @@ return (
       
       <motion.div id="header"  css={mq({ width: `100vw`, height: [`auto`, `auto`, `50vh`, `80vh`], top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"})}>
         <StaticImage 
-          src={`../images/Haarstudio-Marita-Interieur-2020-web-9.jpg`} 
+          src={`../images/team/HM-08.jpg`} 
           alt="Haarstudio Marita Team"
           height={300}
           width={400}
@@ -535,7 +535,7 @@ return (
           layout="fullWidth"
           transformOptions={{fit: "cover", cropFocus: "center", position: "center"}}
         />
-        <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
+        <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.1)", top: 0 }}></div>
           
           <motion.h1 css={{position: "absolute", fontSize: ["1.8rem", "2.4rem"], bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5}}>
             Haarstudio Marita
@@ -638,7 +638,7 @@ return (
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
               <StaticImage 
-                  src={`../images/team/team01.jpg`} 
+                  src={`../images/team/HM-05.jpg`} 
                   alt="Marita Schindler"
                   width={360}
                   height={500}
@@ -652,7 +652,7 @@ return (
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/team03.jpg`} 
+                src={`../images/team/HM-03.jpg`} 
                 alt={"Lisa Scheuing"} 
                 width={360}
                 height={500}
@@ -666,7 +666,7 @@ return (
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/havva_figlestahler.jpg`} 
+                src={`../images/team/HM-07.jpg`} 
                 alt={"Havva Figlestahler"} 
                 width={360}
                 height={500}
@@ -680,7 +680,7 @@ return (
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
           <div css={teamcontainer}>
               <StaticImage 
-                  src={`../images/team/lirije_berisa.jpg`} 
+                  src={`../images/team/HM-06.jpg`} 
                   alt="Lirije Berisa" 
                   width={360}
                   height={500}
@@ -694,7 +694,7 @@ return (
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
               <StaticImage 
-                  src={`../images/team/team05.jpg`} 
+                  src={`../images/team/HM-01.jpg`} 
                   alt="Laura Ott" 
                   width={360}
                   height={500}
@@ -708,7 +708,7 @@ return (
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
               <StaticImage 
-                  src={`../images/team/christine_siebert.jpg`} 
+                  src={`../images/team/HM-04.jpg`} 
                   alt="Christine Siebert" 
                   width={360}
                   height={500}
@@ -722,7 +722,7 @@ return (
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
               <StaticImage 
-                  src={`../images/team/team04.jpg`} 
+                  src={`../images/team/HM-02.jpg`} 
                   alt={"Silvia Lickert"} 
                   width={360}
                   height={500}
