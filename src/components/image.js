@@ -29,7 +29,7 @@ const Image = ({image}) => {
           }
         }
       },
-      logo: file(relativePath: { eq: "logo.png" }) {
+      logo: file(relativePath: { eq: "logo_2023_web.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid

@@ -77,7 +77,7 @@ function SEO({ description, lang, meta, title }) {
           "name": "Haarstudio Marita Kraus GmbH",
           "alternateName": "Haarstudio Marita",
           "url": "https://haarstudio-marita.de/",
-          "logo": "/src/images/logo.jpg",
+          "logo": "/src/images/logo_2023_web.png",
           "description": "Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird. ",
           "contactPoint": {
             "@type": "ContactPoint",

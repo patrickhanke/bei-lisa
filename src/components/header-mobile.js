@@ -73,8 +73,8 @@ return (
         
         <div css={{width: "100px", padding: "0.7em 0"}}>
           <StaticImage 
-              src={`../images/logo.png`} 
-              alt="Haarstudio Marita Logo" 
+              src={`../images/logo_2023_web.png`} 
+              alt="Haarstudio Marita" 
               objectFit="fill"
               layout="constrained"
               width={100}

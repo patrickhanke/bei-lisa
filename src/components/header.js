@@ -18,8 +18,8 @@ return (
         <Link to="/">
           <div css={{width: "160px", padding: "0.5em 0"}}>
           <StaticImage 
-            src={`../images/logo.png`} 
-            alt="Haarstudio Marita Logo" 
+            src={`../images/logo_2023_web.png`} 
+            alt="Haarstudio Marita" 
             objectFit="fill"
             layout="constrained"
             width={160}
