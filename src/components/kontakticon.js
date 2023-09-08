@@ -67,13 +67,13 @@ const KontaktIcon = () => {
                             <div css={{width: "100%", height: "1.5px", background: grey, margin: "6px auto 12px auto"}} />
                             <h5>Öffnungszeiten</h5>
                             <p css={{color: dark + " !important"}}>
-                                Di.: 08:30 - 18:30
+                                Di.: 08:00 - 20:00
                             </p>
                              <p css={{color: dark + " !important"}}>
-                                Mi.: 08:30 - 19:00
+                                Mi.: 08:00 - 18:00
                             </p>
                             <p css={{color: dark + " !important"}}>
-                                Do.: 08:30 - 20:00
+                                Do.: 08:00 - 20:00
                             </p>
                             <p css={{color: dark + " !important"}}>
                                 Fr.: 08:00 - 18:00
@@ -129,13 +129,13 @@ export const KontaktIconMobile = () => {
                             <div css={{width: "100%", height: "1.5px", background: grey, margin: "6px auto 12px auto",}} />
                             <h5>Öffnungszeiten</h5>
                             <p css={{color: dark + " !important"}}>
-                                Di.: 08:30 - 18:30
+                                Di.: 08:00 - 20:00
                             </p>
                              <p css={{color: dark + " !important"}}>
-                                Mi.: 08:30 - 19:00
+                                Mi.: 08:00 - 18:00
                             </p>
                             <p css={{color: dark + " !important"}}>
-                                Do.: 08:30 - 20:00
+                                Do.: 08:00 - 20:00
                             </p>
                             <p css={{color: dark + " !important"}}>
                                 Fr.: 08:00 - 18:00
