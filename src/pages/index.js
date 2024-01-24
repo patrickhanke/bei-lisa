@@ -382,7 +382,7 @@ return (
                 transformOptions={{fit: "cover", cropFocus: "center"}}
             />
           </div>
-          <TeamCard name="Lirije Berisa" titel="Gesellin" bild="lirije_berisa" margin={0} />
+          <TeamCard name="Lirije Berisa" titel="Friseurin" bild="lirije_berisa" margin={0} />
         </motion.div>
         <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
@@ -689,7 +689,7 @@ return (
                   transformOptions={{fit: "cover", cropFocus: "center"}}
               />
             </div>
-            <TeamCard name="Lirije Berisa" titel="Gesellin" />
+            <TeamCard name="Lirije Berisa" titel="Friseurin" />
           </div>
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
