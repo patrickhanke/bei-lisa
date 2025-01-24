@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { beige, dark, mq, } from './styles'
 import {VscClose} from 'react-icons/vsc'
 import { css } from '@emotion/react'
@@ -118,34 +118,45 @@ export const Preisliste = () => {
     const [open, setOpen] = useState(false);
     const [sliderState, setSliderState] = useState("Frisuren");
 
-    const kategorienArray = [];
-    const kategorieObjects = [];
-    const preisArray = []
+    console.log(data);
+    
 
-    if (data) {
-        data.kategorien.map(kategorie => {
-            if (!kategorienArray.includes(kategorie.kategorie)){
-                kategorienArray.push(kategorie.kategorie)
-                kategorieObjects[kategorie.kategorie]  = {
-                    kategorie: kategorie.kategorie,
-                    ueberschriften: [kategorie.ueberschrift]
+    
+    const {kategorienArray, kategorieObjects, preisArray} = useMemo(() => {
+        const kategorienArray = [];
+        const kategorieObjects = [];
+        const preisArray = [];
+    
+        if (data) {
+            data.kategorien.map(kategorie => {
+                console.log(kategorie);
+                if (kategorie.kategorie !== 'Pflege & Make-up') {
+                    if (!kategorienArray.includes(kategorie.kategorie) ){
+                        kategorienArray.push(kategorie.kategorie)
+                        kategorieObjects[kategorie.kategorie]  = {
+                            kategorie: kategorie.kategorie,
+                            ueberschriften: [kategorie.ueberschrift]
+                        }
+                    } else {
+                        kategorieObjects[kategorie.kategorie].ueberschriften.push(kategorie.ueberschrift) 
+                    }
                 }
-            } else {
-                kategorieObjects[kategorie.kategorie].ueberschriften.push(kategorie.ueberschrift) 
-            }
+    
+            })
+            data.frisuren.map(frisur => {
+                preisArray.push(frisur)
+            })
+            data.preiseFuT.map(frisur => {
+                preisArray.push(frisur)
+            })
+            data.preisePuMU.map(frisur => {
+                preisArray.push(frisur)
+            })
+            preisArray.sort((a,b) => a.reihenfolge - b.reihenfolge)
+        }
 
-        })
-        data.frisuren.map(frisur => {
-            preisArray.push(frisur)
-        })
-        data.preiseFuT.map(frisur => {
-            preisArray.push(frisur)
-        })
-        data.preisePuMU.map(frisur => {
-            preisArray.push(frisur)
-        })
-        preisArray.sort((a,b) => a.reihenfolge - b.reihenfolge)
-    }
+        return ({kategorienArray, kategorieObjects, preisArray})
+    }, [data])
 
     return (
         <motion.div
@@ -178,11 +189,17 @@ export const Preisliste = () => {
                             </div>
                             <AnimatePresence mode='wait'> 
                             {Object.keys(kategorieObjects).length > 0 && Object.keys(kategorieObjects).map(kategorieId => {
+                              
+                                
                             return sliderState === kategorieObjects[kategorieId].kategorie &&
                             <motion.div className="preiscontainer" key="frisuren" initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}} css={{overflowY: "scroll", width: "100%", padding: "1em", ['p']: {lineHeight: '2.1em'}}}> 
                                 {
                                     kategorieObjects[kategorieId].ueberschriften.map(ueberschrift => 
                                         {
+                                            if (ueberschrift === 'Make-Up') {
+                                                return null;
+                                            }
+                                            
                                             
                                                 return <>
                                                     <h4 css={{marginTop: "1em", marginBlockEnd: ".5em"}}>{ueberschrift}</h4>
@@ -244,34 +261,40 @@ export const PreislisteMobile = ({preislisteHandler}) => {
     const [open, setOpen] = useState(false);
     const [sliderState, setSliderState] = useState("Frisuren");
 
-    const kategorienArray = [];
-    const kategorieObjects = [];
-    const preisArray = []
-
-    if (data) {
-        data.kategorien.map(kategorie => {
-            if (!kategorienArray.includes(kategorie.kategorie)){
-                kategorienArray.push(kategorie.kategorie)
-                kategorieObjects[kategorie.kategorie]  = {
-                    kategorie: kategorie.kategorie,
-                    ueberschriften: [kategorie.ueberschrift]
+    const {kategorienArray, kategorieObjects, preisArray} = useMemo(() => {
+        const kategorienArray = [];
+        const kategorieObjects = [];
+        const preisArray = [];
+    
+        if (data) {
+            data.kategorien.map(kategorie => {
+                console.log(kategorie);
+                if (kategorie.kategorie !== 'Pflege & Make-up') {
+                    if (!kategorienArray.includes(kategorie.kategorie) ){
+                        kategorienArray.push(kategorie.kategorie)
+                        kategorieObjects[kategorie.kategorie]  = {
+                            kategorie: kategorie.kategorie,
+                            ueberschriften: [kategorie.ueberschrift]
+                        }
+                    } else {
+                        kategorieObjects[kategorie.kategorie].ueberschriften.push(kategorie.ueberschrift) 
+                    }
                 }
-            } else {
-                kategorieObjects[kategorie.kategorie].ueberschriften.push(kategorie.ueberschrift) 
-            }
+            })
+            data.frisuren.map(frisur => {
+                preisArray.push(frisur)
+            })
+            data.preiseFuT.map(frisur => {
+                preisArray.push(frisur)
+            })
+            data.preisePuMU.map(frisur => {
+                preisArray.push(frisur)
+            })
+            preisArray.sort((a,b) => a.reihenfolge - b.reihenfolge)
+        }
 
-        })
-        data.frisuren.map(frisur => {
-            preisArray.push(frisur)
-        })
-        data.preiseFuT.map(frisur => {
-            preisArray.push(frisur)
-        })
-        data.preisePuMU.map(frisur => {
-            preisArray.push(frisur)
-        })
-        preisArray.sort((a,b) => a.reihenfolge - b.reihenfolge)
-    }
+        return ({kategorienArray, kategorieObjects, preisArray})
+    }, [data])
 
     return (
         <motion.div 
