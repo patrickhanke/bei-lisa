@@ -396,7 +396,7 @@ return (
                 transformOptions={{fit: "cover", cropFocus: "center"}}
             />
           </div>
-          <TeamCard name="Laura Ott" titel="Friseurin" />
+          <TeamCard name="Laura Ott" titel="Friseurin (Elternzeit)" />
         </motion.div>
       </FlexBox>
       <FlexBox direction="row" align="flex-start" justify="space-evenly" css={{width: "54em"}}>
@@ -702,7 +702,7 @@ return (
                   transformOptions={{fit: "cover", cropFocus: "center"}}
               />
             </div>
-            <TeamCard name="Laura Ott" titel="Friseurin" />
+            <TeamCard name="Laura Ott" titel="Friseurin (Elternzeit)" />
           </div>
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
