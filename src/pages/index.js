@@ -187,15 +187,15 @@ return (
     
     <motion.div id="header" style={{y: ySlow}} css={{ width: `100vw`, height: `90vh`, top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "fixed"}}>
       <StaticImage 
-        src={`../images/team/HM-08.jpg`} 
+        src={`../images/hs_header.jpg`} 
         alt="Haarstudio Marita Team" 
         objectFit="cover"
         layout="constrained"
         style={{width: '100%', height: '100%', position: 'relative'}}
       />
-      <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4, top: 0 }}></div>
+      <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4, top: 0, backgroundColor: 'rgba(0,0,0, 0.2)' }}></div>
         
-        <motion.h1 style={{y: yMedium, x:"-50%"}} css={{position: "absolute", color: white, top: "50%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
+        <motion.h1 style={{y: yMedium, x:"-56%"}} css={{position: "absolute", color: white, top: "40%", left: "50%", textAlign: "center", transform: "translate(-50%, -50%)", zIndex: 5}}>
           Haarstudio <br />Marita
           </motion.h1>
 
@@ -370,20 +370,6 @@ return (
           </div>
           <TeamCard name="Havva Figlestahler" titel="Friseurmeisterin" bild="havva_figlestahler" margin={0} />
         </motion.div>
-        <motion.div style={{y:paralaxSlow}}>
-          <div css={teamcontainer}>
-            <StaticImage 
-                src={`../images/team/HM-06.jpg`} 
-                alt="Lirije Berisa" 
-                width={360}
-                height={500}
-                objectFit="fill"
-                layout="constrained"
-                transformOptions={{fit: "cover", cropFocus: "center"}}
-            />
-          </div>
-          <TeamCard name="Lirije Berisa" titel="Friseurin" bild="lirije_berisa" margin={0} />
-        </motion.div>
         <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
             <StaticImage 
@@ -526,7 +512,7 @@ return (
       
       <motion.div id="header"  css={mq({ width: `100vw`, height: [`auto`, `auto`, `50vh`, `80vh`], top: 0, left: 0,  zIndex: 2, overflow: "hidden", margin: "auto", position: "relative"})}>
         <StaticImage 
-          src={`../images/team/HM-08.jpg`} 
+          src={`../images/hs_header.jpg`} 
           alt="Haarstudio Marita Team"
           height={300}
           width={400}
@@ -534,7 +520,7 @@ return (
           layout="fullWidth"
           transformOptions={{fit: "cover", cropFocus: "center", position: "center"}}
         />
-        <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.1)", top: 0 }}></div>
+        <div css={{width: "100%", height: "100%", position: "absolute", zIndex: 4,background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
           
           <motion.h1 css={{position: "absolute", fontSize: ["1.8rem", "2.4rem"], bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5}}>
             Haarstudio Marita
@@ -675,20 +661,6 @@ return (
               />
             </div>
             <TeamCard name="Havva Figlestahler" titel="Friseurmeisterin" bild="havva_figlestahler" margin={0} />
-          </div>
-          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-          <div css={teamcontainer}>
-              <StaticImage 
-                  src={`../images/team/HM-06.jpg`} 
-                  alt="Lirije Berisa" 
-                  width={360}
-                  height={500}
-                  objectFit="fill"
-                  layout="constrained"
-                  transformOptions={{fit: "cover", cropFocus: "center"}}
-              />
-            </div>
-            <TeamCard name="Lirije Berisa" titel="Friseurin" />
           </div>
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
