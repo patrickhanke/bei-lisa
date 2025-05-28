@@ -359,20 +359,6 @@ return (
         <motion.div style={{y:paralaxFast}}>
           <div css={teamcontainer}>
             <StaticImage 
-                src={`../images/team/HM-07.jpg`} 
-                alt={"Havva Figlestahler"} 
-                width={360}
-                height={500}
-                objectFit="fill"
-                layout="constrained"
-                transformOptions={{fit: "cover", cropFocus: "center"}}
-            />
-          </div>
-          <TeamCard name="Havva Figlestahler" titel="Friseurmeisterin" bild="havva_figlestahler" margin={0} />
-        </motion.div>
-        <motion.div style={{y:paralaxFast}}>
-          <div css={teamcontainer}>
-            <StaticImage 
                 src={`../images/team/HM-01.jpg`} 
                 alt="Laura Ott" 
                 width={360}
@@ -647,20 +633,6 @@ return (
             />
           </div>
             <TeamCard name="Lisa Scheuing" titel="Friseurmeisterin" bild="team03" margin={2} />
-          </div>
-          <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-          <div css={teamcontainer}>
-            <StaticImage 
-                src={`../images/team/HM-07.jpg`} 
-                alt={"Havva Figlestahler"} 
-                width={360}
-                height={500}
-                objectFit="fill"
-                layout="constrained"
-                transformOptions={{fit: "cover", cropFocus: "center"}}
-              />
-            </div>
-            <TeamCard name="Havva Figlestahler" titel="Friseurmeisterin" bild="havva_figlestahler" margin={0} />
           </div>
           <div css={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <div css={teamcontainer}>
