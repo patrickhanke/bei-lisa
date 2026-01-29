@@ -135,7 +135,7 @@ interface KategorieObjects {
 
 export const Preisliste: React.FC = () => {
     // const { data } = useQuery<PreislistenData>(PREISLISTEN);
-    let data;
+    const data: PreislistenData | undefined = undefined;
     const [open, setOpen] = useState(false);
     const [sliderState, setSliderState] = useState("Frisuren");
 

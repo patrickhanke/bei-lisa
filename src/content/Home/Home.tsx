@@ -16,6 +16,7 @@ import { Preisliste } from "../../components/preislisten";
 import { StaticImage } from "gatsby-plugin-image";
 import { VscClose } from "react-icons/vsc";
 import HomeHeader from "./components/HomeHeader";
+import { loadStaticDataAsync, type BuildTimeData } from "@/lib/static-data";
 
 interface Variants {
   initial: {
@@ -70,12 +71,16 @@ interface ScrollPositions {
 }
 
 const IndexPage: React.FC = () => {
+  
   const [mainHeight, setmainHeight] = useState<number>();
   const [siteState, setSiteState] = useState<string>();
   const [scrollheight, setScrollheight] = useState<number>();
   const [scrollPositions, setScrollPositions] = useState<ScrollPositions>();
   const { scrollY, scrollYProgress } = useScroll();
   const [popupState, setPopupState] = useState(false);
+  const [staticData, setStaticData] = useState<BuildTimeData | null>(null);
+
+  console.log('staticData', staticData);
 
   const scrollSlow = useTransform(scrollY, value => -0.6 * value);
   const scrollMedium = useTransform(scrollY, value => -0.7 * value);
@@ -191,6 +196,20 @@ const IndexPage: React.FC = () => {
     handleScroll(new Event('scroll'));
   }, []);
 
+  // Load static data from build plugin
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const data = await loadStaticDataAsync();
+        setStaticData(data);
+        console.log('Static data loaded:', data);
+      } catch (error) {
+        console.error('Failed to load static data:', error);
+      }
+    }
+    loadData();
+  }, []);
+
   const isTabletOrMobile = useMediaQuery({ query: '(max-device-width: 1180px)' });
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-device-width: 1180px)'
@@ -201,7 +220,7 @@ const IndexPage: React.FC = () => {
   return (
     <Layout>
       <SEO title="Bei Lisa" />
-      {isDesktopOrLaptop &&
+     
         <Wrapper id="mainwrapper" css={{ height: mainHeight + "px" }}>
           <Header top="start" siteState={siteState} position={scrollPositions} popupHandler={setPopupState} />
           <KontaktIcon />
@@ -209,35 +228,20 @@ const IndexPage: React.FC = () => {
 
           <motion.div id="wrapper" style={{ y: yFast }} css={{ position: "fixed", height: "auto", width: "auto", top: "90vh", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%" }}>
           <HomeHeader />
-
+        
             <FlexContainer id="angebot" align="center" justify="center">
               <FlexBox direction="column" align="center" justify="center">
                 {/* <motion.div  style={{y: paralaxFast || 450, x: "-50%"}} css={{width: "8em", height: "8em", backgroundColor: beige, borderRadius: "50%", position: "absolute", top: "10%", left: "50%",  zIndex: -1}}></motion.div> */}
+                
                 <h2 css={{ textAlign: "right", color: beige }}>Wir bieten alles für Ihre Haare:</h2>
                 <div css={{ color: darkgrey }}>
-                  <div css={{ zIndex: 13 }}>
-                    <h4>
-                      Damenschnitt
-                    </h4>
-                    <h4>
-                      Herrenschnitt
-                    </h4>
-                    <h4>
-                      Färben & Tönen
-                    </h4>
-                    <h4 >
-                      Balayage & Foilyage
-                    </h4>
-                    <h4 >
-                      Extensions - Hairtalk
-                    </h4>
-                    <h4>
-                      Wimpern & Augenbrauen färben
-                    </h4>
-                    <h4>
-                      Make-Up & Hochzeitsfrisur
-                    </h4>
-                  </div>
+                <div id="bei-lisa">
+                  <h3>
+                    Bei Lisa
+                  </h3>
+                  <img loading="lazy" src="/static-data/Lisa.jpg" alt="lisa" css={{ width: "100%", height: "auto", maxWidth: "600px" }} />
+                </div>
+                  
                 </div>
               </FlexBox>
             </FlexContainer>
@@ -462,9 +466,8 @@ const IndexPage: React.FC = () => {
           </motion.div>
 
         </Wrapper>
-      }
-      {
-        isTabletOrMobile &&
+
+        {/* isTabletOrMobile &&
         <Wrapper id="mainwrapper" css={{ scrollBehavior: "smooth" }}>
           <HeaderMobile popupHandler={setPopupState} siteState={siteState} position={scrollPositions} />
           <KontaktIconMobile />
@@ -743,7 +746,7 @@ const IndexPage: React.FC = () => {
           </motion.div>
 
         </Wrapper>
-      }
+      } */}
     </Layout>
   );
 };

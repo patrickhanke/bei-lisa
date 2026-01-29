@@ -60,6 +60,9 @@ public
 .output/
 app/routeTree.gen.ts
 
+# Static data generated at build time
+src/static-data/
+
 # Mac files
 .DS_Store
 

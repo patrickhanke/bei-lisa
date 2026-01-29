@@ -1,9 +1,11 @@
 import {Home} from '@content'
-import React from 'react'
 
 const HomePage = () => {
   return (
-    <Home />
+    <div>
+      <p> Hallo?</p>
+      <Home />
+    </div>
   )
 }
 

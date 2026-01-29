@@ -11,6 +11,7 @@ import { useMediaQuery } from "react-responsive";
 import { Preisliste } from "../components/Preislisten";
 import { VscClose } from "react-icons/vsc";
 import { SEO } from "../components/SEO";
+import { loadStaticDataAsync, type BuildTimeData } from "@/lib/static-data";
 
 export const Route = createFileRoute('/')({
   component: HomePage,
@@ -36,6 +37,7 @@ function HomePage() {
   const [scrollPositions, setScrollPositions] = useState<ScrollPositions>();
   const { scrollY, scrollYProgress } = useScroll();
   const [popupState, setPopupState] = useState(false);
+  const [staticData, setStaticData] = useState<BuildTimeData | null>(null);
 
   const scrollSlow = useTransform(scrollY, value => -0.6 * value);
   const scrollMedium = useTransform(scrollY, value => -0.7 * value);
@@ -158,6 +160,20 @@ function HomePage() {
     handleScroll(new Event('scroll'));
   }, []);
 
+  // Load static data from build plugin
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const data = await loadStaticDataAsync();
+        setStaticData(data);
+        console.log('[HomePage] Static data loaded:', data);
+      } catch (error) {
+        console.error('[HomePage] Failed to load static data:', error);
+      }
+    }
+    loadData();
+  }, []);
+
   const isTabletOrMobile = useMediaQuery({ query: '(max-device-width: 1180px)' });
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-device-width: 1180px)'
@@ -174,7 +190,7 @@ function HomePage() {
           <KontaktIcon />
           <Preisliste />
 
-          <motion.div id="wrapper" style={{ y: yFast }} css={{ position: "fixed", height: "auto", width: "auto", top: "90vh", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%" }}>
+          <motion.div id="wrapper" style={{ y: yFast }} css={{ position: "fixed", height: "auto", width: "auto", top: "10vh", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%" }}>
             <div id="header" css={mq({ width: `100vw`, height: [`auto`, `auto`, `50vh`, `80vh`], top: 0, left: 0, zIndex: 2, overflow: "hidden", margin: "auto", position: "relative" })}>
               <img 
                 src="/src/images/hs_header.jpg" 
@@ -190,6 +206,7 @@ function HomePage() {
 
             <FlexContainer id="angebot" align="center" justify="center">
               <FlexBox direction="column" align="center" justify="center">
+                <img loading="lazy" src="/static-data/Lisa.jpg" alt="lisa" css={{ width: "100%", height: "auto", maxWidth: "600px", marginBottom: "2em" }} />
                 <h2 css={{ textAlign: "right", color: beige }}>Wir bieten alles für Ihre Haare:</h2>
                 <div css={{ color: darkgrey }}>
                   <div css={{ zIndex: 13 }}>
