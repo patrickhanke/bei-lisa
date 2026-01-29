@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsxImportSource": "@emotion/react",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ui": ["./src/ui/index.ts"],
+      "@content": ["./src/content/index.ts"],
+      "@styles": ["./src/styles/index.ts"],
+      "@components": ["./src/components/index.ts"],
+      "@provider": ["./src/provider/index.ts"],
+      "@settings": ["./src/settings/index.ts"],
+      "@types": ["./src/types/index.ts"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "gatsby-*.ts",
+    "gatsby-*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "public",
+    ".cache"
+  ]
+}
