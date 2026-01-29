@@ -51,9 +51,14 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
-# gatsby files
+# gatsby files (legacy)
 .cache/
 public
+
+# TanStack Start / Vinxi
+.vinxi/
+.output/
+app/routeTree.gen.ts
 
 # Mac files
 .DS_Store
