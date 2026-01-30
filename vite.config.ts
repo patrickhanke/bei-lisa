@@ -34,11 +34,6 @@ export default defineConfig(({ mode }) => {
         projects: ['./tsconfig.json'],
       }),
     ],
-    resolve: {
-      alias: {
-        '@': '/app',
-      },
-    },
     publicDir: 'src',
   }
 })

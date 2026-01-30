@@ -6,10 +6,31 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { SEO } from '../components/SEO';
 import { dark, FlexBox, FlexContainer, Wrapper, light } from '../components/styles';
+import styled from '@emotion/styled';
 
 export const Route = createFileRoute('/datenschutz')({
   component: DatenschutzPage,
 })
+
+const ScrollBar = styled(motion.div as any)({
+    position: "fixed",
+    top: 0,
+    right: 0,
+    width: "10px",
+    background: dark,
+    zIndex: 12
+});
+
+const ContentWrapper = styled(motion.div as any)({
+    position: "fixed",
+    height: "auto",
+    top: "100px",
+    left: "auto",
+    right: "auto",
+    zIndex: 5,
+    background: light,
+    width: "100%"
+});
 
 function DatenschutzPage() {
     const [mainHeight, setmainHeight] = useState<number | undefined>();
@@ -44,9 +65,9 @@ function DatenschutzPage() {
             <Header top="datenschutz" />
             {isDesktopOrLaptop &&
                 <Wrapper id="mainwrapper" css={{ height: mainHeight + "px" }}>
-                    <motion.div style={{ scaleY: scrollanimation, originY: 0 }} css={{ position: "fixed", top: 0, right: 0, width: "10px", background: dark, zIndex: 12, height: scrollheight + "px" }} />
+                    <ScrollBar style={{ scaleY: scrollanimation, originY: 0, height: scrollheight + "px" }} />
 
-                    <motion.div id="wrapper" style={{ y: yFast }} css={{ position: "fixed", height: "auto", width: "auto", top: "100px", left: "auto", right: "auto", zIndex: 5, background: light, width: "100%" }}>
+                    <ContentWrapper id="wrapper" style={{ y: yFast }}>
                         <FlexContainer direction="column" css={{ padding: "2em 6em" }}>
                             <div >
                                 <h1 css={{ color: dark, fontSize: "6em" }}>Datenschutzerklärung</h1>
@@ -80,7 +101,7 @@ function DatenschutzPage() {
                             <Footer />
                         </FlexContainer>
 
-                    </motion.div>
+                    </ContentWrapper>
 
                 </Wrapper>
             }

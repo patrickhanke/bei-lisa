@@ -88,7 +88,7 @@ async function loadStaticData(): Promise<BuildTimeData> {
 
   try {
     // Try to fetch from the dev server endpoint in development
-    if (import.meta.env.DEV) {
+    if (import.meta.env?.DEV) {
       try {
         const response = await fetch('/api/static-data');
         if (response.ok) {
@@ -107,9 +107,9 @@ async function loadStaticData(): Promise<BuildTimeData> {
       // In production, try to import the JSON file
       try {
         const data = await import('../../src/static-data/build-time-data.json');
-        staticDataCache = data.default || data;
+        staticDataCache = (data.default || data) as BuildTimeData;
         console.log('[Static Data] Loaded from JSON file:', staticDataCache);
-        return staticDataCache;
+        return staticDataCache as BuildTimeData;
       } catch (importError) {
         console.warn('[Static Data] Failed to import JSON file:', importError);
       }

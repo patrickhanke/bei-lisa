@@ -14,8 +14,7 @@ export const mq = facepaint(
 );
 
 export const Wrapper = styled.div(
-    {
-        scrollbarWidth: "thick !important",
+    mq({
         height: "100%",
         width: "100%",
         overflow: "hidden",
@@ -23,9 +22,9 @@ export const Wrapper = styled.div(
         background: white,
         marginLeft: "auto",
         marginRight: "auto",
+        fontSize: ["14px", "15px", "16px", "16px"],
         ['p']: { color: "inherit" }
-    },
-    [mq({ fontSize: ["14px", "15px", "16px", "16px"] })]
+    })
 );
 
 interface FlexContainerProps {
@@ -35,7 +34,9 @@ interface FlexContainerProps {
     direction?: string;
 }
 
-export const FlexContainer = styled.div<FlexContainerProps>(
+export const FlexContainer = styled('div', {
+    shouldForwardProp: (prop) => !['justify', 'background', 'align', 'direction'].includes(prop as string)
+})<FlexContainerProps>(
     {
         width: "100%",
         paddingTop: '2.4em',
@@ -49,10 +50,10 @@ export const FlexContainer = styled.div<FlexContainerProps>(
         maxWidth: '1400px',
         fontSize: "18px",
     },
-    props => ({ justifyContent: props.justify }),
+    props => ({ justifyContent: props.justify as any }),
     props => ({ backgroundColor: props.background }),
-    props => ({ alignItems: props.align }),
-    props => ({ flexDirection: props.direction })
+    props => ({ alignItems: props.align as any }),
+    props => ({ flexDirection: props.direction as any })
 );
 
 export const FlexContainerMobile = styled.div(
@@ -102,7 +103,9 @@ interface FlexBoxProps {
     direction?: string;
 }
 
-export const FlexBox = styled.div<FlexBoxProps>(
+export const FlexBox = styled('div', {
+    shouldForwardProp: (prop) => !['justify', 'align', 'direction'].includes(prop as string)
+})<FlexBoxProps>(
     {
         height: "auto",
         padding: "1em 0",
@@ -111,9 +114,9 @@ export const FlexBox = styled.div<FlexBoxProps>(
         position: "relative",
         minWidth: 0,
     },
-    props => ({ justifyContent: props.justify }),
-    props => ({ alignItems: props.align }),
-    props => ({ flexDirection: props.direction })
+    props => ({ justifyContent: props.justify as any }),
+    props => ({ alignItems: props.align as any }),
+    props => ({ flexDirection: props.direction as any })
 );
 
 export const FlexBoxMobile = styled.div(

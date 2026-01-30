@@ -350,13 +350,159 @@
        url('/src/fonts/open-sans-v18-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/src/fonts/open-sans-v18-latin-800.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
+
+/* montserrat-100 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Montserrat Thin'), local('Montserrat-Thin'),
+       url('/src/fonts/Montserrat-Thin.ttf') format('truetype');
+}
+/* montserrat-100italic - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 100;
+  src: local('Montserrat Thin Italic'), local('Montserrat-ThinItalic'),
+       url('/src/fonts/Montserrat-ThinItalic.ttf') format('truetype');
+}
+/* montserrat-200 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),
+       url('/src/fonts/Montserrat-ExtraLight.ttf') format('truetype');
+}
+/* montserrat-200italic - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 200;
+  src: local('Montserrat ExtraLight Italic'), local('Montserrat-ExtraLightItalic'),
+       url('/src/fonts/Montserrat-ExtraLightItalic.ttf') format('truetype');
+}
+/* montserrat-300 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Montserrat Light'), local('Montserrat-Light'),
+       url('/src/fonts/Montserrat-Light.ttf') format('truetype');
+}
+/* montserrat-300italic - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Montserrat Light Italic'), local('Montserrat-LightItalic'),
+       url('/src/fonts/Montserrat-LightItalic.ttf') format('truetype');
+}
+/* montserrat-regular - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+       url('/src/fonts/Montserrat-Regular.ttf') format('truetype');
+}
+/* montserrat-italic - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Montserrat Italic'), local('Montserrat-Italic'),
+       url('/src/fonts/Montserrat-Italic.ttf') format('truetype');
+}
+/* montserrat-500 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Montserrat Medium'), local('Montserrat-Medium'),
+       url('/src/fonts/Montserrat-Medium.ttf') format('truetype');
+}
+/* montserrat-500italic - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Montserrat Medium Italic'), local('Montserrat-MediumItalic'),
+       url('/src/fonts/Montserrat-MediumItalic.ttf') format('truetype');
+}
+/* montserrat-600 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+       url('/src/fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+/* montserrat-600italic - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Montserrat SemiBold Italic'), local('Montserrat-SemiBoldItalic'),
+       url('/src/fonts/Montserrat-SemiBoldItalic.ttf') format('truetype');
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+       url('/src/fonts/Montserrat-Bold.ttf') format('truetype');
+}
+/* montserrat-700italic - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Montserrat Bold Italic'), local('Montserrat-BoldItalic'),
+       url('/src/fonts/Montserrat-BoldItalic.ttf') format('truetype');
+}
+/* montserrat-800 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
+       url('/src/fonts/Montserrat-ExtraBold.ttf') format('truetype');
+}
+/* montserrat-800italic - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Montserrat ExtraBold Italic'), local('Montserrat-ExtraBoldItalic'),
+       url('/src/fonts/Montserrat-ExtraBoldItalic.ttf') format('truetype');
+}
+/* montserrat-900 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Montserrat Black'), local('Montserrat-Black'),
+       url('/src/fonts/Montserrat-Black.ttf') format('truetype');
+}
+/* montserrat-900italic - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Montserrat Black Italic'), local('Montserrat-BlackItalic'),
+       url('/src/fonts/Montserrat-BlackItalic.ttf') format('truetype');
+}
+
 hgroup {
   margin-block-end: 0;
   margin-block-start: 0;
 }
 
   h1 {
-    font-family: 'Abhaya Libre';
+    font-family: 'Montserrat';
     font-weight: 800;
     font-size: 7em;
     line-height: 1.2em;
@@ -373,7 +519,7 @@ hgroup {
     margin-top: 2em;
   }
   h3 {
-    font-family: 'Abhaya Libre';
+    font-family: 'Montserrat';
     font-weight: 500;
     font-size: 3em;
     line-height: 1em;
@@ -385,16 +531,16 @@ hgroup {
     margin-block-end: 1em;
   }
   h4 {
-    font-family: 'Playfair Display';
-    font-weight: 600;
-    font-size: calc(12px  + 1.2em);
-    line-height: 1.4em;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: calc(12px  + 1em);
+    line-height: 1.2em;
     text-rendering: optimizeLegibility;
     text-align: center;
     color: inherit;
   }
   h5 {
-    font-family: 'Open Sans';
+    font-family: 'Montserrat';
     font-weight: 600;
     font-size: 1.4em;
     line-height: 1.4em;
@@ -403,7 +549,7 @@ hgroup {
     margin-block-start: 0;
   }
   h6 {
-    font-family: 'Playfair Display';
+    font-family: 'Montserrat';
     font-weight: 600;
     font-size: 1em;
     line-height: .8em;

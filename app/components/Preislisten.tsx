@@ -124,6 +124,52 @@ const menuList = {
     exit: { scaleY: 0, scaleX: -1, transition: { staggerChildren: 0.07, delayChildren: 0.2, staggerDirection: -1 } },
 };
 
+const PreislisteContainer = styled(motion.div as any)({
+    position: "fixed",
+    bottom: "30px",
+    right: "30px",
+    zIndex: 12
+});
+
+const PreislisteButton = styled(motion.div as any)({
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "24px",
+    zIndex: 13,
+    borderRadius: "10px",
+    cursor: "pointer",
+    boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)"
+});
+
+const PopupContainer = styled(motion.div as any)({
+    backgroundColor: beige,
+    position: "absolute",
+    boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)"
+});
+
+const PopupContent = styled(motion.div as any)({
+    position: "relative",
+    height: "100%",
+    paddingBottom: "1em",
+    fontSize: "16px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    justifyContent: "flex-start"
+});
+
+const SlideInContainer = styled(motion.div as any)({
+    position: "fixed",
+    backgroundColor: beige,
+    boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)",
+    zIndex: 7,
+    maxHeight: "90vh",
+    overflow: "hidden",
+    paddingBottom: "2em"
+});
+
 interface KategorieObject {
     kategorie: string;
     ueberschriften: string[];
@@ -133,9 +179,9 @@ interface KategorieObjects {
     [key: string]: KategorieObject;
 }
 
-export const Preisliste: React.FC = () => {
+const Preisliste: React.FC = () => {
     // const { data } = useQuery<PreislistenData>(PREISLISTEN);
-    const data: PreislistenData | undefined = undefined;
+    const data = undefined as PreislistenData | undefined;
     const [open, setOpen] = useState(false);
     const [sliderState, setSliderState] = useState("Frisuren");
 
@@ -145,28 +191,36 @@ export const Preisliste: React.FC = () => {
         const preisArray: Preis[] = [];
 
         if (data) {
-            data.kategorien.map(kategorie => {
-                if (kategorie.kategorie !== 'Pflege & Make-up') {
-                    if (!kategorienArray.includes(kategorie.kategorie)) {
-                        kategorienArray.push(kategorie.kategorie);
-                        kategorieObjects[kategorie.kategorie] = {
-                            kategorie: kategorie.kategorie,
-                            ueberschriften: [kategorie.ueberschrift]
-                        };
-                    } else {
-                        kategorieObjects[kategorie.kategorie].ueberschriften.push(kategorie.ueberschrift);
+            if (data.kategorien) {
+                data.kategorien.map((kategorie: Kategorie) => {
+                    if (kategorie.kategorie !== 'Pflege & Make-up') {
+                        if (!kategorienArray.includes(kategorie.kategorie)) {
+                            kategorienArray.push(kategorie.kategorie);
+                            kategorieObjects[kategorie.kategorie] = {
+                                kategorie: kategorie.kategorie,
+                                ueberschriften: [kategorie.ueberschrift]
+                            };
+                        } else {
+                            kategorieObjects[kategorie.kategorie].ueberschriften.push(kategorie.ueberschrift);
+                        }
                     }
-                }
-            });
-            data.frisuren.map(frisur => {
-                preisArray.push(frisur);
-            });
-            data.preiseFuT.map(frisur => {
-                preisArray.push(frisur);
-            });
-            data.preisePuMU.map(frisur => {
-                preisArray.push(frisur);
-            });
+                });
+            }
+            if (data.frisuren) {
+                data.frisuren.map((frisur: Preis) => {
+                    preisArray.push(frisur);
+                });
+            }
+            if (data.preiseFuT) {
+                data.preiseFuT.map((frisur: Preis) => {
+                    preisArray.push(frisur);
+                });
+            }
+            if (data.preisePuMU) {
+                data.preisePuMU.map((frisur: Preis) => {
+                    preisArray.push(frisur);
+                });
+            }
             preisArray.sort((a, b) => a.reihenfolge - b.reihenfolge);
         }
 
@@ -174,23 +228,22 @@ export const Preisliste: React.FC = () => {
     }, [data]);
 
     return (
-        <motion.div
+        <PreislisteContainer
             initial={false}
             animate={open ? "open" : "closed"}
             custom={500}
-            css={{ position: "fixed", bottom: "30px", right: "30px", zIndex: 12 }}
         >
             <AnimatePresence mode='wait'>
                 {open === true &&
-                    <motion.div
+                    <PopupContainer
                         variants={popup}
                         style={{ originX: 0, originY: 0, x: 200, y: -20 }}
                         initial="initial"
                         animate="animate"
                         exit="exit"
-                        css={css`background-color: #EDD6C6; position: absolute; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1)`}>
+                    >
                         <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};border-left: 10px dashed transparent;border-right: 10px dashed transparent; background: transparent;`}></div>
-                        <motion.div variants={menuList} css={{ position: "relative", height: "100%", paddingBottom: "1em", fontSize: "16px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start" }}>
+                        <PopupContent variants={menuList}>
                             <div css={{ width: "100%", display: "flex", padding: "1em", flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                                 <h5> Preisliste</h5>
                                 <div onClick={() => setOpen(!open)} css={{ padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " + dark, cursor: "pointer", [":hover"]: { color: beige, background: dark } }}>
@@ -202,8 +255,9 @@ export const Preisliste: React.FC = () => {
                             </div>
                             <AnimatePresence mode='wait'>
                                 {Object.keys(kategorieObjects).length > 0 && Object.keys(kategorieObjects).map(kategorieId => {
+                                    const StyledMotionDiv = styled(motion.div as any)({ overflowY: "scroll", width: "100%", padding: "1em", ['p']: { lineHeight: '2.1em' } });
                                     return sliderState === kategorieObjects[kategorieId].kategorie &&
-                                        <motion.div className="preiscontainer" key="frisuren" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} css={{ overflowY: "scroll", width: "100%", padding: "1em", ['p']: { lineHeight: '2.1em' } }}>
+                                        <StyledMotionDiv className="preiscontainer" key="frisuren" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                                             {
                                                 kategorieObjects[kategorieId].ueberschriften.map(ueberschrift => {
                                                     if (ueberschrift === 'Make-Up') {
@@ -238,19 +292,19 @@ export const Preisliste: React.FC = () => {
                                                     </React.Fragment>;
                                                 })
                                             }
-                                        </motion.div>;
+                                        </StyledMotionDiv>;
                                 })}
                             </AnimatePresence>
-                        </motion.div>
-                    </motion.div>}
+                        </PopupContent>
+                    </PopupContainer>}
             </AnimatePresence>
 
-            <motion.div onClick={() => setOpen(!open)} animate={open ? { backgroundColor: dark, color: beige } : { backgroundColor: beige, color: dark }} css={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", padding: "24px", zIndex: 13, borderRadius: "10px", cursor: "pointer", boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)" }}>
+            <PreislisteButton onClick={() => setOpen(!open)} animate={open ? { backgroundColor: dark, color: beige } : { backgroundColor: beige, color: dark }}>
                 <h4 css={{ marginBottom: 0, lineHeight: 0, marginTop: 0, marginBlockEnd: 0, fontSize: "16px" }}>
                     Leistungen & Preise
                 </h4>
-            </motion.div>
-        </motion.div>
+            </PreislisteButton>
+        </PreislisteContainer>
     );
 };
 
@@ -260,7 +314,7 @@ interface PreislisteMobileProps {
 }
 
 export const PreislisteMobile: React.FC<PreislisteMobileProps> = ({ preislisteHandler }) => {
-    const { data } = useQuery<PreislistenData>(PREISLISTEN);
+    const { data } = useQuery<PreislistenData | undefined>(PREISLISTEN);
     const [sliderState, setSliderState] = useState("Frisuren");
 
     const { kategorienArray, kategorieObjects, preisArray } = useMemo(() => {
@@ -269,44 +323,64 @@ export const PreislisteMobile: React.FC<PreislisteMobileProps> = ({ preislisteHa
         const preisArray: Preis[] = [];
 
         if (data) {
-            data.kategorien.map(kategorie => {
-                if (kategorie.kategorie !== 'Pflege & Make-up') {
-                    if (!kategorienArray.includes(kategorie.kategorie)) {
-                        kategorienArray.push(kategorie.kategorie);
-                        kategorieObjects[kategorie.kategorie] = {
-                            kategorie: kategorie.kategorie,
-                            ueberschriften: [kategorie.ueberschrift]
-                        };
-                    } else {
-                        kategorieObjects[kategorie.kategorie].ueberschriften.push(kategorie.ueberschrift);
+            if (data.kategorien) {
+                data.kategorien.map((kategorie: Kategorie) => {
+                    if (kategorie.kategorie !== 'Pflege & Make-up') {
+                        if (!kategorienArray.includes(kategorie.kategorie)) {
+                            kategorienArray.push(kategorie.kategorie);
+                            kategorieObjects[kategorie.kategorie] = {
+                                kategorie: kategorie.kategorie,
+                                ueberschriften: [kategorie.ueberschrift]
+                            };
+                        } else {
+                            kategorieObjects[kategorie.kategorie].ueberschriften.push(kategorie.ueberschrift);
+                        }
                     }
-                }
-            });
-            data.frisuren.map(frisur => {
-                preisArray.push(frisur);
-            });
-            data.preiseFuT.map(frisur => {
-                preisArray.push(frisur);
-            });
-            data.preisePuMU.map(frisur => {
-                preisArray.push(frisur);
-            });
+                });
+            }
+            if (data.frisuren) {
+                data.frisuren.map((frisur: Preis) => {
+                    preisArray.push(frisur);
+                });
+            }
+            if (data.preiseFuT) {
+                data.preiseFuT.map((frisur: Preis) => {
+                    preisArray.push(frisur);
+                });
+            }
+            if (data.preisePuMU) {
+                data.preisePuMU.map((frisur: Preis) => {
+                    preisArray.push(frisur);
+                });
+            }
             preisArray.sort((a, b) => a.reihenfolge - b.reihenfolge);
         }
 
         return { kategorienArray, kategorieObjects, preisArray };
     }, [data]);
 
+    const MobileContent = styled(motion.div as any)(mq({
+        position: "relative",
+        height: "100%",
+        padding: ["0em 0em 3em 0em", "0em 0em 3em 0em", "0em 4em 3em 4em", "0em 4em 3em 4em"],
+        fontSize: "14px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
+        marginTop: "60px"
+    }));
+
     return (
-        <motion.div
+        <SlideInContainer
             variants={slidein}
             style={{ x: 0 }}
             initial="initial"
             animate="animate"
             exit="exit"
-            css={css`position: fixed; background-color: #EDD6C6; box-shadow: 0 0 12px 6px rgba(0,0,0,0.1); z-index: 7; max-height: 90vh; overflow: hidden; padding-bottom: 2em;`}>
+        >
             <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};`}></div>
-            <motion.div css={mq({ position: "relative", height: "100%", padding: ["0em 0em 3em 0em", "0em 0em 3em 0em", "0em 4em 3em 4em", "0em 4em 3em 4em"], fontSize: "14px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", marginTop: "60px" })}>
+            <MobileContent>
                 <div css={{ width: "100%", display: "flex", padding: "1em", flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                     <h5> Preisliste</h5>
                     <div onClick={() => preislisteHandler("close")} css={{ padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " + dark, cursor: "pointer", [":hover"]: { color: beige, background: dark } }}>
@@ -318,8 +392,9 @@ export const PreislisteMobile: React.FC<PreislisteMobileProps> = ({ preislisteHa
                 </div>
                 <AnimatePresence mode='wait'>
                     {Object.keys(kategorieObjects).length > 0 && Object.keys(kategorieObjects).map(kategorieId => {
+                        const StyledMotionDivMobile = styled(motion.div as any)({ overflowY: "scroll", width: "100%", padding: "1em", ['p']: { lineHeight: '2.1em' } });
                         return sliderState === kategorieObjects[kategorieId].kategorie &&
-                            <motion.div className="preiscontainer" key="frisuren" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} css={{ overflowY: "scroll", width: "100%", padding: "1em", ['p']: { lineHeight: '2.1em' } }}>
+                            <StyledMotionDivMobile className="preiscontainer" key="frisuren" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                                 {
                                     kategorieObjects[kategorieId].ueberschriften.map(ueberschrift => {
                                         return <React.Fragment key={ueberschrift}>
@@ -351,10 +426,12 @@ export const PreislisteMobile: React.FC<PreislisteMobileProps> = ({ preislisteHa
                                         </React.Fragment>;
                                     })
                                 }
-                            </motion.div>;
+                            </StyledMotionDivMobile>;
                     })}
                 </AnimatePresence>
-            </motion.div>
-        </motion.div>
+            </MobileContent>
+        </SlideInContainer>
     );
 };
+
+export default Preisliste;

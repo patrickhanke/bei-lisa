@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import React from "react";
 import { beige, dark } from "./styles";
 import { IoLogoFacebook, IoLogoInstagram } from 'react-icons/io';
+import styled from '@emotion/styled';
 
 interface ScrollPositions {
   start?: number;
@@ -19,6 +20,17 @@ interface HeaderProps {
   popupHandler?: (state: boolean) => void;
 }
 
+const StyledHeader = styled(motion.header as any)({
+  position: "fixed",
+  width: "100vw",
+  zIndex: 12,
+  padding: "0 1em",
+  background: "rgb(253, 250, 247, 1)",
+  boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)",
+  height: "80px",
+  color: dark
+});
+
 const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler }) => {
   function scrollHandlerAngebot(e: keyof ScrollPositions): void {
     if (position && position[e] !== undefined) {
@@ -27,18 +39,7 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
   }
 
   return (
-    <motion.header
-      css={{
-        position: "fixed",
-        width: "100vw",
-        zIndex: 12,
-        padding: "0 1em",
-        background: "rgb(253, 250, 247, 1)",
-        boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)",
-        height: "80px",
-        color: dark
-      }}
-    >
+    <StyledHeader>
       <div css={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
         <Link to="/">
           <div css={{ width: "160px", padding: "0.5em 0" }}>
@@ -96,7 +97,7 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
         </div>
       </div>
 
-    </motion.header>
+    </StyledHeader>
   );
 };
 

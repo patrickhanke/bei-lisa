@@ -17,7 +17,11 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./app/*"]
+      "@/*": ["./app/*"],
+      "@components": ["./app/components/index.ts"],
+      "@content": ["./app/content/index.ts"],
+      "@styles": ["./app/components/styles.ts"],
+      "@lib": ["./app/lib/index.ts"]
     }
   },
   "include": [

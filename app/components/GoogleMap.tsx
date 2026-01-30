@@ -11,7 +11,7 @@ const center = {
     lng: 7.802252636899373
 };
 
-function KontaktMap(): JSX.Element {
+function KontaktMap(): React.JSX.Element {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyBFXhMQXo61sZuf7h_bq2XZoLb5tQ3Xdhc",
