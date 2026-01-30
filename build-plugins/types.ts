@@ -17,8 +17,10 @@ export const FileSchema = z.object({
 // Category schema
 export const CategorySchema = z.object({
   objectId: z.string(),
-  label: z.string().optional(),
-  title: z.string().optional(),
+  createdAt: z.string(),
+  updatedAt: z.string().optional(),
+  label: z.string().optional().nullable(),
+  title: z.string().optional().nullable(),
 });
 
 // Image schema
@@ -66,6 +68,7 @@ export const schema_map = {
   Image: ImageSchema,
   Person: PersonSchema,
   Entry: EntrySchema,
+  Category: CategorySchema,
 } as const;
 
 export type SchemaName = keyof typeof schema_map;
@@ -98,6 +101,7 @@ export interface BuildTimeData {
   images: ImageClass[];
   persons: PersonClass[];
   entries: EntryClass[];
+  categories: CategoryClass[];
   downloadedFiles: DownloadedFile[];
 }
 

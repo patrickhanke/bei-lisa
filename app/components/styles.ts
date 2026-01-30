@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import facepaint from 'facepaint';
 
 export const white = '#FDFAF7';
-export const light = '#FDFAF7';
-export const beige = '#EDD6C6';
+export const light = '#F1EFE7';
+export const beige = '#2f4858';
 export const dark = '#3D3D3D';
 export const darkgrey = '#3D3D3D';
 
@@ -26,6 +26,19 @@ export const Wrapper = styled.div(
         ['p']: { color: "inherit" }
     })
 );
+
+export const contentContainer = mq({
+    padding: ["0 12px", "0 12px", "0 12px", "0"],
+    width: "100%",
+    overflow: "visible",
+    position: "relative",
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxWidth: '1120px',
+    fontSize: ["14px", "15px", "16px", "16px"],
+    marginTop: ["24px", "24px", "24px", "60px"],
+    marginBottom: ["24px", "24px", "24px", "60px"],
+})
 
 interface FlexContainerProps {
     justify?: string;
@@ -102,22 +115,6 @@ interface FlexBoxProps {
     align?: string;
     direction?: string;
 }
-
-export const FlexBox = styled('div', {
-    shouldForwardProp: (prop) => !['justify', 'align', 'direction'].includes(prop as string)
-})<FlexBoxProps>(
-    {
-        height: "auto",
-        padding: "1em 0",
-        display: "flex",
-        overflow: "visible",
-        position: "relative",
-        minWidth: 0,
-    },
-    props => ({ justifyContent: props.justify as any }),
-    props => ({ alignItems: props.align as any }),
-    props => ({ flexDirection: props.direction as any })
-);
 
 export const FlexBoxMobile = styled.div(
     {

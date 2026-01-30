@@ -9,15 +9,21 @@ export interface File {
 
 export interface Category {
   objectId: string;
-  label?: string;
-  title?: string;
+  createdAt: string;
+  updatedAt?: string;
+  label?: string | null;
+  title?: string | null;
+}
+
+export interface CategoryReference {
+  value: string;
 }
 
 export interface Image {
   objectId: string;
   createdAt: string;
   updatedAt?: string;
-  categories?: Category[] | null;
+  categories?: CategoryReference[] | null;
   label?: string | null;
   title?: string | null;
   text?: string | null;
@@ -38,13 +44,14 @@ export interface Person {
   title?: string | null;
   text?: string | null;
   portrait?: File | null;
+  image?: string | null;
 }
 
 export interface Entry {
   objectId: string;
   createdAt: string;
   updatedAt?: string;
-  categories?: Category[] | null;
+  categories?: CategoryReference[] | null;
   label?: string | null;
   title?: string | null;
   text?: string | null;
@@ -67,6 +74,7 @@ export interface BuildTimeData {
   images: Image[];
   persons: Person[];
   entries: Entry[];
+  categories: Category[];
   downloadedFiles: DownloadedFile[];
 }
 
@@ -83,6 +91,7 @@ async function loadStaticData(): Promise<BuildTimeData> {
     images: [],
     persons: [],
     entries: [],
+    categories: [],
     downloadedFiles: [],
   };
 
@@ -143,6 +152,11 @@ export async function getEntries() {
   return data.entries;
 }
 
+export async function getCategories() {
+  const data = await loadStaticData();
+  return data.categories;
+}
+
 export async function getDownloadedFiles() {
   const data = await loadStaticData();
   return data.downloadedFiles;
@@ -177,14 +191,20 @@ export async function getLocalFilePath(remoteUrl: string) {
 export async function getImagesByCategory(categoryId: string) {
   const data = await loadStaticData();
   return data.images.filter(img => 
-    img.categories?.some(cat => cat.objectId === categoryId)
+    img.categories?.some(cat => cat.value === categoryId)
   );
+}
+
+// Helper to get a specific category by objectId
+export async function getCategoryById(objectId: string) {
+  const data = await loadStaticData();
+  return data.categories.find(cat => cat.objectId === objectId);
 }
 
 // Helper to get entries by category
 export async function getEntriesByCategory(categoryId: string) {
   const data = await loadStaticData();
   return data.entries.filter(entry => 
-    entry.categories?.some(cat => cat.objectId === categoryId)
+    entry.categories?.some(cat => cat.value === categoryId)
   );
 }

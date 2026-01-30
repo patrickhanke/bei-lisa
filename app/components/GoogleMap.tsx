@@ -14,7 +14,7 @@ const center = {
 function KontaktMap(): React.JSX.Element {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+        googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string,
     });
 
     const [map, setMap] = React.useState<google.maps.Map | null>(null);

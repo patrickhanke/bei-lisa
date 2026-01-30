@@ -46,5 +46,14 @@ export const bei_lisa_schema = [
             "text",
             "portrait",
         ]
+    },
+    {
+        name: "Category",
+        keys: [
+            "objectId",
+            "label",
+            "title",
+            "createdAt",
+        ]
     }
 ];

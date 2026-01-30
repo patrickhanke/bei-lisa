@@ -5,6 +5,7 @@ import type {
   ImageClass,
   PersonClass,
   EntryClass,
+  CategoryClass,
   GraphQLVariables,
   GraphQLResponse,
 } from './types';
@@ -12,6 +13,7 @@ import {
   ImageSchema,
   PersonSchema,
   EntrySchema,
+  CategorySchema,
 } from './types';
 import { generateQuery, zodToGraphQLFields } from './graphql-client';
 import { FileDownloader } from './file-downloader';
@@ -33,6 +35,7 @@ export class DataFetcher {
       'Image': 'images',
       'Person': 'people', 
       'Entry': 'entries',
+      'Category': 'categories',
     };
     
     return queryNameMap[objectName] || `${objectName.toLowerCase()}s`;
@@ -222,10 +225,11 @@ export class DataFetcher {
     // Fetch all data
     // Note: Person query is commented out because the GraphQL schema doesn't have a list query for Person
     // The 'person' field requires an ID parameter and returns a single object
-    const [rawImages, rawPersons, rawEntries] = await Promise.all([
+    const [rawImages, rawPersons, rawEntries, rawCategories] = await Promise.all([
       this.fetchObjects<ImageClass>('Image', ImageSchema.shape),
       this.fetchObjects<PersonClass>('Person', PersonSchema.shape),
       this.fetchObjects<EntryClass>('Entry', EntrySchema.shape),
+      this.fetchObjects<CategoryClass>('Category', CategorySchema.shape),
     ]);
 
     // Validate and process data
@@ -241,18 +245,22 @@ export class DataFetcher {
       rawEntries.map((entry) => EntrySchema.parse(entry))
     );
 
+    const categories = rawCategories.map((category) => CategorySchema.parse(category));
+
     const downloadedFiles = this.fileDownloader.getDownloadedFiles();
 
     console.log(`\n✨ Data fetch complete!`);
     console.log(`   - Images: ${images.length}`);
     console.log(`   - Persons: ${persons.length}`);
     console.log(`   - Entries: ${entries.length}`);
+    console.log(`   - Categories: ${categories.length}`);
     console.log(`   - Downloaded files: ${downloadedFiles.length}\n`);
 
     return {
       images,
       persons,
       entries,
+      categories,
       downloadedFiles,
     };
   }

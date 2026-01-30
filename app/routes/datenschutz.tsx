@@ -5,8 +5,9 @@ import { useMediaQuery } from 'react-responsive';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { SEO } from '../components/SEO';
-import { dark, FlexBox, FlexContainer, Wrapper, light } from '../components/styles';
+import { dark, FlexContainer, Wrapper, light } from '../components/styles';
 import styled from '@emotion/styled';
+import { FlexBox } from '@ui';
 
 export const Route = createFileRoute('/datenschutz')({
   component: DatenschutzPage,
@@ -72,7 +73,7 @@ function DatenschutzPage() {
                             <div >
                                 <h1 css={{ color: dark, fontSize: "6em" }}>Datenschutzerklärung</h1>
                             </div>
-                            <FlexBox direction="column" align="flex-start" css={{ width: "100%" }}>
+                            <FlexBox direction="column" align="flex-start" hasFullWidth>
                                 <h2>Datenschutz</h2>
                                 <p>
                                     Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie über die Verarbeitung Ihrer personenbezogenen Daten bei der Nutzung unserer Website.
@@ -111,7 +112,7 @@ function DatenschutzPage() {
 
                     <FlexContainer direction="column" css={{ padding: "2em 1em", ["p"]: { lineHeight: "1.6em", marginBlockEnd: "2.4em" }, ["h2"]: { marginTop: "2em" } }}>
 
-                        <FlexBox direction="column" align="flex-start" css={{ width: "100%" }}>
+                        <FlexBox direction="column" align="flex-start" hasFullWidth>
                             <div >
                                 <h1 css={{ color: dark, fontSize: "3em", marginTop: "100px", marginBottom: "30px" }}>Datenschutzerklärung</h1>
                             </div>

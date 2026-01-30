@@ -1,43 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router'
 import React, { useEffect, useState } from "react";
-import { beige, dark, darkgrey, FlexBox, FlexContainer, light, Wrapper, FlexBoxMobile, FlexContainerMobile, mq, white, teamcontainer } from "@styles";
-import {Footer, Header, KontaktIcon, KontaktIconMobile, Preisliste, GoogleMap, SEO, TeamCard} from "@components";
+import { beige, dark, darkgrey, FlexContainer, light, Wrapper, FlexBoxMobile, FlexContainerMobile, mq, white, teamcontainer } from "@styles";
+import {Footer, KontaktIcon, KontaktIconMobile, Preisliste, GoogleMap, SEO, TeamCard} from "@components";
 import { AnimatePresence, motion, useScroll, useSpring, useTransform, MotionValue } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { loadStaticDataAsync, type BuildTimeData } from "@/lib/static-data";
 import styled from '@emotion/styled';
+import { HomeHeader, StudioContent, HomePresentation, HomeTeam, HomePrices } from './components';
+import { Header } from '../Header';
+import { FooterSection, ImageWrapper, ScrollWrapper } from './styles';
+import { FlexBox } from '@ui';
 
-
-
-const ScrollWrapper = styled(motion.div as any)({
-  position: "fixed",
-  height: "auto",
-  top: "10vh",
-  left: "auto",
-  right: "auto",
-  zIndex: 5,
-  background: light,
-  width: "100%"
-});
-
-const ImageWrapper = styled(motion.div as any)({
-  width: "40%",
-  height: "30em",
-  marginTop: "-4em"
-});
-
-const FooterSection = styled(motion.div as any)({
-  position: "relative",
-  height: "auto",
-  left: "auto",
-  right: "auto",
-  zIndex: 5,
-  background: light,
-  width: "100%",
-  h2: {
-    marginTop: "2em"
-  }
-});
 
 interface Position {
   x: number;
@@ -213,67 +186,14 @@ const HomePage: React.FC = () => {
           <Preisliste />
 
           <ScrollWrapper id="wrapper" style={{ y: yFast }}>
-            <div id="header" css={mq({ width: `100vw`, height: [`auto`, `auto`, `50vh`, `80vh`], top: 0, left: 0, zIndex: 2, overflow: "hidden", margin: "auto", position: "relative" })}>
-              <img 
-                src="/src/images/hs_header.jpg" 
-                alt="Bei Lisa Team"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-              <div css={{ width: "100%", height: "100%", position: "absolute", zIndex: 4, background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
-        
-              <h1 css={{ position: "absolute", bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5 }}>
-                Bei Lisa
-              </h1>
-            </div>
+            <HomeHeader />
+            <HomePresentation />
 
-            <FlexContainer id="angebot" align="center" justify="center">
-              <FlexBox direction="column" align="center" justify="center">
-                <img loading="lazy" src="/static-data/Lisa.jpg" alt="lisa" css={{ width: "100%", height: "auto", maxWidth: "600px", marginBottom: "2em" }} />
-                <h2 css={{ textAlign: "right", color: beige }}>Wir bieten alles für Ihre Haare:</h2>
-                <div css={{ color: darkgrey }}>
-                  <div css={{ zIndex: 13 }}>
-                    <h4>Damenschnitt</h4>
-                    <h4>Herrenschnitt</h4>
-                    <h4>Färben & Tönen</h4>
-                    <h4>Balayage & Foilyage</h4>
-                    <h4>Extensions - Hairtalk</h4>
-                    <h4>Wimpern & Augenbrauen färben</h4>
-                    <h4>Make-Up & Hochzeitsfrisur</h4>
-                  </div>
-                </div>
-              </FlexBox>
-            </FlexContainer>
-            
-            <FlexContainer id="salon" direction="column" justify="space-evenly" align="center" css={{ color: dark }}>
-              <h2 css={{ color: beige }}>Das Studio</h2>
-              <FlexBox direction="column" justify="center" align="flex-start" css={{ width: "100%", margin: "3em 0" }}>
-                <div css={{ display: "flex", flexDirection: "row", width: "100%", alignItems: "flex-start", justifyContent: "space-evenly" }}>
-                  <div css={{ width: "24em" }} >
-                    <h3>Ein Ort zum Verweilen</h3>
-                    <p css={{ marginLeft: "6em" }} >
-                      Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.
-                    </p>
-                  </div>
+            <StudioContent />
 
-                  <ImageWrapper style={{ y: paralaxFast }}>
-                    <img 
-                      src="/src/images/Haarstudio-Marita-Interieur-2020-web-5.jpg" 
-                      alt="Bei Lisa"
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
-                  </ImageWrapper>
-                </div>
-              </FlexBox>
-            </FlexContainer>
+            <HomeTeam />
 
-            <FlexContainer id="team" direction="column" align="center" justify="center" css={{ color: dark }}>
-              <h2 css={{ textAlign: "center", color: beige }}>Das Team</h2>
-              <h3 css={{ textAlign: "center" }}>Friseurinnen mit Leidenschaft</h3>
-              <p css={{ textAlign: "center", maxWidth: "60%", marginBottom: "8em" }}>
-                Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird.
-              </p>
-              {/* Team member images would go here - simplified for now */}
-            </FlexContainer>
+            <HomePrices />
 
             <FlexContainer id="kontakt" direction="column" align="center" css={{ paddingTop: 0 }}>
               <h2 css={{ color: beige }}>Kontakt</h2>
@@ -282,7 +202,7 @@ const HomePage: React.FC = () => {
                 <h3 className="linkclass">0761 484745</h3>
               </a>
 
-              <FlexBox direction="row" justify="space-between" align="flex-start" css={{ width: "100%" }}>
+              <FlexBox direction="row" justify="space-between" align="flex-start" styles={{ width: "100%" }}>
                 <div css={{ background: "transparent", color: dark, padding: "2em 2em" }}>
                   <h4 css={{ textAlign: "left" }}>Unsere <br />Öffnungszeiten</h4>
                   <p css={{ color: dark + " !important" }}>Di.: 08:30 - 18:30</p>
