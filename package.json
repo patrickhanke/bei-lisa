@@ -50,7 +50,8 @@
   "license": "0BSD",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build && tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "preview": "vite preview",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "echo \"Write tests!\" && exit 1"
