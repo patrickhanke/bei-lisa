@@ -3,11 +3,11 @@ import { motion, useSpring, useTransform, MotionValue, useScroll } from 'framer-
 import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Footer from '../components/Footer';
-import Header from '../components/Header';
 import { SEO } from '../components/SEO';
 import { dark, FlexContainer, Wrapper, light } from '../components/styles';
 import styled from '@emotion/styled';
 import { FlexBox } from '@ui';
+import { Header } from '@/content/Header';
 
 export const Route = createFileRoute('/datenschutz')({
   component: DatenschutzPage,

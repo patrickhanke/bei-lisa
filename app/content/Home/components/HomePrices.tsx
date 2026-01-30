@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import { getEntries, getCategories, Entry, Category } from '@/lib/static-data'
-import { darkgrey } from '@/components/styles'
+import { contentContainer, darkgrey } from '@/components/styles'
+import { FlexBox } from '@ui'
+import { contactButton } from '../styles'
 
 const PriceListContainer = styled.div({
   width: '100%',
   maxWidth: '800px',
   margin: '0 auto',
-  padding: '2em 1em',
 })
 
 const CategorySection = styled.div({
@@ -141,21 +142,41 @@ const HomePrices = () => {
   }
 
   return (
-    <PriceListContainer>
-      {groupedEntries.map((group, index) => (
-        <CategorySection key={group.category?.objectId || `uncategorized-${index}`}>
-          <CategoryHeader>
-            {group.category?.title || group.category?.label || 'Other'}
-          </CategoryHeader>
-          {group.entries.map((entry) => (
-            <PriceItem key={entry.objectId}>
-              <PriceTitle>{entry.title || 'Untitled'}</PriceTitle>
-              <PriceValue>{entry.description || '-'}</PriceValue>
-            </PriceItem>
-          ))}
-        </CategorySection>
-      ))}
-    </PriceListContainer>
+    <div id="angebot">
+        <PriceListContainer>
+        {groupedEntries.map((group, index) => (
+            <CategorySection key={group.category?.objectId || `uncategorized-${index}`}>
+            <CategoryHeader>
+                {group.category?.title || group.category?.label || 'Other'}
+            </CategoryHeader>
+            {group.entries.map((entry) => (
+                <PriceItem key={entry.objectId}>
+                <PriceTitle>{entry.title || 'Untitled'}</PriceTitle>
+                <PriceValue>{entry.description || '-'}</PriceValue>
+                </PriceItem>
+            ))}
+            </CategorySection>
+        ))}
+        </PriceListContainer>
+        <div css={contentContainer} id="kontakt">
+            <FlexBox direction="column" align="center" justify="center">
+                <h3 css={{textAlign: "center"}}>Termine sind bitte nur persönlich oder telefonisch zu vereinbaren ! </h3>
+                <a href="tel:+49761484745" css={contactButton}>
+                    <h3>0761 484745</h3>
+                </a>
+            </FlexBox>
+            <FlexBox direction="row" justify="space-between" align="center" styles={{marginTop: "60px"}}>
+                <div css={{flex: 1}} />
+                <div>
+                    <p css={{fontSize: "0.7em"}}>
+                        Bei kurzfristigen Absagen ohne triftigen Grund, die weniger als
+                        24 Stunden vor dem Termin erfolgen, werden wir 50% der gebuchten
+                        Leistung in Rechnung stellen. 
+                    </p>
+                </div>
+            </FlexBox>
+        </div>
+    </div >
   )
 }
 

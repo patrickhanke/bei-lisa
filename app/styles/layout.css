@@ -67,36 +67,7 @@ h6 {
   text-decoration: none;
   color: inherit;
 }
-h6:active,
-h6:hover {
-  color: inherit;
-  outline-width: 0;
-  text-decoration: none;
-}
-h6::after {
-  left: 50%;
-  top: -8px;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  content: '';
-  position: absolute;
-  background: #EDD6C6;
-  transform: translate(-50%, 0) scale(0, 0);
 
-  transform-origin: center;
-  transition: all 0.4s ease-in;
-  z-index: -1;
-}
-h6:hover::after {
-  transform: translate(-50%,0) scale(1, 1);
-  transform-origin: center;
-}
-
-h6.active::after {
-  transform: translate(-50%,0) scale(1, 1);
-  transform-origin: left;
-} 
 
 .linkclass{
   position: relative;

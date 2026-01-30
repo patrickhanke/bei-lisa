@@ -24,10 +24,10 @@ export const StyledHeader = styled(motion.header as any)({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    ":hover": {
-      background: darkgrey,
-    color: white
-    }
+    // ":hover": {
+    //   background: darkgrey,
+    // color: white
+    // }
   })
 
   export const menuElementContainer = mq({

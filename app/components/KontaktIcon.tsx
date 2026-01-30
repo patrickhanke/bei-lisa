@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, Variant, Variants } from 'framer-motion';
 import React, { useState } from 'react';
-import { beige, dark, darkgrey, white } from './styles';
+import { darkgrey, dark, white } from './styles';
 import { MdLocalPhone } from 'react-icons/md';
 import { VscClose } from 'react-icons/vsc';
 import { css } from '@emotion/react';
@@ -34,7 +34,7 @@ const KontaktButton = styled(motion.div as any)({
 });
 
 const PopupContainer = styled(motion.div as any)({
-    backgroundColor: beige,
+    backgroundColor: darkgrey,
     position: "absolute",
     boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)"
 });
@@ -67,35 +67,35 @@ export const KontaktIcon: React.FC = () => {
                         animate="animate"
                         exit="exit"
                     >
-                        <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};border-left: 10px dashed transparent;border-right: 10px dashed transparent; background: transparent;`}></div>
+                        <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${darkgrey};border-left: 10px dashed transparent;border-right: 10px dashed transparent; background: transparent;`}></div>
                         <PopupContent variants={menuList}>
-                            <div onClick={() => setOpen(!open)} css={{ padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " + dark, cursor: "pointer", [":hover"]: { color: beige, background: dark } }}>
+                            <div onClick={() => setOpen(!open)} css={{ padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: white, color: darkgrey, border: "1px solid " + dark, cursor: "pointer" }}>
                                 <VscClose />
                             </div>
-                            <a href="tel:+49761484745" css={{ lineHeight: "1em", color: dark, textDecoration: "none", marginTop: "1em", [":hover"]: { textDecoration: "underline" } }}>
-                                <p css={{ marginBottom: 0, fontSize: "1.2em", lineHeight: "1.2em" }}> 0761 484745</p>
+                            <a href="tel:+49761484745" css={{ lineHeight: "1em", color: white, textDecoration: "none", marginTop: "1em", [":hover"]: { textDecoration: "underline" } }}>
+                                <p css={{ color: "white", marginBottom: 0, fontSize: "1.2em", lineHeight: "1.2em" }}> 0761 484745</p>
                             </a>
                             <div css={{ width: "100%", height: "1.5px", background: darkgrey, margin: "6px auto 12px auto" }} />
-                            <h5>Öffnungszeiten</h5>
-                            <p css={{ color: dark + " !important" }}>
+                            <h5 css={{color: white}}>Öffnungszeiten</h5>
+                            <p css={{ color: white + " !important" }}>
                                 Di.: 08:30 - 18:30
                             </p>
-                            <p css={{ color: dark + " !important" }}>
+                            <p css={{ color: white + " !important" }}>
                                 Mi.: 08:00 - 18:00
                             </p>
-                            <p css={{ color: dark + " !important" }}>
+                            <p css={{ color: white + " !important" }}>
                                 Do.: 08:30 - 20:00
                             </p>
-                            <p css={{ color: dark + " !important" }}>
+                            <p css={{ color: white + " !important" }}>
                                 Fr.: 08:00 - 18:00
                             </p>
                         </PopupContent>
                     </PopupContainer>}
             </AnimatePresence>
 
-            <KontaktButton onClick={() => setOpen(!open)} animate={open ? { backgroundColor: dark, color: beige } : { backgroundColor: beige, color: dark }}>
+            <KontaktButton onClick={() => setOpen(!open)} animate={open ? { backgroundColor: dark, color: darkgrey } : { backgroundColor: darkgrey, color: dark }}>
                 <h4 css={{ marginBottom: 0, lineHeight: 0, marginTop: 0, marginBlockEnd: 0, fontSize: "24px" }}>
-                    <MdLocalPhone />
+                    <MdLocalPhone color={white} />
                 </h4>
             </KontaktButton>
         </KontaktContainer>
@@ -118,7 +118,7 @@ const KontaktButtonMobile = styled(motion.div as any)({
 });
 
 const PopupContainerMobile = styled(motion.div as any)({
-    backgroundColor: beige,
+    backgroundColor: darkgrey,
     position: "absolute",
     boxShadow: "0 0 12px 6px rgba(0,0,0,0.1)",
     fontSize: "14px"
@@ -152,9 +152,9 @@ export const KontaktIconMobile: React.FC = () => {
                         animate="animate"
                         exit="exit"
                     >
-                        <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${beige};border-left: 10px dashed transparent;border-right: 10px dashed transparent; background: transparent;`}></div>
+                        <div css={css`display: block;position: absolute;left: 27px; top: -10px; border-bottom: 10px solid ${darkgrey};border-left: 10px dashed transparent;border-right: 10px dashed transparent; background: transparent;`}></div>
                         <PopupContentMobile variants={menuList}>
-                            <div onClick={() => setOpen(!open)} css={{ padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: beige, color: dark, border: "1px solid " + dark, cursor: "pointer", [":hover"]: { color: beige, background: dark } }}>
+                            <div onClick={() => setOpen(!open)} css={{ padding: "0.5em", fontSize: "1em", lineHeight: "0em", borderRadius: "50%", background: darkgrey, color: dark, border: "1px solid " + dark, cursor: "pointer", [":hover"]: { color: darkgrey, background: dark } }}>
                                 <VscClose />
                             </div>
                             <a href="tel:+49761484745" css={{ lineHeight: "1em", color: dark, textDecoration: "none", marginTop: "1em", [":hover"]: { textDecoration: "underline" } }}>
@@ -178,7 +178,7 @@ export const KontaktIconMobile: React.FC = () => {
                     </PopupContainerMobile>}
             </AnimatePresence>
 
-            <KontaktButtonMobile onClick={() => setOpen(!open)} animate={open ? { backgroundColor: dark, color: beige } : { backgroundColor: beige, color: dark }}>
+            <KontaktButtonMobile onClick={() => setOpen(!open)} animate={open ? { backgroundColor: dark, color: darkgrey } : { backgroundColor: darkgrey, color: dark }}>
                 <h4 css={{ marginBottom: 0, lineHeight: 0, marginTop: 0, marginBlockEnd: 0, fontSize: "18px" }}>
                     <MdLocalPhone />
                 </h4>

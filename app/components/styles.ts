@@ -36,8 +36,8 @@ export const contentContainer = mq({
     marginRight: 'auto',
     maxWidth: '1120px',
     fontSize: ["14px", "15px", "16px", "16px"],
-    marginTop: ["24px", "24px", "24px", "60px"],
-    marginBottom: ["24px", "24px", "24px", "60px"],
+    marginTop: ["24px", "24px", "120px", "180px"],
+    marginBottom: ["24px", "24px", "120px", "180px"],
 })
 
 interface FlexContainerProps {

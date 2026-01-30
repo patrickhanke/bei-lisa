@@ -30,7 +30,7 @@ const HomeTeam: React.FC = () => {
     }
 
     return (
-        <div css={contentContainer}>
+        <div css={contentContainer} id="team">
             <FlexBox direction="column" justify="center" align="center">
                 <h2 css={{ textAlign: "center", color: beige }}>Das Team</h2>
                 <h3 css={{ textAlign: "center" }}>Friseurinnen mit Leidenschaft</h3>

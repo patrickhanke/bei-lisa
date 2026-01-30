@@ -1,6 +1,7 @@
 import { contentContainer } from '@/components/styles'
 import { FlexBox } from '@ui'
 import React from 'react'
+import { studioImage } from '../styles'
 
 const StudioContent = () => {
   return (
@@ -14,28 +15,44 @@ const StudioContent = () => {
         />
     </div>
     <div css={contentContainer}>
+
+        <FlexBox direction="row" justify="center" align="flex-start" styles={{ flex: 1}}>
+            <div css={{flex: 1}} />
+            <div css={{flex: 1}}>
+                <h2>Das Studio</h2>
+                    <div >
+                        <h3>Ein Ort zum Verweilen</h3>
+                        <p >
+                            Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.
+                        </p>
+                    </div>
+            </div>
+        </FlexBox>
+    </div>
+    <div css={{width: "100%", height: "400px", margin: "120px auto"}}>
         <FlexBox direction="row" justify="center" align="stretch" gap="2em" changeToColumn>
-            <FlexBox direction="column" justify="center" align="flex-start" styles={{ flex: 1}}>
-            <h2>Das Studio</h2>
-                <div css={{ marginLeft: "6em" }} >
-                    <h3>Ein Ort zum Verweilen</h3>
-                    <p >
-                        Haare sind für uns mehr als nur ein Beruf. Sie sind Berufung, Motivation und Lifestyle zugleich. In vielen Fällen genügt ein frischer Schnitt – ganz gleich ob klassisch oder topmodisch – um der Person im Spiegel ganz neuen Glanz zu verleihen und Sie richtig aufleben zu lassen.
-                    </p>
-                </div>
-            </FlexBox>
-            <FlexBox direction="column" justify="space-evenly" align="center" styles={{ flex: 1}}>
+            <div css={{flex: 1}}>
                 <img
                     src="/images/Haarstudio-Marita-Interieur-2020-web-5.jpg"
                     alt="Bei Lisa"
-                    style={{ width: "300px", height: "auto", objectFit: "cover" }}
+                    css={studioImage}
+                    width="100%"
+                />
+            </div>
+            <div css={{flex: 1, display: "flex", alignItems:"flex-start", flexDirection: "column", gap: "24px"}}>
+                <img
+                    src="/images/Haarstudio-Marita-Interieur-2020-web-5.jpg"
+                    alt="Bei Lisa"
+                    css={studioImage}
+                    width="300px"
                 />
                 <img
                     src="/images/Haarstudio-Marita-Interieur-2020-web-5.jpg"
                     alt="Bei Lisa"
-                    style={{ width: "300px", height: "auto", objectFit: "cover" }}
+                    css={studioImage}
+                    width="120px"
                 />
-            </FlexBox>
+            </div>
         </FlexBox>
     </div>
     </>

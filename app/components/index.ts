@@ -1,4 +1,3 @@
-export {default as Header} from "./Header";
 export {default as Footer} from "./Footer";
 export {KontaktIcon, KontaktIconMobile} from "./KontaktIcon";
 export {default as Preisliste} from "./Preislisten";

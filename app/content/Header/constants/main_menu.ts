@@ -1,8 +1,5 @@
 const mainMenu: {title: string, state: string}[] = [
-    {
-        title: "Angebot",
-        state: "angebot",
-    },
+    
     {
         title: "Unser Salon",
         state: "salon",
@@ -10,6 +7,10 @@ const mainMenu: {title: string, state: string}[] = [
     {
         title: "Das Team",
         state: "team",
+    },
+    {
+        title: "Angebot",
+        state: "angebot",
     },
     {
         title: "Kontakt",

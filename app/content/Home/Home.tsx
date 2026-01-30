@@ -1,15 +1,15 @@
 import { createFileRoute } from '@tanstack/react-router'
 import React, { useEffect, useState } from "react";
 import { beige, dark, darkgrey, FlexContainer, light, Wrapper, FlexBoxMobile, FlexContainerMobile, mq, white, teamcontainer } from "@styles";
-import {Footer, KontaktIcon, KontaktIconMobile, Preisliste, GoogleMap, SEO, TeamCard} from "@components";
+import { KontaktIcon, KontaktIconMobile, Preisliste, GoogleMap, SEO, TeamCard} from "@components";
 import { AnimatePresence, motion, useScroll, useSpring, useTransform, MotionValue } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { loadStaticDataAsync, type BuildTimeData } from "@/lib/static-data";
-import styled from '@emotion/styled';
 import { HomeHeader, StudioContent, HomePresentation, HomeTeam, HomePrices } from './components';
 import { Header } from '../Header';
 import { FooterSection, ImageWrapper, ScrollWrapper } from './styles';
 import { FlexBox } from '@ui';
+import { Footer } from '../Footer';
 
 
 interface Position {
@@ -34,25 +34,12 @@ const HomePage: React.FC = () => {
   const [popupState, setPopupState] = useState(false);
   const [staticData, setStaticData] = useState<BuildTimeData | null>(null);
 
-  const scrollSlow = useTransform(scrollY, value => -0.6 * value);
-  const scrollMedium = useTransform(scrollY, value => -0.7 * value);
   const scrollFast = useTransform(scrollY, value => -0.9 * value);
-
-  const yRangeLarge = [-450, 0, 450];
-  const yRangeNarrow = [-150, 0, 150];
-  const scrollRange = [1, 0.5, 0];
-  const paralaxfast = useTransform(scrollYProgress, scrollRange, yRangeLarge);
-  const paralaxslow = useTransform(scrollYProgress, scrollRange, yRangeNarrow);
-  const paralaxFast = useSpring(paralaxfast, { damping: 99, stiffness: 200 });
-  const paralaxSlow = useSpring(paralaxslow, { damping: 99, stiffness: 200 });
 
   const scrollbar = useTransform(scrollYProgress, value => value * 100);
 
-  let ySlow = useSpring(scrollSlow, { damping: 99, stiffness: 200 });
-  let yMedium = useSpring(scrollMedium, { damping: 99, stiffness: 200 });
   let yFast = useSpring(scrollFast, { damping: 99, stiffness: 200 });
 
-  let scrollanimation = useSpring(scrollbar, { damping: 99, stiffness: 100 });
 
   const handleScroll = (e: Event): void => {
     const headerElement = document.getElementById("header");
@@ -94,7 +81,6 @@ const HomePage: React.FC = () => {
       return { x: xPosition, y: yPosition };
     }
 
-    const section0 = getPositions(headerElement);
     const section1 = getPositions(angebotElement);
     const section2 = getPositions(salonElement);
     const section3 = getPositions(teamElement);
@@ -183,51 +169,15 @@ const HomePage: React.FC = () => {
         <Wrapper id="mainwrapper" css={{ height: mainHeight + "px" }}>
           <Header top="start" siteState={siteState} position={scrollPositions} popupHandler={setPopupState} />
           <KontaktIcon />
-          <Preisliste />
+          {/* <Preisliste /> */}
 
           <ScrollWrapper id="wrapper" style={{ y: yFast }}>
             <HomeHeader />
             <HomePresentation />
-
             <StudioContent />
-
             <HomeTeam />
-
             <HomePrices />
-
-            <FlexContainer id="kontakt" direction="column" align="center" css={{ paddingTop: 0 }}>
-              <h2 css={{ color: beige }}>Kontakt</h2>
-              <p>Rufen Sie einfach an unter</p>
-              <a href="tel:+49761484745">
-                <h3 className="linkclass">0761 484745</h3>
-              </a>
-
-              <FlexBox direction="row" justify="space-between" align="flex-start" styles={{ width: "100%" }}>
-                <div css={{ background: "transparent", color: dark, padding: "2em 2em" }}>
-                  <h4 css={{ textAlign: "left" }}>Unsere <br />Öffnungszeiten</h4>
-                  <p css={{ color: dark + " !important" }}>Di.: 08:30 - 18:30</p>
-                  <p css={{ color: dark + " !important" }}>Mi.: 08:00 - 18:00</p>
-                  <p css={{ color: dark + " !important" }}>Do.: 08:30 - 20:00</p>
-                  <p css={{ color: dark + " !important" }}>Fr.: 08:00 - 18:00</p>
-                </div>
-                <div css={{ background: "transparent", color: dark, padding: "2em 2em" }}>
-                  <h4 css={{ textAlign: "left" }}>Hier finden Sie uns</h4>
-                  <p>Bei Lisa Kraus GmbH</p>
-                  <p>Andreas-Hofer-Str. 69b</p>
-                  <p>79111 Freiburg im Breisgau</p>
-                </div>
-                <div css={{ background: "transparent", color: dark, padding: "2em 2em" }}>
-                  <h4 css={{ textAlign: "left" }}>Anfahrt</h4>
-                  <div css={{ width: "400px", height: "400px", padding: "2em", background: beige }}>
-                    <GoogleMap />
-                  </div>
-                </div>
-              </FlexBox>
-            </FlexContainer>
-            
-            <FlexContainer id="footer" direction="column" justify="center" align="center" css={{ padding: "0 2em" }}>
-              <Footer />
-            </FlexContainer>
+            <Footer />
           </ScrollWrapper>
         </Wrapper>
       }
@@ -274,9 +224,7 @@ const HomePage: React.FC = () => {
               </FlexBoxMobile>
             </FlexContainer>
             
-            <FlexContainer id="footer" direction="column" justify="center" align="center" css={mq({ padding: ["0 1em", "0 1em", "0 2em", "0 2em"] })}>
               <Footer />
-            </FlexContainer>
           </FooterSection>
         </Wrapper>
       }
