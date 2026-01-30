@@ -26,7 +26,7 @@ export const SEO: React.FC<SEOProps> = ({
     'name': 'Haarstudio Marita Kraus GmbH',
     'alternateName': 'Haarstudio Marita',
     'url': 'https://haarstudio-marita.de/',
-    'logo': '/src/images/bei_lisa_square.png',
+    'logo': '/images/bei_lisa_square.png',
     'description': 'Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird.',
     'contactPoint': {
       '@type': 'ContactPoint',

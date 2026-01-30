@@ -7,7 +7,7 @@ const StudioContent = () => {
     <>
     <div css={{width: "100%", height: "400px", margin: "120px auto"}}>
         <img 
-            src="/src/images/Haarstudio-Marita-Interieur-2020-web-5.jpg" 
+            src="/images/Haarstudio-Marita-Interieur-2020-web-5.jpg" 
             alt="Bei Lisa"
             loading="lazy"
             style={{ width: "100%", height: "100%", objectFit: "cover",  }}
@@ -26,12 +26,12 @@ const StudioContent = () => {
             </FlexBox>
             <FlexBox direction="column" justify="space-evenly" align="center" styles={{ flex: 1}}>
                 <img
-                    src="/src/images/Haarstudio-Marita-Interieur-2020-web-5.jpg"
+                    src="/images/Haarstudio-Marita-Interieur-2020-web-5.jpg"
                     alt="Bei Lisa"
                     style={{ width: "300px", height: "auto", objectFit: "cover" }}
                 />
                 <img
-                    src="/src/images/Haarstudio-Marita-Interieur-2020-web-5.jpg"
+                    src="/images/Haarstudio-Marita-Interieur-2020-web-5.jpg"
                     alt="Bei Lisa"
                     style={{ width: "300px", height: "auto", objectFit: "cover" }}
                 />

@@ -236,7 +236,7 @@ const HomePage: React.FC = () => {
           {/* Mobile version - simplified */}
           <div id="header" css={mq({ width: `100vw`, height: [`auto`, `auto`, `50vh`, `80vh`], top: 0, left: 0, zIndex: 2, overflow: "hidden", margin: "auto", position: "relative" })}>
             <img 
-              src="/src/images/hs_header.jpg" 
+              src="/images/hs_header.jpg" 
               alt="Bei Lisa Team"
               style={{ width: "100%", height: "auto", objectFit: "cover" }}
             />

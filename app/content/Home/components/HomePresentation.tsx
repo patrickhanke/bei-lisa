@@ -27,7 +27,7 @@ const HomePresentation = () => {
         </div>
         <div css={mq({flex: 1, order: ["2", "2", "2", "1"]})}>
             <img
-                src="/src/images/lisa.jpg"
+                src="/images/lisa.jpg"
                 alt="Bei Lisa Team"
                 loading="lazy"
                 style={{ width: "100%", height: "100%", maxWidth: "400px", objectFit: "contain", borderRadius: "10px" }}

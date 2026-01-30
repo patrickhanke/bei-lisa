@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
         <Link to="/">
           <div css={{ width: "160px", padding: "0.5em 0" }}>
             <img 
-              src="/src/images/bei_lisa_font.png" 
+              src="/images/bei_lisa_font.png" 
               alt="Haarstudio Marita"
               style={{ width: "80px", height: "auto" }}
             />
