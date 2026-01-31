@@ -9,11 +9,12 @@ export const StyledHeader = styled(motion.header as any)({
     padding: "0 1em",
     background: "transparent",
     borderBottom: "0.6px solid rgba(0, 0, 0, 0.2)",
-    height: "80px",
+    height: "72px",
     color: dark,
     display: "flex",
     alignItems: "stretch",
     justifyContent: "space-between",
+    flexWrap: "wrap",
   });
   
   export const headerLinkElement = mq({

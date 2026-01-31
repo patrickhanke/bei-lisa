@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import { Menu, X } from "lucide-react";
 import { HeaderProps, ScrollPositions } from "./types";
 import MenuElement from "./components/MenuElement";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 import { menuElementContainer, StyledHeader, MobileMenuButton, MobileMenuOverlay, MobileMenuContent, MobileMenuItem } from "./styles";
 import mainMenu from "./constants/main_menu";
 
@@ -48,6 +49,7 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
             )
           )}
         </div>
+        <ScrollProgressBar />
       </StyledHeader>
 
       {/* Mobile Fullscreen Menu */}

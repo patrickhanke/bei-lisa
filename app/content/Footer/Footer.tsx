@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
 
     return (
         <footer css={footerContainer}>
-            <div css={[contentContainer, {margin: "0 !important"}]}>
+            <div css={[contentContainer, {padding: "0 !important"}]}>
                 <div css={footerInnerContainer}>
                     <div css={footerContentContainer}>
                         <h4 >Öffnungszeiten</h4>
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
                             79111 Freiburg im Breisgau
                         </p>
                     </div>
-                    <div css={[footerContentContainer, {borderRight: "1px solid " + darkgrey}]}>
+                    <div css={[footerContentContainer, {borderRight: "1px solid rgba(0, 0, 0, 0.2)"}]}>
                         <h4 >Inhalte</h4>
                         <Link to="/" onClick={handleClick}>
                             <p css={{ textDecoration: "underline", cursor: "pointer", [":hover"]: { color: beige } }}>
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div css={{ padding: "0.5em 0", width: "100%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", borderTop: "0.6px solid " + darkgrey }}>
+            <div css={{ padding: "0.5em 0", width: "100%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", borderTop: "0.6px solid rgba(0, 0, 0, 0.2)" }}>
                 <p>Haarstudio Bei Lisa.</p>
                 <p css={{ marginLeft: "0.4em" }}> © {new Date().getFullYear()} </p>
             </div>
