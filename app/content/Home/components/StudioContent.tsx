@@ -6,9 +6,9 @@ import { studioImage } from '../styles'
 const StudioContent = () => {
   return (
     <>
-    <div css={{width: "100%", height: "400px", margin: "120px auto"}}>
+    <div css={{width: "100%", height: "400px"}}>
         <img 
-            src="/images/Haarstudio-Marita-Interieur-2020-web-5.jpg" 
+            src="/images/Haarstudio-Marita-Interieur-2020-web-9.jpg" 
             alt="Bei Lisa"
             loading="lazy"
             style={{ width: "100%", height: "100%", objectFit: "cover",  }}
@@ -29,9 +29,9 @@ const StudioContent = () => {
             </div>
         </FlexBox>
     </div>
-    <div css={{width: "100%", height: "400px", margin: "120px auto"}}>
-        <FlexBox direction="row" justify="center" align="stretch" gap="2em" changeToColumn>
-            <div css={{flex: 1}}>
+    <div css={contentContainer}>
+        <FlexBox direction="row" justify="center" align="flex-start" gap="0" changeToColumn>
+            <div css={{flex: 1, marginRight: "24px"}}>
                 <img
                     src="/images/Haarstudio-Marita-Interieur-2020-web-5.jpg"
                     alt="Bei Lisa"
@@ -41,16 +41,16 @@ const StudioContent = () => {
             </div>
             <div css={{flex: 1, display: "flex", alignItems:"flex-start", flexDirection: "column", gap: "24px"}}>
                 <img
-                    src="/images/Haarstudio-Marita-Interieur-2020-web-5.jpg"
+                    src="/images/Haarstudio-Marita-Interieur-2020-web-16.jpg"
                     alt="Bei Lisa"
                     css={studioImage}
                     width="300px"
                 />
                 <img
-                    src="/images/Haarstudio-Marita-Interieur-2020-web-5.jpg"
+                    src="/images/Haarstudio-Marita-Interieur-2020-high-res-14.jpg"
                     alt="Bei Lisa"
                     css={studioImage}
-                    width="120px"
+                    width="240px"
                 />
             </div>
         </FlexBox>

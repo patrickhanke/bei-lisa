@@ -41,6 +41,7 @@ export const PersonSchema = BaseObjectSchema.extend({
   title: z.string().optional().nullable(),
   text: z.string().optional().nullable(),
   image: z.string().optional().nullable(),
+  description: z.string().optional().nullable(),
 });
 
 // Entry schema

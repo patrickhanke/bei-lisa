@@ -1,4 +1,4 @@
-import { darkgrey, mq } from "@/components/styles";
+import { light, mq } from "@/components/styles";
 
 export const footerContainer = mq({
     display: "flex",
@@ -7,7 +7,7 @@ export const footerContainer = mq({
     justifyContent: "space-between",
     width: "100%",
     fontSize: "16px",
-    borderTop: "0.6px solid " + darkgrey,
+    borderTop: "0.6px solid " + light,
     marginTop: "80px"
 });
 
@@ -21,6 +21,6 @@ export const footerInnerContainer = mq({
 
 export const footerContentContainer = mq({
     flex: 1,
-    borderLeft: "1px solid " + darkgrey,
+    borderLeft: "1px solid " + light,
     padding: "1em"
 });

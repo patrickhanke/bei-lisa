@@ -1,8 +1,33 @@
-import { darkgrey, light, mq, white } from "@/components/styles";
+import { beige, darkgrey, light, mq, white } from "@/components/styles";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const headerContainer = mq({ width: `100vw`, height: [`auto`, `auto`, `50vh`, `80vh`], top: 0, left: 0, zIndex: 2, overflow: "hidden", margin: "auto", position: "relative", display: "flex", justifyContent: "center", alignItems: "center" });
+export const headerContainer = mq({ 
+    width: `100vw`, 
+    height: [`auto`, `auto`, `50vh`, `66vh`], 
+    backgroundColor: white,
+    top: 0, 
+    left: 0, 
+    zIndex: 2, 
+    overflow: "hidden", 
+    margin: "auto", 
+    position: "relative", 
+    display: "flex", 
+    justifyContent: "center", 
+    alignItems: "center" ,
+    // paddingBottom: "60px"
+});
+
+export const designElement = mq({
+    backgroundColor: beige,
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    top: "0",
+    left: 0,
+    zIndex: 1,
+    // transform: "translateY(-50%)"
+})
 
 export const ScrollWrapper = styled(motion.div as any)({
     position: "fixed",
@@ -12,7 +37,7 @@ export const ScrollWrapper = styled(motion.div as any)({
     zIndex: 5,
     background: white,
     width: "100%",
-    paddingTop: "80px"
+    paddingTop: "80px",
   });
   
   export const ImageWrapper = styled(motion.div as any)({
@@ -34,20 +59,18 @@ export const ScrollWrapper = styled(motion.div as any)({
     }
   });
 
-  export const contactButton = mq({
-    padding: "24px 36px",
-    border: `1px solid ${darkgrey}`,   
-    borderRadius: "48px",
-    marginTop: "24px",
-    "h3": {
-        margin: "0 !important",
-        fontWeight: 600
-    },
-   
-  })
+
 
   export const studioImage = mq({
-    borderRadius: "12px",
+    borderRadius: "6px",
     // marginBottom: "24px"
+  })
+
+  export const contactButton = mq({
+    "h4": {
+      textDecoration: "underline",
+      fontWeight: 500
+    },
+   
   })
   

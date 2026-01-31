@@ -29,6 +29,25 @@ const HomeTeam: React.FC = () => {
         return file?.localPath
     }
 
+    // Create layout with empty spaces for grid positioning
+    const createGridLayout = () => {
+        const layout: (Person | null)[] = []
+        
+        // Add persons with empty spaces between them
+        // Example: [person, empty, person, empty, person, empty, person]
+        persons.forEach((person, index) => {
+            layout.push(person)
+            // Add empty space after each person except the last one
+            if (index < persons.length - 1) {
+                layout.push(null)
+            }
+        })
+        
+        return layout
+    }
+
+    const gridLayout = createGridLayout()
+
     return (
         <div css={contentContainer} id="team">
             <FlexBox direction="column" justify="center" align="center">
@@ -39,65 +58,94 @@ const HomeTeam: React.FC = () => {
                 </p>
             </FlexBox>
 
-            {/* Render all persons next to each other */}
-            <FlexBox
-                direction="row"
-                justify="space-evenly"
-                align="flex-start"
-                styles={{ width: "100%" }}
+            {/* Grid layout for team members */}
+            <div
+                css={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(12, 1fr)",
+                    gridTemplateRows: "auto auto",
+                    gap: "2em",
+                    width: "100%",
+                    "@media (max-width: 768px)": {
+                        gridTemplateColumns: "1fr",
+                        gridTemplateRows: "auto",
+                    },
+                }}
             >
-                {persons.map((person) => (
-                    <div
-                        key={person.objectId}
-                        css={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            maxWidth: "300px",
-                            textAlign: "center",
-                        }}
-                    >
-                        {/* Person image */}
-                        {person.image && (
-                            <img
-                                src={findImageForPerson(person)}
-                                alt={person.title || person.label || 'Team member'}
+                {gridLayout.map((person, index) => {
+                    // Render empty space
+                    if (!person) {
+                        return (
+                            <div
+                                key={`empty-${index}`}
                                 css={{
-                                    width: "100%",
-                                    maxWidth: "250px",
-                                    height: "auto",
-                                    objectFit: "cover",
-                                    marginBottom: "1em",
-                                    borderRadius: "24px",
-                                    aspectRatio: "1 / 1.4",
+                                    gridColumn: "span 3",
+                                    "@media (max-width: 768px)": {
+                                        display: "none",
+                                    },
                                 }}
                             />
-                        )}
-                        
-                        {/* Person name (title) */}
-                        {person.title && (
-                            <h4 css={{ 
-                                color: beige, 
-                                marginBottom: "0.5em",
-                                fontSize: "1.2em",
-                            }}>
-                                {person.title}
-                            </h4>
-                        )}
-                        
-                        {/* Person description (text) */}
-                        {person.text && (
-                            <p css={{ 
-                                color: dark,
-                                lineHeight: "1.6",
-                                margin: 0,
-                            }}>
-                                {person.text}
-                            </p>
-                        )}
-                    </div>
-                ))}
-            </FlexBox>
+                        )
+                    }
+
+                    // Render person
+                    return (
+                        <div
+                            key={person.objectId}
+                            css={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                textAlign: "center",
+                                gridColumn: "span 3",
+                                marginTop: "2em",
+                                "@media (max-width: 768px)": {
+                                    gridColumn: "span 1",
+                                },
+                            }}
+                        >
+                            {/* Person image */}
+                            {person.image && (
+                                <img
+                                    src={findImageForPerson(person)}
+                                    alt={person.title || person.label || 'Team member'}
+                                    css={{
+                                        width: "100%",
+                                        maxWidth: "250px",
+                                        height: "auto",
+                                        objectFit: "cover",
+                                        marginBottom: "1em",
+                                        borderRadius: "6px",
+                                        aspectRatio: "1 / 1.4",
+                                    }}
+                                />
+                            )}
+                            
+                            {/* Person name (title) */}
+                            {person.title && (
+                                <h4 css={{ 
+                                    color: dark, 
+                                    marginBottom: "0.5em",
+                                    fontSize: "1.2em",
+                                }}>
+                                    {person.title}
+                                </h4>
+                            )}
+                            
+                            {/* Person description (text) */}
+                            {person.description && (
+                                <p css={{ 
+                                    color: dark,
+                                    lineHeight: "1.6",
+                                    margin: 0,
+                                }}>
+                                    {person.description}
+                                </p>
+                            )}
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }

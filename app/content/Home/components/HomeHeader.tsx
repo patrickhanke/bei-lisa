@@ -1,5 +1,5 @@
 import React from 'react'
-import { headerContainer } from '../styles'
+import { designElement, headerContainer } from '../styles'
 
 const HomeHeader: React.FC = () => {
     return (
@@ -8,8 +8,9 @@ const HomeHeader: React.FC = () => {
                 src="/images/bei_lisa_header.png" 
                 alt="Bei Lisa Team"
                 loading="lazy"
-                style={{ width: "100%", height: "100%", maxWidth: "680px", objectFit: "contain" }}
+                style={{ width: "100%", height: "auto", maxWidth: "680px", objectFit: "contain", zIndex: 2 }}
             />
+            <div css={designElement} />
         </div>
     )
 }

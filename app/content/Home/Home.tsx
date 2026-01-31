@@ -7,7 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import { loadStaticDataAsync, type BuildTimeData } from "@/lib/static-data";
 import { HomeHeader, StudioContent, HomePresentation, HomeTeam, HomePrices } from './components';
 import { Header } from '../Header';
-import { FooterSection, ImageWrapper, ScrollWrapper } from './styles';
+import { contactButton, FooterSection, ImageWrapper, ScrollWrapper } from './styles';
 import { FlexBox } from '@ui';
 import { Footer } from '../Footer';
 
@@ -165,7 +165,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <SEO title="Bei Lisa" />
-      {isDesktopOrLaptop &&
+   
         <Wrapper id="mainwrapper" css={{ height: mainHeight + "px" }}>
           <Header top="start" siteState={siteState} position={scrollPositions} popupHandler={setPopupState} />
           <KontaktIcon />
@@ -180,54 +180,8 @@ const HomePage: React.FC = () => {
             <Footer />
           </ScrollWrapper>
         </Wrapper>
-      }
-      {isTabletOrMobile &&
-        <Wrapper id="mainwrapper" css={{ scrollBehavior: "smooth" }}>
-          {/* Mobile version - simplified */}
-          <div id="header" css={mq({ width: `100vw`, height: [`auto`, `auto`, `50vh`, `80vh`], top: 0, left: 0, zIndex: 2, overflow: "hidden", margin: "auto", position: "relative" })}>
-            <img 
-              src="/images/hs_header.jpg" 
-              alt="Bei Lisa Team"
-              style={{ width: "100%", height: "auto", objectFit: "cover" }}
-            />
-            <div css={{ width: "100%", height: "100%", position: "absolute", zIndex: 4, background: "rgba(0,0,0, 0.2)", top: 0 }}></div>
-            <h1 css={{ position: "absolute", fontSize: "1.8rem", bottom: "0", left: "50%", width: "100%", textAlign: "center", transform: "translate(-50%, 0)", zIndex: 5 }}>
-              Bei Lisa
-            </h1>
-          </div>
-
-          <FooterSection>
-            <FlexContainerMobile css={{ alignItems: "center", justifyContent: "center" }} id="angebot">
-              <FlexBoxMobile css={{ flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative" }}>
-                <h2 css={{ textAlign: "center", color: beige }}>Wir bieten alles für Ihre Haare:</h2>
-                <div css={{ color: darkgrey, position: "relative" }}>
-                  <div css={{ zIndex: 13 }}>
-                    <h4>Damenschnitt</h4>
-                    <h4>Herrenschnitt</h4>
-                    <h4>Färben & Tönen</h4>
-                    <h4>Balayage & Foilyage</h4>
-                    <h4>Extensions - Hairtalk</h4>
-                    <h4>Wimpern & Augenbrauen färben</h4>
-                    <h4>Make-Up & Hochzeitsfrisur</h4>
-                  </div>
-                </div>
-              </FlexBoxMobile>
-            </FlexContainerMobile>
-
-            <FlexContainer id="kontakt" direction="column" align="center">
-              <FlexBoxMobile>
-                <h2 css={{ color: beige }}>Kontakt</h2>
-                <p>Rufen Sie einfach an unter</p>
-                <a href="tel:+49761484745">
-                  <h3 className="linkclass">0761 484745</h3>
-                </a>
-              </FlexBoxMobile>
-            </FlexContainer>
-            
-              <Footer />
-          </FooterSection>
-        </Wrapper>
-      }
+      
+    
     </>
   );
 }

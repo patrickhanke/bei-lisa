@@ -3,9 +3,11 @@ import facepaint from 'facepaint';
 
 export const white = '#FDFAF7';
 export const light = '#F1EFE7';
-export const beige = '#2f4858';
+export const beige = '#F1EFE7';
 export const dark = '#3D3D3D';
 export const darkgrey = '#3D3D3D';
+
+export const darkblue = '#2f4858';
 
 const breakpoints = [576, 980, 1180, 1900];
 
@@ -36,8 +38,8 @@ export const contentContainer = mq({
     marginRight: 'auto',
     maxWidth: '1120px',
     fontSize: ["14px", "15px", "16px", "16px"],
-    marginTop: ["24px", "24px", "120px", "180px"],
-    marginBottom: ["24px", "24px", "120px", "180px"],
+    paddingTop: ["24px", "24px", "120px", "120px"],
+    paddingBottom: ["24px", "24px", "120px", "120px"],
 })
 
 interface FlexContainerProps {

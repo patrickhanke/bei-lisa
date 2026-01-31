@@ -162,7 +162,7 @@ const HomePrices = () => {
             <FlexBox direction="column" align="center" justify="center">
                 <h3 css={{textAlign: "center"}}>Termine sind bitte nur persönlich oder telefonisch zu vereinbaren ! </h3>
                 <a href="tel:+49761484745" css={contactButton}>
-                    <h3>0761 484745</h3>
+                    <h4>0761 484745</h4>
                 </a>
             </FlexBox>
             <FlexBox direction="row" justify="space-between" align="center" styles={{marginTop: "60px"}}>
