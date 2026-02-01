@@ -26,7 +26,7 @@ const HomeTeam: React.FC = () => {
 
     // Track scroll progress of the section
     const { scrollYProgress } = useScroll({
-        target: sectionRef,
+        target: sectionRef as React.RefObject<HTMLElement>,
         offset: ["start end", "end start"]
     })
 
@@ -72,17 +72,19 @@ const HomeTeam: React.FC = () => {
             >
                 <motion.div
                     style={{ x }}
-                    css={{
-                        display: "flex",
-                        gap: "0",
-                        width: "fit-content",
-                        "@media (max-width: 768px)": {
-                            flexDirection: "column",
-                            width: "100%",
-                            gap: "2em",
-                        },
-                    }}
                 >
+                    <div
+                        css={{
+                            display: "flex",
+                            gap: "0",
+                            width: "fit-content",
+                            "@media (max-width: 768px)": {
+                                flexDirection: "column",
+                                width: "100%",
+                                gap: "2em",
+                            },
+                        }}
+                    >
                     {duplicatedPersons.map((person, index) => (
                         <div
                             key={`${person.objectId}-${index}`}
@@ -142,6 +144,7 @@ const HomeTeam: React.FC = () => {
                             )}
                         </div>
                     ))}
+                    </div>
                 </motion.div>
             </div>
         </div>
