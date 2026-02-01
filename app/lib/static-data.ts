@@ -45,6 +45,7 @@ export interface Person {
   text?: string | null;
   portrait?: File | null;
   image?: string | null;
+  description?: string | null;
 }
 
 export interface Entry {

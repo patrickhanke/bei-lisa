@@ -64,7 +64,7 @@ const HomePage: React.FC = () => {
     }
     
     setScrollheight(window.innerHeight / 99);
-    setmainHeight((mainclientheight + headerscrollheight) * 1.1);
+    setmainHeight((mainclientheight) * 1.1);
 
     function getPositions(element: HTMLElement | null): Position | null {
       if (!element) return null;

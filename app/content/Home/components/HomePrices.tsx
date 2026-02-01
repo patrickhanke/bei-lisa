@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import { getEntries, getCategories, Entry, Category } from '@/lib/static-data'
-import { contentContainer, darkgrey } from '@/components/styles'
+import { beige, contentContainer, darkgrey } from '@/components/styles'
 import { FlexBox } from '@ui'
 import { contactButton } from '../styles'
 
@@ -19,37 +19,45 @@ const CategorySection = styled.div({
 })
 
 const CategoryHeader = styled.h3({
-  fontSize: '1.5em',
+  fontSize: '0.9em',
   fontWeight: 600,
   color: darkgrey,
   marginBottom: '1.5em',
   textAlign: 'left',
+  padding: "0.6em",
+  backgroundColor: beige,
+  width: "100%",
+  maxWidth: "100% !important",
+  borderRadius: "0.6em",
 })
 
 const PriceItem = styled.div({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '0.6em 0.6em',
-  borderBottom: `0.6px solid ${darkgrey}`,
+  padding: '0.3em 1.2em',
+  borderBottom: `0.6px solid rgba(0, 0, 0, 0.2)`,
   '&:last-child': {
     borderBottom: 'none',
     marginBottom: 0,
   },
 })
 
-const PriceTitle = styled.div({
-  fontSize: '1.1em',
+const PriceTitle = styled.p({
   fontWeight: 500,
   color: darkgrey,
+  margin: "0 !important",
+  lineHeight: "1.8 !important"
+
 })
 
-const PriceValue = styled.div({
-  fontSize: '1.1em',
+const PriceValue = styled.p({
   fontWeight: 600,
   color: darkgrey,
   marginLeft: '1em',
   whiteSpace: 'nowrap',
+  margin: "0 !important",
+  lineHeight: "1.8 !important"
 })
 
 interface GroupedEntries {

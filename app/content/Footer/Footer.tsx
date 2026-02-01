@@ -11,13 +11,20 @@ const Footer: React.FC = () => {
     return (
         <footer css={footerContainer}>
             <div css={[contentContainer, {padding: "0 !important"}]}>
-                <div css={footerInnerContainer}>
-                    <div css={footerContentContainer}>
-                        <h4 >Öffnungszeiten</h4>
-                        <p css={{ color: dark + " !important" }}>Di.: 08:30 - 18:30</p>
-                        <p css={{ color: dark + " !important" }}>Mi.: 08:00 - 18:00</p>
-                        <p css={{ color: dark + " !important" }}>Do.: 08:30 - 20:00</p>
-                        <p css={{ color: dark + " !important" }}>Fr.: 08:00 - 18:00</p>
+                    <div css={footerInnerContainer}>
+                        <div css={[footerContentContainer, {borderRight: "1px solid rgba(0, 0, 0, 0.2)", borderTop: "0.6px solid rgba(0, 0, 0, 0.2)"}]}>
+                            <h4 >Öffnungszeiten</h4>
+                            <p css={{ color: dark + " !important" }}>Di.: 08:30 - 18:30</p>
+                            <p css={{ color: dark + " !important" }}>Mi.: 08:00 - 18:00</p>
+                            <p css={{ color: dark + " !important" }}>Do.: 08:30 - 20:00</p>
+                            <p css={{ color: dark + " !important" }}>Fr.: 08:00 - 18:00</p>
+                        </div>
+                        <div css={{flex: 1}} />
+                        <div css={{flex: 1}} />
+                    </div>
+                <div css={[footerInnerContainer, {borderTop: "0.6px solid rgba(0, 0, 0, 0.2)"}]}>
+                    <div css={[footerContentContainer, {padding: "0 !important"}]}>
+                        <img src="/images/bei_lisa_square.png" alt="Logo" css={{ width: "100%", height: "auto" }} />
                     </div>
                     <div css={footerContentContainer}>
                         <h4 >Kontakt</h4>

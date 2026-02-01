@@ -1,12 +1,14 @@
 import { contentContainer, beige, dark } from '@/components/styles'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { DownloadedFile, Image, loadStaticDataAsync, type Person } from '@/lib/static-data'
-import { FlexBox } from '@ui'
+import { FlexBox, Grid } from '@ui'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 
 const HomeTeam: React.FC = () => {
     const [persons, setPersons] = useState<Person[]>([])
     const [images, setImages] = useState<Image[]>([])
     const [downloadedFiles, setDownloadedFiles] = useState<DownloadedFile[]>([])
+    const sectionRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         async function loadPersons() {
@@ -22,6 +24,25 @@ const HomeTeam: React.FC = () => {
         loadPersons()
     }, [])
 
+    // Track scroll progress of the section
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start end", "end start"]
+    })
+
+    // Duplicate persons array for infinite loop effect
+    const duplicatedPersons = [...persons, ...persons, ...persons]
+
+    // Transform scroll progress to horizontal movement
+    // Move from 0% to -66.66% (since we have 3 copies, moving 2/3 creates seamless loop)
+    const xRaw = useTransform(scrollYProgress, [0, 1], [0, -33.33])
+    
+    // Apply spring animation for smooth transitions (same values as Home.tsx)
+    const xSmooth = useSpring(xRaw, { damping: 99, stiffness: 200 })
+    
+    // Convert to percentage string
+    const x = useTransform(xSmooth, (value) => `${value}%`)
+
     const findImageForPerson = (person: Person) => {
         const image = images.find(img => img.objectId === person.image)
         const file = downloadedFiles.find(file => file.objectId === image?.objectId)
@@ -29,78 +50,54 @@ const HomeTeam: React.FC = () => {
         return file?.localPath
     }
 
-    // Create layout with empty spaces for grid positioning
-    const createGridLayout = () => {
-        const layout: (Person | null)[] = []
-        
-        // Add persons with empty spaces between them
-        // Example: [person, empty, person, empty, person, empty, person]
-        persons.forEach((person, index) => {
-            layout.push(person)
-            // Add empty space after each person except the last one
-            if (index < persons.length - 1) {
-                layout.push(null)
-            }
-        })
-        
-        return layout
-    }
-
-    const gridLayout = createGridLayout()
-
     return (
-        <div css={contentContainer} id="team">
+        <div css={contentContainer} id="team" ref={sectionRef}>
             <FlexBox direction="column" justify="center" align="center">
-                <h2 css={{ textAlign: "center", color: beige }}>Das Team</h2>
+                <h2 css={{ textAlign: "center" }}>Das Team</h2>
                 <h3 css={{ textAlign: "center" }}>Friseurinnen mit Leidenschaft</h3>
                 <p css={{ textAlign: "center", maxWidth: "60%", margin: "0 auto 4em" }}>
                     Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird.
                 </p>
             </FlexBox>
 
-            {/* Grid layout for team members */}
+            {/* Infinite horizontal slider */}
             <div
                 css={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(12, 1fr)",
-                    gridTemplateRows: "auto auto",
-                    gap: "2em",
+                    overflow: "hidden",
                     width: "100%",
                     "@media (max-width: 768px)": {
-                        gridTemplateColumns: "1fr",
-                        gridTemplateRows: "auto",
+                        overflow: "visible",
                     },
                 }}
             >
-                {gridLayout.map((person, index) => {
-                    // Render empty space
-                    if (!person) {
-                        return (
-                            <div
-                                key={`empty-${index}`}
-                                css={{
-                                    gridColumn: "span 3",
-                                    "@media (max-width: 768px)": {
-                                        display: "none",
-                                    },
-                                }}
-                            />
-                        )
-                    }
-
-                    // Render person
-                    return (
+                <motion.div
+                    style={{ x }}
+                    css={{
+                        display: "flex",
+                        gap: "0",
+                        width: "fit-content",
+                        "@media (max-width: 768px)": {
+                            flexDirection: "column",
+                            width: "100%",
+                            gap: "2em",
+                        },
+                    }}
+                >
+                    {duplicatedPersons.map((person, index) => (
                         <div
-                            key={person.objectId}
+                            key={`${person.objectId}-${index}`}
                             css={{
                                 display: "flex",
                                 flexDirection: "column",
                                 alignItems: "center",
                                 textAlign: "center",
-                                gridColumn: "span 3",
-                                marginTop: "2em",
+                                minWidth: "300px",
+                                flex: "0 0 auto",
+                                padding: "2em 1em",
                                 "@media (max-width: 768px)": {
-                                    gridColumn: "span 1",
+                                    minWidth: "auto",
+                                    width: "100%",
+                                    padding: "0",
                                 },
                             }}
                         >
@@ -138,13 +135,14 @@ const HomeTeam: React.FC = () => {
                                     color: dark,
                                     lineHeight: "1.6",
                                     margin: 0,
+                                    maxWidth: "250px",
                                 }}>
                                     {person.description}
                                 </p>
                             )}
                         </div>
-                    )
-                })}
+                    ))}
+                </motion.div>
             </div>
         </div>
     )

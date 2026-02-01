@@ -1,19 +1,19 @@
 const mainMenu: {title: string, state: string}[] = [
     
     {
-        title: "Unser Salon",
+        title: "Unser Salon.",
         state: "salon",
     },
     {
-        title: "Das Team",
+        title: "Das Team.",
         state: "team",
     },
     {
-        title: "Angebot",
+        title: "Angebot.",
         state: "angebot",
     },
     {
-        title: "Kontakt",
+        title: "Kontakt.",
         state: "kontakt",
     }
        

@@ -511,15 +511,15 @@ hgroup {
   }
   h2 {
     font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: 1em;
+    font-weight: 600;
+    font-size: 1.2em;
     line-height: 1.2;
     text-rendering: optimizeLegibility;
-    letter-spacing: 3px;
+    letter-spacing: -1.2px;
     margin-top: 2em;
     margin-block-end: 1em;
     max-width: 680px;
-    color: #f0efe7;
+    color: #b3ac87;
   }
   h3 {
     font-family: 'Montserrat';
@@ -532,7 +532,7 @@ hgroup {
     letter-spacing: 4px;
     margin-block-start: 0.2em;
     margin-block-end: 1em;
-    max-width: 720px;
+    max-width: 100%;
   }
   h4 {
     font-family: 'Montserrat';
@@ -558,7 +558,7 @@ hgroup {
     font-family: 'Montserrat';
     font-weight: 400;
     font-size: 0.9em;
-    line-height: .8em;
+    line-height: 1.2;
     margin-bottom: 0.4em;
     /* text-transform: uppercase; */
     text-rendering: optimizeLegibility;
@@ -567,11 +567,11 @@ hgroup {
   }
   p {
       font-family: 'Open Sans';
-      font-size: 1em;
-      line-height: 2.4em;
+      font-size: 0.9em;
+      line-height: 2;
       color: inherit;
-      margin-bottom: 0.5em;
-      max-width: 360px;
+      margin-bottom: 1.8em;
+      /* max-width: 360px; */
       
 
   }
