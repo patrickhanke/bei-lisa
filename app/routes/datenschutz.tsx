@@ -78,8 +78,8 @@ function DatenschutzPage() {
                             
                             <h2>Verantwortlicher</h2>
                             <p>
-                                Haarstudio Marita Kraus GmbH<br />
-                                Marita Schindler<br />
+                                Bei Lisa. GmbH<br />
+                                Lisa Scheuing<br />
                                 Andreas-Hofer-Str. 69b<br />
                                 79111 Freiburg im Breisgau<br />
                                 Telefon: 0761 484745<br />

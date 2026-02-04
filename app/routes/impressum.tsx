@@ -75,7 +75,7 @@ function ImpressumPage() {
 
                             <p>
                                 Bei Lisa. GmbH <br />
-                                Lisa Scheunig <br />
+                                Lisa Scheuing <br />
                                 Andreas-Hofer-Str. 69b <br />
                                 79111 Freiburg im Breisgau
                             </p>
@@ -84,7 +84,7 @@ function ImpressumPage() {
                                 E-Mail: hallo@bei-lisa.de
                             </p>
                             <p>
-                                Vertretungsberechtigter Geschäftsführer: Marita Schindler
+                                Vertretungsberechtigter Geschäftsführer: Lisa Scheuing
                             </p>
                             <p>
                                 Eintragung im Handelsregister. <br />

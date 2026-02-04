@@ -23,9 +23,9 @@ export const SEO: React.FC<SEOProps> = ({
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    'name': 'Haarstudio Marita Kraus GmbH',
-    'alternateName': 'Haarstudio Marita',
-    'url': 'https://haarstudio-marita.de/',
+    'name': 'Haarstudio Bei Lisa.',
+    'alternateName': 'Haarstudio Bei Lisa.',
+    'url': 'https://bei-lisa.de/',
     'logo': '/images/bei_lisa_square.png',
     'description': 'Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird.',
     'contactPoint': {
@@ -39,21 +39,21 @@ export const SEO: React.FC<SEOProps> = ({
     'sameAs': ['https://haarstudio-marita.de/'],
   };
 
-  const pageSchema = title === 'Haarstudio Marita' ? {
+  const pageSchema = title === 'Haarstudio Bei Lisa.' ? {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        'name': 'Haarstudio Marita Kraus GmbH',
-        'alternateName': 'Haarstudio Marita Kraus GmbH',
-        'url': 'https://www.haarstudio-marita.de',
+        'name': 'Haarstudio Bei Lisa.',
+        'alternateName': 'Haarstudio Bei Lisa.',
+        'url': 'https://www.bei-lisa.de',
         'description': 'Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird.',
         'inLanguage': 'de-DE',
         'isPartOf': {
           '@type': 'WebSite',
           '@id': 'https://haarstudio-marita.de/#website',
           'url': 'https://haarstudio-marita.de/',
-          'name': 'Haarstudio Marita Kraus GmbH',
+          'name': 'Haarstudio Bei Lisa.',
           'inLanguage': 'de-DE',
         },
       },

@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
           <Link to="/" css={{ width: "160px", display: "flex", alignItems: "center", justifyContent: "center", padding: "0.5em 0" }}>
               <img 
                 src="/images/bei_lisa_font.png" 
-                alt="Haarstudio Marita"
+                alt="Haarstudio Bei Lisa."
                 style={{ width: "120px", height: "auto" }}
               />
           </Link>
