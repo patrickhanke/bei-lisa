@@ -39,7 +39,17 @@ export const contentContainer = mq({
     maxWidth: '1120px',
     fontSize: ["14px", "15px", "16px", "16px"],
     paddingTop: ["24px", "24px", "120px", "120px"],
-    paddingBottom: ["24px", "24px", "120px", "120px"],
+    paddingBottom: ["24px", "24px", "90px", "90px"],
+})
+
+export const smallContentContainer = mq({
+    padding: ["0 12px", "0 12px", "0 12px", "0"],
+    width: "100%",
+    overflow: "visible",
+    position: "relative",
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxWidth: '720px',
 })
 
 interface FlexContainerProps {

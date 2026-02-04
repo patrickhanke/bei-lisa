@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import { getEntries, getCategories, Entry, Category } from '@/lib/static-data'
-import { beige, contentContainer, darkgrey } from '@/components/styles'
+import { beige, contentContainer, darkgrey, mq } from '@/components/styles'
 import { FlexBox } from '@ui'
 import { contactButton } from '../styles'
 
-const PriceListContainer = styled.div({
+const priceListContainer = mq({
   width: '100%',
-  maxWidth: '800px',
+  maxWidth: ['100%', '100%', '840px', '840px'],
   margin: '0 auto',
+  padding: ["0 12px", "0 12px", "0 12px", "0"],
 })
 
 const CategorySection = styled.div({
@@ -142,16 +143,22 @@ const HomePrices = () => {
   }, [])
 
   if (loading) {
-    return <PriceListContainer>Loading prices...</PriceListContainer>
+    return <div css={priceListContainer}>Loading prices...</div>
   }
 
   if (groupedEntries.length === 0) {
-    return <PriceListContainer>No prices available.</PriceListContainer>
+    return <div css={priceListContainer}>No prices available.</div>
   }
 
   return (
     <div id="angebot">
-        <PriceListContainer>
+      <div css={contentContainer}>
+        <FlexBox direction="column" align="center" justify="center">
+          <h2>Angebot.</h2>
+          <h3>Unsere Preisliste</h3>
+        </FlexBox>
+      </div>
+        <div css={priceListContainer}>
         {groupedEntries.map((group, index) => (
             <CategorySection key={group.category?.objectId || `uncategorized-${index}`}>
             <CategoryHeader>
@@ -165,18 +172,15 @@ const HomePrices = () => {
             ))}
             </CategorySection>
         ))}
-        </PriceListContainer>
+        </div>
         <div css={contentContainer} id="kontakt">
             <FlexBox direction="column" align="center" justify="center">
                 <h3 css={{textAlign: "center"}}>Termine sind bitte nur persönlich oder telefonisch zu vereinbaren ! </h3>
                 <a href="tel:+49761484745" css={contactButton}>
-                    <h4>0761 484745</h4>
+                    <h4 css={{fontSize: "2.4em", fontWeight: "400 !important"}}>0761 484745</h4>
                 </a>
-            </FlexBox>
-            <FlexBox direction="row" justify="space-between" align="center" styles={{marginTop: "60px"}}>
-                <div css={{flex: 1}} />
-                <div>
-                    <p css={{fontSize: "0.7em"}}>
+                <div css={{backgroundColor: beige, padding: "1.2em", borderRadius: "0.6em", marginTop: "6em"}}>
+                    <p css={{fontSize: "0.7em", maxWidth: "360px", margin: "0 !important"}}>
                         Bei kurzfristigen Absagen ohne triftigen Grund, die weniger als
                         24 Stunden vor dem Termin erfolgen, werden wir 50% der gebuchten
                         Leistung in Rechnung stellen. 

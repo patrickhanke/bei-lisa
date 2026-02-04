@@ -1,13 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { motion, useSpring, useTransform, MotionValue, useScroll } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import Footer from '../components/Footer';
 import { SEO } from '../components/SEO';
-import { dark, FlexContainer, Wrapper, light } from '../components/styles';
+import { dark, FlexContainer, Wrapper, light, contentContainer, smallContentContainer } from '../components/styles';
 import styled from '@emotion/styled';
 import { FlexBox } from '@ui';
 import { Header } from '@/content/Header';
+import { Footer } from '@/content/Footer';
 
 export const Route = createFileRoute('/datenschutz')({
   component: DatenschutzPage,
@@ -29,7 +29,6 @@ const ContentWrapper = styled(motion.div as any)({
     left: "auto",
     right: "auto",
     zIndex: 5,
-    background: light,
     width: "100%"
 });
 
@@ -63,59 +62,15 @@ function DatenschutzPage() {
     return (
         <>
             <SEO title="Datenschutzerklärung" />
+            <Wrapper id="mainwrapper" css={{ height: mainHeight + "px" }}>
+
             <Header top="datenschutz" />
-            {isDesktopOrLaptop &&
-                <Wrapper id="mainwrapper" css={{ height: mainHeight + "px" }}>
-                    <ScrollBar style={{ scaleY: scrollanimation, originY: 0, height: scrollheight + "px" }} />
-
-                    <ContentWrapper id="wrapper" style={{ y: yFast }}>
-                        <FlexContainer direction="column" css={{ padding: "2em 6em" }}>
-                            <div >
-                                <h1 css={{ color: dark, fontSize: "6em" }}>Datenschutzerklärung</h1>
-                            </div>
-                            <FlexBox direction="column" align="flex-start" hasFullWidth>
-                                <h2>Datenschutz</h2>
-                                <p>
-                                    Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie über die Verarbeitung Ihrer personenbezogenen Daten bei der Nutzung unserer Website.
-                                </p>
-                                
-                                <h2>Verantwortlicher</h2>
-                                <p>
-                                    Haarstudio Marita Kraus GmbH<br />
-                                    Marita Schindler<br />
-                                    Andreas-Hofer-Str. 69b<br />
-                                    79111 Freiburg im Breisgau<br />
-                                    Telefon: 0761 484745<br />
-                                    E-Mail: info@haarstudio-marita.de
-                                </p>
-
-                                <h2>Kontaktaufnahme</h2>
-                                <p>
-                                    Bei Ihrer Kontaktaufnahme mit uns werden die von Ihnen mitgeteilten Daten von uns gespeichert, um Ihre Fragen zu beantworten. Die in diesem Zusammenhang anfallenden Daten löschen wir, nachdem die Speicherung nicht mehr erforderlich ist, oder schränken die Verarbeitung ein, falls gesetzliche Aufbewahrungspflichten bestehen.
-                                </p>
-
-                                <h2>Ihre Rechte</h2>
-                                <p>
-                                    Sie haben das Recht auf Auskunft über die Sie betreffenden personenbezogenen Daten sowie auf Berichtigung oder Löschung oder auf Einschränkung der Verarbeitung oder ein Widerspruchsrecht gegen die Verarbeitung sowie ein Recht auf Datenübertragbarkeit.
-                                </p>
-                            </FlexBox>
-                            <Footer />
-                        </FlexContainer>
-
-                    </ContentWrapper>
-
-                </Wrapper>
-            }
-            {isTabletOrMobile &&
-
-                <Wrapper id="wrapper" css={{ height: "auto" }}>
-
-                    <FlexContainer direction="column" css={{ padding: "2em 1em", ["p"]: { lineHeight: "1.6em", marginBlockEnd: "2.4em" }, ["h2"]: { marginTop: "2em" } }}>
-
+                <ContentWrapper id="wrapper" style={{ y: yFast }}>
+                    <div css={smallContentContainer}>
+                        <div >
+                            <h1 >Datenschutzerklärung</h1>
+                        </div>
                         <FlexBox direction="column" align="flex-start" hasFullWidth>
-                            <div >
-                                <h1 css={{ color: dark, fontSize: "3em", marginTop: "100px", marginBottom: "30px" }}>Datenschutzerklärung</h1>
-                            </div>
                             <h2>Datenschutz</h2>
                             <p>
                                 Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie über die Verarbeitung Ihrer personenbezogenen Daten bei der Nutzung unserer Website.
@@ -131,13 +86,22 @@ function DatenschutzPage() {
                                 E-Mail: info@haarstudio-marita.de
                             </p>
 
+                            <h2>Kontaktaufnahme</h2>
+                            <p>
+                                Bei Ihrer Kontaktaufnahme mit uns werden die von Ihnen mitgeteilten Daten von uns gespeichert, um Ihre Fragen zu beantworten. Die in diesem Zusammenhang anfallenden Daten löschen wir, nachdem die Speicherung nicht mehr erforderlich ist, oder schränken die Verarbeitung ein, falls gesetzliche Aufbewahrungspflichten bestehen.
+                            </p>
+
+                            <h2>Ihre Rechte</h2>
+                            <p>
+                                Sie haben das Recht auf Auskunft über die Sie betreffenden personenbezogenen Daten sowie auf Berichtigung oder Löschung oder auf Einschränkung der Verarbeitung oder ein Widerspruchsrecht gegen die Verarbeitung sowie ein Recht auf Datenübertragbarkeit.
+                            </p>
                         </FlexBox>
-                        <Footer />
-                    </FlexContainer>
+                    </div>
+                    <Footer />
 
-
-                </Wrapper>
-            }
+                </ContentWrapper>
+            </Wrapper>
+           
         </>
     );
 }

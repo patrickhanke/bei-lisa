@@ -8,23 +8,26 @@ export const footerContainer = mq({
     justifyContent: "space-between",
     width: "100%",
     fontSize: "16px",
-    borderTop: "0.6px solid rgba(0, 0, 0, 0.2)" ,
+    // borderTop: "0.6px solid rgba(0, 0, 0, 0.2)" ,
     marginTop: "80px"
 });
 
 export const footerInnerContainer = mq({
     height: "fit-content",
     display: "flex",
-    flexDirection: "row",
+    flexDirection: ["column", "column", "row", "row"],
     alignItems: "stretch",
     justifyContent: "space-between",
-    width: "100%"
+    width: "100%",
 });
 
 export const footerContentContainer = mq({
     flex: 1,
+    aspectRatio: ["none", "none", "1 / 1", "1 / 1"],
     borderLeft: "1px solid rgba(0, 0, 0, 0.2)",
-    padding: "1em"
+    padding: ["2em 1em", "2em 1em", "1em", "1em"],
+    fontStretch: "condensed",
+    position: "relative"
 });
 
 // Grid Component Styles

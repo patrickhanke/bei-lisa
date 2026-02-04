@@ -26,8 +26,8 @@ const StudioContent = () => {
                 }
             }}
         >
-            <GridItem  columnStart="7" columnEnd="12">
-                <h2>Das Studio</h2>
+            <GridItem  columnStart={["1", "1", "7"]} columnEnd="12">
+                <h2>Das Studio.</h2>
                 <div >
                     <h3>Ein Ort zum Verweilen</h3>
                     <p >

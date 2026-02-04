@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export const headerContainer = mq({ 
     width: `100vw`, 
-    height: [`auto`, `auto`, `50vh`, `66vh`], 
+    height: [`50vh`, `50vh`, `72vh`, `72vh`], 
     backgroundColor: white,
     top: 0, 
     left: 0, 
@@ -37,7 +37,7 @@ export const ScrollWrapper = styled(motion.div as any)({
     zIndex: 5,
     background: white,
     width: "100%",
-    paddingTop: "80px",
+    // paddingTop: "80px",
   });
   
   export const ImageWrapper = styled(motion.div as any)({
@@ -67,9 +67,10 @@ export const ScrollWrapper = styled(motion.div as any)({
   })
 
   export const contactButton = mq({
+    paddingBottom: "0.1em",
+    borderBottom: "1.2px solid rgba(0, 0, 0, 0.4)",
     "h4": {
-      textDecoration: "underline",
-      fontWeight: 500
+      marginBottom: "0 !important",
     },
    
   })

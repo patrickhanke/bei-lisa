@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@tanstack/react-router';
 import { beige, contentContainer, dark, darkgrey, mq, white } from '@/components/styles';
 import { footerContainer, footerContentContainer, footerInnerContainer } from './styles';
+import { FlexBox } from '@ui';
 
 const Footer: React.FC = () => {
     const handleClick = () => {
@@ -10,21 +11,31 @@ const Footer: React.FC = () => {
 
     return (
         <footer css={footerContainer}>
-            <div css={[contentContainer, {padding: "0 !important"}]}>
-                    <div css={footerInnerContainer}>
-                        <div css={[footerContentContainer, {borderRight: "1px solid rgba(0, 0, 0, 0.2)", borderTop: "0.6px solid rgba(0, 0, 0, 0.2)"}]}>
-                            <h4 >Öffnungszeiten</h4>
-                            <p css={{ color: dark + " !important" }}>Di.: 08:30 - 18:30</p>
-                            <p css={{ color: dark + " !important" }}>Mi.: 08:00 - 18:00</p>
-                            <p css={{ color: dark + " !important" }}>Do.: 08:30 - 20:00</p>
-                            <p css={{ color: dark + " !important" }}>Fr.: 08:00 - 18:00</p>
-                        </div>
-                        <div css={{flex: 1}} />
-                        <div css={{flex: 1}} />
-                    </div>
-                <div css={[footerInnerContainer, {borderTop: "0.6px solid rgba(0, 0, 0, 0.2)"}]}>
+            <div css={[contentContainer, {padding: "0 !important", borderTop: "0.6px solid rgba(0, 0, 0, 0.2)"}]}>
+                <div css={[footerInnerContainer]}>
+                    
                     <div css={[footerContentContainer, {padding: "0 !important"}]}>
-                        <img src="/images/bei_lisa_square.png" alt="Logo" css={{ width: "100%", height: "auto" }} />
+                        <img src="/images/bei_lisa_square.png" alt="Logo" css={{ width: "100%", height: "100%" }} />
+                    </div>
+                <div css={[footerContentContainer, {borderRight: "1px solid rgba(0, 0, 0, 0.2)"}]}>
+                        <h4 >Öffnungszeiten</h4>
+
+                        <FlexBox direction="row" align="center" justify="space-between" hasFullWidth>
+                            <p css={{fontWeight: "600"}}>Dienstag</p> 
+                            <p>08:30 - 18:30</p>
+                        </FlexBox>
+                        <FlexBox direction="row" align="center" justify="space-between" hasFullWidth>
+                            <p css={{fontWeight: "600"}}>Mittwoch</p>
+                            <p> 08:00 - 18:00</p>
+                        </FlexBox>
+                        <FlexBox direction="row" align="center" justify="space-between" hasFullWidth>
+                            <p css={{fontWeight: "600"}}>Donnerstag</p> 
+                            <p>08:30 - 20:00</p>
+                        </FlexBox>
+                        <FlexBox direction="row" align="center" justify="space-between" hasFullWidth>
+                            <p css={{fontWeight: "600"}}>Freitag</p> 
+                            <p>08:00 - 18:00</p>
+                        </FlexBox>
                     </div>
                     <div css={footerContentContainer}>
                         <h4 >Kontakt</h4>

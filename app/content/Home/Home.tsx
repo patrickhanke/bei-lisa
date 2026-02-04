@@ -1,14 +1,12 @@
-import { createFileRoute } from '@tanstack/react-router'
 import React, { useEffect, useState } from "react";
-import { beige, dark, darkgrey, FlexContainer, light, Wrapper, FlexBoxMobile, FlexContainerMobile, mq, white, teamcontainer } from "@styles";
-import { KontaktIcon, KontaktIconMobile, Preisliste, GoogleMap, SEO, TeamCard} from "@components";
-import { AnimatePresence, motion, useScroll, useSpring, useTransform, MotionValue } from "framer-motion";
+import { Wrapper } from "@styles";
+import { KontaktIcon, SEO} from "@components";
+import { useScroll, useSpring, useTransform } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { loadStaticDataAsync, type BuildTimeData } from "@/lib/static-data";
-import { HomeHeader, StudioContent, HomePresentation, HomeTeam, HomePrices } from './components';
+import { HomeHeader, StudioContent, HomePresentation, HomeTeam, HomePrices, HomeTeamTwo } from './components';
 import { Header } from '../Header';
-import { contactButton, FooterSection, ImageWrapper, ScrollWrapper } from './styles';
-import { FlexBox } from '@ui';
+import { ScrollWrapper } from './styles';
 import { Footer } from '../Footer';
 
 
@@ -175,7 +173,7 @@ const HomePage: React.FC = () => {
             <HomeHeader />
             <HomePresentation />
             <StudioContent />
-            <HomeTeam />
+            <HomeTeamTwo />
             <HomePrices />
             <Footer />
           </ScrollWrapper>
