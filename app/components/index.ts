@@ -1,4 +1,3 @@
-export {default as Footer} from "./Footer";
 export {KontaktIcon, KontaktIconMobile} from "./KontaktIcon";
 export {default as Preisliste} from "./Preislisten";
 export {default as GoogleMap} from "./GoogleMap";
