@@ -1,4 +1,4 @@
-import { beige, contentContainer, mq } from '@/components/styles'
+import { contentContainer, mq } from '@/components/styles'
 import { Grid, GridItem } from '@ui'
 import React from 'react'
 
@@ -45,7 +45,6 @@ const HomePresentation: React.FC = () => {
                 />
             </GridItem>
 
-            {/* Text content - starts in the middle, right column */}
             <GridItem 
                 column={["1", "1", "2", "2"]}
                 row={["3", "3", "2", "2"]}

@@ -172,7 +172,7 @@ const HomePrices = () => {
             ))}
             </CategorySection>
         ))}
-        </div>
+        </div>  
         <div css={contentContainer} id="kontakt">
             <FlexBox direction="column" align="center" justify="center" styles={{marginTop: ["30px", "30px", "90px", "90px"]}}>
                 <h3 css={{textAlign: "center"}}>Termine sind bitte nur persönlich oder telefonisch zu vereinbaren ! </h3>
