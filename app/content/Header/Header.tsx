@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
                   <MenuElement key={item.state} title={item.title} state={item.state} onClick={() => scrollHandlerAngebot(item.state as keyof ScrollPositions)} />
                 ))}
                 <div css={[headerLinkElement, {width: "4.2em", borderRight: "0.6px solid rgba(0, 0, 0, 0.2)"}]} >
-                  <a href="https://www.instagram.com/bei_lisa/" target="_blank" rel="noopener noreferrer"  css={{height: "24px"}}>
+                  <a href="https://www.instagram.com/beilisa.friseur" target="_blank" rel="noopener noreferrer"  css={{height: "24px"}}>
                     <FaSquareInstagram size={24} />
                   </a>
                 </div>
