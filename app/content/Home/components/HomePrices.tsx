@@ -174,7 +174,7 @@ const HomePrices = () => {
         ))}
         </div>
         <div css={contentContainer} id="kontakt">
-            <FlexBox direction="column" align="center" justify="center">
+            <FlexBox direction="column" align="center" justify="center" styles={{marginTop: ["30px", "30px", "90px", "90px"]}}>
                 <h3 css={{textAlign: "center"}}>Termine sind bitte nur persönlich oder telefonisch zu vereinbaren ! </h3>
                 <a href="tel:+49761484745" css={contactButton}>
                     <h4 css={{fontSize: "2.4em", fontWeight: "400 !important"}}>0761 484745</h4>
