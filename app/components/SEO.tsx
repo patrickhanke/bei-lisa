@@ -8,7 +8,7 @@ interface SEOProps {
 }
 
 const siteMetadata = {
-  title: 'Haarstudio Bi Lisa',
+  title: 'Haarstudio Bei Lisa',
   description: 'Ihr Friseursalon in Freiburg St. Georgen',
   author: '@PH',
 };
