@@ -39,6 +39,17 @@ export const ScrollWrapper = styled(motion.div as any)({
     width: "100%",
     // paddingTop: "80px",
   });
+
+/** Native scroll wrapper for mobile - no motion/transform, uses browser scroll */
+export const NativeScrollWrapper = styled.div({
+    position: "relative",
+    height: "auto",
+    left: "auto",
+    right: "auto",
+    zIndex: 5,
+    background: white,
+    width: "100%",
+  });
   
   export const ImageWrapper = styled(motion.div as any)({
     width: "40%",

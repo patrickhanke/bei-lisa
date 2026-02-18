@@ -32,6 +32,16 @@ const ContentWrapper = styled(motion.div as any)({
     width: "100%"
 });
 
+const NativeContentWrapper = styled.div({
+    position: "relative",
+    height: "auto",
+    top: "100px",
+    left: "auto",
+    right: "auto",
+    zIndex: 5,
+    width: "100%"
+});
+
 function ImpressumPage() {
     const [mainHeight, setmainHeight] = useState<number | undefined>();
     const [scrollheight, setScrollheight] = useState<number | undefined>();
@@ -64,7 +74,8 @@ function ImpressumPage() {
             <SEO title="Impressum" />
             <Header top="impressum" />
             <Wrapper id="mainwrapper" css={{ height: mainHeight + "px" }}>
-                <ContentWrapper id="wrapper" style={{ y: yFast }}>
+                {isDesktopOrLaptop ? (
+                    <ContentWrapper id="wrapper" style={{ y: yFast }}>
                     <div css={smallContentContainer}>
                         <div >
                             <h1 >Impressum</h1>
@@ -111,6 +122,55 @@ function ImpressumPage() {
                     </div>
                 <Footer />
                 </ContentWrapper>
+                ) : (
+                    <NativeContentWrapper id="wrapper">
+                    <div css={smallContentContainer}>
+                        <div >
+                            <h1 >Impressum</h1>
+                        </div>
+                        <FlexBox direction="column" align="flex-start" styles={{ width: "100%" }}>
+
+                            <h2>Kontakt</h2>
+
+                            <p>
+                                Bei Lisa. GmbH <br />
+                                Lisa Scheuing <br />
+                                Andreas-Hofer-Str. 69b <br />
+                                79111 Freiburg im Breisgau
+                            </p>
+                            <p>
+                                Telefon: 0761 484745
+                                E-Mail: hallo@bei-lisa.de
+                            </p>
+                            <p>
+                                Vertretungsberechtigter Geschäftsführer: Lisa Scheuing
+                            </p>
+                            <p>
+                                Eintragung im Handelsregister. <br />
+                                Registergericht: Amtsgericht Freiburg i.Breisgau <br />
+                                Registernummer:  HRB 3975
+                            </p>
+                            <p>
+                                Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE 142107470
+                            </p>
+                            <h2>
+                                Urheberrechte
+                            </h2>
+                            <p>
+                                Inhalt, Zusammenstellung, Struktur und Präsentation der Webseiten sind urheberrechtlich geschützt. Die Vervielfältigung und Verbreitung von Informationen oder Daten ohne vorherige schriftliche Zustimmung des Herausgebers ist untersagt. Dies gilt auch für die auszugsweise Vervielfältigung und Verbreitung.
+                            </p>
+                            <h2>
+                                Gewährleistungsausschluss
+                            </h2>
+                            <p>
+                                Wir prüfen und aktualisieren die Informationen auf unserer Webseite ständig. Trotz aller Sorgfalt können sich die Angaben inzwischen verändert haben. Eine Haftung oder Garantie für die Aktualität, Richtigkeit und Vollständigkeit der zur Verfügung gestellten Informationen kann deshalb nicht übernommen werden.
+                            </p>
+
+                        </FlexBox>
+                    </div>
+                <Footer />
+                    </NativeContentWrapper>
+                )}
             </Wrapper>
         </>
     );

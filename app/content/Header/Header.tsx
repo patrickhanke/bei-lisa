@@ -16,13 +16,18 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
 
   function scrollHandlerAngebot(e: keyof ScrollPositions): void {
     if (position && position[e] !== undefined) {
-      window.scrollTo(0, position[e]! + 50);
+      window.scrollTo(0, position[e]! - 100);
     }
     setIsMobileMenuOpen(false);
   }
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleMobileNavClick = () => {
+    setIsMobileMenuOpen(false);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -69,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
           </div>
           
           <MobileMenuContent>
-            <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link to="/" onClick={handleMobileNavClick}>
               <MobileMenuItem>
                 <h2>Home</h2>
               </MobileMenuItem>
@@ -77,17 +82,17 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
 
             {top === "start" && mainMenu.map((item) => (
               <MobileMenuItem key={item.state} onClick={() => scrollHandlerAngebot(item.state as keyof ScrollPositions)}>
-                <h2>{item.title}</h2>
+                <h4 css={{ textAlign: "center", fontWeight: 400}}>{item.title}</h4>
               </MobileMenuItem>
             ))}
 
-            <Link to="/impressum" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link to="/impressum" onClick={handleMobileNavClick} >
               <MobileMenuItem>
                 <h2>Impressum</h2>
               </MobileMenuItem>
             </Link>
 
-            <Link to="/datenschutz" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link to="/datenschutz" onClick={handleMobileNavClick}>
               <MobileMenuItem>
                 <h2>Datenschutz</h2>
               </MobileMenuItem>

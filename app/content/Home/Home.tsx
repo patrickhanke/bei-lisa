@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import { loadStaticDataAsync, type BuildTimeData } from "@/lib/static-data";
 import { HomeHeader, StudioContent, HomePresentation, HomeTeam, HomePrices, HomeTeamTwo } from './components';
 import { Header } from '../Header';
-import { ScrollWrapper } from './styles';
+import { ScrollWrapper, NativeScrollWrapper } from './styles';
 import { Footer } from '../Footer';
 
 
@@ -169,14 +169,25 @@ const HomePage: React.FC = () => {
           <KontaktIcon />
           {/* <Preisliste /> */}
 
-          <ScrollWrapper id="wrapper" style={{ y: yFast }}>
-            <HomeHeader />
-            <HomePresentation />
-            <StudioContent />
-            <HomeTeamTwo />
-            <HomePrices />
-            <Footer />
-          </ScrollWrapper>
+          {isDesktopOrLaptop ? (
+            <ScrollWrapper id="wrapper" style={{ y: yFast }}>
+              <HomeHeader />
+              <HomePresentation />
+              <StudioContent />
+              <HomeTeamTwo />
+              <HomePrices />
+              <Footer />
+            </ScrollWrapper>
+          ) : (
+            <NativeScrollWrapper id="wrapper">
+              <HomeHeader />
+              <HomePresentation />
+              <StudioContent />
+              <HomeTeamTwo />
+              <HomePrices />
+              <Footer />
+            </NativeScrollWrapper>
+          )}
         </Wrapper>
       
     
