@@ -48,13 +48,6 @@ const HomePresentation: React.FC = () => {
             <GridItem 
                 column={["1", "1", "2", "2"]}
                 row={["3", "3", "2", "2"]}
-                // styles={{
-                //     alignSelf: "center",
-                //     display: "grid",
-                //     gridTemplateColumns: ["1fr", "1fr", "1fr", "repeat(2, 1fr)"],
-                //     gap: "2em",
-                //     width: "100%"
-                // }}
             >
                 <div>
                     <p>

@@ -8,7 +8,7 @@ interface SEOProps {
 }
 
 const siteMetadata = {
-  title: 'Haarstudio Bei Lisa',
+  title: 'Bei Lisa.',
   description: 'Ihr Friseursalon in Freiburg St. Georgen',
   author: '@PH',
 };
@@ -23,8 +23,8 @@ export const SEO: React.FC<SEOProps> = ({
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    'name': 'Haarstudio Bei Lisa.',
-    'alternateName': 'Haarstudio Bei Lisa.',
+    'name': 'Bei Lisa.',
+    'alternateName': 'Bei Lisa.',
     'url': 'https://bei-lisa.de/',
     'logo': '/images/bei_lisa_square.png',
     'description': 'Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird.',
@@ -39,13 +39,13 @@ export const SEO: React.FC<SEOProps> = ({
     'sameAs': ['https://haarstudio-marita.de/'],
   };
 
-  const pageSchema = title === 'Haarstudio Bei Lisa.' ? {
+  const pageSchema = title === 'Bei Lisa.' ? {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        'name': 'Haarstudio Bei Lisa.',
-        'alternateName': 'Haarstudio Bei Lisa.',
+        'name': 'Bei Lisa.',
+        'alternateName': 'Bei Lisa.',
         'url': 'https://www.bei-lisa.de',
         'description': 'Unser Team erwartet Sie. Wir wollen, dass Ihr Besuch in unserem Salon mit persönlichem Ambiente zu einem echten Verwöhnerlebnis wird.',
         'inLanguage': 'de-DE',
@@ -53,7 +53,7 @@ export const SEO: React.FC<SEOProps> = ({
           '@type': 'WebSite',
           '@id': 'https://haarstudio-marita.de/#website',
           'url': 'https://haarstudio-marita.de/',
-          'name': 'Haarstudio Bei Lisa.',
+          'name': 'Bei Lisa.',
           'inLanguage': 'de-DE',
         },
       },
