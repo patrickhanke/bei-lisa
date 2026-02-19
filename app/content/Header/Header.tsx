@@ -37,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
           <Link to="/" css={{ width: "160px", display: "flex", alignItems: "center", justifyContent: "center", padding: "0.5em 0" }}>
               <img 
                 src="/images/bei_lisa_font.png" 
-                alt="Haarstudio Bei Lisa."
+                alt="Bei Lisa."
                 style={{ width: "120px", height: "auto" }}
               />
           </Link>
@@ -74,17 +74,20 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
           </div>
           
           <MobileMenuContent>
+            <div css={{marginBottom: "60px"}}>
+              <img src="/images/bei_lisa_header.png" alt="Bei Lisa." style={{ width: "120px", height: "auto" }} />
+          </div>
             <Link to="/" onClick={handleMobileNavClick}>
               <MobileMenuItem>
                 <h2>Home</h2>
               </MobileMenuItem>
             </Link>
 
-            {top === "start" && mainMenu.map((item) => (
+            {/* {top === "start" && mainMenu.map((item) => (
               <MobileMenuItem key={item.state} onClick={() => scrollHandlerAngebot(item.state as keyof ScrollPositions)}>
                 <h4 css={{ textAlign: "center", fontWeight: 400}}>{item.title}</h4>
               </MobileMenuItem>
-            ))}
+            ))} */}
 
             <Link to="/impressum" onClick={handleMobileNavClick} >
               <MobileMenuItem>
@@ -92,11 +95,16 @@ const Header: React.FC<HeaderProps> = ({ siteState, position, top, popupHandler 
               </MobileMenuItem>
             </Link>
 
-            <Link to="/datenschutz" onClick={handleMobileNavClick}>
-              <MobileMenuItem>
+            <Link to="/datenschutz" onClick={handleMobileNavClick} >
+              <MobileMenuItem css={{borderBottomWidth: "0 !important"}}>
                 <h2>Datenschutz</h2>
               </MobileMenuItem>
             </Link>
+            <div css={{marginTop: "60px"}}>
+              <a href="https://www.instagram.com/beilisa.friseur" target="_blank" rel="noopener noreferrer"  css={{height: "24px"}}>
+                <FaSquareInstagram size={36} />
+              </a>
+            </div>
           </MobileMenuContent>
         </MobileMenuOverlay>
       )}

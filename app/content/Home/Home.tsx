@@ -164,7 +164,7 @@ const HomePage: React.FC = () => {
     <>
       <SEO title="Bei Lisa" />
    
-        <Wrapper id="mainwrapper" css={{ height: mainHeight + "px" }}>
+        <Wrapper id="mainwrapper" css={{ height:isDesktopOrLaptop ? mainHeight + "px" : "auto" }}>
           <Header top="start" siteState={siteState} position={scrollPositions} popupHandler={setPopupState} />
           <KontaktIcon />
           {/* <Preisliste /> */}

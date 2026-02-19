@@ -26,7 +26,7 @@ const KontaktContainer = styled(motion.div as any)({
 });
 
 const KontaktButton = styled(motion.div as any)({
-    padding: "24px",
+    padding: "18px",
     zIndex: 13,
     borderRadius: "50%",
     cursor: "pointer",
@@ -78,24 +78,27 @@ export const KontaktIcon: React.FC = () => {
                             <div css={{ width: "100%", height: "1.5px", background: darkgrey, margin: "6px auto 12px auto" }} />
                             <h5 css={{color: white}}>Öffnungszeiten</h5>
                             <p css={{ color: white + " !important" }}>
+                                Mo.: 16:00 - 20:00
+                            </p>
+                            <p css={{ color: white + " !important" }}>
                                 Di.: 08:30 - 18:30
                             </p>
                             <p css={{ color: white + " !important" }}>
-                                Mi.: 08:00 - 18:00
+                                Mi.: 08:30 - 20:30
                             </p>
                             <p css={{ color: white + " !important" }}>
-                                Do.: 08:30 - 20:00
+                                Do.: 08:30 - 18:00
                             </p>
                             <p css={{ color: white + " !important" }}>
-                                Fr.: 08:00 - 18:00
+                                Fr.: 08:00 - 14:00
                             </p>
                         </PopupContent>
                     </PopupContainer>}
             </AnimatePresence>
 
             <KontaktButton onClick={() => setOpen(!open)} animate={open ? { backgroundColor: dark, color: darkgrey } : { backgroundColor: darkgrey, color: dark }}>
-                <h4 css={{ marginBottom: 0, lineHeight: 0, marginTop: 0, marginBlockEnd: 0, fontSize: "24px" }}>
-                    <MdLocalPhone color={white} />
+                <h4 css={{ marginBottom: 0, lineHeight: 0, marginTop: 0, marginBlockEnd: 0 }}>
+                    <MdLocalPhone color={white} size={18} />
                 </h4>
             </KontaktButton>
         </KontaktContainer>

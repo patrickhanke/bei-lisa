@@ -1,12 +1,11 @@
 import { contentContainer } from '@/components/styles'
-import { FlexBox, Grid, GridItem } from '@ui'
-import React from 'react'
+import { Grid, GridItem } from '@ui'
 import { studioImage } from '../styles'
 
 const StudioContent = () => {
   return (
     <>
-    <div css={{width: "100%", height: "400px"}}>
+    <div css={{width: "100%", height: "400px", display: "none"}}>
         <img 
             src="/images/Haarstudio-Marita-Interieur-2020-web-9.jpg" 
             alt="Bei Lisa"
@@ -46,24 +45,25 @@ const StudioContent = () => {
                 }
             }}
         >
-            <img
+            {/* <img
                 src="/images/Haarstudio-Marita-Interieur-2020-web-5.jpg"
                 alt="Bei Lisa"
                 css={studioImage}
                 style={{ width: "100%", gridColumn: "span 6", gridRow: "span 2" }}
-            />
+            /> */}
+            <div css={{gridColumn: "span 6"}} />
             <img
-                src="/images/Haarstudio-Marita-Interieur-2020-web-16.jpg"
+                src="/images/studio_1.jpg"
                 alt="Bei Lisa"
                 css={studioImage}
                 style={{ width: "100%", gridColumn: "span 5" }}
             />
-            <img
+            {/* <img
                 src="/images/Haarstudio-Marita-Interieur-2020-high-res-14.jpg"
                 alt="Bei Lisa"
                 css={studioImage}
                 style={{ width: "100%", gridColumn: "span 3" }}
-            />
+            /> */}
         </Grid>
     </div>
     </>
