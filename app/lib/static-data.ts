@@ -61,6 +61,9 @@ export interface Entry {
   image?: File | null;
   description?: string | null;
   documents?: File[] | null;
+  data?: {
+    order?: number | null;
+  } | null;
 }
 
 export interface DownloadedFile {

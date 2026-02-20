@@ -1,13 +1,14 @@
 import { contentContainer, mq } from '@/components/styles'
 import { Grid, GridItem } from '@ui'
 import React from 'react'
+import { mainImage } from '../styles'
 
 const HomePresentation: React.FC = () => {
   return (
     <>
     <div css={contentContainer} id="salon">
         <Grid 
-            columns={["1fr", "1fr", "repeat(2, 1fr)", "repeat(2, 1fr)"]}
+            columns={["12"]}
             rows={["auto", "auto", "auto 1fr", "auto 1fr"]}
             gap="2em"
             hasFullWidth
@@ -18,7 +19,8 @@ const HomePresentation: React.FC = () => {
         >
             {/* Header section - spans full width */}
             <GridItem 
-                column={["1", "1", "1 / -1", "1 / -1"]}
+                columnStart={["1"]}
+                columnEnd={["13"]}
                 row={["1", "1", "1", "1"]}
             >
                 <h2>
@@ -31,23 +33,25 @@ const HomePresentation: React.FC = () => {
             
             {/* Image - bottom left position */}
             <GridItem 
-                column={["1", "1", "1", "1"]}
-                row={["2"]}
+                columnStart={["1"]}
+                columnEnd={["13", "13", "5"]}
+                row={["3", "3", "2", "2"]}
                 styles={{
                     alignSelf: "end"
                 }}
             >
                 <img
-                    src="/images/lisa.jpg"
-                    alt="Bei Lisa Team"
+                    src="/images/lisa_gesch.jpg"
+                    alt="Bei Lisa."
                     loading="lazy"
-                    style={{ width: "100%", display: "none", height: "auto", maxWidth: "300px", objectFit: "contain", borderRadius: "10px" }}
+                    css={mainImage}
                 />
             </GridItem>
 
             <GridItem 
-                column={["1", "1", "2", "2"]}
-                row={["3", "3", "2", "2"]}
+                columnStart={["1", "1", "7"]}
+                columnEnd={["13"]}
+                row="2"
             >
                 <div>
                     <p>

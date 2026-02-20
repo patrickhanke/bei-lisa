@@ -36,7 +36,7 @@ const PriceItem = styled.div({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '0.3em 1.2em',
+  padding: '0.6em 1.2em',
   borderBottom: `0.6px solid rgba(0, 0, 0, 0.2)`,
   '&:last-child': {
     borderBottom: 'none',
@@ -45,7 +45,7 @@ const PriceItem = styled.div({
 })
 
 const PriceTitle = styled.p({
-  fontWeight: 500,
+  fontWeight: 600,
   color: darkgrey,
   margin: "0 !important",
   lineHeight: "1.8 !important"
@@ -53,7 +53,7 @@ const PriceTitle = styled.p({
 })
 
 const PriceValue = styled.p({
-  fontWeight: 600,
+  fontWeight: 400,
   color: darkgrey,
   marginLeft: '1em',
   whiteSpace: 'nowrap',
@@ -77,6 +77,8 @@ const HomePrices = () => {
           getEntries(),
           getCategories(),
         ])
+
+        console.log(entries)
 
         // Create a map of categoryId -> Category for quick lookup
         const categoryMap = new Map<string, Category>()
@@ -150,6 +152,14 @@ const HomePrices = () => {
     return <div css={priceListContainer}>No prices available.</div>
   }
 
+  const sortGroupEntries = ((entries: Entry[]) => {
+    return entries.sort((a, b) => {
+      const orderA = a.data?.order || 0
+      const orderB = b.data?.order || 0
+      return orderA - orderB
+    })
+  })
+
   return (
     <div id="angebot">
       <div css={contentContainer}>
@@ -160,17 +170,27 @@ const HomePrices = () => {
       </div>
         <div css={priceListContainer}>
         {groupedEntries.map((group, index) => (
+          <>
             <CategorySection key={group.category?.objectId || `uncategorized-${index}`}>
             <CategoryHeader>
                 {group.category?.title || group.category?.label || 'Other'}
             </CategoryHeader>
-            {group.entries.map((entry) => (
+            {sortGroupEntries(group.entries).map((entry) => (
                 <PriceItem key={entry.objectId}>
                 <PriceTitle>{entry.title || 'Untitled'}</PriceTitle>
-                <PriceValue>{entry.description || '-'}</PriceValue>
+                <PriceValue>{entry.description || ''}</PriceValue>
                 </PriceItem>
             ))}
             </CategorySection>
+            {group.category?.objectId === "CqVnQIULBQ" && (
+              <div css={{backgroundColor: beige, padding: "1.2em", borderRadius: "0.6em", marginTop: "0.6em"}}>
+                <p css={{margin: "0 !important"}}>
+                 Preise können je nach Aufwand und Menge abweichen. 
+                </p>
+              </div>
+            )}
+          </>
+
         ))}
         </div>  
         <div css={contentContainer} id="kontakt">

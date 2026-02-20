@@ -18,7 +18,8 @@ export const bei_lisa_schema = [
             "file",
             "image",
             "description",
-            "documents"
+            "documents",
+            "data"
         ]
     },
     {

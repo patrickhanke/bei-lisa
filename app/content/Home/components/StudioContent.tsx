@@ -51,12 +51,12 @@ const StudioContent = () => {
                 css={studioImage}
                 style={{ width: "100%", gridColumn: "span 6", gridRow: "span 2" }}
             /> */}
-            <div css={{gridColumn: "span 6"}} />
             <img
                 src="/images/studio_1.jpg"
                 alt="Bei Lisa"
                 css={studioImage}
-                style={{ width: "100%", gridColumn: "span 5" }}
+                style={{ width: "100%" }}
+                width="100%"
             />
             {/* <img
                 src="/images/Haarstudio-Marita-Interieur-2020-high-res-14.jpg"

@@ -70,10 +70,23 @@ export const NativeScrollWrapper = styled.div({
     }
   });
 
+  export const mainImage = mq({
+    width: "100%",
+    height: "auto",
+    objectFit: "contain",
+    borderRadius: "10px",
+    gridColumnStart: ["1"],
+    gridColumnEnd: ["13", "13", "5"],
+    display: "grid"
+  })
+
 
 
   export const studioImage = mq({
     borderRadius: "6px",
+    width: "100%",
+    gridColumnStart: ["1", "1", "7"],
+    gridColumnEnd: ["13"],
     // marginBottom: "24px"
   })
 

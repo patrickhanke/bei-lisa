@@ -55,6 +55,9 @@ export const EntrySchema = BaseObjectSchema.extend({
   image: z.string().optional().nullable(),  // image is a string, not a File
   description: z.string().optional().nullable(),
   documents: z.array(z.object({ value: z.string() })).optional().nullable(),
+  data: z.object({
+    order: z.number().optional().nullable(),
+  }).optional().nullable(),
 });
 
 // Export types

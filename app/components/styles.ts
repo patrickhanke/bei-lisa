@@ -24,7 +24,7 @@ export const Wrapper = styled.div(
         background: white,
         marginLeft: "auto",
         marginRight: "auto",
-        fontSize: ["14px", "15px", "16px", "16px"],
+        fontSize: ["16px", "16px", "16px", "16px"],
         ['p']: { color: "inherit" }
     })
 );
@@ -38,8 +38,8 @@ export const contentContainer = mq({
     marginRight: 'auto',
     maxWidth: '1120px',
     fontSize: ["14px", "15px", "16px", "16px"],
-    paddingTop: ["24px", "24px", "120px", "120px"],
-    paddingBottom: ["24px", "24px", "90px", "90px"],
+    paddingTop: ["60px", "60px", "120px", "120px"],
+    paddingBottom: ["60px", "60px", "90px", "90px"],
 })
 
 export const smallContentContainer = mq({
