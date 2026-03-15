@@ -78,8 +78,6 @@ const HomePrices = () => {
           getCategories(),
         ])
 
-        console.log(entries)
-
         // Create a map of categoryId -> Category for quick lookup
         const categoryMap = new Map<string, Category>()
         categories.forEach((cat) => {

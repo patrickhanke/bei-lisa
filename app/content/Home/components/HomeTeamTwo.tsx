@@ -36,7 +36,10 @@ const HomeTeam: React.FC = () => {
         acc.push({ type: 'person', data: person })
         // Add spacers after each person except the last, alternating between 1 and 2
         if (index < persons.length - 1) {
-            const spacerCount = index % 2 === 0 ? 1 : 2
+            let spacerCount = index  % 2 === 0 ? 1 : 2
+            if (index === 3) {
+                spacerCount = 0
+            }
             for (let i = 0; i < spacerCount; i++) {
                 acc.push({ type: 'empty', id: `empty-${index}-${i}` })
             }

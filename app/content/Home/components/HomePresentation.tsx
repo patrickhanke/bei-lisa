@@ -17,10 +17,24 @@ const HomePresentation: React.FC = () => {
                 justifyItems: "start"
             }}
         >
-            {/* Header section - spans full width */}
+            <GridItem 
+                columnStart={["1", "1", "8"]}
+                columnEnd={["13"]}
+                row={["1", "1", "1", "1"]}
+                styles={{
+                    alignSelf: "end"
+                }}
+            >
+                <img
+                    src="/images/team_02.jpeg"
+                    alt="Bei Lisa."
+                    loading="lazy"
+                    css={mainImage}
+                />
+            </GridItem>
             <GridItem 
                 columnStart={["1"]}
-                columnEnd={["13"]}
+                columnEnd={["13", "13", "6"]}
                 row={["1", "1", "1", "1"]}
             >
                 <h2>
@@ -29,30 +43,6 @@ const HomePresentation: React.FC = () => {
                 <h3>
                     Ich heiße Lisa und freue mich sehr, euch in meinem Salon begrüßen zu dürfen.
                 </h3>
-            </GridItem>
-            
-            {/* Image - bottom left position */}
-            <GridItem 
-                columnStart={["1"]}
-                columnEnd={["13", "13", "5"]}
-                row={["3", "3", "2", "2"]}
-                styles={{
-                    alignSelf: "end"
-                }}
-            >
-                <img
-                    src="/images/lisa_gesch.jpg"
-                    alt="Bei Lisa."
-                    loading="lazy"
-                    css={mainImage}
-                />
-            </GridItem>
-
-            <GridItem 
-                columnStart={["1", "1", "7"]}
-                columnEnd={["13"]}
-                row="2"
-            >
                 <div>
                     <p>
                         Mit der Übernahme des Haarstudios Marita beginnt ein neues Kapitel – mit viel Leidenschaft, frischen Ideen und dem Anspruch, dass ihr euch bei mir rundum wohlfühlt.

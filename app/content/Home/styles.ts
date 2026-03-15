@@ -75,9 +75,8 @@ export const NativeScrollWrapper = styled.div({
     height: "auto",
     objectFit: "contain",
     borderRadius: "10px",
-    gridColumnStart: ["1"],
-    gridColumnEnd: ["13", "13", "5"],
-    display: "grid"
+    display: "grid",
+    maxHeight: "600px"
   })
 
 

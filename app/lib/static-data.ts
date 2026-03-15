@@ -108,7 +108,6 @@ async function loadStaticData(): Promise<BuildTimeData> {
           const data = await response.json();
           if (data && data !== null) {
             staticDataCache = data;
-            console.log('[Static Data] Loaded from dev server:', data);
             return data;
           }
         }
