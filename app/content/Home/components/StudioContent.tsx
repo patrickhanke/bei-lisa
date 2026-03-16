@@ -35,7 +35,7 @@ const StudioContent = () => {
                     </p>
                 </div>
             </GridItem>
-            <GridItem columnStart={["1", "1", "1"]} columnEnd={["13", "13", "6"]} row={["1", "1", "1", "1"]}>
+            <GridItem columnStart={["1", "1", "1"]} columnEnd={["13", "13", "6"]} row={["2", "2", "1", "1"]}>
                 <img
                     src="/images/studio_1.jpg"
                     alt="Bei Lisa"

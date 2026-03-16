@@ -20,7 +20,7 @@ const HomePresentation: React.FC = () => {
             <GridItem 
                 columnStart={["1", "1", "8"]}
                 columnEnd={["13"]}
-                row={["1", "1", "1", "1"]}
+                row={["2", "2", "1", "1"]}
                 styles={{
                     alignSelf: "end"
                 }}

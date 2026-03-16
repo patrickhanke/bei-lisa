@@ -10,6 +10,7 @@ const priceListContainer = mq({
   maxWidth: ['100%', '100%', '840px', '840px'],
   margin: '0 auto',
   padding: ["0 12px", "0 12px", "0 12px", "0"],
+  fontSize: ["14px", "15px", "16px", "16px"],
 })
 
 const CategorySection = styled.div({
@@ -198,7 +199,7 @@ const HomePrices = () => {
                     <h4 css={{fontSize: "2.4em", fontWeight: "400 !important"}}>0761 484745</h4>
                 </a>
                 <div css={{backgroundColor: beige, padding: "1.2em", borderRadius: "0.6em", marginTop: "6em"}}>
-                    <p css={{fontSize: "0.7em", maxWidth: "360px", margin: "0 !important"}}>
+                    <p css={{ maxWidth: "780px", margin: "0 !important"}}>
                         Bei kurzfristigen Absagen ohne triftigen Grund, die weniger als
                         24 Stunden vor dem Termin erfolgen, werden wir 50% der gebuchten
                         Leistung in Rechnung stellen. 
